@@ -1,130 +1,146 @@
-
-import { useState } from 'react';
-import { toast } from '@/components/ui/use-toast';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import NewsStrip from '../components/NewsStrip';
-import LazyImage from '../components/LazyImage';
-import { ArrowRight, Send, ChevronDown } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { useState } from "react";
+import { toast } from "@/components/ui/use-toast";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import NewsStrip from "../components/NewsStrip";
+import LazyImage from "../components/LazyImage";
+import { ArrowRight, Send, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 
 // Updated with new food categories and images
 const foodCategories = [
-  { 
-    id: 'snacks', 
-    name: 'Snacks', 
-    image: '/lovable-uploads/1b580580-4769-4a6c-8c94-c52f0215e0fe.png', 
-    description: 'Delicious ready-to-cook snacks that can be prepared within minutes.' 
+  {
+    id: "snacks",
+    name: "Snacks",
+    image: "/lovable-uploads/food-categories/samosa2.jpeg",
+    description:
+      "Delicious ready-to-cook snacks that can be prepared within minutes.",
   },
-  { 
-    id: 'base-gravies', 
-    name: 'Base Gravies', 
-    image: '/lovable-uploads/4dd3ef64-1210-43c7-8fec-777c8a5e052b.png', 
-    description: 'Perfectly balanced base gravies to create authentic Indian curries instantly.' 
+  {
+    id: "base-gravies",
+    name: "Base Gravies",
+    image: "/lovable-uploads/food-categories/basegravy1.jpeg",
+    description:
+      "Perfectly balanced base gravies to create authentic Indian curries instantly.",
   },
-  { 
-    id: 'indian-desserts', 
-    name: 'Indian Desserts', 
-    image: '/lovable-uploads/2af7e52d-b539-434c-b72b-63ea1b06724e.png', 
-    description: 'Traditional Indian sweets and desserts with authentic taste and quick preparation.' 
+  {
+    id: "indian-desserts",
+    name: "Indian Desserts",
+    image: "/lovable-uploads/food-categories/GulabJamum.jpeg",
+    description:
+      "Traditional Indian sweets and desserts with authentic taste and quick preparation.",
   },
-  { 
-    id: 'ready-to-eat-curries', 
-    name: 'Ready to Eat Curries', 
-    image: '/lovable-uploads/918a671f-47b4-4497-a274-8d484424f544.png', 
-    description: 'Authentic Indian curries ready to serve in minutes with homemade taste.' 
+  {
+    id: "ready-to-eat-curries",
+    name: "Ready to Eat Curries",
+    image: "/lovable-uploads/food-categories/RTECurry2.jpeg",
+    description:
+      "Authentic Indian curries ready to serve in minutes with homemade taste.",
   },
-  { 
-    id: 'rice-products', 
-    name: 'Rice Products', 
-    image: '/lovable-uploads/87853b66-83be-4ae1-ad8a-45daef15380f.png', 
-    description: 'Aromatic rice dishes including biryani and pulao that regenerate perfectly.' 
+  {
+    id: "rice-products",
+    name: "Rice Products",
+    image: "/lovable-uploads/food-categories/riceproduct.jpeg",
+    description:
+      "Aromatic rice dishes including biryani and pulao that regenerate perfectly.",
   },
-  { 
-    id: 'beverages-premix', 
-    name: 'Beverages Premix', 
-    image: '/lovable-uploads/0c7c7860-5503-46ea-8d0b-00c7554acf90.png', 
-    description: 'Instant beverage premixes for tea, coffee and other popular Indian drinks.' 
+  {
+    id: "beverages-premix",
+    name: "Beverages Premix",
+    image: "/lovable-uploads/food-categories/premixchai.jpeg",
+    description:
+      "Instant beverage premixes for tea, coffee and other popular Indian drinks.",
   },
-  { 
-    id: 'pan-asian-food', 
-    name: 'Pan Asian Food', 
-    image: '/lovable-uploads/a88293f6-d3bd-4d7b-b1a6-3860efe34896.png', 
-    description: 'Quick-prep authentic Asian favorites including manchurian, noodles and more.' 
+  {
+    id: "pan-asian-food",
+    name: "Pan Asian Food",
+    image: "/lovable-uploads/food-categories/panasian.jpeg",
+    description:
+      "Quick-prep authentic Asian favorites including manchurian, noodles and more.",
   },
-  { 
-    id: 'continental-food', 
-    name: 'Continental Food', 
-    image: '/lovable-uploads/306639a0-bc1a-4392-9d44-eeeb47b276e5.png', 
-    description: 'Ready-to-cook continental classics that bring global flavors to your menu.' 
+  {
+    id: "continental-food",
+    name: "Continental Food",
+    image: "/lovable-uploads/food-categories/continental.jpeg",
+    description:
+      "Ready-to-cook continental classics that bring global flavors to your menu.",
   },
-  { 
-    id: 'indian-breads', 
-    name: 'Indian Breads', 
-    image: '/public/lovable-uploads/8c184d03-531e-4220-a71c-e1dd8d9706ab.png', 
-    description: 'Fresh Indian breads including naan, paratha, and roti ready in minutes.' 
+  {
+    id: "indian-breads",
+    name: "Indian Breads",
+    image: "/lovable-uploads/food-categories/indianbread1.jpeg",
+    description:
+      "Fresh Indian breads including naan, paratha, and roti ready in minutes.",
   },
 ];
 
 const HorecaSupply = () => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [formData, setFormData] = useState({
-    brandName: '',
-    quantities: '',
-    contactNumber: '',
-    email: '',
+    brandName: "",
+    quantities: "",
+    contactNumber: "",
+    email: "",
   });
 
   const handleCategoryToggle = (categoryId: string) => {
-    setSelectedCategories(prev => 
+    setSelectedCategories((prev) =>
       prev.includes(categoryId)
-        ? prev.filter(id => id !== categoryId)
+        ? prev.filter((id) => id !== categoryId)
         : [...prev, categoryId]
     );
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const scrollToEnquiry = () => {
-    const enquirySection = document.getElementById('enquire');
+    const enquirySection = document.getElementById("enquire");
     if (enquirySection) {
-      enquirySection.scrollIntoView({ behavior: 'smooth' });
+      enquirySection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Basic validation
-    if (!formData.brandName || !formData.contactNumber || selectedCategories.length === 0) {
+    if (
+      !formData.brandName ||
+      !formData.contactNumber ||
+      selectedCategories.length === 0
+    ) {
       toast({
         title: "Missing information",
-        description: "Please fill in all required fields and select at least one category.",
-        variant: "destructive"
+        description:
+          "Please fill in all required fields and select at least one category.",
+        variant: "destructive",
       });
       return;
     }
-    
+
     // Form submission logic would go here
     toast({
       title: "Enquiry Submitted",
-      description: "Thank you for your interest. Our team will contact you shortly!",
+      description:
+        "Thank you for your interest. Our team will contact you shortly!",
     });
-    
+
     // Reset form
     setFormData({
-      brandName: '',
-      quantities: '',
-      contactNumber: '',
-      email: '',
+      brandName: "",
+      quantities: "",
+      contactNumber: "",
+      email: "",
     });
     setSelectedCategories([]);
   };
@@ -132,24 +148,27 @@ const HorecaSupply = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-24 pb-12 md:pt-32 md:pb-16 bg-gradient-purple-red">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Enabling restaurants and quick commerce players to cook fast, so that they can deliver fast!
+            Enabling restaurants and quick commerce players to cook fast, so
+            that they can deliver fast!
           </h1>
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-8 mt-8 text-white">
-              <div className="flex items-center">
-                <div className="w-3 h-3 bg-dil-yellow rounded-full mr-2"></div>
-                <span>In-house automated manufacturing facility</span>
+              <div className="flex items-baseline">
+                <div className="w-3 h-3 bg-dil-yellow rounded-full mr-2 "></div>
+                <span className="text-start">
+                  In-house automated manufacturing facility
+                </span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-baseline">
                 <div className="w-3 h-3 bg-dil-yellow rounded-full mr-2"></div>
                 <span>AM to PM food solutions</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-baseline">
                 <div className="w-3 h-3 bg-dil-yellow rounded-full mr-2"></div>
                 <span>All cuisines covered</span>
               </div>
@@ -157,22 +176,24 @@ const HorecaSupply = () => {
           </div>
         </div>
       </section>
-      
+
       {/* News Strip */}
-      <NewsStrip 
-        text="READY TO COOK! READY TO EAT! READY TO REGENERATE IN 2 MINUTES!" 
+      <NewsStrip
+        text="READY TO COOK! READY TO EAT! READY TO REGENERATE IN 2 MINUTES!"
         speed="extremely-slow"
       />
-      
+
       {/* Categories Section - Updated with all 9 categories */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-purple-red text-transparent bg-clip-text">Our Food Categories</h2>
-          
+          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-purple-red text-transparent bg-clip-text">
+            Our Food Categories
+          </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {foodCategories.map((category) => (
-              <Card 
-                key={category.id} 
+              <Card
+                key={category.id}
                 className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full bg-gradient-soft-yellow-orange"
               >
                 <div className="w-full h-64 relative">
@@ -184,11 +205,13 @@ const HorecaSupply = () => {
                   />
                 </div>
                 <CardContent className="p-6 flex-grow">
-                  <h3 className="text-xl font-semibold mb-2 text-dil-purple">{category.name}</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-dil-purple">
+                    {category.name}
+                  </h3>
                   <p className="text-gray-700 mb-4">{category.description}</p>
                 </CardContent>
                 <CardFooter className="p-4 border-t bg-gradient-yellow-orange bg-opacity-30">
-                  <Button 
+                  <Button
                     className="w-full bg-gradient-purple-red hover:opacity-90 text-white gap-2"
                     onClick={scrollToEnquiry}
                   >
@@ -200,17 +223,18 @@ const HorecaSupply = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Quick Delivery Section */}
       <section className="py-16 bg-dil-yellow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="md:flex md:items-center md:justify-between">
+          <div className="md:flex md:items-center md:justify-around">
             <div className="md:w-1/2 mb-8 md:mb-0">
               <h2 className="text-3xl md:text-4xl font-bold text-dil-purple mb-4">
                 Perfect for 10-Minute Deliveries!
               </h2>
               <p className="text-dil-purple text-lg mb-6">
-                Our products regenerate in just 2 minutes, making them ideal for quick commerce platforms and fast-food operations.
+                Our products regenerate in just 2 minutes, making them ideal for
+                quick commerce platforms and fast-food operations.
               </p>
               <div className="flex gap-4">
                 <div className="flex items-center">
@@ -227,8 +251,8 @@ const HorecaSupply = () => {
                 </div>
               </div>
             </div>
-            
-            <div className="md:w-1/2 flex justify-center">
+
+            <div className="">
               <LazyImage
                 src="/lovable-uploads/8c184d03-531e-4220-a71c-e1dd8d9706ab.png"
                 alt="Food Production with Dil Foods"
@@ -238,12 +262,14 @@ const HorecaSupply = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Enquiry Form Section */}
       <section id="enquire" className="py-16 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-purple-red text-transparent bg-clip-text">Enquire Now</h2>
-          
+          <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-purple-red text-transparent bg-clip-text">
+            Enquire Now
+          </h2>
+
           <div className="bg-white p-6 rounded-lg shadow-md">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -257,27 +283,37 @@ const HorecaSupply = () => {
                   required
                 />
               </div>
-              
+
               <div>
                 <Label>SKUs Interested In *</Label>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-3 mt-2">
                   {foodCategories.map((category) => (
-                    <div key={category.id} className="flex items-center space-x-2">
+                    <div
+                      key={category.id}
+                      className="flex items-center space-x-2"
+                    >
                       <Checkbox
                         id={category.id}
                         checked={selectedCategories.includes(category.id)}
-                        onCheckedChange={() => handleCategoryToggle(category.id)}
+                        onCheckedChange={() =>
+                          handleCategoryToggle(category.id)
+                        }
                       />
-                      <Label htmlFor={category.id} className="text-sm cursor-pointer">
+                      <Label
+                        htmlFor={category.id}
+                        className="text-sm cursor-pointer"
+                      >
                         {category.name}
                       </Label>
                     </div>
                   ))}
                 </div>
               </div>
-              
+
               <div>
-                <Label htmlFor="quantities">Approx. Monthly Quantities (kg)</Label>
+                <Label htmlFor="quantities">
+                  Approx. Monthly Quantities (kg)
+                </Label>
                 <Textarea
                   id="quantities"
                   name="quantities"
@@ -286,7 +322,7 @@ const HorecaSupply = () => {
                   onChange={handleInputChange}
                 />
               </div>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="contactNumber">Contact Number *</Label>
@@ -311,15 +347,18 @@ const HorecaSupply = () => {
                   />
                 </div>
               </div>
-              
-              <Button type="submit" className="w-full bg-gradient-purple-red hover:bg-dil-red/90 text-white">
+
+              <Button
+                type="submit"
+                className="w-full bg-gradient-purple-red hover:bg-dil-red/90 text-white"
+              >
                 Submit Enquiry <Send size={16} className="ml-2" />
               </Button>
             </form>
           </div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );
