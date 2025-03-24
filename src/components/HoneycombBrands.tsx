@@ -24,18 +24,16 @@ const HoneycombBrands: React.FC<HoneycombBrandsProps> = ({
     <div className="w-full flex justify-center py-6 ">
       <div className="inline-flex flex-col justify-center max-w-full gap-5">
         {/* First row */}
-        <div className="flex justify-center w-full -mb-2 gap-2">
+        <div className="flex justify-center w-full -mb-2 gap-2 ">
           {brands.slice(0, 5).map((brand, index) => (
             <div
               key={`row1-${index}`}
-              className={`${sizeClasses[size]} rounded-full bg-white shadow-md flex items-center justify-center `}
+              className={`${sizeClasses[size]} rounded-full bg-white shadow-md flex justify-center items-center overflow-hidden`}
             >
-              <LazyImage
+              <img
                 src={brand.logo}
                 alt={brand.name}
-                className="w-full h-full object-contain rounded-full"
-                // width={size === "small" ? 32 : size === "medium" ? 48 : 100}
-                // height={size === "small" ? 32 : size === "medium" ? 48 : 100}
+                className="w-[70%] h-[70%] object-fill"
               />
             </div>
           ))}
@@ -48,12 +46,10 @@ const HoneycombBrands: React.FC<HoneycombBrandsProps> = ({
               key={`row2-${index}`}
               className={`${sizeClasses[size]} rounded-full bg-white shadow-md flex items-center justify-center z-10`}
             >
-              <LazyImage
+              <img
                 src={brand.logo}
                 alt={brand.name}
-                className="w-full h-full object-contain rounded-full"
-                // width={size === "small" ? 32 : size === "medium" ? 48 : 100}
-                // height={size === "small" ? 32 : size === "medium" ? 48 : 100}
+                className="w-[70%] h-[70%] object-fill"
               />
             </div>
           ))}

@@ -11,6 +11,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import axios from "axios";
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
 // Updated with new food categories and images
 const foodCategories = [
@@ -110,7 +112,7 @@ const HorecaSupply = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Basic validation
@@ -129,11 +131,22 @@ const HorecaSupply = () => {
     }
 
     // Form submission logic would go here
-    toast({
-      title: "Enquiry Submitted",
-      description:
-        "Thank you for your interest. Our team will contact you shortly!",
-    });
+    try {
+      let res = await axios.post(`${apiUrl}/main_website/enquiry`, {
+        type: "enquire",
+        data: { ...formData, selectedCategories },
+      });
+
+      console.log;
+
+      toast({
+        title: "Enquiry Submitted",
+        description:
+          "Thank you for your interest. Our team will contact you shortly!",
+      });
+    } catch (e) {
+      console.log(e);
+    }
 
     // Reset form
     setFormData({

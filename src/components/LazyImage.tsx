@@ -52,7 +52,7 @@ const LazyImage = ({
   return (
     <div
       id={imageId}
-      className={`relative overflow-hidden ${
+      className={`relative overflow-hidden  ${
         !isLoaded ? loadingClassName : ""
       }`}
       style={{

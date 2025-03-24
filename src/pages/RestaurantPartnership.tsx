@@ -18,6 +18,10 @@ import {
   Send,
 } from "lucide-react";
 
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
+
+import axios from "axios";
+
 const RestaurantPartnership = () => {
   // Form for kitchen utilization calculator
   const [kitchenData, setKitchenData] = useState({
@@ -106,9 +110,18 @@ const RestaurantPartnership = () => {
     toast.success("Calculation complete!");
   };
 
-  const onSignUpSubmit = (data: any) => {
-    console.log("Form submitted:", data);
-    toast.success("Thanks for signing up! We will contact you soon.");
+  const onSignUpSubmit = async (data: any) => {
+    try {
+      let res = await axios.post(`${apiUrl}/main_website/enquiry`, {
+        type: "partner_form",
+        data: data,
+      });
+
+      toast.success("Thanks for signing up! We will contact you soon.");
+      console.log("Form submitted:", data);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   const advantageCards = [
