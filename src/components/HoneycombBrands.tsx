@@ -15,7 +15,7 @@ const HoneycombBrands: React.FC<HoneycombBrandsProps> = ({
 }) => {
   const sizeClasses = {
     small: "w-8 h-8 md:w-10 md:h-10",
-    medium: "w-10 h-10 md:w-16 md:h-16",
+    medium: "w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16",
     large: "w-12 h-12 md:w-16 md:h-16",
   };
 
@@ -24,23 +24,23 @@ const HoneycombBrands: React.FC<HoneycombBrandsProps> = ({
     <div className="w-full flex justify-center py-6 ">
       <div className="inline-flex flex-col justify-center max-w-full gap-5">
         {/* First row */}
-        <div className="flex justify-center w-full -mb-2 gap-2 ">
-          {brands.slice(0, 5).map((brand, index) => (
+        <div className="flex justify-center flex-wrap w-full gap-1 md:gap-3 lg:gap-4 gap-y-4 ">
+          {brands.slice(0, 10).map((brand, index) => (
             <div
               key={`row1-${index}`}
-              className={`${sizeClasses[size]} rounded-full bg-white shadow-md flex justify-center items-center overflow-hidden`}
+              className="aspect-square w-12 rounded-full bg-white shadow-md flex justify-center items-center overflow-hidden"
             >
               <img
                 src={brand.logo}
                 alt={brand.name}
-                className="w-[70%] h-[70%] object-fill"
+                className="w-[70%] object-fill"
               />
             </div>
           ))}
         </div>
 
         {/* Second row */}
-        <div className="flex justify-center w-full gap-2 ">
+        {/* <div className="flex justify-center w-full gap-2 ">
           {brands.slice(5, 10).map((brand, index) => (
             <div
               key={`row2-${index}`}
@@ -49,11 +49,11 @@ const HoneycombBrands: React.FC<HoneycombBrandsProps> = ({
               <img
                 src={brand.logo}
                 alt={brand.name}
-                className="w-[70%] h-[70%] object-fill"
+                className="w-[70%] object-fill"
               />
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

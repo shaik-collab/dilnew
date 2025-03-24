@@ -41,40 +41,40 @@ const Index = () => {
       logo: "/lovable-uploads/55d6ad50-361d-42cd-b556-c283b2ee23e4.png",
     },
     {
-      name: "Bihari Bowl",
+      name: "House Of Andhra",
       logo: "/lovable-uploads/1310a9da-ccbe-4fa6-bc06-51441a0872ba.png",
     },
     {
-      name: "Khichdi Bar",
-      logo: "/lovable-uploads/dpd.png",
+      name: "Dil Punjabi Daily",
+      logo: "/lovable-uploads/dpd_logo.png",
     },
     {
       name: "Bhole ke Chole",
       logo: "/lovable-uploads/cdf67c56-7bd7-4023-af81-bf258fe60fe3.png",
     },
     {
-      name: "The Chaat Cult",
+      name: "Khichdi Bar",
       logo: "/lovable-uploads/235a933c-2973-43db-8419-1bc689100f0a.png",
     },
     {
-      name: "House Of Andhra",
+      name: "Nagada",
       logo: "/lovable-uploads/b7f77f5d-c32a-4b73-9673-c4572c649bf4.png",
     },
     {
-      name: "Dil Foods",
+      name: "All Things Fried",
       logo: "/lovable-uploads/981bf596-8923-43ae-950d-88e254903acf.png",
     },
     {
-      name: "Bowled Over",
+      name: "The Chaat Cult",
       logo: "/lovable-uploads/tcc.png",
     },
     {
-      name: "Dil Punjabi Daily",
-      logo: "/lovable-uploads/vegerama_logo.png",
+      name: "Bihari Bowl",
+      logo: "/lovable-uploads/bb_logo.png",
     },
     {
-      name: "Nagada",
-      logo: "/lovable-uploads/1baa2440-41ee-47c5-8537-70989d99f512.png",
+      name: "VegeRAMA",
+      logo: "/lovable-uploads/vegerama_logo.png",
     },
   ];
 
@@ -99,7 +99,7 @@ const Index = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 md:mb-16 animate-fadeInUp">
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-purple-red">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-purple-red md:pb-1">
               India's largest truly virtual brands chain
             </h1>
             <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
@@ -268,27 +268,30 @@ const Index = () => {
       </section>
 
       {/* Cities We Serve Section */}
-      <section id="cities" className="py-16 md:py-24 relative">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/lovable-uploads/a7647927-564d-4dc1-b4f9-5c390eb794b0.png"
-            alt="India Map"
-            className="w-full h-full object-contain opacity-[0.07]"
-          />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      <section
+        id="cities"
+        className="py-0 md:py-0 relative h-[400px] md:h-[600px]"
+      >
+        {/* Content on top of the map */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-4 md:mt-16">
+          <div className="text-center md-4 md:mb-10">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-purple-red">
               Cities we serve
             </h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 bg-clip-text text-transparent bg-gradient-purple-red">
               Currently live in 5 cities with plans to expand to 9 more
               locations soon
             </p>
           </div>
+        </div>
 
-          <CityMap />
+        {/* Background Map */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/lovable-uploads/Indiamap.png"
+            alt="India Map"
+            className="absolute top-1/2 left-1/2 h-[400px] md:h-[600px] object-cover opacity-80 -translate-x-1/2 -translate-y-1/2"
+          />
         </div>
       </section>
 
