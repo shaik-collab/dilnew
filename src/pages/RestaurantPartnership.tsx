@@ -63,6 +63,8 @@ const RestaurantPartnership = () => {
     });
   };
 
+  const [isSaving, setIsSaving] = useState<boolean>(false);
+
   const calculateUtilization = () => {
     const { kitchenSize, totalStaff, operatingHours, currentOrders, prepTime } =
       kitchenData;
@@ -111,6 +113,7 @@ const RestaurantPartnership = () => {
   };
 
   const onSignUpSubmit = async (data: any) => {
+    setIsSaving(true);
     try {
       let res = await axios.post(`${apiUrl}/main_website/enquiry`, {
         type: "partner_form",
@@ -121,6 +124,8 @@ const RestaurantPartnership = () => {
       console.log("Form submitted:", data);
     } catch (e) {
       console.log(e);
+    } finally {
+      setIsSaving(false);
     }
   };
 
@@ -639,10 +644,17 @@ const RestaurantPartnership = () => {
 
             <button
               type="submit"
-              className="w-full btn-primary flex justify-center items-center gap-10"
+              disabled={isSaving}
+              className="w-full btn-primary flex justify-center items-center gap-2 disabled:opacity-50"
             >
-              <Send size={18} className="" />
-              Submit Application
+              {isSaving ? (
+                "Submitting..."
+              ) : (
+                <>
+                  <Send size={18} />
+                  Submit Application
+                </>
+              )}
             </button>
           </form>
         </div>

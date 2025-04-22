@@ -88,7 +88,9 @@ const HorecaSupply = () => {
     quantities: "",
     contactNumber: "",
     email: "",
+    city: "",
   });
+  const [isSaving, setIsSaving] = useState<boolean>(false);
 
   const handleCategoryToggle = (categoryId: string) => {
     setSelectedCategories((prev) =>
@@ -130,6 +132,7 @@ const HorecaSupply = () => {
       return;
     }
 
+    setIsSaving(true);
     // Form submission logic would go here
     try {
       let res = await axios.post(`${apiUrl}/main_website/enquiry`, {
@@ -146,6 +149,8 @@ const HorecaSupply = () => {
       });
     } catch (e) {
       console.log(e);
+    } finally {
+      setIsSaving(false);
     }
 
     // Reset form
@@ -154,6 +159,7 @@ const HorecaSupply = () => {
       quantities: "",
       contactNumber: "",
       email: "",
+      city: "",
     });
     setSelectedCategories([]);
   };
@@ -267,7 +273,7 @@ const HorecaSupply = () => {
 
             <div className="">
               <LazyImage
-                src="/lovable-uploads/8c184d03-531e-4220-a71c-e1dd8d9706ab.png"
+                src="/lovable-uploads/packedfood.jpg"
                 alt="Food Production with Dil Foods"
                 className="rounded-lg shadow-lg w-full max-w-md"
               />
@@ -359,13 +365,31 @@ const HorecaSupply = () => {
                     placeholder="Enter your email address"
                   />
                 </div>
+                <div>
+                  <Label htmlFor="email">City</Label>
+                  <Input
+                    id="city"
+                    name="city"
+                    type="text"
+                    value={formData.city}
+                    onChange={handleInputChange}
+                    placeholder="Enter your city name"
+                  />
+                </div>
               </div>
 
               <Button
                 type="submit"
-                className="w-full bg-gradient-purple-red hover:bg-dil-red/90 text-white"
+                className="w-full bg-gradient-purple-red hover:bg-dil-red/90 text-white flex items-center justify-center"
+                disabled={isSaving}
               >
-                Submit Enquiry <Send size={16} className="ml-2" />
+                {isSaving ? (
+                  "Submitting..."
+                ) : (
+                  <>
+                    Submit Enquiry <Send size={16} className="ml-2" />
+                  </>
+                )}
               </Button>
             </form>
           </div>
