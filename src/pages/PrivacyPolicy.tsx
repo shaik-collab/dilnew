@@ -1,6 +1,6 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import "../styles/privacyPolicy.css";
+import "../styles/PrivacyPolicy.css";
 
 const PrivacyPolicy = () => {
   return (
