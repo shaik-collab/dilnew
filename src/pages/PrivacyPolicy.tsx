@@ -524,7 +524,7 @@ const PrivacyPolicy = () => {
         </p>
         <ul>
           <li>
-            <p>By email: info@dilfoods.in</p>
+            <p>By email: marketing.dil@dilfoods.in</p>
           </li>
           <li>
             <p>

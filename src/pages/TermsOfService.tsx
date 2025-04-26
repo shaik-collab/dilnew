@@ -134,7 +134,7 @@ const TermsOfService = () => {
           please contact us at:
         </p>
         <ul>
-          <li>By email: info@dilfoods.in</li>
+          <li>By email: marketing.dil@dilfoods.in</li>
           <li>
             By visiting this page on our website:{" "}
             <a href="https://dilfoods.in" target="_blank">

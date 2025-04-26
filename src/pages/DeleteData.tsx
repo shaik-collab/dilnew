@@ -30,8 +30,10 @@ const DeleteData = () => {
         </ul>
         <p>
           You can email us at{" "}
-          <a href="mailto:info@dilfoods.in">info@dilfoods.in</a> with the
-          subject "Request for Data Deletion" and include the required
+          <a href="mailto:marketing.dil@dilfoods.in">
+            marketing.dil@dilfoods.in
+          </a>{" "}
+          with the subject "Request for Data Deletion" and include the required
           information in your message.
         </p>
 
@@ -50,7 +52,10 @@ const DeleteData = () => {
         </p>
         <ul>
           <li>
-            Email: <a href="mailto:info@dilfoods.in">info@dilfoods.in</a>
+            Email:{" "}
+            <a href="mailto:marketing.dil@dilfoods.in">
+              marketing.dil@dilfoods.in
+            </a>
           </li>
           <li>
             Website:{" "}
