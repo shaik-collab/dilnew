@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,6 +8,9 @@ import RestaurantPartnership from "./pages/RestaurantPartnership";
 import HorecaSupply from "./pages/HorecaSupply";
 import NotFound from "./pages/NotFound";
 import Media from "./pages/Media";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import DeleteData from "./pages/DeleteData";
 
 const queryClient = new QueryClient();
 
@@ -20,9 +22,15 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/restaurant-partnership" element={<RestaurantPartnership />} />
+          <Route
+            path="/restaurant-partnership"
+            element={<RestaurantPartnership />}
+          />
           <Route path="/horeca-supply" element={<HorecaSupply />} />
           <Route path="/media" element={<Media />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/delete-data" element={<DeleteData />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
