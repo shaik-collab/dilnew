@@ -69,11 +69,19 @@ const Navbar = () => {
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0" onClick={scrollToTop}>
-              <img
-                src="/lovable-uploads/60eb50d7-da70-4fee-a1ec-fd331878910f.png"
-                alt="Dil Foods"
-                className="h-16 w-auto"
-              />
+              {location.pathname === "/horeca-supply" ? (
+                <img
+                  src="/lovable-uploads/towa_foods.png"
+                  alt="towa foods"
+                  className="h-16 w-auto"
+                />
+              ) : (
+                <img
+                  src="/lovable-uploads/60eb50d7-da70-4fee-a1ec-fd331878910f.png"
+                  alt="Dil Foods"
+                  className="h-16 w-auto "
+                />
+              )}
             </Link>
           </div>
 
