@@ -71,9 +71,9 @@ const Navbar = () => {
             <Link to="/" className="flex-shrink-0" onClick={scrollToTop}>
               {location.pathname === "/horeca-supply" ? (
                 <img
-                  src="/lovable-uploads/towa_foods1.png"
+                  src="/lovable-uploads/towa_foods.png"
                   alt="towa foods"
-                  className="h-16 w-auto"
+                  className="h-14 w-auto"
                 />
               ) : (
                 <img
