@@ -7,7 +7,7 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const isTovfoodsDomain = window.location.hostname.includes("tovfoods.in");
+  const isTovfoodsDomain = window.location.hostname.includes("tovafoods.in");
 
   return (
     <footer className="bg-gradient-to-r from-[#1A1F2C] to-[#ea384c] pt-16 pb-8 text-white">
