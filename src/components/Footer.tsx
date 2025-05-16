@@ -54,7 +54,7 @@ const Footer = () => {
             <div className="flex space-x-4 mt-4">
               <a
                 href={
-                  isToavfoodsDomain
+                  isTovafoodsDomain
                     ? "https://www.linkedin.com/company/tovafoods"
                     : "https://www.linkedin.com/company/dilfoods"
                 }
