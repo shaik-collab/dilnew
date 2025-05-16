@@ -7,7 +7,7 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const isTowfoodsDomain = window.location.hostname.includes("towfoods");
+  const isTovfoodsDomain = window.location.hostname.includes("tovfoods.in");
 
   return (
     <footer className="bg-gradient-to-r from-[#1A1F2C] to-[#ea384c] pt-16 pb-8 text-white">
@@ -18,19 +18,19 @@ const Footer = () => {
             <Link to="/" className="inline-block" onClick={scrollToTop}>
               <img
                 src={
-                  isTowfoodsDomain
-                    ? "/lovable-uploads/towfoods-logo.png"
+                  isTovfoodsDomain
+                    ? "/lovable-uploads/tovfoods-logo.png"
                     : "/lovable-uploads/60eb50d7-da70-4fee-a1ec-fd331878910f.png"
                 }
-                alt={isTowfoodsDomain ? "Tow Foods" : "Dil Foods"}
+                alt={isTovfoodsDomain ? "Tova Foods" : "Dil Foods"}
                 className="h-20 w-auto"
               />
             </Link>
 
             <div className="mt-4">
               <h2 className="text-2xl font-bold mb-4">
-                {isTowfoodsDomain
-                  ? "Empowering food businesses with Tow"
+                {isTovfoodsDomain
+                  ? "Empowering food businesses with Tov"
                   : "Grow your restaurant business with Dil"}
               </h2>
               <Button
@@ -40,13 +40,13 @@ const Footer = () => {
               >
                 <Link
                   to={
-                    isTowfoodsDomain
-                      ? "/tow-partnership"
+                    isTovfoodsDomain
+                      ? "/tov-partnership"
                       : "/restaurant-partnership"
                   }
                   onClick={scrollToTop}
                 >
-                  {isTowfoodsDomain ? "Partner with Tow" : "Get Started"}
+                  {isTovfoodsDomain ? "Partner with Tov" : "Get Started"}
                 </Link>
               </Button>
             </div>
@@ -54,8 +54,8 @@ const Footer = () => {
             <div className="flex space-x-4 mt-4">
               <a
                 href={
-                  isTowfoodsDomain
-                    ? "https://www.linkedin.com/company/towfoods"
+                  isTovfoodsDomain
+                    ? "https://www.linkedin.com/company/tovfoods"
                     : "https://www.linkedin.com/company/dilfoods"
                 }
                 target="_blank"
@@ -66,8 +66,8 @@ const Footer = () => {
               </a>
               <a
                 href={
-                  isTowfoodsDomain
-                    ? "https://www.instagram.com/towfoods.in/"
+                  isTovfoodsDomain
+                    ? "https://www.instagram.com/tovfoods.in/"
                     : "https://www.instagram.com/dilfoods.in/"
                 }
                 target="_blank"
@@ -78,7 +78,7 @@ const Footer = () => {
               </a>
               <a
                 href={`mailto:info@${
-                  isTowfoodsDomain ? "towfoods" : "dilfoods"
+                  isTovfoodsDomain ? "tovfoods" : "dilfoods"
                 }.in`}
                 className="text-white hover:text-gradient-soft-yellow-orange transition-colors"
               >
@@ -103,19 +103,19 @@ const Footer = () => {
               <li>
                 <Link
                   to={
-                    isTowfoodsDomain
-                      ? "/tow-partnership"
+                    isTovfoodsDomain
+                      ? "/tov-partnership"
                       : "/restaurant-partnership"
                   }
                   onClick={scrollToTop}
                   className="text-white hover:text-gradient-soft-yellow-orange transition-colors"
                 >
-                  {isTowfoodsDomain
+                  {isTovfoodsDomain
                     ? "Tow Partnership"
                     : "Restaurant Partnership"}
                 </Link>
               </li>
-              {!isTowfoodsDomain && (
+              {!isTovfoodsDomain && (
                 <>
                   <li>
                     <Link
@@ -144,22 +144,14 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <address className="not-italic text-white/90">
-              {isTowfoodsDomain ? (
-                <>
-                  3rd Floor, Startup Hub,
-                  <br />
-                  Indiranagar, Bangalore
-                </>
-              ) : (
-                <>
-                  Incubex HSR20 2nd Floor,
-                  <br />
-                  HSR Layout, Bangalore
-                </>
-              )}
+              51, 2, Chandapura - Anekal Rd
+              <br />
+              Sri Rama Layout, Anekal,
+              <br />
+              Naganaikanahalli, Karnataka 562106
             </address>
             <div className="mt-4">
-              {!isTowfoodsDomain && (
+              {!isTovfoodsDomain && (
                 <>
                   <a
                     href="https://www.linkedin.com/company/dil-foods/jobs/"
@@ -187,7 +179,7 @@ const Footer = () => {
             <div>
               <h3 className="text-lg font-semibold mb-4">Our Mission</h3>
               <p className="text-white/90">
-                {isTowfoodsDomain
+                {isTovfoodsDomain
                   ? "Building smarter food supply systems for the modern kitchen."
                   : "Transforming restaurant businesses with innovative virtual brands and technology solutions."}
               </p>
@@ -199,7 +191,7 @@ const Footer = () => {
         <div className="border-t border-white/20 mt-12 pt-8">
           <p className="text-white/80 text-center text-sm">
             &copy; {new Date().getFullYear()}{" "}
-            {isTowfoodsDomain ? "Tow Foods" : "Dil Foods"}. All rights reserved.
+            {isTovfoodsDomain ? "Tow Foods" : "Dil Foods"}. All rights reserved.
           </p>
         </div>
       </div>

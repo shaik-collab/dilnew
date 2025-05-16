@@ -17,28 +17,28 @@ const queryClient = new QueryClient();
 const App = () => {
   const hostname = window.location.hostname;
 
-  const isTowaDomain = hostname.includes("towafoods");
+  const isTovaDomain = hostname.includes("tovafoods.in");
 
-  // Set metadata for Towa domain
-  if (isTowaDomain) {
-    document.title = "Towa Foods - India's Trusted Brand";
+  // Set metadata for Tova domain
+  if (isTovaDomain) {
+    document.title = "Tova Foods - India's Trusted Brand";
 
     const descriptionTag = document.querySelector("meta[name='description']");
     if (descriptionTag) {
       descriptionTag.setAttribute(
         "content",
-        "Towa Foods - Premium food solutions tailored for your needs."
+        "Tova Foods - Premium food solutions tailored for your needs."
       );
     }
 
     const ogImage = document.querySelector("meta[property='og:image']");
     if (ogImage) {
-      ogImage.setAttribute("content", "/towa_logo.png");
+      ogImage.setAttribute("content", "/tova_logo.png");
     }
 
     const favicon = document.querySelector("link[rel='icon']");
     if (favicon) {
-      favicon.setAttribute("href", "/towa_favicon.png");
+      favicon.setAttribute("href", "/tova_favicon.png");
     }
   }
 
@@ -52,7 +52,7 @@ const App = () => {
             {/* Conditionally set the homepage */}
             <Route
               path="/"
-              element={isTowaDomain ? <HorecaSupply /> : <Index />}
+              element={isTovaDomain ? <HorecaSupply /> : <Index />}
             />
 
             {/* Keep the other routes as they are */}

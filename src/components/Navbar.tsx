@@ -7,7 +7,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  const isTowaDomain = window.location.hostname.includes("towafoods");
+  const isTovaDomain = window.location.hostname.includes("tovafoods.in");
 
   const hasPurpleGradientHero =
     location.pathname === "/restaurant-partnership" ||
@@ -62,10 +62,10 @@ const Navbar = () => {
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0" onClick={scrollToTop}>
-              {location.pathname === "/horeca-supply" || isTowaDomain ? (
+              {location.pathname === "/horeca-supply" || isTovaDomain ? (
                 <img
-                  src="/lovable-uploads/towa_foods.png"
-                  alt="Towa Foods"
+                  src="/lovable-uploads/tova_foods.png"
+                  alt="Tova Foods"
                   className="h-14 w-auto"
                 />
               ) : (
@@ -78,7 +78,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {!isTowaDomain && (
+          {!isTovaDomain && (
             <>
               {/* Desktop Menu */}
               <div className="hidden md:block">
@@ -133,7 +133,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Dropdown */}
-      {!isTowaDomain && (
+      {!isTovaDomain && (
         <div className={`md:hidden ${isOpen ? "block" : "hidden"}`}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
             {navigation.map((item) => (
