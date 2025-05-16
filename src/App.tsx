@@ -14,28 +14,63 @@ import DeleteData from "./pages/DeleteData";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route
-            path="/restaurant-partnership"
-            element={<RestaurantPartnership />}
-          />
-          <Route path="/horeca-supply" element={<HorecaSupply />} />
-          <Route path="/media" element={<Media />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-          <Route path="/delete-data" element={<DeleteData />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  const hostname = window.location.hostname;
+
+  const isTowaDomain = hostname.includes("towafoods");
+
+  // Set metadata for Towa domain
+  if (isTowaDomain) {
+    document.title = "Towa Foods - India's Trusted Brand";
+
+    const descriptionTag = document.querySelector("meta[name='description']");
+    if (descriptionTag) {
+      descriptionTag.setAttribute(
+        "content",
+        "Towa Foods - Premium food solutions tailored for your needs."
+      );
+    }
+
+    const ogImage = document.querySelector("meta[property='og:image']");
+    if (ogImage) {
+      ogImage.setAttribute("content", "/towa_logo.png");
+    }
+
+    const favicon = document.querySelector("link[rel='icon']");
+    if (favicon) {
+      favicon.setAttribute("href", "/towa_favicon.png");
+    }
+  }
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            {/* Conditionally set the homepage */}
+            <Route
+              path="/"
+              element={isTowaDomain ? <HorecaSupply /> : <Index />}
+            />
+
+            {/* Keep the other routes as they are */}
+            <Route
+              path="/restaurant-partnership"
+              element={<RestaurantPartnership />}
+            />
+            <Route path="/horeca-supply" element={<HorecaSupply />} />
+            <Route path="/media" element={<Media />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/delete-data" element={<DeleteData />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

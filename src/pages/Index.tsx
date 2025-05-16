@@ -12,6 +12,9 @@ import { ArrowRight, ChevronRight, Heart } from "lucide-react";
 const Index = () => {
   const [activeSection, setActiveSection] = useState<string>("");
 
+  const domain = window.location.hostname;
+  console.log(domain);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;

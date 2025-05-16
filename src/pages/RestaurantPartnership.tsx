@@ -17,6 +17,7 @@ import {
   Calculator,
   Send,
 } from "lucide-react";
+import * as Dialog from "@radix-ui/react-dialog";
 
 const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
@@ -32,6 +33,8 @@ const RestaurantPartnership = () => {
     prepTime: 0,
   });
 
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   const [calculationResult, setCalculationResult] = useState<{
     totalManHours: number;
     totalPotentialOrders: number;
@@ -44,11 +47,13 @@ const RestaurantPartnership = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     defaultValues: {
       name: "",
       restaurantName: "",
+      area: "",
       city: "",
       contactNumber: "",
       email: "",
@@ -120,8 +125,13 @@ const RestaurantPartnership = () => {
         data: data,
       });
 
-      toast.success("Thanks for signing up! We will contact you soon.");
+      console.log(res);
+      // toast.success("Thanks for signing up! We will contact you soon.");
       console.log("Form submitted:", data);
+      if (res.data.message == "Data saved successfully") {
+        setIsDialogOpen(true);
+        reset();
+      }
     } catch (e) {
       console.log(e);
     } finally {
@@ -230,6 +240,28 @@ const RestaurantPartnership = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
+
+      <Dialog.Root open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <Dialog.Portal>
+          <Dialog.Overlay className="fixed inset-0 bg-black/50" />
+          <Dialog.Content className="fixed left-1/2 top-1/2 w-[90%] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white p-6 shadow-lg">
+            <Dialog.Title className="text-lg font-bold">
+              Thank you!
+            </Dialog.Title>
+            <Dialog.Description className="mt-2 text-sm text-gray-600">
+              Your enquiry has been submitted. We will contact you soon.
+            </Dialog.Description>
+            <div className="mt-4 text-right">
+              <button
+                className="rounded bg-dil-red px-4 py-2 text-white"
+                onClick={() => setIsDialogOpen(false)}
+              >
+                Close
+              </button>
+            </div>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
 
       {/* Hero Section - Updated with purple gradient background */}
       <section className="pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-purple-red text-white">
@@ -587,6 +619,20 @@ const RestaurantPartnership = () => {
                 <p className="mt-1 text-sm text-red-600">
                   Restaurant name is required
                 </p>
+              )}
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Area*
+              </label>
+              <input
+                type="text"
+                {...register("area", { required: true })}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
+              />
+              {errors.city && (
+                <p className="mt-1 text-sm text-red-600">Area is required</p>
               )}
             </div>
 

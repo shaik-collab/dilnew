@@ -89,6 +89,7 @@ const HorecaSupply = () => {
     contactNumber: "",
     email: "",
     city: "",
+    more: "",
   });
   const [isSaving, setIsSaving] = useState<boolean>(false);
 
@@ -160,6 +161,7 @@ const HorecaSupply = () => {
       contactNumber: "",
       email: "",
       city: "",
+      more: "",
     });
     setSelectedCategories([]);
   };
@@ -329,25 +331,27 @@ const HorecaSupply = () => {
                 </div>
               </div>
 
-              <div>
-                <Label htmlFor="quantities">
-                  Approx. Monthly Quantities (kg)
-                </Label>
-                <Textarea
-                  id="quantities"
-                  name="quantities"
-                  placeholder="Enter approximate quantities required per month"
-                  value={formData.quantities}
-                  onChange={handleInputChange}
-                />
-              </div>
-
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="quantities">
+                    Approx. Monthly Quantities (kg) *
+                  </Label>
+                  <Input
+                    id="quantities"
+                    name="quantities"
+                    type="number"
+                    placeholder="Quantities required per month in kg"
+                    value={formData.quantities}
+                    onChange={handleInputChange}
+                    required
+                  />
+                </div>
                 <div>
                   <Label htmlFor="contactNumber">Contact Number *</Label>
                   <Input
                     id="contactNumber"
                     name="contactNumber"
+                    type="number"
                     value={formData.contactNumber}
                     onChange={handleInputChange}
                     placeholder="Enter your contact number"
@@ -355,7 +359,7 @@ const HorecaSupply = () => {
                   />
                 </div>
                 <div>
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="email">Email *</Label>
                   <Input
                     id="email"
                     name="email"
@@ -363,10 +367,11 @@ const HorecaSupply = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="Enter your email address"
+                    required
                   />
                 </div>
                 <div>
-                  <Label htmlFor="email">City</Label>
+                  <Label htmlFor="email">City *</Label>
                   <Input
                     id="city"
                     name="city"
@@ -374,8 +379,19 @@ const HorecaSupply = () => {
                     value={formData.city}
                     onChange={handleInputChange}
                     placeholder="Enter your city name"
+                    required
                   />
                 </div>
+              </div>
+              <div>
+                <Label htmlFor="quantities">Tell us More</Label>
+                <Textarea
+                  id="more"
+                  name="more"
+                  placeholder="Tell us more..."
+                  value={formData.more}
+                  onChange={handleInputChange}
+                />
               </div>
 
               <Button
