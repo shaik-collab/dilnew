@@ -21,25 +21,72 @@ const App = () => {
 
   // Set metadata for Tova domain
   if (isTovaDomain) {
+    // Dynamically set the title
     document.title = "Tova Foods - India's Trusted Brand";
 
-    const descriptionTag = document.querySelector("meta[name='description']");
-    if (descriptionTag) {
-      descriptionTag.setAttribute(
-        "content",
-        "Tova Foods - Premium food solutions tailored for your needs."
-      );
+    // Dynamically set meta tags
+    let descriptionTag = document.querySelector("meta[name='description']");
+    if (!descriptionTag) {
+      descriptionTag = document.createElement("meta");
+      descriptionTag.setAttribute("name", "description");
+      document.head.appendChild(descriptionTag);
     }
+    descriptionTag.setAttribute(
+      "content",
+      "Tova Foods - Premium food solutions tailored for your needs."
+    );
 
-    const ogImage = document.querySelector("meta[property='og:image']");
-    if (ogImage) {
-      ogImage.setAttribute("content", "/tova_logo.png");
+    let ogImage = document.querySelector("meta[property='og:image']");
+    if (!ogImage) {
+      ogImage = document.createElement("meta");
+      ogImage.setAttribute("property", "og:image");
+      document.head.appendChild(ogImage);
     }
+    ogImage.setAttribute("content", "/tova_logo.png");
 
-    const favicon = document.querySelector("link[rel='icon']");
-    if (favicon) {
-      favicon.setAttribute("href", "/tova_favicon.png");
+    let favicon = document.querySelector("link[rel='icon']");
+    if (!favicon) {
+      favicon = document.createElement("link");
+      favicon.setAttribute("rel", "icon");
+      document.head.appendChild(favicon);
     }
+    favicon.setAttribute("href", "/tova_favicon.png");
+  } else {
+    // Default metadata for other domains (like Dil Foods)
+    document.title = "Dil Foods - India's Largest Virtual Brands Chain";
+
+    let descriptionTag = document.querySelector("meta[name='description']");
+    if (!descriptionTag) {
+      descriptionTag = document.createElement("meta");
+      descriptionTag.setAttribute("name", "description");
+      document.head.appendChild(descriptionTag);
+    }
+    descriptionTag.setAttribute(
+      "content",
+      "Dil Foods - India's largest truly virtual brands chain, helping restaurants increase revenue from existing kitchen infrastructure."
+    );
+
+    let ogImage = document.querySelector("meta[property='og:image']");
+    if (!ogImage) {
+      ogImage = document.createElement("meta");
+      ogImage.setAttribute("property", "og:image");
+      document.head.appendChild(ogImage);
+    }
+    ogImage.setAttribute(
+      "content",
+      "/lovable-uploads/b743a878-95c1-4663-b49a-820eec6a6800.png"
+    );
+
+    let favicon = document.querySelector("link[rel='icon']");
+    if (!favicon) {
+      favicon = document.createElement("link");
+      favicon.setAttribute("rel", "icon");
+      document.head.appendChild(favicon);
+    }
+    favicon.setAttribute(
+      "href",
+      "/lovable-uploads/b743a878-95c1-4663-b49a-820eec6a6800.png"
+    );
   }
 
   return (
@@ -54,7 +101,6 @@ const App = () => {
               path="/"
               element={isTovaDomain ? <HorecaSupply /> : <Index />}
             />
-
             {/* Keep the other routes as they are */}
             <Route
               path="/restaurant-partnership"
