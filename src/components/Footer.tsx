@@ -19,7 +19,7 @@ const Footer = () => {
               <img
                 src={
                   isTovafoodsDomain
-                    ? "/lovable-uploads/tova_foods-logo.png"
+                    ? "/lovable-uploads/tova_foods.png"
                     : "/lovable-uploads/60eb50d7-da70-4fee-a1ec-fd331878910f.png"
                 }
                 alt={isTovafoodsDomain ? "Tova Foods" : "Dil Foods"}
