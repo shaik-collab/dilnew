@@ -33,58 +33,63 @@ const Footer = () => {
                   ? "Empowering food businesses with Tova"
                   : "Grow your restaurant business with Dil"}
               </h2>
-              <Button
-                asChild
-                variant="default"
-                className="bg-gradient-yellow-orange text-dil-purple hover:bg-gradient-orange-yellow hover:shadow-md mt-2"
-              >
-                <Link
-                  to={
-                    isTovafoodsDomain
-                      ? "/tova-partnership"
-                      : "/restaurant-partnership"
-                  }
-                  onClick={scrollToTop}
+
+              {!isTovafoodsDomain && (
+                <Button
+                  asChild
+                  variant="default"
+                  className="bg-gradient-yellow-orange text-dil-purple hover:bg-gradient-orange-yellow hover:shadow-md mt-2"
                 >
-                  {isTovafoodsDomain ? "Partner with Tova" : "Get Started"}
-                </Link>
-              </Button>
+                  <Link
+                    to={
+                      isTovafoodsDomain
+                        ? "/tova-partnership"
+                        : "/restaurant-partnership"
+                    }
+                    onClick={scrollToTop}
+                  >
+                    {isTovafoodsDomain ? "Partner with Tova" : "Get Started"}
+                  </Link>
+                </Button>
+              )}
             </div>
 
-            <div className="flex space-x-4 mt-4">
-              <a
-                href={
-                  isTovafoodsDomain
-                    ? "https://www.linkedin.com/company/tovafoods"
-                    : "https://www.linkedin.com/company/dilfoods"
-                }
-                target="_blank"
-                rel="noreferrer"
-                className="text-white hover:text-gradient-soft-yellow-orange transition-colors"
-              >
-                <Linkedin size={20} />
-              </a>
-              <a
-                href={
-                  isTovafoodsDomain
-                    ? "https://www.instagram.com/tovafoods.in/"
-                    : "https://www.instagram.com/dilfoods.in/"
-                }
-                target="_blank"
-                rel="noreferrer"
-                className="text-white hover:text-gradient-soft-yellow-orange transition-colors"
-              >
-                <Instagram size={20} />
-              </a>
-              <a
-                href={`mailto:info@${
-                  isTovafoodsDomain ? "tovafoods" : "dilfoods"
-                }.in`}
-                className="text-white hover:text-gradient-soft-yellow-orange transition-colors"
-              >
-                <Mail size={20} />
-              </a>
-            </div>
+            {!isTovafoodsDomain && (
+              <div className="flex space-x-4 mt-4">
+                <a
+                  href={
+                    isTovafoodsDomain
+                      ? "https://www.linkedin.com/company/tovafoods"
+                      : "https://www.linkedin.com/company/dilfoods"
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-white hover:text-gradient-soft-yellow-orange transition-colors"
+                >
+                  <Linkedin size={20} />
+                </a>
+                <a
+                  href={
+                    isTovafoodsDomain
+                      ? "https://www.instagram.com/tovafoods.in/"
+                      : "https://www.instagram.com/dilfoods.in/"
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-white hover:text-gradient-soft-yellow-orange transition-colors"
+                >
+                  <Instagram size={20} />
+                </a>
+                <a
+                  href={`mailto:info@${
+                    isTovafoodsDomain ? "tovafoods" : "dilfoods"
+                  }.in`}
+                  className="text-white hover:text-gradient-soft-yellow-orange transition-colors"
+                >
+                  <Mail size={20} />
+                </a>
+              </div>
+            )}
           </div>
 
           {/* Quick Links */}
@@ -100,21 +105,24 @@ const Footer = () => {
                   Home
                 </Link>
               </li>
-              <li>
-                <Link
-                  to={
-                    isTovafoodsDomain
-                      ? "/tova-partnership"
-                      : "/restaurant-partnership"
-                  }
-                  onClick={scrollToTop}
-                  className="text-white hover:text-gradient-soft-yellow-orange transition-colors"
-                >
-                  {isTovafoodsDomain
-                    ? "Tow Partnership"
-                    : "Restaurant Partnership"}
-                </Link>
-              </li>
+
+              {!isTovafoodsDomain && (
+                <li>
+                  <Link
+                    to={
+                      isTovafoodsDomain
+                        ? "/tova-partnership"
+                        : "/restaurant-partnership"
+                    }
+                    onClick={scrollToTop}
+                    className="text-white hover:text-gradient-soft-yellow-orange transition-colors"
+                  >
+                    {isTovafoodsDomain
+                      ? "Tow Partnership"
+                      : "Restaurant Partnership"}
+                  </Link>
+                </li>
+              )}
               {!isTovafoodsDomain && (
                 <>
                   <li>
