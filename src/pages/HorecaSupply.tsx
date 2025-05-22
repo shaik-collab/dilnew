@@ -174,7 +174,7 @@ const HorecaSupply = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pb-12 md:pb-16 bg-gradient-purple-red border border-green-700">
+      <section className="pb-12 md:pb-16 bg-gradient-purple-red ">
         {isTovafoodsDomain && (
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p
