@@ -15,17 +15,33 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Info */}
           <div className="space-y-4">
-            <Link to="/" className="inline-block" onClick={scrollToTop}>
-              <img
-                src={
-                  isTovafoodsDomain
-                    ? "/lovable-uploads/tova_foods.png"
-                    : "/lovable-uploads/60eb50d7-da70-4fee-a1ec-fd331878910f.png"
-                }
-                alt={isTovafoodsDomain ? "Tova Foods" : "Dil Foods"}
-                className="h-20 w-auto"
-              />
-            </Link>
+            <div>
+              <Link to="/" className="inline-block" onClick={scrollToTop}>
+                <img
+                  src={
+                    isTovafoodsDomain
+                      ? "/lovable-uploads/tova_foods.png"
+                      : "/lovable-uploads/60eb50d7-da70-4fee-a1ec-fd331878910f.png"
+                  }
+                  alt={isTovafoodsDomain ? "Tova Foods" : "Dil Foods"}
+                  className="h-20 w-auto"
+                />
+              </Link>
+              {isTovafoodsDomain && (
+                <p
+                  className=" text-white font-light ml-1"
+                  style={{ fontFamily: "Montserrat, sans-serif" }}
+                >
+                  A company of{" "}
+                  <Link
+                    to="https://dilfoods.in"
+                    className="inline-block text-[#E81E3F]"
+                  >
+                    Dil Foods
+                  </Link>
+                </p>
+              )}
+            </div>
 
             <div className="mt-4">
               <h2 className="text-2xl font-bold mb-4">

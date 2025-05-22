@@ -12,6 +12,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import axios from "axios";
+import { Link } from "react-router-dom";
 const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
 // Updated with new food categories and images
@@ -93,6 +94,8 @@ const HorecaSupply = () => {
   });
   const [isSaving, setIsSaving] = useState<boolean>(false);
 
+  const isTovafoodsDomain = window.location.hostname.includes("tovafoods.in");
+
   const handleCategoryToggle = (categoryId: string) => {
     setSelectedCategories((prev) =>
       prev.includes(categoryId)
@@ -171,8 +174,26 @@ const HorecaSupply = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-12 md:pt-32 md:pb-16 bg-gradient-purple-red">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="pb-12 md:pb-16 bg-gradient-purple-red border border-green-700">
+        {isTovafoodsDomain && (
+          <p
+            className="pt-12 text-white font-light ml-[156px] w-24 mt-2"
+            style={{ fontFamily: "Montserrat, sans-serif" }}
+          >
+            A company of{" "}
+            <Link
+              to="https://dilfoods.in"
+              className="inline-block text-[#E81E3F]"
+            >
+              Dil Foods
+            </Link>
+          </p>
+        )}
+        <div
+          className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-6 ${
+            isTovafoodsDomain ? "md:pt-24" : "md:pt-32"
+          } `}
+        >
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Enabling restaurants and quick commerce players to cook fast, so
             that they can deliver fast!
