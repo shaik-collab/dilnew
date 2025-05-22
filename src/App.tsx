@@ -50,7 +50,7 @@ const App = () => {
       favicon.setAttribute("rel", "icon");
       document.head.appendChild(favicon);
     }
-    favicon.setAttribute("href", "/tova_foods.png");
+    favicon.setAttribute("href", "/tova_foods1.png");
   } else {
     // Default metadata for other domains (like Dil Foods)
     document.title = "Dil Foods - India's Largest Virtual Brands Chain";
