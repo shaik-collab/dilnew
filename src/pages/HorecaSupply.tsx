@@ -227,6 +227,166 @@ const HorecaSupply = () => {
         speed="extremely-slow"
       />
 
+      {/* Why Food Businesses Choose Tova Foods Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-purple-red text-transparent bg-clip-text">
+            Why Food Businesses Choose Tova Foods
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Benefit 1 */}
+            <Card className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-soft-yellow-orange">
+              <CardContent className="p-0">
+                <h3 className="text-xl font-semibold text-dil-purple mb-2">
+                  Reduced Manpower & Cost
+                </h3>
+                <div className="flex items-center mb-4">
+                  <div className="flex flex-col items-center mr-4 flex-shrink-0">
+                    <div className="w-24 h-24 overflow-hidden shadow-md">
+                      <LazyImage
+                        src="/horeca/1.png"
+                        alt="Reduced Manpower & Cost"
+                        className="w-full h-full"
+                        objectFit="cover"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-gray-700">
+                      Cut prep time and reduce skilled staff needs with our
+                      pre-made gravies & sauces.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Benefit 2 */}
+            <Card className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-soft-yellow-orange">
+              <CardContent className="p-0">
+                <h3 className="text-xl font-semibold text-dil-purple mb-2">
+                  Consistency, Every Time
+                </h3>
+                <div className="flex items-center mb-4">
+                  <div className="flex flex-col items-center mr-4 flex-shrink-0">
+                    <div className="w-24 h-24 overflow-hidden shadow-md">
+                      <LazyImage
+                        src="/horeca/2.png"
+                        alt="Consistency, Every Time"
+                        className="w-full h-full"
+                        objectFit="cover"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-gray-700">
+                      Get the same taste,texture and quality in every batch,with
+                      our standardized manufacturing process.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Benefit 3 */}
+            <Card className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-soft-yellow-orange">
+              <CardContent className="p-0">
+                <h3 className="text-xl font-semibold text-dil-purple mb-2">
+                  Be a part of Quick Commerce wave with Tova
+                </h3>
+                <div className="flex items-center mb-4">
+                  <div className="flex flex-col items-center mr-4 flex-shrink-0">
+                    <div className="w-24 h-24 overflow-hidden shadow-md">
+                      <LazyImage
+                        src="/horeca/3.png"
+                        alt="Be a part of Quick Commerce wave with Tova"
+                        className="w-full h-full"
+                        objectFit="cover"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-gray-700">
+                      Serve great food in minutes with Tova Foods' pre-cooked,
+                      blast-frozen meals.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Benefit 4 */}
+            <Card className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-soft-yellow-orange">
+              <CardContent className="p-0">
+                <h3 className="text-xl font-semibold text-dil-purple mb-2">
+                  Drive business through processes and not skills
+                </h3>
+                <div className="flex items-center mb-4">
+                  <div className="flex flex-col items-center mr-4 flex-shrink-0">
+                    <div className="w-24 h-24 overflow-hidden shadow-md">
+                      <LazyImage
+                        src="/horeca/4.png"
+                        alt="Drive business through processes and not skills"
+                        className="w-full h-full"
+                        objectFit="cover"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-gray-700">
+                      Our ready-to-eat and ready-to-cook products simplify
+                      operations,no skilled chef needed.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Benefit 5 */}
+            <Card className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-soft-yellow-orange">
+              <CardContent className="p-0">
+                <h3 className="text-xl font-semibold text-dil-purple mb-2">
+                  Multi Cuisine offering at same operational cost
+                </h3>
+                <div className="flex items-center mb-4">
+                  <div className="flex flex-col items-center mr-4 flex-shrink-0">
+                    <div className="w-24 h-24 overflow-hidden shadow-md">
+                      <LazyImage
+                        src="/horeca/5.png"
+                        alt="Multi Cuisine offering at same operational cost"
+                        className="w-full h-full"
+                        objectFit="cover"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-gray-700">
+                      Expand your menu without expanding your team.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Call to Action Card */}
+            <Card className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-purple-red flex items-center justify-center">
+              <CardContent className="p-0 text-center">
+                <h3 className="text-xl font-semibold text-white mb-4">
+                  Ready to Transform Your Business?
+                </h3>
+                <Button
+                  className="bg-white text-dil-purple hover:bg-gray-100 font-semibold px-6 py-2"
+                  onClick={scrollToEnquiry}
+                >
+                  Enquire Now <ArrowRight size={16} className="ml-2" />
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Categories Section - Updated with all 9 categories */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -268,8 +428,203 @@ const HorecaSupply = () => {
         </div>
       </section>
 
+      {/* Our Process Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 bg-gradient-purple-red text-transparent bg-clip-text">
+            Our Process
+          </h2>
+          <p className="text-lg text-gray-700 text-center mb-12 max-w-4xl mx-auto">
+            At Tova Foods, we combine automated cooking technology, robust
+            quality control systems, and cold chain logistics to deliver a
+            product that's as fresh and flavorful as it is reliable.
+          </p>
+
+          {/* Manufacturing Process */}
+          <div className="mb-16">
+            <Card className="p-8 shadow-lg bg-white">
+              <CardContent className="p-0">
+                <div className="flex items-start mb-6">
+                  <div className="w-10 h-10 bg-gradient-purple-red rounded-full flex items-center justify-center text-white font-bold text-xl mr-6 flex-shrink-0">
+                    1
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-semibold text-dil-purple mb-4">
+                      Manufacturing Process
+                    </h3>
+                    <p className="text-gray-700 mb-6">
+                      We use state-of-the-art semi-automated industrial
+                      production lines that replicate the manual cooking process
+                      with far greater precision and hygiene. Ensuring that
+                      every batch is cooked uniformly, with the same timing,
+                      temperature, and technique every single time.
+                    </p>
+
+                    {/* Process Steps Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                      <div className="text-center">
+                        <div className="w-full h-64 rounded-lg mb-3 flex items-center justify-center">
+                          <LazyImage
+                            src="/horeca/mp1.png"
+                            alt="Semi-Automated Systems"
+                            className="w-full h-full rounded-lg"
+                            objectFit="cover"
+                          />
+                        </div>
+                      </div>
+                      <div className="text-center">
+                        <div className="w-full  h-64 rounded-lg mb-3 flex items-center justify-center">
+                          <LazyImage
+                            src="/horeca/mp2.png"
+                            alt="Temperature Control"
+                            className="w-full h-full rounded-lg"
+                            objectFit="cover"
+                          />
+                        </div>
+                      </div>
+                      <div className="text-center">
+                        <div className="w-full h-64  rounded-lg mb-3 flex items-center justify-center">
+                          <LazyImage
+                            src="/horeca/mp3.png"
+                            alt="Minimal Human Intervention"
+                            className="w-full h-full rounded-lg"
+                            objectFit="cover"
+                          />
+                        </div>
+                      </div>
+                      <div className="text-center">
+                        <div className="w-full h-64 rounded-lg mb-3 flex items-center justify-center">
+                          <LazyImage
+                            src="/horeca/mp4.png"
+                            alt="Standardized Recipes"
+                            className="w-full h-full rounded-lg"
+                            objectFit="cover"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Quality Control */}
+          <div className="mb-16">
+            <Card className="p-8 shadow-lg bg-white">
+              <CardContent className="p-0">
+                <div className="flex items-start mb-6">
+                  <div className="w-10 h-10 bg-gradient-purple-red rounded-full flex items-center justify-center text-white font-bold text-xl mr-6 flex-shrink-0">
+                    2
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-semibold text-dil-purple mb-4">
+                      Quality Control
+                    </h3>
+                    <p className="text-gray-700">
+                      Our facility follows strict FSSAI and HACCP Compliant food
+                      safety norms, with multiple quality checks built into each
+                      stage of production.
+                    </p>
+                    <div className="flex justify-center">
+                      <div className="w-full max-w-md">
+                        <LazyImage
+                          src="/horeca/qualitycontrol.png"
+                          alt="Production Capacity"
+                          className="w-full h-48 rounded-lg "
+                          objectFit="cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Capacity */}
+          <div className="mb-16">
+            <Card className="p-8 shadow-lg bg-white">
+              <CardContent className="p-0">
+                <div className="flex items-start mb-6">
+                  <div className="w-10 h-10 bg-gradient-purple-red rounded-full flex items-center justify-center text-white font-bold text-xl mr-6 flex-shrink-0">
+                    3
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-semibold text-dil-purple mb-4">
+                      Capacity
+                    </h3>
+                    <p className="text-gray-700 mb-6">
+                      Our current production infrastructure allows us to
+                      manufacture up to 20 tonnes of gravies, curries, and bases
+                      per day. Whether you're a multi-city cloud kitchen or
+                      restaurant, or a QSR brand scaling fast, our systems are
+                      built to grow with you.
+                    </p>
+                    <div className="flex justify-center">
+                      <div className="w-full max-w-md">
+                        <LazyImage
+                          src="/horeca/capacity.png"
+                          alt="Production Capacity"
+                          className="w-full h-48 rounded-lg"
+                          objectFit="cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Cold Chain Storage & Delivery */}
+          <div className="mb-12">
+            <Card className="p-8 shadow-lg bg-white">
+              <CardContent className="p-0">
+                <div className="flex items-start mb-6">
+                  <div className="w-10 h-10 bg-gradient-purple-red rounded-full flex items-center justify-center text-white font-bold text-xl mr-6 flex-shrink-0">
+                    4
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-2xl font-semibold text-dil-purple mb-4">
+                      Cold Chain Storage & Delivery
+                    </h3>
+                    <p className="text-gray-700 mb-6">
+                      From the moment the product leaves our blast freezer to
+                      the point it reaches your kitchen, it remains in a fully
+                      controlled cold chain ensuring no compromise on safety or
+                      quality.
+                    </p>
+                    <div className="flex justify-center">
+                      <div className="w-full max-w-md">
+                        <LazyImage
+                          src="/horeca/s1.png"
+                          alt="Cold Chain Storage"
+                          className="w-full h-48 rounded-lg"
+                          objectFit="cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center">
+            <Button
+              className="bg-gradient-purple-red hover:opacity-90 text-white px-8 py-3 text-lg font-semibold"
+              onClick={scrollToEnquiry}
+            >
+              Enquire Now <ArrowRight size={20} className="ml-2" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Quick Delivery Section */}
-      <section className="py-16 bg-dil-yellow">
+      {/* <section className="py-16 bg-dil-yellow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="md:flex md:items-center md:justify-around">
             <div className="md:w-1/2 mb-8 md:mb-0">
@@ -305,7 +660,7 @@ const HorecaSupply = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Enquiry Form Section */}
       <section id="enquire" className="py-16 bg-gray-50">

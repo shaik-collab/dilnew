@@ -1,0 +1,133 @@
+            {/* Benefit 1 */}
+            <Card className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-soft-yellow-orange">
+              <CardContent className="p-0">
+                <h3 className="text-xl font-semibold text-dil-purple mb-2">
+                  Reduced Manpower & Cost
+                </h3>
+                <div className="flex items-center mb-4">
+                  <div className="flex flex-col items-center mr-4 flex-shrink-0">
+                    <div className="w-24 h-24 overflow-hidden shadow-md">
+                      <LazyImage
+                        src="/horeca/1.png"
+                        alt="Reduced Manpower & Cost"
+                        className="w-full h-full"
+                        objectFit="cover"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-gray-700">
+                      Cut prep time and reduce skilled staff needs with our
+                      pre-made gravies & sauces.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Benefit 2 */}
+            <Card className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-soft-yellow-orange">
+              <CardContent className="p-0">
+                <h3 className="text-xl font-semibold text-dil-purple mb-2">
+                  Consistency, Every Time
+                </h3>
+                <div className="flex items-center mb-4">
+                  <div className="flex flex-col items-center mr-4 flex-shrink-0">
+                    <div className="w-24 h-24 overflow-hidden shadow-md">
+                      <LazyImage
+                        src="/horeca/2.png"
+                        alt="Consistency, Every Time"
+                        className="w-full h-full"
+                        objectFit="cover"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-gray-700">
+                      Get the same taste, texture and quality in every batch, with
+                      our standardized manufacturing process.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Benefit 3 */}
+            <Card className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-soft-yellow-orange">
+              <CardContent className="p-0">
+                <h3 className="text-xl font-semibold text-dil-purple mb-2">
+                  Be a part of Quick Commerce wave with Tova
+                </h3>
+                <div className="flex items-center mb-4">
+                  <div className="flex flex-col items-center mr-4 flex-shrink-0">
+                    <div className="w-24 h-24 overflow-hidden shadow-md">
+                      <LazyImage
+                        src="/horeca/3.png"
+                        alt="Be a part of Quick Commerce wave with Tova"
+                        className="w-full h-full"
+                        objectFit="cover"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-gray-700">
+                      Serve great food in minutes with Tova Foods' pre-cooked,
+                      blast-frozen meals.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Benefit 4 */}
+            <Card className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-soft-yellow-orange">
+              <CardContent className="p-0">
+                <h3 className="text-xl font-semibold text-dil-purple mb-2">
+                  Drive business through processes and not skills
+                </h3>
+                <div className="flex items-center mb-4">
+                  <div className="flex flex-col items-center mr-4 flex-shrink-0">
+                    <div className="w-24 h-24 overflow-hidden shadow-md">
+                      <LazyImage
+                        src="/horeca/4.png"
+                        alt="Drive business through processes and not skills"
+                        className="w-full h-full"
+                        objectFit="cover"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-gray-700">
+                      Our ready-to-eat and ready-to-cook products simplify
+                      operations, no skilled chef needed.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Benefit 5 */}
+            <Card className="p-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-soft-yellow-orange">
+              <CardContent className="p-0">
+                <h3 className="text-xl font-semibold text-dil-purple mb-2">
+                  Multi Cuisine offering at same operational cost
+                </h3>
+                <div className="flex items-center mb-4">
+                  <div className="flex flex-col items-center mr-4 flex-shrink-0">
+                    <div className="w-24 h-24 overflow-hidden shadow-md">
+                      <LazyImage
+                        src="/horeca/5.png"
+                        alt="Multi Cuisine offering at same operational cost"
+                        className="w-full h-full"
+                        objectFit="cover"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-gray-700">
+                      Expand your menu without expanding your team.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
