@@ -11,6 +11,7 @@ import Media from "./pages/Media";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import DeleteData from "./pages/DeleteData";
+import SpecialOffer from "./pages/SpecialOffer";
 
 const queryClient = new QueryClient();
 
@@ -111,6 +112,7 @@ const App = () => {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/delete-data" element={<DeleteData />} />
+            <Route path="/special-offer" element={<SpecialOffer />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
