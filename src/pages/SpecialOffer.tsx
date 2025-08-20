@@ -47,7 +47,7 @@ const SpecialOffer: React.FC = () => {
 
   // Pack configurations
   const packConfigs = {
-    11: { price: 699, minQuantity: 2 },
+    11: { price: 1, minQuantity: 2 },
     21: { price: 1299, minQuantity: 1 },
   };
 
@@ -57,7 +57,7 @@ const SpecialOffer: React.FC = () => {
   const subtotal =
     pack11Quantity * packConfigs[11].price +
     pack21Quantity * packConfigs[21].price;
-  const deliveryFee = 50;
+  const deliveryFee = 2;
   const totalPrice = subtotal + deliveryFee;
   const totalPieces = pack11Quantity * 11 + pack21Quantity * 21;
 
@@ -462,7 +462,7 @@ const SpecialOffer: React.FC = () => {
                       <div className="flex justify-between items-center">
                         <span>11-Piece Packs:</span>
                         <span>
-                          {pack11Quantity} × ₹699 = ₹
+                          {pack11Quantity} × ₹1 = ₹
                           {pack11Quantity * packConfigs[11].price}
                         </span>
                       </div>
