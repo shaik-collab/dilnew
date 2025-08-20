@@ -21,6 +21,8 @@ import {
 } from "../components/ui/select";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 // Razorpay types
 declare global {
@@ -31,7 +33,7 @@ declare global {
 
 const SpecialOffer: React.FC = () => {
   const navigate = useNavigate();
-  const [quantity, setQuantity] = useState<number>(1);
+  const [quantity, setQuantity] = useState<number>(2); // Minimum 2 packs
   const [loading, setLoading] = useState<boolean>(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -43,8 +45,21 @@ const SpecialOffer: React.FC = () => {
   });
   const [deliveryDate, setDeliveryDate] = useState<string>("");
 
-  const pricePerItem = 60;
-  const totalPrice = quantity * pricePerItem;
+  // Pack configurations
+  const packConfigs = {
+    11: { price: 699, minQuantity: 2 },
+    21: { price: 1299, minQuantity: 1 },
+  };
+
+  const [pack11Quantity, setPack11Quantity] = useState<number>(0);
+  const [pack21Quantity, setPack21Quantity] = useState<number>(0);
+
+  const subtotal =
+    pack11Quantity * packConfigs[11].price +
+    pack21Quantity * packConfigs[21].price;
+  const deliveryFee = 50;
+  const totalPrice = subtotal + deliveryFee;
+  const totalPieces = pack11Quantity * 11 + pack21Quantity * 21;
 
   // Cities list
   const cities = [
@@ -101,9 +116,24 @@ const SpecialOffer: React.FC = () => {
 
   const deliveryDates = generateDeliveryDates();
 
-  const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseInt(e.target.value) || 1;
-    setQuantity(Math.max(1, value));
+  const handlePack11QuantityChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const value = e.target.value;
+    // Remove leading zeros and parse as integer
+    const cleanValue = value.replace(/^0+/, "") || "0";
+    const numValue = parseInt(cleanValue) || 0;
+    setPack11Quantity(Math.max(0, numValue));
+  };
+
+  const handlePack21QuantityChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const value = e.target.value;
+    // Remove leading zeros and parse as integer
+    const cleanValue = value.replace(/^0+/, "") || "0";
+    const numValue = parseInt(cleanValue) || 0;
+    setPack21Quantity(Math.max(0, numValue));
   };
 
   const handleInputChange = (
@@ -151,8 +181,10 @@ const SpecialOffer: React.FC = () => {
         address: formData.address,
         city: formData.city,
         pincode: formData.pincode,
-        quantity: quantity,
-        price_per_item: pricePerItem,
+        pack11_quantity: pack11Quantity,
+        pack21_quantity: pack21Quantity,
+        pack11_price: packConfigs[11].price,
+        pack21_price: packConfigs[21].price,
         delivery_date: deliveryDate,
       };
 
@@ -250,20 +282,11 @@ const SpecialOffer: React.FC = () => {
       );
 
       if (verifyResponse.data.success) {
-        alert(
-          "Payment Successful! Your Modak order has been placed successfully."
-        );
-        // Reset form
-        setFormData({
-          name: "",
-          phone: "",
-          email: "",
-          address: "",
-          city: "",
-          pincode: "",
+        // Redirect to thank you page with order ID
+        navigate("/thank-you", {
+          state: { orderId: orderId },
+          replace: true,
         });
-        setQuantity(1);
-        setDeliveryDate("");
       } else {
         alert("Payment verification failed. Please contact support.");
       }
@@ -290,6 +313,14 @@ const SpecialOffer: React.FC = () => {
       return;
     }
 
+    // Validate pack quantities
+    if (pack11Quantity < 2 && pack21Quantity < 1) {
+      alert(
+        "Please select at least 2 packs of 11-piece or 1 pack of 21-piece."
+      );
+      return;
+    }
+
     // Step 1: Create the order
     const orderId = await createOrder();
 
@@ -300,29 +331,10 @@ const SpecialOffer: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50">
-      {/* Navbar */}
-      <nav className="bg-white shadow-sm border-b">
-        <div className="max-w-4xl mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
-            <div
-              className="flex items-center cursor-pointer"
-              onClick={() => navigate("/")}
-            >
-              <img
-                src="/lovable-uploads/b743a878-95c1-4663-b49a-820eec6a6800.png"
-                alt="Dilfoods"
-                className="h-8 w-auto"
-              />
-              <span className="ml-2 text-xl font-bold text-gray-800">
-                Dilfoods
-              </span>
-            </div>
-          </div>
-        </div>
-      </nav>
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50  mt-10">
+      <Navbar />
 
-      <div className="py-8 px-4">
+      <div className="pt-16 py-8 px-4">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
@@ -342,7 +354,7 @@ const SpecialOffer: React.FC = () => {
             <Card className="shadow-lg">
               <CardHeader>
                 <CardTitle className="text-2xl text-orange-600">
-                  Modak
+                  Ukadiche Modak
                 </CardTitle>
                 <CardDescription>
                   Handcrafted with love using traditional recipes passed down
@@ -373,30 +385,112 @@ const SpecialOffer: React.FC = () => {
 
                 <Separator />
 
-                {/* Quantity and Price */}
+                {/* Pack Selection */}
                 <div className="space-y-4">
                   <div>
-                    <Label htmlFor="quantity" className="text-lg font-medium">
-                      Quantity
+                    <Label className="text-lg font-medium">
+                      Select Pack Quantities
                     </Label>
-                    <Input
-                      id="quantity"
-                      type="number"
-                      min="1"
-                      value={quantity}
-                      onChange={handleQuantityChange}
-                      className="mt-2 text-lg"
-                    />
+
+                    {/* 11-Piece Pack */}
+                    <div className="mt-4 p-4 border-2 border-orange-200 rounded-lg">
+                      <div className="flex justify-between items-center mb-3">
+                        <div>
+                          <h4 className="font-semibold text-lg">
+                            11-Piece Pack
+                          </h4>
+                          <p className="text-sm text-gray-600">₹699 per pack</p>
+                        </div>
+                        <div className="text-sm text-gray-500">
+                          Min: 2 packs
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Label htmlFor="pack11" className="text-sm">
+                          Quantity:
+                        </Label>
+                        <Input
+                          id="pack11"
+                          type="number"
+                          min="0"
+                          step="1"
+                          value={pack11Quantity || ""}
+                          onChange={handlePack11QuantityChange}
+                          className="w-20"
+                        />
+                        <span className="text-sm text-gray-600">
+                          ({pack11Quantity * 11} pieces)
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* 21-Piece Pack */}
+                    <div className="mt-4 p-4 border-2 border-orange-200 rounded-lg">
+                      <div className="flex justify-between items-center mb-3">
+                        <div>
+                          <h4 className="font-semibold text-lg">
+                            21-Piece Pack
+                          </h4>
+                          <p className="text-sm text-gray-600">
+                            ₹1299 per pack
+                          </p>
+                        </div>
+                        <div className="text-sm text-gray-500">Min: 1 pack</div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Label htmlFor="pack21" className="text-sm">
+                          Quantity:
+                        </Label>
+                        <Input
+                          id="pack21"
+                          type="number"
+                          min="0"
+                          step="1"
+                          value={pack21Quantity || ""}
+                          onChange={handlePack21QuantityChange}
+                          className="w-20"
+                        />
+                        <span className="text-sm text-gray-600">
+                          ({pack21Quantity * 21} pieces)
+                        </span>
+                      </div>
+                    </div>
                   </div>
 
                   <div className="bg-orange-50 p-4 rounded-lg">
-                    <div className="flex justify-between items-center text-lg">
-                      <span>Price per piece:</span>
-                      <span className="font-semibold">₹{pricePerItem}</span>
-                    </div>
-                    <div className="flex justify-between items-center text-xl font-bold text-orange-600 mt-2">
-                      <span>Total Amount:</span>
-                      <span>₹{totalPrice}</span>
+                    <div className="space-y-2">
+                      <div className="flex justify-between items-center">
+                        <span>11-Piece Packs:</span>
+                        <span>
+                          {pack11Quantity} × ₹699 = ₹
+                          {pack11Quantity * packConfigs[11].price}
+                        </span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span>21-Piece Packs:</span>
+                        <span>
+                          {pack21Quantity} × ₹1299 = ₹
+                          {pack21Quantity * packConfigs[21].price}
+                        </span>
+                      </div>
+                      <Separator />
+                      <div className="flex justify-between items-center">
+                        <span>Subtotal:</span>
+                        <span>₹{subtotal}</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span>Delivery Fee:</span>
+                        <span>₹{deliveryFee}</span>
+                      </div>
+                      <Separator />
+                      <div className="flex justify-between items-center text-lg font-bold text-orange-600">
+                        <span>Total Amount:</span>
+                        <span>₹{totalPrice}</span>
+                      </div>
+                      <div className="flex justify-between items-center text-sm text-gray-600">
+                        <span>Total Pieces:</span>
+                        <span>{totalPieces} pieces</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -528,12 +622,20 @@ const SpecialOffer: React.FC = () => {
                       <span>Modak</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Quantity:</span>
-                      <span>{quantity} pieces</span>
+                      <span>11-Piece Packs:</span>
+                      <span>
+                        {pack11Quantity} packs ({pack11Quantity * 11} pieces)
+                      </span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Price per piece:</span>
-                      <span>₹{pricePerItem}</span>
+                      <span>21-Piece Packs:</span>
+                      <span>
+                        {pack21Quantity} packs ({pack21Quantity * 21} pieces)
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Total Pieces:</span>
+                      <span>{totalPieces} pieces</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Delivery Date:</span>
@@ -542,6 +644,15 @@ const SpecialOffer: React.FC = () => {
                           ? new Date(deliveryDate).toLocaleDateString()
                           : "Not selected"}
                       </span>
+                    </div>
+                    <Separator />
+                    <div className="flex justify-between">
+                      <span>Subtotal:</span>
+                      <span>₹{subtotal}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Delivery Fee:</span>
+                      <span>₹{deliveryFee}</span>
                     </div>
                     <Separator />
                     <div className="flex justify-between text-lg font-bold text-orange-600">
@@ -591,6 +702,8 @@ const SpecialOffer: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };
