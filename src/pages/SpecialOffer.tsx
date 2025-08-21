@@ -117,7 +117,19 @@ const SpecialOffer: React.FC = () => {
   const deliveryDates = generateDeliveryDates();
 
   const handlePack11QuantityChange = (increment: number) => {
-    const newQuantity = Math.max(0, pack11Quantity + increment);
+    let newQuantity = pack11Quantity + increment;
+
+    // If incrementing from 0, jump to minimum of 2
+    if (increment > 0 && pack11Quantity === 0) {
+      newQuantity = 2;
+    }
+
+    // If decrementing from 2, go to 0
+    if (increment < 0 && pack11Quantity === 2) {
+      newQuantity = 0;
+    }
+
+    // Set the quantity (can be 0, 2, 3, 4, etc.)
     setPack11Quantity(newQuantity);
   };
 
