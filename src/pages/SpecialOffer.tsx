@@ -237,9 +237,6 @@ const SpecialOffer: React.FC = () => {
           description: "Modak Order Payment",
           image: "/lovable-uploads/b743a878-95c1-4663-b49a-820eec6a6800.png", // Dilfoods logo
           order_id: razorpayOrder.id,
-          callback_url: `${
-            import.meta.env.VITE_API_BASE_URL
-          }/modak_orders/${orderId}/payment/callback`,
           prefill: {
             name: formData.name,
             email: formData.email,
@@ -276,6 +273,7 @@ const SpecialOffer: React.FC = () => {
           import.meta.env.VITE_API_BASE_URL
         }/modak_orders/${orderId}/payment/verify`,
         {
+          razorpay_order_id: paymentData.razorpay_order_id,
           razorpay_payment_id: paymentData.razorpay_payment_id,
           razorpay_signature: paymentData.razorpay_signature,
         }
