@@ -47,7 +47,7 @@ const SpecialOffer: React.FC = () => {
 
   // Pack configurations
   const packConfigs = {
-    11: { price: 1, minQuantity: 2 },
+    11: { price: 699, minQuantity: 2 },
     21: { price: 1299, minQuantity: 1 },
   };
 
@@ -695,20 +695,24 @@ const SpecialOffer: React.FC = () => {
                           : "Not selected"}
                       </span>
                     </div>
-                    <Separator />
-                    <div className="flex justify-between">
-                      <span>Subtotal:</span>
-                      <span>₹{subtotal}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Delivery Fee:</span>
-                      <span>₹{deliveryFee}</span>
-                    </div>
-                    <Separator />
-                    <div className="flex justify-between text-lg font-bold text-orange-600">
-                      <span>Total Amount:</span>
-                      <span>₹{totalPrice}</span>
-                    </div>
+                    {totalPieces > 0 && (
+                      <>
+                        <Separator />
+                        <div className="flex justify-between">
+                          <span>Subtotal:</span>
+                          <span>₹{subtotal}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>Delivery Fee:</span>
+                          <span>₹{deliveryFee}</span>
+                        </div>
+                        <Separator />
+                        <div className="flex justify-between text-lg font-bold text-orange-600">
+                          <span>Total Amount:</span>
+                          <span>₹{totalPrice}</span>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
 
@@ -1058,20 +1062,24 @@ const SpecialOffer: React.FC = () => {
                           : "Not selected"}
                       </span>
                     </div>
-                    <Separator />
-                    <div className="flex justify-between">
-                      <span>Subtotal:</span>
-                      <span>₹{subtotal}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Delivery Fee:</span>
-                      <span>₹{deliveryFee}</span>
-                    </div>
-                    <Separator />
-                    <div className="flex justify-between text-lg font-bold text-orange-600">
-                      <span>Total Amount:</span>
-                      <span>₹{totalPrice}</span>
-                    </div>
+                    {totalPieces > 0 && (
+                      <>
+                        <Separator />
+                        <div className="flex justify-between">
+                          <span>Subtotal:</span>
+                          <span>₹{subtotal}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span>Delivery Fee:</span>
+                          <span>₹{deliveryFee}</span>
+                        </div>
+                        <Separator />
+                        <div className="flex justify-between text-lg font-bold text-orange-600">
+                          <span>Total Amount:</span>
+                          <span>₹{totalPrice}</span>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
 
