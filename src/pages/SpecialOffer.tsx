@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
@@ -64,34 +64,55 @@ const SpecialOffer: React.FC = () => {
   // Cities list
   const cities = [
     "Bengaluru",
-    "Chennai",
-    "Hyderabad",
+    // "Chennai",
+    // "Hyderabad",
     "Pune",
     "Mumbai",
-    "Mysore",
-    "Coimbatore",
-    "Ahmedabad",
+    // "Mysore",
+    // "Coimbatore",
+    // "Ahmedabad",
   ];
 
-  // Generate delivery dates from tomorrow till August 25th
+  const brands = [
+    {
+      name: "Khichdi Bar",
+      img: "/lovable-uploads/235a933c-2973-43db-8419-1bc689100f0a.png",
+      zomato: "#",
+      swiggy: "#",
+    },
+    {
+      name: "Bhole Ke Chole",
+      img: "/lovable-uploads/cdf67c56-7bd7-4023-af81-bf258fe60fe3.png",
+      zomato: "#",
+      swiggy: "#",
+    },
+    {
+      name: "Vegerama",
+      img: "/lovable-uploads/vegerama_logo.png",
+      zomato: "#",
+      swiggy: "#",
+    },
+    {
+      name: "Dil Daily",
+      img: "/lovable-uploads/dpd_logo.png",
+      zomato: "#",
+      swiggy: "#",
+    },
+  ];
+
+  // Generate delivery dates from August 27th for next 10 days
   const generateDeliveryDates = () => {
     const dates = [];
-    const today = new Date();
-    const currentYear = today.getFullYear();
+    const currentYear = new Date().getFullYear();
 
-    // Create dates using local time to avoid timezone issues
-    const tomorrow = new Date(
-      currentYear,
-      today.getMonth(),
-      today.getDate() + 1
-    );
-    const endDate = new Date(currentYear, 7, 27); // August 27th (month is 0-indexed)
+    // Start date: August 27th
+    const startDate = new Date(currentYear, 7, 27); // August 27th (month is 0-indexed)
 
-    // Generate dates from tomorrow till August 27th
-    let currentDate = new Date(tomorrow);
+    // Generate dates from August 27th for next 10 days
+    for (let i = 0; i < 10; i++) {
+      const currentDate = new Date(startDate);
+      currentDate.setDate(startDate.getDate() + i);
 
-    // Use simple date comparison
-    while (currentDate <= endDate) {
       const year = currentDate.getFullYear();
       const month = String(currentDate.getMonth() + 1).padStart(2, "0");
       const day = String(currentDate.getDate()).padStart(2, "0");
@@ -106,9 +127,6 @@ const SpecialOffer: React.FC = () => {
           day: "numeric",
         }),
       });
-
-      // Move to next day
-      currentDate.setDate(currentDate.getDate() + 1);
     }
 
     return dates;
@@ -146,6 +164,14 @@ const SpecialOffer: React.FC = () => {
       ...prev,
       [name]: value,
     }));
+
+    // Clear error when user starts typing
+    if (name === "email" || name === "phone") {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: "",
+      }));
+    }
   };
 
   const handleCityChange = (value: string) => {
@@ -158,6 +184,54 @@ const SpecialOffer: React.FC = () => {
   const handleDeliveryDateChange = (value: string) => {
     setDeliveryDate(value);
   };
+
+  // Validation functions
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhone = (phone: string) => {
+    const phoneRegex = /^[6-9]\d{9}$/;
+    return phoneRegex.test(phone);
+  };
+
+  // Form validation state
+  const [errors, setErrors] = useState({
+    email: "",
+    phone: "",
+  });
+
+  // Refs for scrolling to input fields (mobile and desktop)
+  const emailRefMobile = useRef<HTMLInputElement>(null);
+  const phoneRefMobile = useRef<HTMLInputElement>(null);
+  const emailRefDesktop = useRef<HTMLInputElement>(null);
+  const phoneRefDesktop = useRef<HTMLInputElement>(null);
+
+  // Helper to pick the visible element
+  function getVisibleElement<T extends HTMLElement>(...els: Array<T | null>) {
+    for (const el of els) {
+      if (
+        el &&
+        el.offsetParent !== null && // not display:none
+        window.getComputedStyle(el).visibility !== "hidden"
+      ) {
+        return el;
+      }
+    }
+    return null;
+  }
+
+  function scrollToField(el: HTMLElement | null) {
+    if (!el) return;
+    // give space for fixed navbar/banner; also add scroll-margin-top in CSS
+    requestAnimationFrame(() => {
+      // Use 'start' instead of 'center' to position at top of viewport
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      // focus after scroll for mobile keyboards
+      setTimeout(() => el.focus({ preventScroll: true }), 250);
+    });
+  }
 
   // Load Razorpay script
   useEffect(() => {
@@ -318,6 +392,9 @@ const SpecialOffer: React.FC = () => {
   };
 
   const handleOrder = async () => {
+    // Clear previous errors
+    setErrors({ email: "", phone: "" });
+
     // Validate form
     if (
       !formData.name ||
@@ -329,6 +406,36 @@ const SpecialOffer: React.FC = () => {
       !deliveryDate
     ) {
       alert("Please fill in all required fields.");
+      return;
+    }
+
+    // Validate email
+    if (!validateEmail(formData.email)) {
+      setErrors((prev) => ({
+        ...prev,
+        email: "Please enter a valid email address",
+      }));
+
+      const emailEl = getVisibleElement(
+        emailRefMobile.current,
+        emailRefDesktop.current
+      );
+      scrollToField(emailEl);
+      return;
+    }
+
+    // Validate phone number
+    if (!validatePhone(formData.phone)) {
+      setErrors((prev) => ({
+        ...prev,
+        phone: "Please enter a valid 10-digit mobile number",
+      }));
+
+      const phoneEl = getVisibleElement(
+        phoneRefMobile.current,
+        phoneRefDesktop.current
+      );
+      scrollToField(phoneEl);
       return;
     }
 
@@ -380,9 +487,6 @@ const SpecialOffer: React.FC = () => {
             <h1 className="text-3xl font-bold text-gray-800 mb-2">
               Authentic Homemade Modak
             </h1>
-            <p className="text-lg text-gray-600">
-              Experience the divine taste of traditional Indian sweets
-            </p>
           </div>
 
           {/* Mobile Layout - No Cards */}
@@ -579,6 +683,7 @@ const SpecialOffer: React.FC = () => {
                   <div>
                     <Label htmlFor="phone">Phone Number *</Label>
                     <Input
+                      ref={phoneRefMobile}
                       id="phone"
                       name="phone"
                       type="tel"
@@ -586,11 +691,20 @@ const SpecialOffer: React.FC = () => {
                       onChange={handleInputChange}
                       placeholder="Enter your phone number"
                       required
+                      className={`${
+                        errors.phone ? "border-red-500" : ""
+                      } scroll-mt-28`}
                     />
+                    {errors.phone && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.phone}
+                      </p>
+                    )}
                   </div>
                   <div>
                     <Label htmlFor="email">Email Address *</Label>
                     <Input
+                      ref={emailRefMobile}
                       id="email"
                       name="email"
                       type="email"
@@ -598,7 +712,13 @@ const SpecialOffer: React.FC = () => {
                       onChange={handleInputChange}
                       placeholder="Enter your email address"
                       required
+                      className={errors.email ? "border-red-500" : ""}
                     />
+                    {errors.email && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.email}
+                      </p>
+                    )}
                   </div>
                   <div>
                     <Label htmlFor="address">Delivery Address *</Label>
@@ -940,6 +1060,7 @@ const SpecialOffer: React.FC = () => {
                   <div>
                     <Label htmlFor="phone">Phone Number *</Label>
                     <Input
+                      ref={phoneRefDesktop}
                       id="phone"
                       name="phone"
                       type="tel"
@@ -947,13 +1068,22 @@ const SpecialOffer: React.FC = () => {
                       onChange={handleInputChange}
                       placeholder="Enter your phone number"
                       required
+                      className={`${
+                        errors.phone ? "border-red-500" : ""
+                      } scroll-mt-28`}
                     />
+                    {errors.phone && (
+                      <p className="text-red-500 text-sm mt-1">
+                        {errors.phone}
+                      </p>
+                    )}
                   </div>
                 </div>
 
                 <div>
                   <Label htmlFor="email">Email Address *</Label>
                   <Input
+                    ref={emailRefDesktop}
                     id="email"
                     name="email"
                     type="email"
@@ -961,7 +1091,13 @@ const SpecialOffer: React.FC = () => {
                     onChange={handleInputChange}
                     placeholder="Enter your email address"
                     required
+                    className={`${
+                      errors.email ? "border-red-500" : ""
+                    } scroll-mt-28`}
                   />
+                  {errors.email && (
+                    <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                  )}
                 </div>
 
                 <div>
@@ -1120,6 +1256,139 @@ const SpecialOffer: React.FC = () => {
               <h3 className="font-semibold">Quality Assured</h3>
               <p className="text-gray-600">Premium quality ingredients only</p>
             </div>
+          </div>
+
+          {/* Live Order Section */}
+          <div className="mt-8 rounded-xl border-2 border-orange-200 bg-gradient-to-r from-orange-50 to-yellow-50 p-6">
+            <div className="text-center mb-6">
+              <h2 className="text-2xl font-bold text-gray-800 mb-1">
+                Want a smaller order or immediate delivery?
+              </h2>
+              <p className="text-gray-600">Order from our delivery partners.</p>
+            </div>
+
+            <ul className="grid gap-4 md:grid-cols-2">
+              {/* Zomato */}
+              <li>
+                <a
+                  href="https://link.zomato.com/xqzv/rshare?id=8694507230563fe4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Order on Zomato (opens in new tab)"
+                  className="group block rounded-xl border-2 border-orange-200 bg-white p-4 shadow-sm transition-all hover:border-orange-400 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-red-500">
+                        <span className="text-lg font-bold text-white">Z</span>
+                      </div>
+                      <div>
+                        <h3 className="text-base font-semibold text-gray-800">
+                          Order on Zomato
+                        </h3>
+                        <p className="text-xs text-gray-500">
+                          Typically 30–45 mins
+                        </p>
+                      </div>
+                    </div>
+                    <svg
+                      className="h-6 w-6 text-orange-600 transition-transform group-hover:translate-x-0.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+                </a>
+              </li>
+
+              {/* Swiggy */}
+              <li>
+                <a
+                  href="https://www.swiggy.com/direct/brand/442032?source=swiggy-direct&subSource=instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Order on Swiggy (opens in new tab)"
+                  className="group block rounded-xl border-2 border-orange-200 bg-white p-4 shadow-sm transition-all hover:border-orange-400 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-orange-500">
+                        <span className="text-lg font-bold text-white">S</span>
+                      </div>
+                      <div>
+                        <h3 className="text-base font-semibold text-gray-800">
+                          Order on Swiggy
+                        </h3>
+                        <p className="text-xs text-gray-500">
+                          Typically 25–40 mins
+                        </p>
+                      </div>
+                    </div>
+                    <svg
+                      className="h-6 w-6 text-orange-600 transition-transform group-hover:translate-x-0.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <p className="mt-4 text-center text-sm text-gray-500">
+              💡 Prefer to order in advance? Use the form above for special
+              festival orders.
+            </p>
+
+            {/* divider */}
+            <div className="my-6 flex items-center gap-3">
+              <div className="h-px flex-1 bg-orange-200" />
+              <p className="text-center text-sm text-gray-800">
+                or order from our brands on
+                <br className="sm:hidden" />
+                <span className="font-medium">Zomato</span> and{" "}
+                <span className="font-medium">Swiggy</span>
+              </p>
+              <div className="h-px flex-1 bg-orange-200" />
+            </div>
+
+            {/* brand grid */}
+            <ul className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+              {brands.map((b) => (
+                <li key={b.name}>
+                  <div className="rounded-xl border-2 border-orange-200 bg-white p-3 shadow-sm">
+                    <div className="mx-auto aspect-square w-24 md:w-28 overflow-hidden rounded-full bg-gray-100 ring-1 ring-orange-200 flex items-center justify-center">
+                      <img
+                        src={b.img}
+                        alt={`${b.name} logo`}
+                        className="max-h-[70%] max-w-[70%] object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    <p className="mt-3 text-center text-sm font-medium text-gray-800">
+                      {b.name}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
