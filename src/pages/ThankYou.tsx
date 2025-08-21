@@ -423,12 +423,12 @@ const ThankYou: React.FC = () => {
               <div>
                 <div className="text-2xl mb-2">📞</div>
                 <p className="font-semibold">Call Us</p>
-                <p className="text-gray-600">+91 9963442006</p>
+                <p className="text-gray-600">+91 6366960723</p>
               </div>
               <div>
                 <div className="text-2xl mb-2">✉️</div>
                 <p className="font-semibold">Email Us</p>
-                <p className="text-gray-600">rajesh@dilfoods.in</p>
+                <p className="text-gray-600">marketing.dil@dilfoods.in</p>
               </div>
               <div>
                 <div className="text-2xl mb-2">🕒</div>
