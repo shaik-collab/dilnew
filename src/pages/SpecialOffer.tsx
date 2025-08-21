@@ -88,13 +88,13 @@ const SpecialOffer: React.FC = () => {
     },
     {
       name: "Vegerama",
-      img: "/lovable-uploads/vegerama_logo.png",
+      img: "/lovable-uploads/vegerama_new.png",
       zomato: "#",
       swiggy: "#",
     },
     {
       name: "Dil Daily",
-      img: "/lovable-uploads/dpd_logo.png",
+      img: "/lovable-uploads/DIL_daily_new.png",
       zomato: "#",
       swiggy: "#",
     },
