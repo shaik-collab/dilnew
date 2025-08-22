@@ -76,7 +76,7 @@ async function trackEvent(
 ) {
   const key = onceKey || eventName;
   if (hasSentEvent(key)) {
-    console.log(`Analytics: Event ${eventName} already sent (key: ${key})`);
+    // console.log(`Analytics: Event ${eventName} already sent (key: ${key})`);
     return;
   }
 
@@ -90,15 +90,15 @@ async function trackEvent(
     props: data,
   };
 
-  console.log(`Analytics: Sending event ${eventName}`, payload);
+  // console.log(`Analytics: Sending event ${eventName}`, payload);
 
   // Use axios to match your other API calls and avoid CORS issues
   try {
     const response = await axios.post(ANALYTICS_ENDPOINT, payload);
-    console.log(
-      `Analytics: Event ${eventName} sent successfully`,
-      response.data
-    );
+    // console.log(
+    //   `Analytics: Event ${eventName} sent successfully`,
+    //   response.data
+    // );
     markEventSent(key);
   } catch (e) {
     console.error(`Analytics: Failed to send event ${eventName}`, e);
@@ -217,7 +217,7 @@ const SpecialOffer: React.FC = () => {
   const deliveryDates = generateDeliveryDates();
 
   const handlePack11QuantityChange = (increment: number) => {
-    console.log(`Pack11 button clicked: increment = ${increment}`);
+    // console.log(`Pack11 button clicked: increment = ${increment}`);
 
     // Track plus/minus (one-time per visitor)
     if (increment > 0) {
@@ -243,7 +243,7 @@ const SpecialOffer: React.FC = () => {
   };
 
   const handlePack21QuantityChange = (increment: number) => {
-    console.log(`Pack21 button clicked: increment = ${increment}`);
+    // console.log(`Pack21 button clicked: increment = ${increment}`);
 
     // Track plus/minus (one-time per visitor)
     if (increment > 0) {
@@ -347,7 +347,7 @@ const SpecialOffer: React.FC = () => {
 
   // Track page visit (once per visitor)
   useEffect(() => {
-    console.log("SpecialOffer page loaded, tracking page view...");
+    // console.log("SpecialOffer page loaded, tracking page view...");
     // will only send once because of localStorage guard
     trackEvent("page_view_special_offer", {}, "once:page_view_special_offer");
   }, []);
