@@ -357,11 +357,13 @@ const SpecialOffer: React.FC = () => {
     const style = document.createElement("style");
     style.textContent = `
       @keyframes marquee {
-        0% { transform: translateX(100%); }
+        0% { transform: translateX(0%); }
         100% { transform: translateX(-100%); }
       }
       .animate-marquee {
         animation: marquee 20s linear infinite;
+        display: flex;
+        width: max-content;
       }
     `;
     document.head.appendChild(style);
@@ -605,16 +607,16 @@ const SpecialOffer: React.FC = () => {
       <div className="bg-red-600 text-white py-3 overflow-hidden mt-16">
         <div className="animate-marquee whitespace-nowrap">
           <span className="inline-block mx-4">
-            🚨 PRE-ORDERING CLOSES ON AUGUST 26TH! LAST DELIVERY DATE: AUGUST
-            27TH! 🚨
+            🚨 PRE-ORDERING CLOSES ON AUGUST 26TH! LAST DELIVERY DATE: SEPTEMBER
+            5TH! 🚨
           </span>
           <span className="inline-block mx-4">
-            🚨 PRE-ORDERING CLOSES ON AUGUST 26TH! LAST DELIVERY DATE: AUGUST
-            27TH! 🚨
+            🚨 PRE-ORDERING CLOSES ON AUGUST 26TH! LAST DELIVERY DATE: SEPTEMBER
+            5TH! 🚨
           </span>
           <span className="inline-block mx-4">
-            🚨 PRE-ORDERING CLOSES ON AUGUST 26TH! LAST DELIVERY DATE: AUGUST
-            27TH! 🚨
+            🚨 PRE-ORDERING CLOSES ON AUGUST 26TH! LAST DELIVERY DATE: SEPTEMBER
+            5TH! 🚨
           </span>
         </div>
       </div>
