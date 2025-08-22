@@ -24,6 +24,88 @@ import axios from "axios";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+// ===== Analytics helpers (simple, anonymous) =====
+const ANALYTICS_ENDPOINT = `${
+  import.meta.env.VITE_API_BASE_URL
+}/modak_orders/analytics/track`;
+const APP_NAMESPACE = "modak_2025_test"; // change if you want to reset all users
+
+function getOrCreateAnonId() {
+  const k = `${APP_NAMESPACE}:anon_id`;
+  let id = localStorage.getItem(k);
+  if (!id) {
+    // lightweight UUID-ish
+    id = (([1e7] as any) + -1e3 + -4e3 + -8e3 + -1e11).replace(
+      /[018]/g,
+      (c: string) =>
+        (
+          Number(c) ^
+          (crypto.getRandomValues(new Uint8Array(1))[0] &
+            (15 >> (Number(c) / 4)))
+        ).toString(16)
+    );
+    localStorage.setItem(k, id);
+  }
+  return id;
+}
+
+function getUtmParams() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    utm_source: params.get("utm_source") || "",
+    utm_medium: params.get("utm_medium") || "",
+    utm_campaign: params.get("utm_campaign") || "",
+    utm_term: params.get("utm_term") || "",
+    utm_content: params.get("utm_content") || "",
+  };
+}
+
+// Ensure we only send a particular event once per visitor
+function markEventSent(key: string) {
+  localStorage.setItem(`${APP_NAMESPACE}:evt:${key}`, "1");
+}
+function hasSentEvent(key: string) {
+  return localStorage.getItem(`${APP_NAMESPACE}:evt:${key}`) === "1";
+}
+
+// Send event to backend (fire-and-forget)
+async function trackEvent(
+  eventName: string,
+  data: Record<string, any> = {},
+  onceKey?: string
+) {
+  const key = onceKey || eventName;
+  if (hasSentEvent(key)) {
+    console.log(`Analytics: Event ${eventName} already sent (key: ${key})`);
+    return;
+  }
+
+  const payload = {
+    anon_id: getOrCreateAnonId(),
+    event: eventName,
+    page: window.location.pathname,
+    ts: new Date().toISOString(),
+    referrer: document.referrer || "",
+    ...getUtmParams(),
+    props: data,
+  };
+
+  console.log(`Analytics: Sending event ${eventName}`, payload);
+
+  // Use axios to match your other API calls and avoid CORS issues
+  try {
+    const response = await axios.post(ANALYTICS_ENDPOINT, payload);
+    console.log(
+      `Analytics: Event ${eventName} sent successfully`,
+      response.data
+    );
+    markEventSent(key);
+  } catch (e) {
+    console.error(`Analytics: Failed to send event ${eventName}`, e);
+    // fail silently (we don't want to affect the order flow)
+  }
+}
+
 // Razorpay types
 declare global {
   interface Window {
@@ -135,6 +217,15 @@ const SpecialOffer: React.FC = () => {
   const deliveryDates = generateDeliveryDates();
 
   const handlePack11QuantityChange = (increment: number) => {
+    console.log(`Pack11 button clicked: increment = ${increment}`);
+
+    // Track plus/minus (one-time per visitor)
+    if (increment > 0) {
+      trackEvent("click_plus_pack11", {}, "once:click_plus_pack11");
+    } else {
+      trackEvent("click_minus_pack11", {}, "once:click_minus_pack11");
+    }
+
     let newQuantity = pack11Quantity + increment;
 
     // If incrementing from 0, jump to minimum of 2
@@ -152,6 +243,15 @@ const SpecialOffer: React.FC = () => {
   };
 
   const handlePack21QuantityChange = (increment: number) => {
+    console.log(`Pack21 button clicked: increment = ${increment}`);
+
+    // Track plus/minus (one-time per visitor)
+    if (increment > 0) {
+      trackEvent("click_plus_pack21", {}, "once:click_plus_pack21");
+    } else {
+      trackEvent("click_minus_pack21", {}, "once:click_minus_pack21");
+    }
+
     const newQuantity = Math.max(0, pack21Quantity + increment);
     setPack21Quantity(newQuantity);
   };
@@ -243,6 +343,13 @@ const SpecialOffer: React.FC = () => {
     return () => {
       document.body.removeChild(script);
     };
+  }, []);
+
+  // Track page visit (once per visitor)
+  useEffect(() => {
+    console.log("SpecialOffer page loaded, tracking page view...");
+    // will only send once because of localStorage guard
+    trackEvent("page_view_special_offer", {}, "once:page_view_special_offer");
   }, []);
 
   // Add marquee animation styles
@@ -392,6 +499,18 @@ const SpecialOffer: React.FC = () => {
   };
 
   const handleOrder = async () => {
+    // Track place order attempt (once per visitor)
+    trackEvent(
+      "click_place_order",
+      {
+        pack11_quantity: pack11Quantity,
+        pack21_quantity: pack21Quantity,
+        total_amount: totalPrice,
+        total_pieces: totalPieces,
+      },
+      "once:click_place_order"
+    );
+
     // Clear previous errors
     setErrors({ email: "", phone: "" });
 
@@ -454,6 +573,29 @@ const SpecialOffer: React.FC = () => {
       // Step 2: Process payment
       await processPayment(orderId);
     }
+  };
+
+  // Track delivery partner clicks
+  const handleZomatoClick = () => {
+    trackEvent(
+      "click_order_zomato",
+      {
+        partner: "zomato",
+        url: "https://link.zomato.com/xqzv/rshare?id=8694507230563fe4",
+      },
+      "once:click_order_zomato"
+    );
+  };
+
+  const handleSwiggyClick = () => {
+    trackEvent(
+      "click_order_swiggy",
+      {
+        partner: "swiggy",
+        url: "https://www.swiggy.com/direct/brand/442032?source=swiggy-direct&subSource=instagram",
+      },
+      "once:click_order_swiggy"
+    );
   };
 
   return (
@@ -1290,6 +1432,7 @@ const SpecialOffer: React.FC = () => {
                   rel="noopener noreferrer"
                   aria-label="Order on Zomato (opens in new tab)"
                   className="group block rounded-xl border-2 border-orange-200 bg-white p-4 shadow-sm transition-all hover:border-orange-400 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+                  onClick={handleZomatoClick}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
@@ -1331,6 +1474,7 @@ const SpecialOffer: React.FC = () => {
                   rel="noopener noreferrer"
                   aria-label="Order on Swiggy (opens in new tab)"
                   className="group block rounded-xl border-2 border-orange-200 bg-white p-4 shadow-sm transition-all hover:border-orange-400 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+                  onClick={handleSwiggyClick}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
