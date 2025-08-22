@@ -489,304 +489,316 @@ const SpecialOffer: React.FC = () => {
             </h1>
           </div>
 
-          {/* Mobile Layout - No Cards */}
+          {/* Mobile Layout - Organized Cards */}
           <div className="md:hidden space-y-6">
-            {/* Product Section Mobile */}
-            <div className="space-y-6">
-              <div className="text-center">
-                <h2 className="text-2xl font-bold text-orange-600 mb-2">
+            {/* Card 1: Product Info and Pack Selection */}
+            <Card className="shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl text-orange-600">
                   Ukadiche Modak
-                </h2>
-                <p className="text-gray-600">
+                </CardTitle>
+                <CardDescription>
                   Handcrafted with love using traditional recipes passed down
                   through generations
-                </p>
-              </div>
-
-              {/* Product Image */}
-              <div className="aspect-square rounded-lg overflow-hidden">
-                <img
-                  src="/modak.png"
-                  alt="Authentic Homemade Modak"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Product Description */}
-              <div className="space-y-3">
-                <h3 className="font-semibold text-lg">Product Details:</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• Made with premium rice flour and jaggery</li>
-                  <li>• Traditional steam cooking method</li>
-                  <li>• No artificial preservatives</li>
-                  <li>• Perfect for festivals and celebrations</li>
-                  <li>• Freshly made and hygienically packed</li>
-                </ul>
-              </div>
-
-              <Separator />
-
-              {/* Pack Selection */}
-              <div className="space-y-4">
-                <div>
-                  <Label className="text-lg font-medium">
-                    Select Pack Quantities
-                  </Label>
-
-                  {/* 11-Piece Pack */}
-                  <div className="mt-4 p-4 border-2 border-orange-200 rounded-lg">
-                    <div className="flex justify-between items-center mb-3">
-                      <div>
-                        <h4 className="font-semibold text-lg">11-Piece Pack</h4>
-                        <p className="text-sm text-gray-600">₹699 per pack</p>
-                      </div>
-                      <div className="text-sm text-gray-500">Min: 2 packs</div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Label className="text-sm">Quantity:</Label>
-                      <div className="flex items-center bg-white border border-gray-300 rounded-md shadow-sm">
-                        <button
-                          type="button"
-                          onClick={() => handlePack11QuantityChange(-1)}
-                          disabled={pack11Quantity <= 0}
-                          className="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed border-r border-gray-300"
-                        >
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M20 12H4"
-                            />
-                          </svg>
-                        </button>
-                        <div className="w-16 h-10 flex items-center justify-center text-lg font-semibold text-gray-900">
-                          {pack11Quantity}
-                        </div>
-                        <button
-                          type="button"
-                          onClick={() => handlePack11QuantityChange(1)}
-                          className="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-50 border-l border-gray-300"
-                        >
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M12 4v16m8-8H4"
-                            />
-                          </svg>
-                        </button>
-                      </div>
-                      <span className="text-sm text-gray-600">
-                        ({pack11Quantity * 11} pieces)
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* 21-Piece Pack */}
-                  <div className="mt-4 p-4 border-2 border-orange-200 rounded-lg">
-                    <div className="flex justify-between items-center mb-3">
-                      <div>
-                        <h4 className="font-semibold text-lg">21-Piece Pack</h4>
-                        <p className="text-sm text-gray-600">₹1299 per pack</p>
-                      </div>
-                      <div className="text-sm text-gray-500">Min: 1 pack</div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Label className="text-sm">Quantity:</Label>
-                      <div className="flex items-center bg-white border border-gray-300 rounded-md shadow-sm">
-                        <button
-                          type="button"
-                          onClick={() => handlePack21QuantityChange(-1)}
-                          disabled={pack21Quantity <= 0}
-                          className="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed border-r border-gray-300"
-                        >
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M20 12H4"
-                            />
-                          </svg>
-                        </button>
-                        <div className="w-16 h-10 flex items-center justify-center text-lg font-semibold text-gray-900">
-                          {pack21Quantity}
-                        </div>
-                        <button
-                          type="button"
-                          onClick={() => handlePack21QuantityChange(1)}
-                          className="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-50 border-l border-gray-300"
-                        >
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M12 4v16m8-8H4"
-                            />
-                          </svg>
-                        </button>
-                      </div>
-                      <span className="text-sm text-gray-600">
-                        ({pack21Quantity * 21} pieces)
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Order Form for Mobile */}
-              <div className="space-y-4">
-                <div className="text-center">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                    Pre Order Your Modaks
-                  </h2>
-                  <p className="text-gray-600">
-                    Fill in your details to complete the order
-                  </p>
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                {/* Product Image */}
+                <div className="aspect-square rounded-lg overflow-hidden">
+                  <img
+                    src="/modak.png"
+                    alt="Authentic Homemade Modak"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
-                <div className="space-y-4">
-                  <div>
-                    <Label htmlFor="name">Full Name *</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="Enter your full name"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="phone">Phone Number *</Label>
-                    <Input
-                      ref={phoneRefMobile}
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="Enter your phone number"
-                      required
-                      className={`${
-                        errors.phone ? "border-red-500" : ""
-                      } scroll-mt-28`}
-                    />
-                    {errors.phone && (
-                      <p className="text-red-500 text-sm mt-1">
-                        {errors.phone}
-                      </p>
-                    )}
-                  </div>
-                  <div>
-                    <Label htmlFor="email">Email Address *</Label>
-                    <Input
-                      ref={emailRefMobile}
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="Enter your email address"
-                      required
-                      className={errors.email ? "border-red-500" : ""}
-                    />
-                    {errors.email && (
-                      <p className="text-red-500 text-sm mt-1">
-                        {errors.email}
-                      </p>
-                    )}
-                  </div>
-                  <div>
-                    <Label htmlFor="address">Delivery Address *</Label>
-                    <Textarea
-                      id="address"
-                      name="address"
-                      value={formData.address}
-                      onChange={handleInputChange}
-                      placeholder="Enter your complete delivery address"
-                      rows={3}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="city">City *</Label>
-                    <Select
-                      value={formData.city}
-                      onValueChange={handleCityChange}
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select your city" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {cities.map((city) => (
-                          <SelectItem key={city} value={city}>
-                            {city}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div>
-                    <Label htmlFor="pincode">Pincode *</Label>
-                    <Input
-                      id="pincode"
-                      name="pincode"
-                      value={formData.pincode}
-                      onChange={handleInputChange}
-                      placeholder="Enter pincode"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="deliveryDate">Delivery Date *</Label>
-                    <Select
-                      value={deliveryDate}
-                      onValueChange={handleDeliveryDateChange}
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select delivery date" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {deliveryDates.map((date) => (
-                          <SelectItem key={date.value} value={date.value}>
-                            {date.label}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
+                {/* Product Description */}
+                <div className="space-y-3">
+                  <h3 className="font-semibold text-lg">Product Details:</h3>
+                  <ul className="space-y-2 text-gray-700 text-sm">
+                    <li>• Made with premium rice flour and jaggery</li>
+                    <li>• Traditional steam cooking method</li>
+                    <li>• No artificial preservatives</li>
+                    <li>• Perfect for festivals and celebrations</li>
+                    <li>• Freshly made and hygienically packed</li>
+                  </ul>
                 </div>
 
                 <Separator />
 
-                {/* Order Summary for Mobile */}
+                {/* Pack Selection */}
+                <div className="space-y-4">
+                  <div>
+                    <Label className="text-lg font-medium">
+                      Select Pack Quantities
+                    </Label>
+
+                    {/* 11-Piece Pack */}
+                    <div className="mt-4 p-4 border-2 border-orange-200 rounded-lg">
+                      <div className="flex justify-between items-center mb-3">
+                        <div>
+                          <h4 className="font-semibold text-lg">
+                            11-Piece Pack
+                          </h4>
+                          <p className="text-sm text-gray-600">₹699 per pack</p>
+                        </div>
+                        <div className="text-sm text-gray-500">
+                          Min: 2 packs
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Label className="text-sm">Qty:</Label>
+                        <div className="flex items-center bg-white border border-gray-300 rounded-md shadow-sm">
+                          <button
+                            type="button"
+                            onClick={() => handlePack11QuantityChange(-1)}
+                            disabled={pack11Quantity <= 0}
+                            className="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed border-r border-gray-300"
+                          >
+                            <svg
+                              className="w-4 h-4"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M20 12H4"
+                              />
+                            </svg>
+                          </button>
+                          <div className="w-16 h-10 flex items-center justify-center text-lg font-semibold text-gray-900">
+                            {pack11Quantity}
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => handlePack11QuantityChange(1)}
+                            className="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-50 border-l border-gray-300"
+                          >
+                            <svg
+                              className="w-4 h-4"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M12 4v16m8-8H4"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                        <span className="text-sm text-gray-600">
+                          ({pack11Quantity * 11} pieces)
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* 21-Piece Pack */}
+                    <div className="mt-4 p-4 border-2 border-orange-200 rounded-lg">
+                      <div className="flex justify-between items-center mb-3">
+                        <div>
+                          <h4 className="font-semibold text-lg">
+                            21-Piece Pack
+                          </h4>
+                          <p className="text-sm text-gray-600">
+                            ₹1299 per pack
+                          </p>
+                        </div>
+                        <div className="text-sm text-gray-500">Min: 1 pack</div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Label className="text-sm">Qty:</Label>
+                        <div className="flex items-center bg-white border border-gray-300 rounded-md shadow-sm">
+                          <button
+                            type="button"
+                            onClick={() => handlePack21QuantityChange(-1)}
+                            disabled={pack21Quantity <= 0}
+                            className="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed border-r border-gray-300"
+                          >
+                            <svg
+                              className="w-4 h-4"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M20 12H4"
+                              />
+                            </svg>
+                          </button>
+                          <div className="w-16 h-10 flex items-center justify-center text-lg font-semibold text-gray-900">
+                            {pack21Quantity}
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => handlePack21QuantityChange(1)}
+                            className="w-10 h-10 flex items-center justify-center text-gray-600 hover:bg-gray-50 border-l border-gray-300"
+                          >
+                            <svg
+                              className="w-4 h-4"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M12 4v16m8-8H4"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                        <span className="text-sm text-gray-600">
+                          ({pack21Quantity * 21} pieces)
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Card 2: Order Form */}
+            <Card className="shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl text-gray-800">
+                  Pre Order Your Modaks
+                </CardTitle>
+                <CardDescription>
+                  Fill in your details to complete the order
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <Label htmlFor="name">Full Name *</Label>
+                  <Input
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="Enter your full name"
+                    required
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="phone">Phone Number *</Label>
+                  <Input
+                    ref={phoneRefMobile}
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder="Enter your phone number"
+                    required
+                    className={`${
+                      errors.phone ? "border-red-500" : ""
+                    } scroll-mt-28`}
+                  />
+                  {errors.phone && (
+                    <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                  )}
+                </div>
+                <div>
+                  <Label htmlFor="email">Email Address *</Label>
+                  <Input
+                    ref={emailRefMobile}
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="Enter your email address"
+                    required
+                    className={errors.email ? "border-red-500" : ""}
+                  />
+                  {errors.email && (
+                    <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                  )}
+                </div>
+                <div>
+                  <Label htmlFor="address">Delivery Address *</Label>
+                  <Textarea
+                    id="address"
+                    name="address"
+                    value={formData.address}
+                    onChange={handleInputChange}
+                    placeholder="Enter your complete delivery address"
+                    rows={3}
+                    required
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="city">City *</Label>
+                  <Select
+                    value={formData.city}
+                    onValueChange={handleCityChange}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select your city" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {cities.map((city) => (
+                        <SelectItem key={city} value={city}>
+                          {city}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div>
+                  <Label htmlFor="pincode">Pincode *</Label>
+                  <Input
+                    id="pincode"
+                    name="pincode"
+                    value={formData.pincode}
+                    onChange={handleInputChange}
+                    placeholder="Enter pincode"
+                    required
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="deliveryDate">Delivery Date *</Label>
+                  <Select
+                    value={deliveryDate}
+                    onValueChange={handleDeliveryDateChange}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select delivery date" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {deliveryDates.map((date) => (
+                        <SelectItem key={date.value} value={date.value}>
+                          {date.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Card 3: Order Summary and Payment */}
+            <Card className="shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-xl text-gray-800">
+                  Order Summary & Payment
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {/* Order Summary */}
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <h3 className="font-semibold text-lg mb-3">Order Summary</h3>
-                  <div className="space-y-2">
+                  <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span>Product:</span>
                       <span>Modak</span>
@@ -794,13 +806,15 @@ const SpecialOffer: React.FC = () => {
                     <div className="flex justify-between">
                       <span>11-Piece Packs:</span>
                       <span>
-                        {pack11Quantity} packs ({pack11Quantity * 11} pieces)
+                        {pack11Quantity} packs <br />({pack11Quantity * 11}{" "}
+                        pieces)
                       </span>
                     </div>
                     <div className="flex justify-between">
                       <span>21-Piece Packs:</span>
                       <span>
-                        {pack21Quantity} packs ({pack21Quantity * 21} pieces)
+                        {pack21Quantity} packs <br />({pack21Quantity * 21}{" "}
+                        pieces)
                       </span>
                     </div>
                     <div className="flex justify-between">
@@ -836,7 +850,7 @@ const SpecialOffer: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Order Button for Mobile */}
+                {/* Order Button */}
                 <Button
                   onClick={handleOrder}
                   disabled={loading}
@@ -852,8 +866,8 @@ const SpecialOffer: React.FC = () => {
                   * All fields are required. Payment will be processed securely
                   through Razorpay.
                 </p>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Desktop Layout - With Cards */}
@@ -1286,9 +1300,9 @@ const SpecialOffer: React.FC = () => {
                         <h3 className="text-base font-semibold text-gray-800">
                           Order on Zomato
                         </h3>
-                        <p className="text-xs text-gray-500">
+                        {/* <p className="text-xs text-gray-500">
                           Typically 30–45 mins
-                        </p>
+                        </p> */}
                       </div>
                     </div>
                     <svg
@@ -1327,9 +1341,9 @@ const SpecialOffer: React.FC = () => {
                         <h3 className="text-base font-semibold text-gray-800">
                           Order on Swiggy
                         </h3>
-                        <p className="text-xs text-gray-500">
+                        {/* <p className="text-xs text-gray-500">
                           Typically 25–40 mins
-                        </p>
+                        </p> */}
                       </div>
                     </div>
                     <svg
@@ -1362,7 +1376,7 @@ const SpecialOffer: React.FC = () => {
               <p className="text-center text-sm text-gray-800">
                 or order from our brands on
                 <br className="sm:hidden" />
-                <span className="font-medium">Zomato</span> and{" "}
+                <span className="font-medium"> Zomato</span> and{" "}
                 <span className="font-medium">Swiggy</span>
               </p>
               <div className="h-px flex-1 bg-orange-200" />
@@ -1389,6 +1403,18 @@ const SpecialOffer: React.FC = () => {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* View Order History Button */}
+          <div className="mt-8 text-center">
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={() => navigate("/order-history")}
+              className="text-orange-600 border-orange-200 hover:bg-orange-50 px-8 py-3"
+            >
+              📋 View Order History
+            </Button>
           </div>
         </div>
       </div>

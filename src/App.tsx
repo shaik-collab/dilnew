@@ -13,6 +13,7 @@ import TermsOfService from "./pages/TermsOfService";
 import DeleteData from "./pages/DeleteData";
 import SpecialOffer from "./pages/SpecialOffer";
 import ThankYou from "./pages/ThankYou";
+import OrderHistory from "./pages/OrderHistory";
 
 const queryClient = new QueryClient();
 
@@ -115,6 +116,7 @@ const App = () => {
             <Route path="/delete-data" element={<DeleteData />} />
             <Route path="/special-offer" element={<SpecialOffer />} />
             <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/order-history" element={<OrderHistory />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

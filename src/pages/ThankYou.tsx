@@ -421,19 +421,31 @@ const ThankYou: React.FC = () => {
             </h3>
             <div className="grid md:grid-cols-3 gap-4 text-center">
               <div>
-                <div className="text-2xl mb-2">📞</div>
-                <p className="font-semibold">Call Us</p>
-                <p className="text-gray-600">+91 6366960723</p>
+                <div className="text-2xl mb-2">📱</div>
+                <p className="font-semibold">WhatsApp Us</p>
+                <Button
+                  onClick={() => {
+                    const phoneNumber = "916366960723";
+                    const message = "Hi! I need help with my modak order.";
+                    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+                      message
+                    )}`;
+                    window.open(whatsappUrl, "_blank");
+                  }}
+                  className="bg-green-600 hover:bg-green-700 text-white mt-2"
+                >
+                  📱 WhatsApp Us
+                </Button>
               </div>
               <div>
                 <div className="text-2xl mb-2">✉️</div>
                 <p className="font-semibold">Email Us</p>
-                <p className="text-gray-600">marketing.dil@dilfoods.in</p>
+                <p className="text-gray-600">support@dilfoods.in</p>
               </div>
               <div>
                 <div className="text-2xl mb-2">🕒</div>
                 <p className="font-semibold">Business Hours</p>
-                <p className="text-gray-600">9:00 AM - 6:00 PM</p>
+                <p className="text-gray-600">10:00 AM - 7:00 PM</p>
               </div>
             </div>
           </div>
