@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -7,10 +7,13 @@ import CounterAnimation from "../components/CounterAnimation";
 import BrandCard from "../components/BrandCard";
 import CityMap from "../components/CityMap";
 import LazyImage from "../components/LazyImage";
-import { ArrowRight, ChevronRight, Heart } from "lucide-react";
+import { ArrowRight, ChevronRight, Heart, ChevronLeft } from "lucide-react";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState<string>("");
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const domain = window.location.hostname;
   console.log(domain);
@@ -39,46 +42,78 @@ const Index = () => {
   }, []);
 
   const brands = [
+    // {
+    //   name: "The Junglee Kitchen",
+    //   // logo: "/lovable-uploads/junglee logo.png",
+    //   route: "/junglee-kitchen",
+    // },
+    {
+      name: "Bhole ke Chole",
+      logo: "/lovable-uploads/cdf67c56-7bd7-4023-af81-bf258fe60fe3.png",
+      route: "/bhole-ke-chole",
+    },
     {
       name: "Aahar",
       logo: "/lovable-uploads/55d6ad50-361d-42cd-b556-c283b2ee23e4.png",
+      route: "/aahar",
+    },
+    {
+      name: "Junglee Kitchen",
+      logo: "/lovable-uploads/junglee logo.png",
+      route: "/junglee-kitchen",
     },
     {
       name: "House Of Andhra",
       logo: "/lovable-uploads/1310a9da-ccbe-4fa6-bc06-51441a0872ba.png",
+      route: "/house-of-andhra",
     },
     {
       name: "Dil Punjabi Daily",
-      logo: "/lovable-uploads/dpd_logo.png",
+      logo: "/lovable-uploads/DIL_daily_new.png",
+      route: "/dil-punjabi-daily",
     },
-    {
-      name: "Bhole ke Chole",
-      logo: "/lovable-uploads/cdf67c56-7bd7-4023-af81-bf258fe60fe3.png",
-    },
+    // {
+    //   name: "Bhole ke Chole",
+    //   logo: "/lovable-uploads/cdf67c56-7bd7-4023-af81-bf258fe60fe3.png",
+    //   route: "/bhole-ke-chole",
+    // },
+    // {
+    //   name: "Nagada",
+    //   logo: "/lovable-uploads/b7f77f5d-c32a-4b73-9673-c4572c649bf4.png",
+    //   route: "/nagada",
+    // },
     {
       name: "Khichdi Bar",
       logo: "/lovable-uploads/235a933c-2973-43db-8419-1bc689100f0a.png",
+      route: "/khichdi-bar",
     },
-    {
-      name: "Nagada",
-      logo: "/lovable-uploads/b7f77f5d-c32a-4b73-9673-c4572c649bf4.png",
-    },
-    {
-      name: "All Things Fried",
-      logo: "/lovable-uploads/981bf596-8923-43ae-950d-88e254903acf.png",
-    },
+    
+    // {
+    //   name: "All Things Fried",
+    //   logo: "/lovable-uploads/981bf596-8923-43ae-950d-88e254903acf.png",
+    //   route: "/all-things-fried",
+    // },
     {
       name: "The Chaat Cult",
       logo: "/lovable-uploads/tcc.png",
+      route: "/the-chaat-cult",
+    },
+    
+    {
+      name: "VegeRAMA",
+      logo: "/lovable-uploads/vegerama_new-Photoroom.png",
+      route: "/vegerama",
     },
     {
       name: "Bihari Bowl",
       logo: "/lovable-uploads/bb_logo.png",
+      route: "/bihari-bowl",
     },
-    {
-      name: "VegeRAMA",
-      logo: "/lovable-uploads/vegerama_logo.png",
-    },
+    // {
+    //   name: "Junglee Kitchen",
+    //   logo: "/lovable-uploads/junglee logo.png",
+    //   route: "/junglee-kitchen",
+    // },
   ];
 
   const [showLovedByText, setShowLovedByText] = useState(false);
@@ -102,7 +137,7 @@ const Index = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 md:mb-16 animate-fadeInUp">
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-purple-red md:pb-1">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-purple-red md:pb-1 font-heading">
               India's largest truly virtual brands chain
             </h1>
             <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
@@ -217,16 +252,40 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Brand Logos Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8 max-w-5xl mx-auto">
+          {/* Brand Logos Enhanced Wave Pattern */}
+          <div className="flex justify-center items-start gap-3 md:gap-4 lg:gap-6 max-w-full mx-auto px-2 md:px-4">
             {brands.map((brand, index) => (
-              <BrandCard
-                key={index}
-                logo={brand.logo}
-                name={brand.name}
-                color={index % 2 === 0 ? "yellow" : "purple"}
-                link="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
-              />
+              <div 
+                key={index} 
+                className={`w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 flex-shrink-0 transition-all duration-500 ease-in-out hover:scale-150 hover:rotate-6 hover:z-20 group cursor-pointer ${
+                  index % 2 === 1 ? 'mt-6 md:mt-10 lg:mt-12' : 'mt-0'
+                }`}
+                style={{
+                  filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.15))',
+                  animationDelay: `${index * 200}ms`,
+                  animationDuration: '4s'
+                }}
+              >
+                <div className="relative">
+                  {/* Enhanced glow effect - only for yellow logos */}
+                  {index % 2 === 0 && (
+                    <div className="absolute inset-0 rounded-full blur-sm opacity-20 transition-all duration-500 group-hover:opacity-80 group-hover:blur-md bg-gradient-yellow-orange"></div>
+                  )}
+                  
+                  <BrandCard
+                    logo={brand.logo}
+                    name={brand.name}
+                    color={index % 2 === 0 ? "yellow" : "transparent"}
+                    link={
+                      (brand as any).route
+                        ? (brand as any).route
+                        : "https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
+                    }
+                    internalRoute={!!(brand as any).route}
+                    className={`relative z-10 ${index % 2 === 1 ? 'bg-gradient-to-br from-orange-300 to-orange-400 border border-orange-400' : ''}`}
+                  />
+                </div>
+              </div>
             ))}
           </div>
 
@@ -346,3 +405,4 @@ const Index = () => {
 };
 
 export default Index;
+

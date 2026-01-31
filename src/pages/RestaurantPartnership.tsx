@@ -226,7 +226,7 @@ const RestaurantPartnership = () => {
       name: "Dil Foods",
       logo: "/lovable-uploads/981bf596-8923-43ae-950d-88e254903acf.png",
     },
-    { name: "Dil Punjabi Daily", logo: "/lovable-uploads/vegerama_logo.png" },
+    { name: "Dil Punjabi Daily", logo: "/lovable-uploads/vegerama_new-Photoroom.png" },
     {
       name: "Bowled Over",
       logo: "/lovable-uploads/fde1b960-d52b-4beb-bf58-bb7c457abca9.png",

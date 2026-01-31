@@ -21,6 +21,8 @@ export default {
 			fontFamily: {
 				sans: ["Inter", "sans-serif"],
 				heading: ["Montserrat", "sans-serif"],
+				display: ['Playfair Display', 'serif'],
+				body: ['Lato', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -77,6 +79,87 @@ export default {
 					beige: "#F5F5DC",
 					peach: "#FDE1D3",
 					lightPeach: "#fcf7ee",
+				},
+				// Bhole ke Chole brand colors - Vibrant street food palette
+				bhole: {
+					pink: "#E91E63", // Brand Pink - more vibrant, logo-accurate
+					saffron: "#FF8F00", // Warm Saffron - appetizing alternative to yellow
+					cream: "#FFF8F0", // Soft Cream - warm backgrounds  
+					lightPink: "#FCE4EC", // Light Pink - subtle accents
+					mutedPink: "#F06292", // Muted Pink - secondary elements
+					orange: "#FF6B35", // Rich Orange - CTA gradients
+					spiceBrown: "#8D4E27", // Spice Brown - authentic street food feel
+					freshGreen: "#4CAF50", // Fresh Green - success states
+					charcoal: "#2C2C2C", // Deep Charcoal - better readability
+				},
+				// House of Andhra brand colors - Royal heritage palette
+				andhra: {
+					royalMaroon: "#8B3A3A", // Royal Maroon - logo-accurate, traditional
+					spiceRed: "#B22222", // Spice Red - authentic chili red
+					deepBurgundy: "#722F37", // Deep Burgundy - darker maroon for depth
+					lightMaroon: "#CD5C5C", // Light Maroon - softer accents
+					warmIvory: "#FFF8DC", // Warm Ivory - classic, elegant backgrounds
+					traditionalCream: "#F5F5DC", // Traditional Cream - heritage feel
+					warmBeige: "#F7E7CE", // Warm Beige - subtle backgrounds
+					paprikaOrange: "#D2691E", // Paprika Orange - spice-inspired accent
+					turmericGold: "#DAA520", // Turmeric Gold - traditional spice color
+					curryLeafGreen: "#228B22", // Curry Leaf Green - fresh, authentic
+					darkCharcoal: "#2F2F2F", // Dark Charcoal - refined text
+				},
+				// Dil Punjabi Daily brand colors - Celebratory pink-teal palette
+				dilDaily: {
+					dilPink: "#E91E63", // Primary - logo-accurate vibrant magenta
+					richTeal: "#20B2AA", // Secondary - logo-accurate turquoise
+					heartRed: "#DC143C", // Gradient accent from "Dil"
+					lightPink: "#FFE4E6", // Subtle pink backgrounds
+					warmCream: "#FFF8DC", // Main backgrounds
+					celebrationGold: "#FFD700", // Festive accent - Punjabi spirit
+					pureWhite: "#FFFFFF", // Clean contrast
+					darkCharcoal: "#2F2F2F", // Readable text
+				},
+				// Nagada brand colors - Premium golden-orange palette
+				nagada: {
+					goldenOrange: "#F57B00", // Primary - logo-accurate main color
+					warmGold: "#FFD700", // Secondary - celebratory accent
+					richBronze: "#CD7F32", // Deeper golden tone for depth
+					lightGold: "#FFF9E6", // Subtle golden backgrounds
+					elegantCream: "#FFF8DC", // Main backgrounds
+					deepCharcoal: "#1A1A1A", // Sophisticated text
+					pureWhite: "#FFFFFF", // Clean contrast
+					premiumBlack: "#000000", // Logo-accurate black
+				},
+				// Khichdi Bar brand colors - Natural wholesome palette
+				khichdiBar: {
+					forestGreen: "#2E7D32", // Primary - logo-accurate "khichdi" text
+					warmOrange: "#FF8F00", // Secondary - logo-accurate "Bar" text
+					lightGreen: "#E8F5E8", // Subtle green backgrounds
+					softOrange: "#FFE0B2", // Light orange accents
+					naturalCream: "#F9F7ED", // Main backgrounds
+					deepBrown: "#4B2C20", // Earthy, natural text
+					pureWhite: "#FFFFFF", // Clean contrast
+				},
+				// Junglee Kitchen brand colors - Food palette
+				jungle: {
+					beige: 'hsl(var(--jungle-beige))',
+					brown: 'hsl(var(--jungle-brown))',
+					gold: 'hsl(var(--jungle-gold))',
+					'brown-dark': 'hsl(var(--jungle-brown-dark))',
+					'brown-light': 'hsl(var(--jungle-brown-light))',
+					'beige-light': 'hsl(var(--jungle-beige-light))',
+					'beige-dark': 'hsl(var(--jungle-beige-dark))',
+					// Legacy support
+					dark: 'hsl(var(--jungle-dark))',
+					medium: 'hsl(var(--jungle-medium))',
+					light: 'hsl(var(--jungle-light))',
+				},
+				terracotta: {
+					DEFAULT: 'hsl(var(--terracotta))',
+					dark: 'hsl(var(--terracotta-dark))',
+				},
+				saffron: 'hsl(var(--saffron))',
+				cream: {
+					DEFAULT: 'hsl(var(--cream))',
+					dark: 'hsl(var(--cream-dark))',
 				}
 			},
 			borderRadius: {
@@ -200,6 +283,17 @@ export default {
 				'gradient-yellow-orange': 'linear-gradient(135deg, #FFD700 0%, #F97316 100%)',
 				'gradient-orange-yellow': 'linear-gradient(135deg, #F97316 0%, #FFD700 100%)',
 				'gradient-soft-yellow-orange': 'linear-gradient(135deg, #FEF7CD 0%, #FEC6A1 100%)',
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-section': 'var(--gradient-section)',
+				'gradient-accent': 'var(--gradient-accent)',
+				'gradient-jungle': 'var(--gradient-jungle)',
+				'gradient-food': 'var(--gradient-food)',
+			},
+			boxShadow: {
+				'soft': 'var(--shadow-soft)',
+				'medium': 'var(--shadow-medium)',
+				'strong': 'var(--shadow-strong)',
+				'glow': 'var(--shadow-glow)',
 			}
 		}
 	},

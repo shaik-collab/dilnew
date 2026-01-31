@@ -14,6 +14,17 @@ import DeleteData from "./pages/DeleteData";
 import SpecialOffer from "./pages/SpecialOffer";
 import ThankYou from "./pages/ThankYou";
 import OrderHistory from "./pages/OrderHistory";
+import JungleeKitchen from "./pages/JungleeKitchen";
+import Aahar from "./pages/Aahar";
+import HouseOfAndhra from "./pages/HouseOfAndhra";
+import DilPunjabiDaily from "./pages/DilPunjabiDaily";
+import BholeKeChole from "./pages/BholeKeChole";
+import KhichdiBar from "./pages/KhichdiBar";
+import Nagada from "./pages/Nagada";
+import AllThingsFried from "./pages/AllThingsFried";
+import TheChaatCult from "./pages/TheChaatCult";
+import BihariBowl from "./pages/BihariBowl";
+import VegeRAMA from "./pages/VegeRAMA";
 
 const queryClient = new QueryClient();
 
@@ -117,6 +128,17 @@ const App = () => {
             <Route path="/special-offer" element={<SpecialOffer />} />
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="/order-history" element={<OrderHistory />} />
+            <Route path="/junglee-kitchen" element={<JungleeKitchen />} />
+            <Route path="/aahar" element={<Aahar />} />
+            <Route path="/house-of-andhra" element={<HouseOfAndhra />} />
+            <Route path="/dil-punjabi-daily" element={<DilPunjabiDaily />} />
+            <Route path="/bhole-ke-chole" element={<BholeKeChole />} />
+            <Route path="/khichdi-bar" element={<KhichdiBar />} />
+            <Route path="/nagada" element={<Nagada />} />
+            <Route path="/all-things-fried" element={<AllThingsFried />} />
+            <Route path="/the-chaat-cult" element={<TheChaatCult />} />
+            <Route path="/bihari-bowl" element={<BihariBowl />} />
+            <Route path="/vegerama" element={<VegeRAMA />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
