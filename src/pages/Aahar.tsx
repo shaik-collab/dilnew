@@ -32,25 +32,25 @@ const Aahar = () => {
   const menuItems = [
     {
       name: "Steamed Idli (2 Pcs)",
-      image: "/Aahar/Steamed_Idli_2_Pcs.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Aahar/Steamed_Idli_2_Pcs.jpg",
       description: "Soft and fluffy steamed idlis served with coconut chutney and sambar - the perfect South Indian comfort food",
       badge: "Bestseller",
     },
     {
       name: "Thatte Idli (1 Pc)",
-      image: "/Aahar/Thatte_Idli_1_Pc.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Aahar/Thatte_Idli_1_Pc.jpg",
       description: "Large, plate-sized Karnataka special idli, soft and spongy, served with traditional accompaniments",
       badge: "Signature",
     },
     {
       name: "Thatte Idli + Medu Vada Combo",
-      image: "/Aahar/Thatte_Idli_1_Pcs_1_Medu_Vada.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Aahar/Thatte_Idli_1_Pcs_1_Medu_Vada.png",
       description: "Perfect combination of soft thatte idli with crispy medu vada, served with chutney and sambar",
       badge: "Popular",
     },
     {
       name: "Dip Idli with Sambhar (2 Pcs)",
-      image: "/Aahar/Dip_Idli_Sambhar_2Pcs_Chutney_100_ML.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Aahar/Dip_Idli_Sambhar_2Pcs_Chutney_100_ML.png",
       description: "Soft idlis served with flavorful sambar for dipping and coconut chutney - a traditional South Indian delight",
       badge: "Traditional",
     },
@@ -62,31 +62,31 @@ const Aahar = () => {
     // },
     {
       name: "Onion Uttapam",
-      image: "/Aahar/Onion_Uttapam.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Aahar/Onion_Uttapam.jpg",
       description: "Thick, fluffy South Indian pancake topped with fresh onions and served with chutney and sambar",
       badge: "Popular",
     },
     {
       name: "Bisi Bele Bath (500 ML)",
-      image: "/Aahar/Bisi_Bele_Bath_500_ML.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Aahar/Bisi_Bele_Bath_500_ML.jpg",
       description: "Karnataka's famous one-pot meal with rice, lentils, vegetables and aromatic spices - comfort in every spoonful",
       badge: "Specialty",
     },
     {
       name: "Lemon Rice with Chutney (500 ML)",
-      image: "/Aahar/Lemon_Rice_500_ML_Chutney_100_ML.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Aahar/Lemon_Rice_500_ML_Chutney_100_ML.jpg",
       description: "Tangy and flavorful lemon rice tempered with curry leaves and spices, served with coconut chutney",
       badge: "Chef's Special",
     },
     {
       name: "Ghee Pongal (250 ML)",
-      image: "/Aahar/Ghee_Pongal_250_ML.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Aahar/Ghee_Pongal_250_ML.jpg",
       description: "Creamy and comforting rice and lentil dish cooked with ghee and spices - pure indulgence",
       badge: "Traditional",
     },
     // {
     //   name: "Rice of the Day (500 ML)",
-    //   image: "/Aahar/Rice_Of_The_Day_500_ML.jpg",
+    //   image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Aahar/Rice_Of_The_Day_500_ML.jpg",
     //   description: "Chef's daily special rice preparation with seasonal vegetables and authentic South Indian flavors",
     //   badge: "Daily Special",
     // },
@@ -266,7 +266,7 @@ const Aahar = () => {
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/Aahar/Aahar Display image - Swiggy.png"
+            src="https://dilwebsite.s3.ap-south-1.amazonaws.com/Aahar/Aahar Display image - Swiggy.png"
             alt="Traditional Indian Feast - Aahar"
             className="w-full h-full object-cover object-center"
           />
@@ -312,7 +312,7 @@ const Aahar = () => {
             <div className="relative flex justify-center">
               <div className="relative w-full max-w-lg aspect-[4/3] rounded-2xl overflow-hidden shadow-strong bg-[#F4A460]/20">
                 <img
-                  src="/Aahar/Aahar Display image - Swiggy.png"
+                  src="https://dilwebsite.s3.ap-south-1.amazonaws.com/Aahar/Aahar Display image - Swiggy.png"
                   alt="South Indian Heritage - Aahar"
                   className="w-full h-full object-cover object-center"
                 />

@@ -220,7 +220,7 @@ const Nagada = () => {
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/Nagada/Butter Chicken Roll.jpg"
+            src="https://dilwebsite.s3.ap-south-1.amazonaws.com/Nagada/Butter Chicken Roll.jpg"
             alt="Traditional Feast - Nagada"
             className="w-full h-full object-cover object-center"
           />

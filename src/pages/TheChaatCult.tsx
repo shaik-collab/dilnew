@@ -76,97 +76,97 @@ const TheChaatCult = () => {
   const menuItems = [
     {
       name: "Pani Puri",
-      image: "/TCC/Pani Puri 004428.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/Pani Puri 004428.jpg",
       description: "Crisp puris filled with spicy potato mix and tangy flavored water, a refreshing and fun treat",
       badge: "Bestseller",
     },
     {
       name: "Samosa Chole Chaat",
-      image: "/TCC/Samosa Chole Chaat  004340.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/Samosa Chole Chaat  004340.jpg",
       description: "Golden-fried samosas crushed and layered with spicy chole, tangy chutneys, onions, and crunchy sev, a street-style delight in every bite",
       badge: "Signature",
     },
     {
       name: "Dahi Puri",
-      image: "/TCC/Dahi puri 004485.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/Dahi puri 004485.jpg",
       description: "Crisp puris filled with potato, curd, and chutneys, a burst of sweet, spicy, and tangy flavors",
       badge: "Popular",
     },
     {
       name: "Ragda Papdi Chaat",
-      image: "/TCC/Ragda Papdi Chaat top shot 004568.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/Ragda Papdi Chaat top shot 004568.jpg",
       description: "Papdi topped with ragda, curd, chutneys, and sev, a mix of textures and bold flavors",
       badge: "Traditional",
     },
     {
       name: "Pav Bhaji",
-      image: "/TCC/Pav bhaji 004733.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/Pav bhaji 004733.jpg",
       description: "Butter Pav with bhaji, served with chopped onion and tomato",
       badge: "Mumbai Special",
     },
     {
       name: "Cheese Pav Bhaji",
-      image: "/TCC/Cheese Pav bhaji 004737.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/Cheese Pav bhaji 004737.jpg",
       description: "Piping hot gravy made up of mashed vegetables, tomatoes and onion topped with cheese, served with buttery pav and onions",
       badge: "Cheesy Favorite",
     },
     {
-      name: "Samosa + Chai Combo",
-      image: "/TCC/Samosa (2pc)  + Chai 004099.jpg",
+      name: "Samosa + Chai",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/Samosa+(2pc)++%2B+Chai+004099.jpg",
       description: "Golden-fried samosa served with flavorful chutneys, complemented by a warm cup of chai for a comforting break",
       badge: "Tea Time",
     },
     {
       name: "Samosa Pav + Chai",
-      image: "/TCC/Samosa Pav + Chai 004203.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/Samosa+Pav+%2B+Chai+004203.jpg",
       description: "Samosa tucked inside a soft pav, served with spicy green chutney and tangy imly chutney, a desi street-style favorite",
       badge: "Fusion Special",
     },
     {
       name: "Veg Chop",
-      image: "/TCC/veg Chop 004163.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/veg Chop 004163.jpg",
       description: "Four crispy Bengali-style vegetable chops made with beetroot, potato, and spices, earthy and flavorful",
       badge: "Bengali Style",
     },
     {
       name: "Peri Peri Veg Chop",
-      image: "/TCC/Peri Peri Veg chop 004174.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/Peri Peri Veg chop 004174.jpg",
       description: "Four veg chops infused with peri peri spice, a fiery twist on the classic Bengali favorite",
       badge: "Spicy Twist",
     },
     {
       name: "Veg Chop Pav + Chai",
-      image: "/TCC/Veg chop pav + Chai 004267.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/Veg+chop+pav+%2B+Chai+004267.jpg",
       description: "A veg chop placed in a pav, served with chutneys, crunchy, flavorful, and satisfying",
       badge: "Street Slider",
     },
     {
       name: "Litti Chokha Combo",
-      image: "/TCC/Litti Chokha 004749.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/Litti Chokha 004749.jpg",
       description: "Sattu-stuffed littis served with mashed spiced chokha made from roasted eggplant, potato, and tomato, a rustic and flavorful regional dish",
       badge: "Bihari Special",
     },
     {
       name: "Litti with Aloo Sabji",
-      image: "/TCC/Litti + aloo sabji top shot 004757.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/Litti+%2B+aloo+sabji+top+shot+004757.jpg",
       description: "Baked littis stuffed with spiced sattu, served with flavorful aloo sabji, a rustic and satisfying regional favorite",
       badge: "Traditional",
     },
     {
       name: "Kulcha Bhaji",
-      image: "/TCC/Kulcha Bhaji 004783.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/Kulcha Bhaji 004783.jpg",
       description: "Soft bread kulches served with flavorful bhaji, a hearty and satisfying plate",
       badge: "Comfort Food",
     },
     {
-      name: "Samosa Kadhi Combo",
-      image: "/TCC/Samosa + Kadi 004818.jpg",
+      name: "Samosa Kadhi",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/Samosa+%2B+Kadi+004818.jpg",
       description: "A crispy samosa served mildly spiced kadhi, topped with fresh coriander, a unique and flavorful twist on traditional comfort food",
       badge: "Unique Combo",
     },
     {
       name: "Peri Peri Samosa + Chai",
-      image: "/TCC/Peri Peri Samosa + Chai 004117.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/Peri+Peri+Samosa+%2B+Chai+004117.jpg",
       description: "Crispy samosas with a zesty peri peri twist, served with green chutney and tangy imly chutney sachets, a bold take on a classic snack",
       badge: "Spicy Special",
     },
@@ -344,7 +344,7 @@ const TheChaatCult = () => {
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/TCC/The Chaat Cult Display image - Swiggy.png"
+            src="https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/The Chaat Cult Display image - Swiggy.png"
             alt="Street Food Feast - The Chaat Cult"
             className="w-full h-full object-cover object-center"
           />
@@ -391,7 +391,7 @@ const TheChaatCult = () => {
             <div className="relative flex justify-center">
               <div className="relative w-full max-w-lg aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-[#e8e73e]/20">
                 <img
-                  src="/TCC/The Chaat Cult Display image - Swiggy.png"
+                  src="https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/The Chaat Cult Display image - Swiggy.png"
                   alt="Street Food Heritage - The Chaat Cult"
                   className="w-full h-full object-cover object-center"
                 />

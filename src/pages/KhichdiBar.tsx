@@ -76,73 +76,73 @@ const KhichdiBar = () => {
   const menuItems = [
     {
       name: "Plain Dal Khichdi",
-      image: "/Khichdi Bar/Plain Dal Khichdi.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi Bar/Plain Dal Khichdi.jpg",
       description: "Classic comfort food with rice and lentils. Served with ghee, chili garlic chutney, curd, and farsan. Lightly seasoned and soothing, great for any time of day.",
       badge: "Bestseller",
     },
     {
       name: "Simple Vegetable Khichdi",
-      image: "/Khichdi Bar/Simple Vegetable Khichdi.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi Bar/Simple Vegetable Khichdi.jpg",
       description: "A healthy mix of rice, lentils, and vegetables. Served with ghee, chili garlic chutney, curd, and farsan. Simple, nutritious, and perfect for a balanced meal.",
       badge: "Popular",
     },
     {
       name: "Butter Garlic Khichdi",
-      image: "/Khichdi Bar/Butter Garlic Khichdi.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi Bar/Butter Garlic Khichdi.jpg",
       description: "A creamy, buttery khichdi with a hint of garlic that will remind you of ghar ka khana. Served with ghee, chili garlic chutney, curd, and farsan for a wholesome experience.",
       badge: "Signature",
     },
     {
       name: "Rajasthani Dal Papad Khichdi",
-      image: "/Khichdi Bar/Rajasthani Dal Papad .jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi Bar/Rajasthani Dal Papad .jpg",
       description: "Savor the bold flavors of Rajasthan in this spiced khichdi blended with papad. Served with ghee, chutney, curd, and farsan for a hearty, regional delight.",
       badge: "Regional Special",
     },
     {
       name: "Peri-Peri Khichdi",
-      image: "/Khichdi Bar/Peri Peri .jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi Bar/Peri Peri .jpg",
       description: "A fiery twist on comfort food this zesty peri-peri flavored khichdi is bold, flavorful, and satisfying. Served with ghee, chutney, curd, and farsan for a balanced meal with a spicy edge.",
       badge: "Spicy Special",
     },
     {
       name: "Punjabi Kadhi Pakoda Khichdi",
-      image: "/Khichdi Bar/Punjabi Kadhi Pakoda Khichdi - High Protein.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi Bar/Punjabi Kadhi Pakoda Khichdi - High Protein.jpg",
       description: "Creamy, tangy Punjabi kadhi with crispy pakodas, blended into comforting rice khichdi. Served with ghee, chutney, curd, and farsan, rich in flavor and deeply satisfying.",
       badge: "High Protein",
     },
     {
       name: "Butter Garlic Palak Khichdi",
-      image: "/Khichdi Bar/Butter Garlic Palak Khichdi.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi Bar/Butter Garlic Palak Khichdi.jpg",
       description: "Creamy, buttery khichdi with a hint of garlic your comfort food, elevated. Served with ghee, chutney, curd, and palak for a flavorful meal that feels just like home.",
       badge: "Healthy Choice",
     },
     {
       name: "Classic Curd Rice",
-      image: "/Khichdi Bar/Classic Curd Rice.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi Bar/Classic Curd Rice.jpg",
       description: "Wholesome meal of creamy curd rice, tempered with mustard seeds, curry leaves, Hing and red chilly. Offering a cooling balance to a spicy meal.",
       badge: "South Indian",
     },
     {
       name: "Pepper Rasam Rice Mix",
-      image: "/Khichdi Bar/Pepper Rasam Rice Mix.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi Bar/Pepper Rasam Rice Mix.jpg",
       description: "Savour our tangy Pepper Rasam mixed with steamed rice, served with ghee, chutney and Sev. It's a soul-soothing meal, perfect for any time of the day.",
       badge: "Traditional",
     },
     {
       name: "Kadhi Pakoda Rice Meal",
-      image: "/Khichdi Bar/Kadhi Pakoda Rice Meal.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi Bar/Kadhi Pakoda Rice Meal.jpg",
       description: "Flavorful Punjabi kadhi with crispy onion pakodas, served alongside steamed rice, chutney, curd, chatpata sev, and a ghee sachet. A tangy twist on a traditional favorite.",
       badge: "Comfort Special",
     },
     {
       name: "Suji Ka Halwa",
-      image: "/Khichdi Bar/Suji Ka Halwa (150ml).jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi Bar/Suji Ka Halwa (150ml).jpg",
       description: "Our special homemade Suji Ka Halwa, filled with deliciousness and loaded with droplets of ghee. Every bite is a sweet pleasure, all in a completely desi style!",
       badge: "Sweet Treat",
     },
     {
       name: "Gulab Jamun",
-      image: "/Khichdi Bar/Gulab jamun.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi Bar/Gulab jamun.jpg",
       description: "Soft, plump, with loads of syrup - Gulab Jamun just the way you like it. There is nothing else in our Gulab jamun than authenticity and love.",
       badge: "Classic Sweet",
     },
@@ -318,7 +318,7 @@ const KhichdiBar = () => {
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/Khichdi Bar/Rajasthani Dal Papad .jpg"
+            src="https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi Bar/Rajasthani Dal Papad .jpg"
             alt="Comfort Food Feast - Khichdi Bar"
             className="w-full h-full object-cover object-center"
           />
@@ -365,7 +365,7 @@ const KhichdiBar = () => {
             <div className="relative flex justify-center">
               <div className="relative w-full max-w-lg aspect-[4/3] rounded-2xl overflow-hidden shadow-strong bg-secondary/20">
                 <img
-                  src="/Khichdi Bar/Rajasthani Dal Papad .jpg"
+                  src="https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi Bar/Rajasthani Dal Papad .jpg"
                   alt="Comfort Heritage - Khichdi Bar"
                   className="w-full h-full object-cover object-center"
                 />

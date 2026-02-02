@@ -33,67 +33,67 @@ const HouseOfAndhra = () => {
     // VEGETARIAN ITEMS (11 items - 50%)
     {
       name: "Gutti Vankaya",
-      image: "/HOA/Gutti Venkaya (Brinjal).jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/Gutti Venkaya (Brinjal).jpg",
       description: "Traditional Andhra stuffed brinjal cooked with tangy tamarind and aromatic spices",
       badge: "Signature",
     },
     {
       name: "Andhra Style Paneer Ghee Rice Bowl",
-      image: "/HOA/Andhra Style Paneer Ghee Rice Bowl.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/Andhra Style Paneer Ghee Rice Bowl.jpg",
       description: "Flavorful ghee rice bowl topped with spicy Andhra style paneer curry",
       badge: "Vegetarian",
     },
     {
       name: "Andhra Chilli Paneer",
-      image: "/HOA/Andhra Chilli paneer.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/Andhra Chilli paneer.jpg",
       description: "Crispy paneer cooked with fiery Andhra chilies and traditional spices",
       badge: "Spicy",
     },
     {
       name: "Andhra Chilli Soya Chaap",
-      image: "/HOA/Andhra Chilli Soya Chaap .jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/Andhra Chilli Soya Chaap .jpg",
       description: "Tender soya chaap cooked with authentic Andhra spices and red chilies",
       badge: "Vegetarian",
     },
     {
       name: "Curd Rice",
-      image: "/HOA/Curd Rice (500 ml).jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/Curd Rice (500 ml).jpg",
       description: "Classic South Indian curd rice, creamy and comforting",
       badge: "Classic",
     },
     {
       name: "Ghee Podi Mini Idlis",
-      image: "/HOA/Ghee Podi Mini Idlis (Tossed).jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/Ghee Podi Mini Idlis (Tossed).jpg",
       description: "Mini idlis tossed in ghee and spicy podi powder, a perfect snack",
       badge: "Traditional",
     },
     {
       name: "Ghee Roast Mini Idlis",
-      image: "/HOA/Ghee Roast Mini Idlis (Tossed).jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/Ghee Roast Mini Idlis (Tossed).jpg",
       description: "Mini idlis roasted in ghee with aromatic spices, crispy and flavorful",
       badge: "Popular",
     },
     {
       name: "Vegetable Sambar Rice Bowl",
-      image: "/HOA/Sambar Rice Bowl with Pepper Chicken .jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/Sambar Rice Bowl with Pepper Chicken .jpg",
       description: "Traditional sambar rice with mixed vegetables and authentic Andhra spices",
       badge: "Healthy",
     },
     {
       name: "Vegetarian Rasam Rice Bowl",
-      image: "/HOA/Copy of Rasam Rice with Pepper Chicken.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/Copy of Rasam Rice with Pepper Chicken.jpg",
       description: "Tangy rasam rice with traditional South Indian flavors, light and comforting",
       badge: "Light Meal",
     },
     {
       name: "Andhra Veg Curry Rice Bowl",
-      image: "/HOA/Andhra Style Chicken Ghee Rice Bowl.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/Andhra Style Chicken Ghee Rice Bowl.jpg",
       description: "Aromatic ghee rice bowl topped with spicy Andhra style mixed vegetable curry",
       badge: "Vegetarian",
     },
     {
       name: "Paneer Ghee Rice",
-      image: "/HOA/gunter chicken ghee rice-1.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/gunter chicken ghee rice-1.jpg",
       description: "Fragrant ghee rice topped with spicy Andhra paneer curry, rich and flavorful",
       badge: "Comfort Food",
     },
@@ -101,67 +101,67 @@ const HouseOfAndhra = () => {
     // NON-VEGETARIAN ITEMS (11 items - 50%)
     {
       name: "Andhra Chilli Chicken",
-      image: "/HOA/Andhra Chilli Chicken.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/Andhra Chilli Chicken.jpg",
       description: "Fiery chicken cooked with authentic Andhra spices and red chilies",
       badge: "Bestseller",
     },
     {
       name: "HOA Special Chicken Curry",
-      image: "/HOA/HOA Special Chicken Curry.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/HOA Special Chicken Curry.jpg",
       description: "House special chicken curry with bold Andhra flavors and traditional spices",
       badge: "Signature",
     },
     {
       name: "Chicken Ghee Roast",
-      image: "/HOA/Chicken ghee roast.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/Chicken ghee roast.jpg",
       description: "Succulent chicken roasted in ghee with aromatic spices and red chilies",
       badge: "Spicy",
     },
     {
       name: "Guntur Chicken Ghee Rice",
-      image: "/HOA/gunter chicken ghee rice-1.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/gunter chicken ghee rice-1.jpg",
       description: "Fragrant ghee rice topped with spicy Guntur chicken, a perfect Andhra combination",
       badge: "Popular",
     },
     {
       name: "HOA Special Chicken Ghee Rice Bowl",
-      image: "/HOA/HOA Special Chicken Ghee Rice Bowl.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/HOA Special Chicken Ghee Rice Bowl.jpg",
       description: "House special ghee rice bowl with our signature chicken curry",
       badge: "Signature",
     },
     {
       name: "Andhra Style Egg Ghee Rice Bowl",
-      image: "/HOA/Andhra Style Egg Ghee Rice Bowl .jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/Andhra Style Egg Ghee Rice Bowl .jpg",
       description: "Flavorful ghee rice bowl topped with spicy Andhra style egg curry",
       badge: "Egg Special",
     },
     {
       name: "HOA Special Egg Ghee Rice Bowl",
-      image: "/HOA/HOA Special Egg Ghee Rice Bowl.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/HOA Special Egg Ghee Rice Bowl.jpg",
       description: "House special ghee rice bowl with our signature egg preparation",
       badge: "Popular",
     },
     {
       name: "Egg Pulusu Ghee Rice Bowl",
-      image: "/HOA/Egg Pulusu Ghee Rice Bowl.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/Egg Pulusu Ghee Rice Bowl.jpg",
       description: "Aromatic ghee rice with tangy egg pulusu, a perfect balance of flavors",
       badge: "Traditional",
     },
     {
       name: "Curd Rice with Pepper Chicken",
-      image: "/HOA/Curd Rice topped with Pepper Chicken.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/Curd Rice topped with Pepper Chicken.jpg",
       description: "Cooling curd rice topped with spicy pepper chicken, a perfect contrast",
       badge: "Classic",
     },
     {
       name: "Curd Rice with Guntur Chicken",
-      image: "/HOA/Curd Rice with Guntur Chicken.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/Curd Rice with Guntur Chicken.jpg",
       description: "Traditional curd rice served with fiery Guntur chicken",
       badge: "Spicy",
     },
     {
       name: "Mini Idlis with Guntur Chicken",
-      image: "/HOA/Mini Idlis with Guntur Chicken Curry.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/Mini Idlis with Guntur Chicken Curry.jpg",
       description: "Soft mini idlis served with authentic spicy Guntur chicken curry",
       badge: "Combo Special",
     },
@@ -191,22 +191,22 @@ const HouseOfAndhra = () => {
   const instagramPosts: Array<{ id: number; thumbnail: string; url: string }> = [
     {
       id: 1,
-      thumbnail: "/HOA/instagram/post 1.jpg",
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/instagram/post 1.jpg",
       url: "https://www.instagram.com/reel/C2HwrLZxg-V/?igsh=eWN3bmRzc3FsYWhs",
     },
     {
       id: 2,
-      thumbnail: "/HOA/instagram/post 2.jpg",
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/instagram/post 2.jpg",
       url: "https://www.instagram.com/reel/DTQMBimEx50/?igsh=MTJ2em9oa2tzaXJ4YQ==",
     },
     {
       id: 3,
-      thumbnail: "/HOA/instagram/post 3.jpg",
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/instagram/post 3.jpg",
       url: "https://www.instagram.com/reel/DSM15vgk0Gg/?igsh=bHBmcjVza2ZoZHZv",
     },
     {
       id: 4,
-      thumbnail: "/HOA/instagram/post 4.jpg",
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/instagram/post 4.jpg",
       url: "https://www.instagram.com/reel/CucJMeNtJtN/?igsh=MWllZ3ZqMzRnZThzaw==",
     },
   ];
@@ -361,7 +361,7 @@ const HouseOfAndhra = () => {
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/HOA/House Of Andhra Display image - Swiggy.png"
+            src="https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/House Of Andhra Display image - Swiggy.png"
             alt="Traditional Andhra Feast - House Of Andhra"
             className="w-full h-full object-cover object-center"
           />
@@ -409,7 +409,7 @@ const HouseOfAndhra = () => {
             <div className="relative flex justify-center">
               <div className="relative w-full max-w-lg aspect-[4/3] rounded-2xl overflow-hidden shadow-strong bg-accent/20">
                 <img
-                  src="/HOA/House Of Andhra Display image - Swiggy.png"
+                  src="https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/House Of Andhra Display image - Swiggy.png"
                   alt="Royal Andhra Heritage - House Of Andhra"
                   className="w-full h-full object-cover object-center"
                 />

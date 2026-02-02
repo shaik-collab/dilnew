@@ -77,25 +77,25 @@ const BholeKeChole = () => {
     // TOP 5 FEATURED ITEMS - Most Popular Street Food Items
     {
       name: "Chole Bhature",
-      image: "/BKC/Chole Bhature.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Chole Bhature.jpg",
       description: "Savor rich and aromatic pindi chole, slow-cooked with traditional spices to deliver deep, bold flavors, making it a true North Indian classic.",
       badge: "Bestseller",
     },
     {
       name: "Chole Kulche",
-      image: "/BKC/Chole Kulche.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Chole Kulche.jpg",
       description: "Savor the perfect pairing of soft Kulchas with our pindi chole, accompanied with carrot and chilli pickle, lachha onion masala",
       badge: "Popular",
     },
     {
       name: "Paneer Stuffed Chole Bhature",
-      image: "/BKC/Paneer Stuffed Chole Bhature.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Paneer Stuffed Chole Bhature.jpg",
       description: "Savor the essence of North India with our Paneer Stuffed Chole Bhature, 2 soft and fluffy bhaturas filled with paneer, served with flavorful Pindi chole",
       badge: "Signature",
     },
     {
       name: "Mini Aloo Tikki Chaat",
-      image: "/BKC/Mini Aloo Tikki Chaat.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Mini Aloo Tikki Chaat.jpg",
       description: "Savor the blend of Mini Aloo Tikki and Ragda Chaat, featuring flavorful aloo tikki, ragda, sweet Imly, and green chutney. Garnished with chopped coriander and Dil spice mix",
       badge: "Street Special",
     },
@@ -108,43 +108,43 @@ const BholeKeChole = () => {
     // OTHER POPULAR STREET FOOD ITEMS
     {
       name: "Poori Chole Combo",
-      image: "/BKC/Poori Chole Combo.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Poori Chole Combo.png",
       description: "The Poori Chole Combo features fluffy Pooris paired with flavorful Chole, offering a classic and satisfying meal",
       badge: "Comfort Food",
     },
     {
       name: "Mini Ragda Chaat",
-      image: "/BKC/Mini Ragda Chaat.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Mini Ragda Chaat.jpg",
       description: "Savor the rich flavors of our Ragda topped with onion tomato mix, a hearty blend of spiced chickpeas, complemented with our special Dil Spice mix paired with Imli and mint chutney",
       badge: "Spicy",
     },
     {
       name: "Punjabi Aloo Samosa",
-      image: "/BKC/Punjabi Aloo Samosa (2 pcs).jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Punjabi Aloo Samosa (2 pcs).jpg",
       description: "The all-season snack buddy! Punjabi style samosa with spices and green peas. Served with chutney",
       badge: "Classic",
     },
     {
       name: "Mini Dal Kachori",
-      image: "/BKC/Mini Dal Kachori (3 pcs).jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Mini Dal Kachori (3 pcs).jpg",
       description: "Mini freshly fried Rajasthani Dal kachori, served along with green and sweet Imly chutney",
       badge: "Regional",
     },
     {
       name: "Dahi Bhalla",
-      image: "/BKC/Dahi Bhalla [2pc].jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Dahi Bhalla [2pc].jpg",
       description: "Soft Dahi Bhalle soaked in creamy yogurt, topped with tangy chutneys. A perfect sweet and savory delight!",
       badge: "Refreshing",
     },
     {
       name: "Gulab Jamun",
-      image: "/BKC/Gulab Jamun (2Pc).jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Gulab Jamun (2Pc).jpg",
       description: "Soft, plump, with loads of syrup - Gulab Jamun just the way you like it. There is nothing else in our Gulab jamun than authenticity and love",
       badge: "Sweet Treat",
     },
     {
       name: "Masala Lemonade",
-      image: "/BKC/Masala Lemonade.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Masala Lemonade.jpg",
       description: "A zesty twist on an old favorite. Our Hajmola Lemonade combines the tangy thrill of Hajmola with the refreshing zest of fresh lemons",
       badge: "Refreshing",
     },
@@ -322,7 +322,7 @@ const BholeKeChole = () => {
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/BKC/Bhole ke Chole Display image - Swiggy.JPG"
+            src="https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Bhole ke Chole Display image - Swiggy.JPG"
             alt="Street Food Feast - Bhole ke Chole"
             className="w-full h-full object-cover object-center"
           />
@@ -369,7 +369,7 @@ const BholeKeChole = () => {
             <div className="relative flex justify-center">
               <div className="relative w-full max-w-lg aspect-[4/3] rounded-2xl overflow-hidden shadow-strong bg-secondary/20">
                 <img
-                  src="/BKC/Bhole ke Chole Display image - Swiggy.JPG"
+                  src="https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Bhole ke Chole Display image - Swiggy.JPG"
                   alt="Street Food Culture - Bhole ke Chole"
                   className="w-full h-full object-cover object-center"
                 />

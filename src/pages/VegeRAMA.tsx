@@ -76,109 +76,109 @@ const VegeRAMA = () => {
   const menuItems = [
     {
       name: "Dal Khichdi (No onion No garlic)",
-      image: "/Vegerama/Dal Khichdi (No onion No garlic).png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Dal Khichdi (No onion No garlic).png",
       description: "Homestyle plain dal khichdi. Served with fresh curd, a simple, comforting meal.",
       badge: "Jain Special",
     },
     {
       name: "Dal Khichdi + Paneer Butter Masala Combo",
-      image: "/Vegerama/Dal Khichdi (No onion No garlic) with Paneer Butter Masala Combo.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Dal Khichdi (No onion No garlic) with Paneer Butter Masala Combo.png",
       description: "A wholesome and satisfying meal featuring homestyle plain dal khichdi and creamy Jain-style butter paneer paired with fresh curd.",
       badge: "Bestseller",
     },
     {
       name: "Paneer Butter Masala Rice Bowl",
-      image: "/Vegerama/Paneer Butter Masala Rice Bowl.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Paneer Butter Masala Rice Bowl.png",
       description: "Paneer Butter Masala served steamed rice bowl accompanied with Green chutney and Salad.",
       badge: "Popular",
     },
     {
       name: "Dal Makhani Rice Bowl",
-      image: "/Vegerama/Dal Makhani Rice Bowl.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Dal Makhani Rice Bowl.png",
       description: "Daily Dal Makhani rice bowl accompanied with Green chutney and Salad.",
       badge: "Creamy Delight",
     },
     {
       name: "Matar Paneer Rice Bowl",
-      image: "/Vegerama/Matar Paneer Rice Bowl.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Matar Paneer Rice Bowl.png",
       description: "A wholesome mix of soft paneer and green peas in a flavorful gravy over steamed rice, offering a hearty and balanced meal.",
       badge: "Nutritious",
     },
     {
       name: "Rajma Masala Rice Bowl",
-      image: "/Vegerama/Rajma Rice Bowl.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Rajma Rice Bowl.png",
       description: "Homestyle rajma cooked in a tomato-onion masala, served with steamed rice, fresh salad, and green chutney.",
       badge: "Comfort Food",
     },
     {
       name: "Samosa Chole Chaat",
-      image: "/Vegerama/Samosa Chole Chaat.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Samosa Chole Chaat.png",
       description: "Golden-fried samosas crushed and layered with spicy chole, tangy chutneys, onions, and crunchy sev, a street-style delight in every bite.",
       badge: "Chaat Special",
     },
     {
       name: "Samosa with Aloo Sabji",
-      image: "/Vegerama/Samosa with Aloo Sabzi.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Samosa with Aloo Sabzi.png",
       description: "Samosas with aloo tamatar sabzi, fresh onion tomato & salad, and green chutney.",
       badge: "Traditional",
     },
     {
       name: "Aloo Samosa [2pcs]",
-      image: "/Vegerama/Aloo Samosa [2pcs].png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Aloo Samosa [2pcs].png",
       description: "Golden, crispy samosas served with tangy green chutney, offering a perfect blend of crunch and flavor.",
       badge: "Street Snack",
     },
     {
       name: "Matar Kulche",
-      image: "/Vegerama/Matar Kulche.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Matar Kulche.png",
       description: "Bread kulches with ragda, served with chopped onion, tomato, Imly and green chutney.",
       badge: "North Indian",
     },
     {
       name: "Dahi Bhalle [6pcs]",
-      image: "/Vegerama/Dahi Bhalle [6pcs].png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Dahi Bhalle [6pcs].png",
       description: "Soft, flavorful Dahi Bhalle topped with tangy chutney and aromatic special spice mix for a refreshing treat.",
       badge: "Cooling Treat",
     },
     {
       name: "Ragada Kachori Chaat",
-      image: "/Vegerama/Ragada Kachori Chaat.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Ragada Kachori Chaat.png",
       description: "Crispy mini kachoris paired with flavorful ragda, tangy green chutney, imli chutney, and crunchy sev, offering a perfect mix of textures and flavors.",
       badge: "Tangy Chaat",
     },
     {
       name: "Mini Dal Kachori [5pcs]",
-      image: "/Vegerama/Dal Kachori [5pcs].png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Dal Kachori [5pcs].png",
       description: "Freshly fried Rajasthani Dal kachori, served along with green and sweet Imly chutney.",
       badge: "Rajasthani Special",
     },
     {
       name: "Upwas Sabudana Vada [2pcs]",
-      image: "/Vegerama/Upwas Sabudana Vada [2pcs].png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Upwas Sabudana Vada [2pcs].png",
       description: "Crispy vada made from Sabudana, and roasted peanuts served with sweet curd. Made with SENDHA NAMAK.",
       badge: "Vrat Special",
     },
     {
       name: "Sabudana Khichdi",
-      image: "/Vegerama/Sabudana Khichdi (No onion No garlic).png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Sabudana Khichdi (No onion No garlic).png",
       description: "Light and tasty Sabudana Khichdi, served with sweet curd. A perfect vrat-friendly meal for fasting days.",
       badge: "Fasting Food",
     },
     {
       name: "Maska Pav + Chai",
-      image: "/Vegerama/Maska Pav +  Chai.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Maska+Pav+%2B++Chai+copy.png",
       description: "Buttery buns served with a cup of hot chai. A timeless Indian comfort pairing.",
       badge: "Tea Time",
     },
     {
       name: "Samosa + Chai Combo",
-      image: "/Vegerama/Samosa [1pc] + Chai [250ml].png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Samosa+%5B1pc%5D+%2B+Chai+%5B250ml%5D+copy.png",
       description: "Golden-fried samosa served with flavorful chutneys, complemented by a warm cup of chai for a comforting break.",
       badge: "Classic Combo",
     },
     {
       name: "Samosa Pav",
-      image: "/Vegerama/Samosa Pav.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Samosa Pav.png",
       description: "A crispy samosa served inside a soft pav paired with tangy green chutney for a classic and satisfying bite.",
       badge: "Street Fusion",
     },
@@ -356,7 +356,7 @@ const VegeRAMA = () => {
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/Vegerama/Vegerama Display image - Swiggy.png"
+            src="https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Vegerama Display image - Swiggy.png"
             alt="Fresh Vegetarian Feast - VegeRAMA"
             className="w-full h-full object-cover object-center"
           />
@@ -403,7 +403,7 @@ const VegeRAMA = () => {
             <div className="relative flex justify-center">
               <div className="relative w-full max-w-lg aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-[#AED581]/20">
                 <img
-                  src="/Vegerama/Vegerama Display image - Swiggy.png"
+                  src="https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Vegerama Display image - Swiggy.png"
                   alt="Fresh Vegetarian Heritage - VegeRAMA"
                   className="w-full h-full object-cover object-center"
                 />

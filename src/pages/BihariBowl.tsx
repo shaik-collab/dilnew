@@ -76,121 +76,121 @@ const BihariBowl = () => {
   const menuItems = [
     {
       name: "Paneer Butter Masala [250ml]",
-      image: "/Bihari Bowl/Paneer butter masala.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Paneer butter masala.png",
       description: "Classic Paneer Butter Masala in a creamy gravy.",
       badge: "Rich & Creamy",
     },
     {
       name: "Kala Chana Ghugni [250ml]",
-      image: "/Bihari Bowl/Kala Channa Ghugni .png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Kala Channa Ghugni .png",
       description: "Kala Chana Ghugni is a flavorful dish of black chickpeas cooked with spices.",
       badge: "Traditional",
     },
     {
       name: "Suji Ka Halwa (150ml)",
-      image: "/Khichdi Bar/Suji Ka Halwa (150ml).jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi Bar/Suji Ka Halwa (150ml).jpg",
       description: "Our special homemade Suji Ka Halwa, filled with deliciousness and loaded with droplets of ghee. Every bite is a sweet pleasure, all in a completely desi style!",
       badge: "Sweet Treat",
     },
     {
       name: "Chura Fry with Peanuts (Poha Chiwada)",
-      image: "/Bihari Bowl/Chura badam.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Chura badam.jpg",
       description: "A crispy mix of chura and roasted peanuts, lightly spiced for a tasty and light snack.",
       badge: "Crispy Snack",
     },
     {
       name: "Wasseypur Ki Thali [8cp]",
-      image: "/Bihari Bowl/wasseypur ki thali.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/wasseypur ki thali.jpg",
       description: "A hearty Bihari feast featuring Dal Tadka, Chokha, Ghughni, and more rich in tradition and taste.",
       badge: "Signature Thali",
     },
     {
       name: "Madhubhani Thali [8cp]",
-      image: "/Bihari Bowl/Madhubani Thali.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Madhubani Thali.jpg",
       description: "A Bihari delight with Tehri, Matar Gravy, Paneer, Ghughni, and more, plus sweet Thekua and Charauri for an authentic taste.",
       badge: "Royal Thali",
     },
     {
       name: "Bihari Tehri Combo",
-      image: "/Bihari Bowl/Bihari Tehri combo.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Bihari Tehri combo.png",
       description: "A tasty mix of Bihari Tehri, Aloo Tamatar Baingan Chokha, tangy salsa, Charauri, and onions for a rich, balanced meal.",
       badge: "Regional Special",
     },
     {
       name: "Dal Butter Chawal",
-      image: "/Bihari Bowl/dal butter chawal mix.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/dal butter chawal mix.jpg",
       description: "A creamy mix of buttery lentils served over steamed rice, offering a hearty and satisfying meal.",
       badge: "Comfort Special",
     },
     {
       name: "Matar Paneer [250ml]",
-      image: "/Bihari Bowl/Matar paneer.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Matar paneer.png",
       description: "Green peas and paneer cooked in a rich, spiced tomato gravy.",
       badge: "Nutritious",
     },
     {
       name: "Dal Bhaat Bhujiya Bowl",
-      image: "/Bihari Bowl/dal bhaat bhujiya combo.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/dal bhaat bhujiya combo.jpg",
       description: "Combines lentils, rice, and crispy bhujiya for a comforting meal.",
       badge: "Comfort Bowl",
     },
     {
       name: "Dal Bhaat Chokha Bowl",
-      image: "/Bihari Bowl/dal bhaat chokha combo.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/dal bhaat chokha combo.jpg",
       description: "A wholesome mix of lentils, rice, and spiced Potato & Brinjal mash, offering a balanced and flavorful meal.",
       badge: "Homestyle",
     },
     {
       name: "Homestyle Rajma Masala [250ml]",
-      image: "/Bihari Bowl/Rajma Masala.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Rajma Masala.png",
       description: "Kidney beans cooked in a thick tomato gravy, a comforting North Indian flavors.",
       badge: "Popular",
     },
     {
       name: "Poori with Aloo Tamatar Sabji [4cp]",
-      image: "/Bihari Bowl/Poori Aloo Tamatar Sabji.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Poori Aloo Tamatar Sabji.png",
       description: "Fluffy, golden poori served with spiced potato and tomato curry for a hearty homestyle meal.",
       badge: "Classic Combo",
     },
     {
       name: "Dal Tadka [250ml]",
-      image: "/Bihari Bowl/Dal Tadka Edited.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Dal Tadka Edited.png",
       description: "Dal cooked until soft and seasoned with cumin, garlic, and spices.",
       badge: "Simple & Pure",
     },
     {
       name: "Aloo Baingan Chokha [250ml]",
-      image: "/Bihari Bowl/Aloo baingan chokha.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Aloo baingan chokha.png",
       description: "A mashed blend of potatoes and roasted brinjal with mild spices.",
       badge: "Rustic Special",
     },
     {
       name: "Aloo Tamatar Ki Sabzi [250ml]",
-      image: "/Bihari Bowl/Aloo tamatar sabji.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Aloo tamatar sabji.png",
       description: "Homestyle Aloo Tamatar Ki Sabji cooked in a flavorful tomato-based gravy, offering a comforting and hearty meal.",
       badge: "Homestyle",
     },
     {
       name: "Bihari Style Kadhi Badi [250ml]",
-      image: "/Bihari Bowl/Bihari Kadhi badi.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Bihari Kadhi badi.png",
       description: "A comforting bowl of Kadhi Badi, soft besan dumplings in a tangy, yogurt-based curry for a homestyle treat.",
       badge: "Traditional",
     },
     {
       name: "Aloo Bhujiya [250ml]",
-      image: "/Bihari Bowl/Aloo bhujiya.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Aloo bhujiya.png",
       description: "A crunchy snack made with chickpea flour and potatoes.",
       badge: "Crispy Snack",
     },
     {
       name: "Aloo Matar [250ml]",
-      image: "/Bihari Bowl/Aloo matar.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Aloo matar.png",
       description: "Potatoes and green peas cooked in a spiced tomato-based curry.",
       badge: "Homestyle",
     },
     {
       name: "Bhaat [Steam Rice] [250ml]",
-      image: "/Bihari Bowl/bhaat_ steamed rice.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/bhaat_ steamed rice.jpg",
       description: "Rice steamed to perfect fluffy white grains. Enjoyable with our special curries.",
       badge: "Simple & Pure",
     },
@@ -366,7 +366,7 @@ const BihariBowl = () => {
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/Bihari Bowl/Madhubani Thali.jpg"
+            src="https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Madhubani Thali.jpg"
             alt="Traditional Madhubani Thali - Bihari Bowl"
             className="w-full h-full object-cover object-center"
           />
@@ -413,7 +413,7 @@ const BihariBowl = () => {
             <div className="relative flex justify-center">
               <div className="relative w-full max-w-lg aspect-[4/3] rounded-2xl overflow-hidden shadow-lg bg-[#fad8a1]/20">
                 <img
-                  src="/Bihari Bowl/Madhubani Thali.jpg"
+                  src="https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Madhubani Thali.jpg"
                   alt="Bihari Heritage - Madhubani Thali"
                   className="w-full h-full object-cover object-center"
                 />

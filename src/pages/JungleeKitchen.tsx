@@ -40,98 +40,98 @@ const JungleeKitchen = () => {
     // TOP 5 FEATURED ITEMS - Most Popular Menu Items
     {
       name: "Butter Chicken (Murgh Makhanwala)",
-      image: "/junglee-kitchen/Butter Chicken (Murgh Makhanwala).jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Butter Chicken (Murgh Makhanwala).jpg",
       description: "Mouth watering chicken makhanwala made with chunks of boneless chickens cooked in a smooth buttery and creamy tomato gravy",
       badge: "Bestseller",
     },
     {
       name: "Butter Naan",
-      image: "/junglee-kitchen/Butter Naan.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Butter Naan.jpg",
       description: "Fluffy naan bread brushed with melted butter, offering a soft and rich texture",
       badge: "Most Popular",
     },
     {
       name: "Dal Makhani",
-      image: "/junglee-kitchen/Dal Makhani.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Dal Makhani.jpg",
       description: "Creamy, buttery Dal Makhani made with slow-simmered lentils, and a swirl of fresh cream — indulgence in every bite",
       badge: "Signature",
     },
     {
       name: "Mutton Yakhni Pulao",
-      image: "/junglee-kitchen/Mutton Yakhni Pulao.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Mutton Yakhni Pulao.jpg",
       description: "Tender mutton yakhni pulao slow-cooked with aromatic spices and long-grain basmati biryani rice, crowned with Junglee's signature garnish",
       badge: "Chef's Special",
     },
     {
       name: "Rumali Roti",
-      image: "/junglee-kitchen/Roomali Roti.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Roomali Roti.jpg",
       description: "Indian Bread Made Of Refined Flour, Thin layer Roti, soft and light",
       badge: "Traditional",
     },
     // OTHER SPECIALTIES
     {
       name: "Mutton Rogan Josh",
-      image: "/junglee-kitchen/Mutton Rogan Josh.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Mutton Rogan Josh.jpg",
       description: "Aromatic and flavorful Indian delicacy showcasing tender mutton cooked to perfection in a rich, savory gravy offering a luxurious taste",
       badge: "Classic",
     },
     {
       name: "Chicken Kalmi Tangdi Kebab",
-      image: "/junglee-kitchen/Chicken Kalmi Tangdi Kebab  - 8 Pcs.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Chicken Kalmi Tangdi Kebab  - 8 Pcs.jpg",
       description: "A delightfully flavor-packed dish with succulent chicken legs, marinated in mouthwatering masalas and grilled to perfection",
       badge: "Signature",
     },
     {
       name: "Tandoori Chicken Tangdi Kebab",
-      image: "/junglee-kitchen/Tandoori Chicken Tangdi Kebab - 8 pcs.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Tandoori Chicken Tangdi Kebab - 8 pcs.jpg",
       description: "Indulge in our Murgh Tangdi Kebab where chicken leg pieces are marinated in our signature spiced yoghurt mix and cooked in the Tandoor for that tantalizing smoky aroma and taste",
       badge: "Popular",
     },
     {
       name: "Achari Chicken Tikka",
-      image: "/junglee-kitchen/Achari Chicken Tikka.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Achari Chicken Tikka.jpg",
       description: "Tangy and pickle-inspired Achari Chicken Tikka, bursting with flavors for all the Chatpat lovers",
       badge: "Spicy",
     },
     {
       name: "Mutton Keema Kebab",
-      image: "/junglee-kitchen/Mutton Keema Kebab (6 pcs) .jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Mutton Keema Kebab (6 pcs) .jpg",
       description: "A melt-in-mouth Mutton Galouti, delicately spiced and slow-cooked to perfection — rich, tender, and packed with royal flavors",
       badge: "Signature",
     },
     {
       name: "Mutton Achari Gosht",
-      image: "/junglee-kitchen/Mutton Achari Gosht.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Mutton Achari Gosht.jpg",
       description: "Mutton slow-cooked in rich, achari flavours which is also known as Martaban gravy, bursting with tangy depth and smoky warmth. Marinated overnight for intense flavor and melt-in-mouth tenderness",
       badge: "Spicy",
     },
     {
       name: "Peshawari Kadhai Tangdi Masala",
-      image: "/junglee-kitchen/Peshawari Kadhai Tangdi Masala.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Peshawari Kadhai Tangdi Masala.jpg",
       description: "A rich and flavorful Peshawari chicken curry made with aromatic spices and tender Tangdi Kebabs. Perfectly spiced and full of bold, authentic taste",
       badge: "Regional",
     },
     {
       name: "Zafrani Chicken",
-      image: "/junglee-kitchen/Zafrani Chicken .jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Zafrani Chicken .jpg",
       description: "A royal blend of tender angara chicken tikka simmered in rich zafrani gravy, finished with a hint of saffron for that luxurious, aromatic touch",
       badge: "Premium",
     },
     {
       name: "Zafrani Pulao with Bhatti Murgh",
-      image: "/junglee-kitchen/Zafrani Pulao with Bhatti Murgh .jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Zafrani Pulao with Bhatti Murgh .jpg",
       description: "Smoky whole-leg Bhatti Murgh meets aromatic saffron and berry-studded pulao — finished with creamy raita for a rich, indulgent bite",
       badge: "Chef's Special",
     },
     {
       name: "Peshawari Karahi Paneer",
-      image: "/junglee-kitchen/Peshawari Karahi Paneer.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Peshawari Karahi Paneer.jpg",
       description: "A rich Peshawari-style paneer tossed with Angara spices, cooked in karahi gravy and finished with our signature Junglee Hero garnish. Bold, smoky, and irresistibly creamy",
       badge: "Vegetarian",
     },
     {
       name: "Rezala Malai Kofta",
-      image: "/junglee-kitchen/Rezala Malai Kofta.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Rezala Malai Kofta.jpg",
       description: "Royal malai-stuffed koftas simmered in rich Rezala gravy, finished with refined oil for a silky, luxurious bite that melts in your mouth",
       badge: "Vegetarian",
     },
@@ -165,22 +165,22 @@ const JungleeKitchen = () => {
   const instagramPosts = [
     {
       id: 1,
-      thumbnail: "/junglee-kitchen/instagram/post -1.jpg",
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/instagram/post -1.jpg",
       url: "https://www.instagram.com/reel/DRcPHjeD4iG/?igsh=M3B3NTNkdXkwNW84",
     },
     {
       id: 2,
-      thumbnail: "/junglee-kitchen/instagram/post - 2.jpg",
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/instagram/post - 2.jpg",
       url: "https://www.instagram.com/reel/DSkMlzKDXu3/?igsh=ZTYwOTJuN2syOHph",
     },
     {
       id: 3,
-      thumbnail: "/junglee-kitchen/instagram/post-3.jpg",
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/instagram/post-3.jpg",
       url: "https://www.instagram.com/reel/DS43r3Lj2Ni/?igsh=MTczcnNjY2s4aWFrcg==",
     },
     {
       id: 4,
-      thumbnail: "/junglee-kitchen/instagram/post-4.jpg",
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/instagram/post-4.jpg",
       url: "https://www.instagram.com/reel/DT4xnsAD6Cb/?igsh=MWtraWs1eDV2aTE1NA==",
     },
     // Add more posts as needed (6-12 recommended)
@@ -366,7 +366,7 @@ const JungleeKitchen = () => {
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/junglee-kitchen/TJK Experience Box (Mutton) [Serves 2].jpg"
+            src="https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/TJK Experience Box (Mutton) [Serves 2].jpg"
             alt="Traditional Indian Feast - The Junglee Kitchen"
             className="w-full h-full object-cover object-center"
           />
@@ -428,7 +428,7 @@ const JungleeKitchen = () => {
             <div className="relative flex justify-center">
               <div className="relative w-full max-w-lg aspect-[3/4] rounded-2xl overflow-hidden shadow-strong bg-jungle-beige/30">
                 <img
-                  src="/junglee-kitchen/Armaan Jain 1.png"
+                  src="https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Armaan Jain 1.png"
                   alt="Armaan Jain - Curator of The Junglee Kitchen"
                   className="w-full h-full object-contain object-center"
                 />

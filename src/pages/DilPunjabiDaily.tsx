@@ -32,73 +32,73 @@ const DilPunjabiDaily = () => {
   const menuItems = [
     {
       name: "Chole Bhature",
-      image: "/DPD/Chole Bhature.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Chole Bhature.jpg",
       description: "Pindi chole served with 2 fluffy Bhataras",
       badge: "Bestseller",
     },
     {
       name: "Dal Makhani & Paratha Combo",
-      image: "/DPD/Dal Makhani & Paratha combo.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Dal Makhani & Paratha combo.jpg",
       description: "Indulge in the perfection of slow-cooked creamy black lentils paired with fresh Whole Wheat Paratha",
       badge: "Signature",
     },
     {
       name: "Butter Chicken & Paratha Combo",
-      image: "/DPD/Butter Chicken & Paratha Combo.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Butter Chicken & Paratha Combo.jpg",
       description: "Creamy tomato-based curry with tender chicken pieces served with fresh parathas, a North Indian classic",
       badge: "Popular",
     },
     {
       name: "Veg Homely Thali",
-      image: "/DPD/Veg Homely Thali.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Veg Homely Thali.jpg",
       description: "A complete meal with Dal tadka + Aloo Matar + Paneer butter masala + Paratha + Steamed rice + Salad with chutney + Gulab jamun",
       badge: "Chef's Special",
     },
     {
       name: "Aloo Matar & Paratha Combo",
-      image: "/DPD/Aloo Matar & Paratha Combo.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Aloo Matar & Paratha Combo.jpg",
       description: "Homestyle Matar Aloo made in a savory gravy served with Lachha Paratha + Salad + Chutney",
       badge: "Comfort Food",
     },
     {
       name: "Butter Chicken Rice Bowl",
-      image: "/DPD/Butter Chicken Rice Bowl.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Butter Chicken Rice Bowl.jpg",
       description: "Daily Butter Chicken rice bowl accompanied with Green chutney and Salad",
       badge: "Bowl Special",
     },
     {
       name: "Aloo Matar Rice Bowl",
-      image: "/DPD/Aloo Matar Rice Bowl.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Aloo Matar Rice Bowl.jpg",
       description: "Daily Aloo Matar rice bowl accompanied with Green chutney and Salad",
       badge: "Healthy Choice",
     },
     {
       name: "Spiced Chicken & Paratha Combo",
-      image: "/DPD/Amritsari Chicken & Paratha Combo.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Amritsari Chicken & Paratha Combo.jpg",
       description: "Authentic spiced chicken curry served with fresh whole wheat parathas and accompaniments",
       badge: "Regional Special",
     },
     {
       name: "Spiced Chicken Rice Bowl",
-      image: "/DPD/Amritsari Chicken Rice Bowl.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Amritsari Chicken Rice Bowl.jpg",
       description: "Daily spiced chicken rice bowl accompanied with Green chutney and Salad",
       badge: "Traditional",
     },
     {
       name: "Palak Chicken & Paratha Combo",
-      image: "/DPD/Palak Chicken & Paratha combo.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Palak Chicken & Paratha combo.jpg",
       description: "Nutritious spinach-based chicken curry served with fresh parathas for a wholesome meal",
       badge: "Healthy Special",
     },
     {
       name: "Palak Chicken Rice Bowl",
-      image: "/DPD/Palak Chicken Rice Bowl.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Palak Chicken Rice Bowl.jpg",
       description: "Daily Palak Chicken rice bowl accompanied with Green chutney and Salad",
       badge: "Nutritious",
     },
     {
       name: "Atta Halwa",
-      image: "/DPD/Atta Halwa (150ml).jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Atta Halwa (150ml).jpg",
       description: "Traditional wheat flour halwa, rich and sweet, perfect for dessert lovers",
       badge: "Sweet Treat",
     },
@@ -274,7 +274,7 @@ const DilPunjabiDaily = () => {
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/DPD/Dil Daily Display image - Swiggy.png"
+            src="https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Dil Daily Display image - Swiggy.png"
             alt="Comfort Feast - Dil Daily"
             className="w-full h-full object-cover object-center"
           />
@@ -321,7 +321,7 @@ const DilPunjabiDaily = () => {
             <div className="relative flex justify-center">
               <div className="relative w-full max-w-lg aspect-[4/3] rounded-2xl overflow-hidden shadow-strong bg-accent/20">
                 <img
-                  src="/DPD/Dil Daily Display image - Swiggy.png"
+                  src="https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Dil Daily Display image - Swiggy.png"
                   alt="Comfort Heritage - Dil Daily"
                   className="w-full h-full object-cover object-center"
                 />
