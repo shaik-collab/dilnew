@@ -253,7 +253,45 @@ const Index = () => {
           </div>
 
           {/* Brand Logos Enhanced Wave Pattern */}
-          <div className="flex justify-center items-start gap-3 md:gap-4 lg:gap-6 max-w-full mx-auto px-2 md:px-4">
+          {/* Mobile: Grid layout for better visibility of all brands */}
+          <div className="block sm:hidden">
+            <div className="grid grid-cols-3 gap-4 max-w-sm mx-auto px-4">
+              {brands.map((brand, index) => (
+                <div 
+                  key={index} 
+                  className="w-16 h-16 mx-auto transition-all duration-500 ease-in-out hover:scale-110 group cursor-pointer"
+                  style={{
+                    filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.15))',
+                    animationDelay: `${index * 200}ms`,
+                    animationDuration: '4s'
+                  }}
+                >
+                  <div className="relative">
+                    {/* Enhanced glow effect - only for yellow logos */}
+                    {index % 2 === 0 && (
+                      <div className="absolute inset-0 rounded-full blur-sm opacity-20 transition-all duration-500 group-hover:opacity-80 group-hover:blur-md bg-gradient-yellow-orange"></div>
+                    )}
+                    
+                    <BrandCard
+                      logo={brand.logo}
+                      name={brand.name}
+                      color={index % 2 === 0 ? "yellow" : "transparent"}
+                      link={
+                        (brand as any).route
+                          ? (brand as any).route
+                          : "https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
+                      }
+                      internalRoute={!!(brand as any).route}
+                      className={`relative z-10 ${index % 2 === 1 ? 'bg-gradient-to-br from-orange-300 to-orange-400 border border-orange-400' : ''}`}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop/Tablet: Original wave pattern */}
+          <div className="hidden sm:flex justify-center items-start gap-3 md:gap-4 lg:gap-6 max-w-full mx-auto px-2 md:px-4">
             {brands.map((brand, index) => (
               <div 
                 key={index} 
