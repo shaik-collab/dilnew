@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import BrandNavigation from "../components/BrandNavigation";
+import FloatingBrandSuggestion from "../components/BrandNavigation";
 import {
   Sparkles,
   Handshake,
@@ -101,7 +103,7 @@ const AllThingsFried = () => {
                   alt="Dil Foods" 
                   className="h-5 w-auto group-hover:scale-110 transition-transform duration-300" 
                 />
-                <span className="hidden sm:inline text-sm font-medium">Home</span>
+                {/* <span className="hidden sm:inline text-sm font-medium">Home</span> */}
               </Link>
               <div className="h-6 w-px bg-white/30"></div>
               <Link to="/all-things-fried" className="text-2xl text-white font-bold font-display">
@@ -148,6 +150,7 @@ const AllThingsFried = () => {
               >
                 Order Now
               </a>
+              <BrandNavigation variant="light" />
             </div>
 
             <button

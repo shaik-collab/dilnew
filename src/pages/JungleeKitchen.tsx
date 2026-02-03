@@ -1,6 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import BrandNavigation from "../components/BrandNavigation";
+import BrandDiscoveryCarousel from "../components/BrandDiscoveryCarousel";
+import FloatingBrandSuggestion from "../components/FloatingBrandSuggestion";
 import {
   Sparkles,
   Handshake,
@@ -23,6 +26,9 @@ import {
 const JungleeKitchen = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  const menuScrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -35,6 +41,45 @@ const JungleeKitchen = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Check scroll position to show/hide arrows
+  const checkScrollPosition = () => {
+    if (menuScrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = menuScrollRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
+    }
+  };
+
+  useEffect(() => {
+    checkScrollPosition();
+    if (menuScrollRef.current) {
+      menuScrollRef.current.addEventListener('scroll', checkScrollPosition);
+      return () => {
+        if (menuScrollRef.current) {
+          menuScrollRef.current.removeEventListener('scroll', checkScrollPosition);
+        }
+      };
+    }
+  }, []);
+
+  const scrollLeft = () => {
+    if (menuScrollRef.current) {
+      menuScrollRef.current.scrollBy({
+        left: -400,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (menuScrollRef.current) {
+      menuScrollRef.current.scrollBy({
+        left: 400,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   const menuItems = [
     // TOP 5 FEATURED ITEMS - Most Popular Menu Items
@@ -221,7 +266,7 @@ const JungleeKitchen = () => {
                   alt="Dil Foods" 
                   className="h-5 w-auto group-hover:scale-110 transition-transform duration-300" 
                 />
-                <span className="hidden sm:inline text-sm font-medium">Home</span>
+                {/* <span className="hidden sm:inline text-sm font-medium">Home</span> */}
               </Link>
               <div className="h-6 w-px bg-jungle-beige/30"></div>
               <Link to="/junglee-kitchen" className="text-2xl text-jungle-beige font-bold font-display">
@@ -262,6 +307,16 @@ const JungleeKitchen = () => {
                 Reviews
               </a>
               <a
+                href="#brands"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("brands");
+                }}
+                className="text-jungle-beige/90 hover:text-jungle-gold transition-colors duration-300 font-medium"
+              >
+                Other Brands
+              </a>
+              <a
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
@@ -279,6 +334,7 @@ const JungleeKitchen = () => {
               >
                 Order Now
               </a>
+              <BrandNavigation variant="light" />
             </div>
 
             {/* Mobile Menu Button */}
@@ -556,7 +612,30 @@ const JungleeKitchen = () => {
               your table.
             </p>
           </div>
-          <div className="flex gap-6 overflow-x-auto scrollbar-hide px-6 pb-4 snap-x snap-mandatory">
+          <div className="relative">
+            {/* Left Arrow */}
+            {canScrollLeft && (
+              <button
+                onClick={scrollLeft}
+                className="absolute left-2 top-1/3 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-300 hover:scale-110"
+                aria-label="Scroll left"
+              >
+                <ChevronLeft size={24} className="text-gray-700" />
+              </button>
+            )}
+
+            {/* Right Arrow */}
+            {canScrollRight && (
+              <button
+                onClick={scrollRight}
+                className="absolute right-2 top-1/3 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-300 hover:scale-110"
+                aria-label="Scroll right"
+              >
+                <ChevronRight size={24} className="text-gray-700" />
+              </button>
+            )}
+
+            <div ref={menuScrollRef} className="flex gap-6 overflow-x-auto scrollbar-hide px-6 pb-4 snap-x snap-mandatory">
             {menuItems.map((item, index) => (
               <div
                 key={index}
@@ -581,6 +660,7 @@ const JungleeKitchen = () => {
                 <p className="text-jungle-brown/70 text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
+          </div>
           </div>
         </div>
       </section>
@@ -683,9 +763,19 @@ const JungleeKitchen = () => {
         </div>
       </section>
 
-      <div className="scroll-snap-section">
+      {/* Brand Discovery Section */}
+      <section id="brands" className="min-h-screen scroll-snap-section scroll-snap-align-start py-16 md:py-24">
+        <div className="h-full flex items-center justify-center">
+          <BrandDiscoveryCarousel currentBrandRoute="/junglee-kitchen" />
+        </div>
+      </section>
+
+      <div id="contact" className="scroll-snap-section">
         <Footer />
       </div>
+
+      {/* Floating Brand Suggestion - 30 second popup */}
+      <FloatingBrandSuggestion />
     </div>
   );
 };

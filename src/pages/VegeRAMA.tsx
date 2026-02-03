@@ -1,6 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import BrandNavigation from "../components/BrandNavigation";
+import BrandDiscoveryCarousel from "../components/BrandDiscoveryCarousel";
+import FloatingBrandSuggestion from "../components/FloatingBrandSuggestion";
 import {
   Sparkles,
   Handshake,
@@ -188,7 +191,7 @@ const VegeRAMA = () => {
     {
       name: "Meera Patel",
       location: "Mumbai",
-      text: "VegeRAMA is a vegetarian's paradise! Fresh, green, and absolutely delicious. The power bowl is amazing!",
+      text: "VEGERAMA is a vegetarian's paradise! Fresh, green, and absolutely delicious. The power bowl is amazing!",
       initial: "M",
     },
     {
@@ -235,11 +238,11 @@ const VegeRAMA = () => {
                   alt="Dil Foods" 
                   className="h-5 w-auto group-hover:scale-110 transition-transform duration-300" 
                 />
-                <span className="hidden sm:inline text-sm font-medium">Home</span>
+                {/* <span className="hidden sm:inline text-sm font-medium">Home</span> */}
               </Link>
               <div className="h-6 w-px bg-white/30"></div>
               <Link to="/vegerama" className="text-2xl text-white font-bold font-display">
-                VegeRAMA
+                VEGERAMA
               </Link>
             </div>
 
@@ -265,6 +268,16 @@ const VegeRAMA = () => {
                 Reviews
               </a>
               <a
+                href="#brands"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("brands");
+                }}
+                className="text-white/90 hover:text-[#AED581] transition-colors duration-300 font-medium"
+              >
+                Other Brands
+              </a>
+              <a
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
@@ -282,6 +295,7 @@ const VegeRAMA = () => {
               >
                 Order Now
               </a>
+              <BrandNavigation variant="light" />
             </div>
 
             <button
@@ -371,7 +385,7 @@ const VegeRAMA = () => {
             </p>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight font-display">
-              <span className="text-white">VegeRAMA</span>
+              <span className="text-white">VEGERAMA</span>
               {/* <span className="block text-[#AED581]">RAMA</span> */}
             </h1>
             
@@ -411,7 +425,7 @@ const VegeRAMA = () => {
               </div>
               <div className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 bg-[#AED581] text-[#2E7D32] p-4 lg:p-5 rounded-xl shadow-lg max-w-[280px] z-10">
                 <p className="text-lg lg:text-xl italic mb-1 font-semibold">"Fresh. Green. Delicious."</p>
-                <p className="text-xs opacity-80">— The VegeRAMA Promise</p>
+                <p className="text-xs opacity-80">— The VEGERAMA Promise</p>
               </div>
             </div>
             <div>
@@ -422,7 +436,7 @@ const VegeRAMA = () => {
               </h2>
               <div className="space-y-4 text-white/80 text-base md:text-lg leading-relaxed">
                 <p>
-                  <span className="text-white font-semibold">VegeRAMA</span> celebrates the vibrant world of vegetarian cuisine, 
+                  <span className="text-white font-semibold">VEGERAMA</span> celebrates the vibrant world of vegetarian cuisine, 
                   where fresh, green ingredients come together to create dishes that nourish both body and soul. 
                   Our mission is to showcase the incredible diversity and flavor potential of plant-based foods.
                 </p>
@@ -527,7 +541,7 @@ const VegeRAMA = () => {
             {canScrollLeft && (
               <button
                 onClick={scrollLeft}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-300 hover:scale-110"
+                className="absolute left-2 top-1/3 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-300 hover:scale-110"
                 aria-label="Scroll left"
               >
                 <ChevronLeft size={24} className="text-gray-700" />
@@ -538,7 +552,7 @@ const VegeRAMA = () => {
             {canScrollRight && (
               <button
                 onClick={scrollRight}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-300 hover:scale-110"
+                className="absolute right-2 top-1/3 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-300 hover:scale-110"
                 aria-label="Scroll right"
               >
                 <ChevronRight size={24} className="text-gray-700" />
@@ -560,7 +574,7 @@ const VegeRAMA = () => {
                     />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-[#4CAF50] to-[#81C784] flex items-center justify-center">
-                      <span className="text-white text-2xl font-bold">VegeRAMA</span>
+                      <span className="text-white text-2xl font-bold">VEGERAMA</span>
                     </div>
                   )}
                   <div className="absolute top-4 left-4">
@@ -676,9 +690,19 @@ const VegeRAMA = () => {
         </div>
       </section>
 
-      <div className="scroll-snap-section">
+      {/* Brand Discovery Section */}
+      <section id="brands" className="min-h-screen scroll-snap-section scroll-snap-align-start py-16 md:py-24">
+        <div className="h-full flex items-center justify-center">
+          <BrandDiscoveryCarousel currentBrandRoute="/vegerama" />
+        </div>
+      </section>
+
+      <div id="contact" className="scroll-snap-section">
         <Footer />
       </div>
+
+      {/* Floating Brand Suggestion - 30 second popup */}
+      <FloatingBrandSuggestion />
     </div>
   );
 };

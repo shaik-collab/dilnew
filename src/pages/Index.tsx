@@ -100,7 +100,7 @@ const Index = () => {
     },
     
     {
-      name: "VegeRAMA",
+      name: "VEGERAMA",
       logo: "/lovable-uploads/vegerama_new-Photoroom.png",
       route: "/vegerama",
     },

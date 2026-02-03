@@ -1,6 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import BrandNavigation from "../components/BrandNavigation";
+import BrandDiscoveryCarousel from "../components/BrandDiscoveryCarousel";
+import FloatingBrandSuggestion from "../components/FloatingBrandSuggestion";
 import {
   Sparkles,
   Handshake,
@@ -207,7 +210,7 @@ const TheChaatCult = () => {
     <div className="min-h-screen bg-background the-chaat-cult-page scroll-snap-container">
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-[#089797]/95 backdrop-blur-md shadow-lg" : "bg-black/20 backdrop-blur-sm"
+          scrolled ? "bg-[#089797]/95 backdrop-blur-md shadow-lg" : "bg-black/35 backdrop-blur-sm"
         }`}
       >
         <div className="container mx-auto px-6">
@@ -223,7 +226,7 @@ const TheChaatCult = () => {
                   alt="Dil Foods" 
                   className="h-5 w-auto group-hover:scale-110 transition-transform duration-300" 
                 />
-                <span className="hidden sm:inline text-sm font-medium">Home</span>
+                {/* <span className="hidden sm:inline text-sm font-medium">Home</span> */}
               </Link>
               <div className="h-6 w-px bg-white/30"></div>
               <Link to="/the-chaat-cult" className="text-2xl text-white font-bold font-display">
@@ -253,6 +256,16 @@ const TheChaatCult = () => {
                 Reviews
               </a>
               <a
+                href="#brands"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("brands");
+                }}
+                className="text-white/90 hover:text-[#e8e73e] transition-colors duration-300 font-medium"
+              >
+                Other Brands
+              </a>
+              <a
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
@@ -270,6 +283,7 @@ const TheChaatCult = () => {
               >
                 Order Now
               </a>
+              <BrandNavigation variant="light" />
             </div>
 
             <button
@@ -300,6 +314,7 @@ const TheChaatCult = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection("menu");
+                  setIsMenuOpen(false);
                 }}
                 className="block text-white/90 hover:text-[#e8e73e] transition-colors duration-300 font-medium py-2"
               >
@@ -310,16 +325,29 @@ const TheChaatCult = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection("reviews");
+                  setIsMenuOpen(false);
                 }}
                 className="block text-white/90 hover:text-[#e8e73e] transition-colors duration-300 font-medium py-2"
               >
                 Reviews
               </a>
               <a
+                href="#brands"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("brands");
+                  setIsMenuOpen(false);
+                }}
+                className="block text-white/90 hover:text-[#e8e73e] transition-colors duration-300 font-medium py-2"
+              >
+                Other Brands
+              </a>
+              <a
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection("contact");
+                  setIsMenuOpen(false);
                 }}
                 className="block text-white/90 hover:text-[#e8e73e] transition-colors duration-300 font-medium py-2"
               >
@@ -515,7 +543,7 @@ const TheChaatCult = () => {
             {canScrollLeft && (
               <button
                 onClick={scrollLeft}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-300 hover:scale-110"
+                className="absolute left-2 top-1/3 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-300 hover:scale-110"
                 aria-label="Scroll left"
               >
                 <ChevronLeft size={24} className="text-gray-700" />
@@ -526,7 +554,7 @@ const TheChaatCult = () => {
             {canScrollRight && (
               <button
                 onClick={scrollRight}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-300 hover:scale-110"
+                className="absolute right-2 top-1/3 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-300 hover:scale-110"
                 aria-label="Scroll right"
               >
                 <ChevronRight size={24} className="text-gray-700" />
@@ -607,9 +635,10 @@ const TheChaatCult = () => {
         </div>
       </section>
 
-      <section id="contact" className="min-h-screen flex items-center bg-white overflow-hidden scroll-snap-section">
-        <div className="container mx-auto px-6 py-16">
-          <div className="text-center max-w-3xl mx-auto mb-12">
+      {/* Instagram/Social Section */}
+      <section className="min-h-screen py-16 md:py-24 bg-background scroll-snap-section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#FF8C00] rounded-full mb-6">
               <Instagram className="w-5 h-5 text-white" />
               <span className="font-semibold text-white">@thechaatcult</span>
@@ -664,9 +693,19 @@ const TheChaatCult = () => {
         </div>
       </section>
 
-      <div className="scroll-snap-section">
+      {/* Brand Discovery Section */}
+      <section id="brands" className="min-h-screen scroll-snap-section scroll-snap-align-start py-16 md:py-24">
+        <div className="h-full flex items-center justify-center">
+          <BrandDiscoveryCarousel currentBrandRoute="/the-chaat-cult" />
+        </div>
+      </section>
+
+      <div id="contact" className="scroll-snap-section">
         <Footer />
       </div>
+
+      {/* Floating Brand Suggestion - 30 second popup */}
+      <FloatingBrandSuggestion />
     </div>
   );
 };

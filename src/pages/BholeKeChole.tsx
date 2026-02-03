@@ -1,6 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import BrandNavigation from "../components/BrandNavigation";
+import BrandDiscoveryCarousel from "../components/BrandDiscoveryCarousel";
+import FloatingBrandSuggestion from "../components/FloatingBrandSuggestion";
 import {
   Sparkles,
   Handshake,
@@ -201,7 +204,7 @@ const BholeKeChole = () => {
                   alt="Dil Foods" 
                   className="h-5 w-auto group-hover:scale-110 transition-transform duration-300" 
                 />
-                <span className="hidden sm:inline text-sm font-medium">Home</span>
+                {/* <span className="hidden sm:inline text-sm font-medium">Home</span> */}
               </Link>
               <div className="h-6 w-px bg-white/30"></div>
               <Link to="/bhole-ke-chole" className="text-2xl text-white font-bold font-display">
@@ -231,6 +234,16 @@ const BholeKeChole = () => {
                 Reviews
               </a>
               <a
+                href="#brands"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("brands");
+                }}
+                className="text-white/90 hover:text-primary/70 transition-colors duration-300 font-medium"
+              >
+                Other Brands
+              </a>
+              <a
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
@@ -248,6 +261,7 @@ const BholeKeChole = () => {
               >
                 Order Now
               </a>
+              <BrandNavigation variant="light" />
             </div>
 
             <button
@@ -493,7 +507,7 @@ const BholeKeChole = () => {
             {canScrollLeft && (
               <button
                 onClick={scrollLeft}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-300 hover:scale-110"
+                className="absolute left-2 top-1/3 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-300 hover:scale-110"
                 aria-label="Scroll left"
               >
                 <ChevronLeft size={24} className="text-gray-700" />
@@ -504,7 +518,7 @@ const BholeKeChole = () => {
             {canScrollRight && (
               <button
                 onClick={scrollRight}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-300 hover:scale-110"
+                className="absolute right-2 top-1/3 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-300 hover:scale-110"
                 aria-label="Scroll right"
               >
                 <ChevronRight size={24} className="text-gray-700" />
@@ -642,9 +656,19 @@ const BholeKeChole = () => {
         </div>
       </section>
 
-      <div className="scroll-snap-section">
+      {/* Brand Discovery Section */}
+      <section id="brands" className="min-h-screen scroll-snap-section scroll-snap-align-start py-16 md:py-24">
+        <div className="h-full flex items-center justify-center">
+          <BrandDiscoveryCarousel currentBrandRoute="/bhole-ke-chole" />
+        </div>
+      </section>
+
+      <div id="contact" className="scroll-snap-section">
         <Footer />
       </div>
+
+      {/* Floating Brand Suggestion - 30 second popup */}
+      <FloatingBrandSuggestion />
     </div>
   );
 };
