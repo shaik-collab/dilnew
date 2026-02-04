@@ -362,7 +362,7 @@ const Aahar = () => {
                 <span className="text-white text-sm font-medium">Available only on</span>
                 <div className="flex items-center gap-3 flex-1">
                   <a
-                    href="https://www.swiggy.com"
+                    href="https://www.swiggy.com/city/bangalore/aahar-doddaballapura-2nd-stage-rajajinagar-rest545922"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-2 py-1 bg-white hover:bg-gray-50 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg flex items-center flex-1 justify-center h-8"
@@ -667,7 +667,7 @@ const Aahar = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="min-h-screen flex items-center bg-white overflow-hidden scroll-snap-section">
+      <section id="social" className="min-h-screen flex items-center bg-white overflow-hidden scroll-snap-section">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#8BC34A] rounded-full mb-6">

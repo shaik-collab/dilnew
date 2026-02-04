@@ -185,14 +185,12 @@ const Footer = () => {
                   >
                     Careers at Dil Foods
                   </a>
-                  <a
-                    href="https://dilfoods.in/blog/"
-                    target="_blank"
-                    rel="noreferrer"
+                  <Link
+                    to="/media?tab=blogs"
                     className="block text-gradient-yellow-orange hover:underline mt-2"
                   >
                     Read Our Blog
-                  </a>
+                  </Link>
                 </>
               )}
             </div>

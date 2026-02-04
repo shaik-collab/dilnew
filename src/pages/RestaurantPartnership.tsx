@@ -57,6 +57,11 @@ const RestaurantPartnership = () => {
       city: "",
       contactNumber: "",
       email: "",
+      pincode: "",
+      kitchenArea: "",
+      kitchenWorkingHours: "",
+      totalOrdersPerDay: "",
+      freezerCapacity: "",
     },
   });
 
@@ -208,7 +213,7 @@ const RestaurantPartnership = () => {
     },
     {
       name: "Khichdi Bar",
-      logo: "/lovable-uploads/e4e94576-7f4a-4f0c-ac31-cb388323568b.png",
+      logo: "/lovable-uploads/DIL_daily_new.png",
     },
     {
       name: "Bhole ke Chole",
@@ -222,9 +227,14 @@ const RestaurantPartnership = () => {
       name: "House Of Andhra",
       logo: "/lovable-uploads/b7f77f5d-c32a-4b73-9673-c4572c649bf4.png",
     },
+    // {
+    //   name: "Dil Foods",
+    //   logo: "/lovable-uploads/981bf596-8923-43ae-950d-88e254903acf.png",
+    // },
     {
-      name: "Dil Foods",
-      logo: "/lovable-uploads/981bf596-8923-43ae-950d-88e254903acf.png",
+      name: "Junglee Kitchen",
+      logo: "/lovable-uploads/junglee logo.png",
+      route: "/junglee-kitchen",
     },
     { name: "Dil Punjabi Daily", logo: "/lovable-uploads/vegerama_new-Photoroom.png" },
     {
@@ -233,7 +243,7 @@ const RestaurantPartnership = () => {
     },
     {
       name: "Nagada",
-      logo: "/lovable-uploads/1baa2440-41ee-47c5-8537-70989d99f512.png",
+      logo: "/lovable-uploads/bb_logo.png",
     },
   ];
 
@@ -684,6 +694,109 @@ const RestaurantPartnership = () => {
               {errors.email && (
                 <p className="mt-1 text-sm text-red-600">
                   Please enter a valid email address
+                </p>
+              )}
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Pincode*
+              </label>
+              <input
+                type="text"
+                {...register("pincode", { 
+                  required: true,
+                  pattern: /^[0-9]{6}$/,
+                })}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
+                placeholder="Enter 6-digit pincode"
+              />
+              {errors.pincode && (
+                <p className="mt-1 text-sm text-red-600">
+                  Please enter a valid 6-digit pincode
+                </p>
+              )}
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Kitchen Area (in sq ft)*
+              </label>
+              <input
+                type="number"
+                {...register("kitchenArea", { 
+                  required: true,
+                  min: 1,
+                })}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
+                placeholder="Enter kitchen area in square feet"
+              />
+              {errors.kitchenArea && (
+                <p className="mt-1 text-sm text-red-600">
+                  Kitchen area is required
+                </p>
+              )}
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Kitchen Working Hours
+              </label>
+              <input
+                type="number"
+                min="1"
+                max="24"
+                step="1"
+                {...register("kitchenWorkingHours", {
+                  min: { value: 1, message: "Working hours must be at least 1 hour" },
+                  max: { value: 24, message: "Working hours cannot exceed 24 hours per day" },
+                  valueAsNumber: true,
+                })}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
+                placeholder="Enter working hours per day (1-24)"
+              />
+              {errors.kitchenWorkingHours && (
+                <p className="mt-1 text-sm text-red-600">
+                  {errors.kitchenWorkingHours.message || "Please enter valid working hours (1-24)"}
+                </p>
+              )}
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Total Number of Orders per Day
+              </label>
+              <input
+                type="number"
+                {...register("totalOrdersPerDay", {
+                  min: 0,
+                })}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
+                placeholder="Enter average orders per day"
+              />
+              {errors.totalOrdersPerDay && (
+                <p className="mt-1 text-sm text-red-600">
+                  Please enter a valid number
+                </p>
+              )}
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Freezer Capacity (in litres)*
+              </label>
+              <input
+                type="number"
+                {...register("freezerCapacity", { 
+                  required: true,
+                  min: 1,
+                })}
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
+                placeholder="Enter freezer capacity in litres"
+              />
+              {errors.freezerCapacity && (
+                <p className="mt-1 text-sm text-red-600">
+                  Freezer capacity is required
                 </p>
               )}
             </div>

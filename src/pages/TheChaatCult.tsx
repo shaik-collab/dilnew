@@ -702,7 +702,7 @@ const TheChaatCult = () => {
       </section>
 
       {/* Instagram/Social Section */}
-      <section className="min-h-screen py-16 md:py-24 bg-background scroll-snap-section">
+      <section id="social" className="min-h-screen py-16 md:py-24 bg-background scroll-snap-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#FF8C00] rounded-full mb-6">

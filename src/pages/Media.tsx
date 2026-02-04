@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -117,8 +118,19 @@ const MediaCard = ({ item }: { item: MediaItem }) => {
 };
 
 const Media = () => {
-  const [activeTab, setActiveTab] = useState("all");
+  const [searchParams] = useSearchParams();
+  const tabFromUrl = searchParams.get("tab");
+  
+  // Set initial tab based on URL parameter, default to "all"
+  const [activeTab, setActiveTab] = useState(tabFromUrl || "all");
   const [email, setEmail] = useState("");
+
+  // Update activeTab if URL parameter changes
+  useEffect(() => {
+    if (tabFromUrl && ["all", "news", "blogs", "press"].includes(tabFromUrl)) {
+      setActiveTab(tabFromUrl);
+    }
+  }, [tabFromUrl]);
 
   const filteredItems =
     activeTab === "all"
@@ -172,7 +184,8 @@ const Media = () => {
         <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Tabs
-              defaultValue="all"
+              defaultValue={activeTab}
+              value={activeTab}
               className="w-full"
               onValueChange={setActiveTab}
             >

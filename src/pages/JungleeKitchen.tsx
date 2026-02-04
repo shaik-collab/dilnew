@@ -783,7 +783,7 @@ const JungleeKitchen = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="min-h-screen flex items-center bg-background overflow-hidden scroll-snap-section">
+      <section id="social" className="min-h-screen flex items-center bg-background overflow-hidden scroll-snap-section">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center gap-3 px-6 py-3 bg-jungle-gold rounded-full mb-6">
