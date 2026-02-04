@@ -365,27 +365,34 @@ const DilPunjabiDaily = () => {
               homestyle cuisine, served with love and tradition every day.
             </p>
             
-            {/* Platform Availability */}
-            <div className="flex flex-wrap justify-center gap-3 mb-10">
-              <div className="flex items-center gap-3 px-6 py-3 bg-primary/20 backdrop-blur-sm rounded-full border border-accent/30 hover:bg-primary/30 transition-all duration-300">
-                <span className="text-white/90 text-sm font-medium">Available only on</span>
-                <div className="flex items-center gap-2">
+            {/* Platform Availability in Hero */}
+            <div className="flex justify-center mb-8">
+              <div className="flex items-center gap-4 px-6 py-2 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 shadow-lg max-w-md w-full">
+                <span className="text-white text-sm font-medium">Available only on</span>
+                <div className="flex items-center gap-3 flex-1">
                   <a
-                    href="https://www.swiggy.com"
+                    href="https://www.swiggy.com/direct/brand/553014?source=swiggy-direct&subSource=instagram"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3 py-1 bg-orange-500 hover:bg-orange-600 text-white text-xs font-semibold rounded-md transition-colors duration-200"
+                    className="px-2 py-1 bg-white hover:bg-gray-50 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg flex items-center flex-1 justify-center h-8"
                   >
-                    Swiggy
+                    <img
+                      src="/swiggy_logo.jpg"
+                      alt="Swiggy"
+                      className="h-6 w-full object-cover rounded-sm"
+                    />
                   </a>
-                  <span className="text-white/70">&</span>
                   <a
-                    href="https://www.zomato.com"
+                    href="https://link.zomato.com/xqzv/rshare?id=8344315630563afe"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3 py-1 bg-red-500 hover:bg-red-600 text-white text-xs font-semibold rounded-md transition-colors duration-200"
+                    className="px-2 py-1 bg-white hover:bg-gray-50 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg flex items-center flex-1 justify-center h-8"
                   >
-                    Zomato
+                    <img
+                      src="/Zomato-logo.png"
+                      alt="Zomato"
+                      className="h-6 w-full object-cover rounded-sm"
+                    />
                   </a>
                 </div>
               </div>
@@ -521,7 +528,7 @@ const DilPunjabiDaily = () => {
 
       <section id="menu" className="min-h-screen flex items-center bg-background overflow-hidden scroll-snap-section">
         <div className="container mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-8">
             <span className="text-primary text-sm tracking-[0.3em] uppercase font-semibold">Our Menu</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl text-foreground font-bold mt-4 mb-6 leading-tight font-display">
               Taste the
@@ -533,6 +540,40 @@ const DilPunjabiDaily = () => {
               Each dish is a celebration of rich, hearty comfort food flavors.
             </p>
           </div>
+          
+          {/* Platform Availability Banner */}
+          <div className="flex justify-center mb-16">
+            <div className="flex items-center gap-4 px-6 py-2 bg-gradient-to-r from-primary/20 to-secondary/20 backdrop-blur-sm rounded-xl border border-primary/30 shadow-lg max-w-md w-full">
+              <span className="text-foreground text-sm font-medium">Available only on</span>
+              <div className="flex items-center gap-3 flex-1">
+                <a
+                  href="https://www.swiggy.com/direct/brand/553014?source=swiggy-direct&subSource=instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-2 py-1 bg-white hover:bg-gray-50 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg flex items-center flex-1 justify-center h-8"
+                >
+                  <img
+                    src="/swiggy_logo.jpg"
+                    alt="Swiggy"
+                    className="h-6 w-full object-cover rounded-sm"
+                  />
+                </a>
+                <a
+                  href="https://link.zomato.com/xqzv/rshare?id=8344315630563afe"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-2 py-1 bg-white hover:bg-gray-50 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg flex items-center flex-1 justify-center h-8"
+                >
+                  <img
+                    src="/Zomato-logo.png"
+                    alt="Zomato"
+                    className="h-6 w-full object-cover rounded-sm"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          
           <div className="relative">
             {/* Left Arrow */}
             {canScrollLeft && (
