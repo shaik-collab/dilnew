@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import BrandNavigation from "../components/BrandNavigation";
-import BrandDiscoveryCarousel from "../components/BrandDiscoveryCarousel";
 import FloatingBrandSuggestion from "../components/FloatingBrandSuggestion";
 import {
   Sparkles,
@@ -393,6 +392,16 @@ const JungleeKitchen = () => {
                 Reviews
               </a>
               <a
+                href="#brands"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("brands");
+                }}
+                className="block text-jungle-beige/90 hover:text-jungle-gold transition-colors duration-300 font-medium py-2"
+              >
+                Other Brands
+              </a>
+              <a
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
@@ -445,10 +454,36 @@ const JungleeKitchen = () => {
             </h1>
             
             {/* Description */}
-            <p className="text-jungle-beige/95 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+            <p className="text-jungle-beige/95 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
               Where untamed flavors meet culinary artistry. Experience the wild side of Indian
               cuisine, curated with passion and served with soul.
             </p>
+            
+            {/* Platform Availability */}
+            <div className="flex flex-wrap justify-center gap-3 mb-10">
+              <div className="flex items-center gap-3 px-6 py-3 bg-jungle-brown/20 backdrop-blur-sm rounded-full border border-jungle-gold/30 hover:bg-jungle-brown/30 transition-all duration-300">
+                <span className="text-jungle-beige/90 text-sm font-medium">Available only on</span>
+                <div className="flex items-center gap-2">
+                  <a
+                    href="https://www.swiggy.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1 bg-orange-500 hover:bg-orange-600 text-white text-xs font-semibold rounded-md transition-colors duration-200"
+                  >
+                    Swiggy
+                  </a>
+                  <span className="text-jungle-beige/70">&</span>
+                  <a
+                    href="https://www.zomato.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1 bg-red-500 hover:bg-red-600 text-white text-xs font-semibold rounded-md transition-colors duration-200"
+                  >
+                    Zomato
+                  </a>
+                </div>
+              </div>
+            </div>
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -482,15 +517,16 @@ const JungleeKitchen = () => {
         <div className="container mx-auto px-6 w-full">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center max-w-7xl mx-auto">
             <div className="relative flex justify-center">
-              <div className="relative w-full max-w-lg aspect-[3/4] rounded-2xl overflow-hidden shadow-strong bg-jungle-beige/30">
+              <div className="relative w-full max-w-md aspect-[3/3.5] rounded-2xl overflow-hidden shadow-strong bg-jungle-beige/30">
                 <img
-                  src="https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Armaan Jain 1.png"
+                  // src="https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Armaan Jain 1.png"
+                  src="/junglee-kitchen/armaan jain1.png"
                   alt="Armaan Jain - Curator of The Junglee Kitchen"
-                  className="w-full h-full object-contain object-center"
+                  className="w-full h-full object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-jungle-dark/10 to-transparent"></div>
               </div>
-              <div className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 bg-jungle-brown text-jungle-beige p-4 lg:p-5 rounded-xl shadow-strong max-w-[280px] z-10">
+              <div className="absolute -bottom-12 -right-3 lg:-bottom-14 lg:-right-4 bg-jungle-brown text-jungle-beige p-3 lg:p-4 rounded-xl shadow-strong max-w-[250px] z-10">
                 <p className="text-lg lg:text-xl italic mb-1">"Food is my language of love"</p>
                 <p className="text-xs opacity-80">— Armaan Jain</p>
               </div>
@@ -763,10 +799,210 @@ const JungleeKitchen = () => {
         </div>
       </section>
 
-      {/* Brand Discovery Section */}
-      <section id="brands" className="min-h-screen scroll-snap-section scroll-snap-align-start py-16 md:py-24">
-        <div className="h-full flex items-center justify-center">
-          <BrandDiscoveryCarousel currentBrandRoute="/junglee-kitchen" />
+      {/* Brand Discovery Section - Inline with Junglee Theme */}
+      <section id="brands" className="min-h-screen scroll-snap-section scroll-snap-align-start py-16 md:py-24" 
+        style={{ background: 'linear-gradient(135deg, hsl(42 35% 88%) 0%, hsl(42 30% 92%) 100%)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header Section - Junglee Theme */}
+          <div className="text-center mb-12 px-4">
+            <div className="relative">
+              {/* Background Decoration with Junglee colors */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-32 h-32 bg-gradient-to-r from-amber-200 to-orange-200 rounded-full blur-3xl opacity-40"></div>
+              </div>
+              
+              <div className="relative">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-display"
+                  style={{ color: 'hsl(18 35% 28%)' }}>
+                  Explore Our Other
+                  <span className="block" style={{ color: 'hsl(18 40% 22%)' }}>
+                    Culinary Brands
+                  </span>
+                </h2>
+                
+                <p className="text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed mb-8"
+                  style={{ color: 'hsl(18 30% 35%)' }}>
+                  Discover more delicious cuisines from our family of food brands, each crafted with 
+                  <span className="font-semibold"> passion</span> and 
+                  <span className="font-semibold"> authenticity</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative">
+            {/* Brand Cards Container */}
+            <div className="flex gap-6 md:gap-8 overflow-x-auto scrollbar-hide pb-6 px-4">
+              {[
+                {
+                  name: "Bhole ke Chole",
+                  logo: "/lovable-uploads/cdf67c56-7bd7-4023-af81-bf258fe60fe3.png",
+                  route: "/bhole-ke-chole",
+                  description: "Authentic North Indian street food",
+                  primaryColor: "#DC2A6B",
+                  secondaryColor: "#E91E63",
+                  logoBackground: "#FCE4EC",
+                },
+                {
+                  name: "Aahar",
+                  logo: "/lovable-uploads/55d6ad50-361d-42cd-b556-c283b2ee23e4.png",
+                  route: "/aahar",
+                  description: "Traditional South Indian homestyle meals",
+                  primaryColor: "#F44336",
+                  secondaryColor: "#4CAF50",
+                  logoBackground: "#FFF3E0",
+                },
+                {
+                  name: "House Of Andhra",
+                  logo: "/lovable-uploads/1310a9da-ccbe-4fa6-bc06-51441a0872ba.png",
+                  route: "/house-of-andhra",
+                  description: "Authentic Andhra cuisine with bold spices",
+                  primaryColor: "#8B1538",
+                  secondaryColor: "#AD1457",
+                  logoBackground: "#F8F6F5",
+                },
+                {
+                  name: "Dil Daily",
+                  logo: "/lovable-uploads/DIL_daily_new.png",
+                  route: "/dil-punjabi-daily",
+                  description: "Daily dose of Punjabi comfort food",
+                  primaryColor: "#E91E63",
+                  secondaryColor: "#26A69A",
+                  logoBackground: "#FFFDE7",
+                },
+                {
+                  name: "Khichdi Bar",
+                  logo: "/lovable-uploads/235a933c-2973-43db-8419-1bc689100f0a.png",
+                  route: "/khichdi-bar",
+                  description: "Comfort in every bowl - healthy & delicious",
+                  primaryColor: "#2E7D32",
+                  secondaryColor: "#FF9800",
+                  logoBackground: "#FDF6E8",
+                },
+                {
+                  name: "The Chaat Cult",
+                  logo: "/lovable-uploads/tcc.png",
+                  route: "/the-chaat-cult",
+                  description: "Tangy, spicy, addictive street chaat",
+                  primaryColor: "#00897B",
+                  secondaryColor: "#CDDC39",
+                  logoBackground: "#E0F2F1",
+                },
+                {
+                  name: "VEGERAMA",
+                  logo: "/lovable-uploads/vegerama_new-Photoroom.png",
+                  route: "/vegerama",
+                  description: "Fresh, delicious vegetarian delights",
+                  primaryColor: "#2E7D32",
+                  secondaryColor: "#8BC34A",
+                  logoBackground: "#E8F5E8",
+                },
+                {
+                  name: "Bihari Bowl",
+                  logo: "/lovable-uploads/bb_logo.png",
+                  route: "/bihari-bowl",
+                  description: "Authentic Bihari flavors in every bite",
+                  primaryColor: "#B71C1C",
+                  secondaryColor: "#D32F2F",
+                  logoBackground: "#FFF8E1",
+                },
+              ].map((brand) => (
+                <Link
+                  key={brand.route}
+                  to={brand.route}
+                  className="flex-shrink-0 group"
+                >
+                  {/* Junglee-themed Card Design */}
+                  <div className="w-64 sm:w-72 md:w-64 h-52 sm:h-56 md:h-64 bg-white/90 backdrop-blur-sm rounded-3xl shadow-lg border border-amber-100 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group-hover:border-amber-300 relative">
+                    
+                    {/* Brand Color Strip - Junglee themed */}
+                    <div 
+                      className="h-1 w-full opacity-70 group-hover:opacity-100 transition-opacity duration-300" 
+                      style={{ 
+                        background: `linear-gradient(90deg, ${brand.primaryColor}, ${brand.secondaryColor})` 
+                      }}
+                    />
+
+                    {/* Main Content */}
+                    <div className="flex flex-col items-center justify-center h-full p-6">
+                      
+                      {/* Logo Container with Junglee glow */}
+                      <div className="relative mb-4">
+                        <div 
+                          className="absolute -inset-4 rounded-3xl blur-lg opacity-0 group-hover:opacity-30 transition-all duration-500"
+                          style={{ 
+                            backgroundColor: 'hsl(38 85% 58%)'
+                          }}
+                        />
+                        
+                        <div 
+                          className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-2xl flex items-center justify-center shadow-md transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                          style={{ 
+                            backgroundColor: brand.logoBackground,
+                          }}
+                        >
+                          <img
+                            src={brand.logo}
+                            alt={brand.name}
+                            className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain transition-transform duration-300 group-hover:scale-110"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Description with Junglee colors */}
+                      <p className="text-sm text-center leading-relaxed mb-4 px-3 min-h-[2rem] flex items-center justify-center transition-all duration-300 font-medium"
+                        style={{ color: 'hsl(18 30% 45%)' }}>
+                        {brand.description}
+                      </p>
+
+                      {/* CTA Button - Junglee themed */}
+                      <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                        <div 
+                          className="px-6 py-2 rounded-full text-white font-medium text-sm shadow-lg transition-all duration-300 flex items-center gap-2"
+                          style={{ 
+                            background: `linear-gradient(135deg, hsl(18 35% 28%), hsl(38 85% 58%))` 
+                          }}
+                        >
+                          <span>Explore</span>
+                          <ChevronRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Corner Accent - Junglee themed */}
+                    <div 
+                      className="absolute top-3 right-3 w-2 h-2 rounded-full opacity-50 group-hover:opacity-80 transition-all duration-300"
+                      style={{ backgroundColor: 'hsl(38 85% 58%)' }}
+                    />
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA Button - Junglee themed */}
+          <div className="text-center mt-12 px-4">
+            <div className="relative inline-block">
+              <div className="absolute inset-0 rounded-2xl blur opacity-40 transition-opacity duration-300"
+                style={{ background: 'linear-gradient(135deg, hsl(18 35% 28%), hsl(38 85% 58%))' }}></div>
+              
+              <Link
+                to="/#brands"
+                className="relative inline-flex items-center gap-4 px-10 py-5 font-bold text-lg rounded-2xl transition-all duration-500 hover:shadow-2xl transform hover:scale-105 hover:-translate-y-2 group text-white"
+                style={{ background: 'linear-gradient(135deg, hsl(18 35% 28%), hsl(38 85% 58%))' }}
+              >
+                <span>View All Brands</span>
+                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-white/30 group-hover:scale-110">
+                  <ChevronRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+                </div>
+              </Link>
+            </div>
+            
+            <p className="text-sm mt-6 max-w-md mx-auto px-4"
+              style={{ color: 'hsl(18 30% 45%)' }}>
+              Experience the diverse flavors and authentic cuisines from our carefully curated brand collection
+            </p>
+          </div>
         </div>
       </section>
 

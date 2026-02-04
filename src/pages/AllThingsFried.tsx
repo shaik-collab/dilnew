@@ -234,10 +234,36 @@ const AllThingsFried = () => {
               <span className="block text-[#FFEB3B]">Fried</span>
             </h1>
             
-            <p className="text-white/95 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+            <p className="text-white/95 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
               Bold, energetic, and indulgent. Experience the perfect crunch in every bite, 
               where crispy meets golden perfection.
             </p>
+            
+            {/* Platform Availability */}
+            <div className="flex flex-wrap justify-center gap-3 mb-10">
+              <div className="flex items-center gap-3 px-6 py-3 bg-[#E91E63]/20 backdrop-blur-sm rounded-full border border-[#FFEB3B]/30 hover:bg-[#E91E63]/30 transition-all duration-300">
+                <span className="text-white/90 text-sm font-medium">Available only on</span>
+                <div className="flex items-center gap-2">
+                  <a
+                    href="https://www.swiggy.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1 bg-orange-500 hover:bg-orange-600 text-white text-xs font-semibold rounded-md transition-colors duration-200"
+                  >
+                    Swiggy
+                  </a>
+                  <span className="text-white/70">&</span>
+                  <a
+                    href="https://www.zomato.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1 bg-red-500 hover:bg-red-600 text-white text-xs font-semibold rounded-md transition-colors duration-200"
+                  >
+                    Zomato
+                  </a>
+                </div>
+              </div>
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
