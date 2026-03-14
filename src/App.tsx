@@ -14,6 +14,7 @@ import DeleteData from "./pages/DeleteData";
 import SpecialOffer from "./pages/SpecialOffer";
 import ThankYou from "./pages/ThankYou";
 import OrderHistory from "./pages/OrderHistory";
+import FeedbackSurvey from "./pages/FeedbackSurvey";
 
 const queryClient = new QueryClient();
 
@@ -117,6 +118,7 @@ const App = () => {
             <Route path="/special-offer" element={<SpecialOffer />} />
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="/order-history" element={<OrderHistory />} />
+            <Route path="/feedback-survey/:id/:restaurantName/:encryptedName" element={<FeedbackSurvey />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
