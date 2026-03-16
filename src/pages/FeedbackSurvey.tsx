@@ -21,6 +21,7 @@ const FeedbackSurvey = () => {
   } = useForm({
     defaultValues: {
       name: "",
+      feedback: "",
     },
   });
 
@@ -95,6 +96,7 @@ const FeedbackSurvey = () => {
           restaurantName: restaurantName,
           name: data.name || "",
           npsScore: npsScore,
+          feedback: data.feedback || "",
         };
 
         const res = await axios.post(`${apiUrl.replace(/\/+$/, '')}/feedback-surveys`, payload);
@@ -182,6 +184,17 @@ const FeedbackSurvey = () => {
                 <span>Not at all likely</span>
                 <span>Extremely likely</span>
               </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mb-6">
+              <h2 className="text-lg font-semibold mb-2 text-gray-800">
+                We would like to hear from you. Please give a feedback to understand you better
+              </h2>
+              <textarea
+                {...register("feedback")}
+                className="w-full min-h-[100px] px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-purple focus:border-transparent"
+                placeholder="Share any comments or suggestions you may have"
+              />
             </div>
 
             <button
