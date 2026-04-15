@@ -25,6 +25,7 @@ import AllThingsFried from "./pages/AllThingsFried";
 import TheChaatCult from "./pages/TheChaatCult";
 import BihariBowl from "./pages/BihariBowl";
 import VegeRAMA from "./pages/VegeRAMA";
+import FeedbackSurvey from "./pages/FeedbackSurvey";
 
 const queryClient = new QueryClient();
 
@@ -139,6 +140,7 @@ const App = () => {
             <Route path="/the-chaat-cult" element={<TheChaatCult />} />
             <Route path="/bihari-bowl" element={<BihariBowl />} />
             <Route path="/vegerama" element={<VegeRAMA />} />
+            <Route path="/feedback-survey/:id/:restaurantName/:encryptedName" element={<FeedbackSurvey />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
