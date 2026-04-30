@@ -80,6 +80,18 @@ export default {
 					peach: "#FDE1D3",
 					lightPeach: "#fcf7ee",
 				},
+				premium: {
+					dark: "#1a1a1a",
+					warm: "#2d2d2d",
+					gold: "#c9a227",
+					beige: "#d4a574",
+					bg: "#faf9f6",
+					white: "#ffffff",
+					text: {
+						primary: "#1a1a1a",
+						secondary: "#666666",
+					}
+				},
 				// Bhole ke Chole brand colors - Vibrant street food palette
 				bhole: {
 					pink: "#E91E63", // Brand Pink - more vibrant, logo-accurate

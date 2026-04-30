@@ -25,8 +25,9 @@ const Navbar = () => {
 
   const navigation = [
     { name: "Home", href: "/" },
+    { name: "Brands", href: "/#brands", isAnchor: true },
     { name: "Restaurant Partnership", href: "/restaurant-partnership" },
-    { name: "Horeca Supply", href: "/horeca-supply" },
+    // { name: "Horeca Supply", href: "/horeca-supply" },
     { name: "Media", href: "/media" },
   ];
 
@@ -41,6 +42,17 @@ const Navbar = () => {
     window.scrollTo(0, 0);
   };
 
+  const scrollToBrands = () => {
+    if (location.pathname === "/") {
+      const brandsSection = document.getElementById("brands");
+      if (brandsSection) {
+        brandsSection.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      window.location.href = "/#brands";
+    }
+  };
+
   const getTextColorClass = (isActive: boolean) => {
     if (!scrolled && hasPurpleGradientHero) {
       return isActive
@@ -49,7 +61,7 @@ const Navbar = () => {
     }
     return isActive
       ? "text-dil-red font-semibold"
-      : "text-gray-700 hover:text-dil-red";
+      : "text-gray-800 hover:text-dil-red";
   };
 
   return (
@@ -87,7 +99,7 @@ const Navbar = () => {
                     <Link
                       key={item.name}
                       to={item.href}
-                      onClick={scrollToTop}
+                      onClick={item.isAnchor ? scrollToBrands : scrollToTop}
                       className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${getTextColorClass(
                         location.pathname === item.href
                       )}`}
@@ -140,7 +152,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                onClick={scrollToTop}
+                onClick={item.isAnchor ? scrollToBrands : scrollToTop}
                 className={`block px-3 py-2 rounded-md text-base font-medium ${
                   location.pathname === item.href
                     ? "text-dil-red font-semibold"

@@ -10,9 +10,10 @@ interface CounterProps {
   suffix?: string;
   icon?: React.ReactNode;
   fullText?: string;
+  textColor?: string;
 }
 
-const CounterAnimation = ({ end, duration = 3000, label, suffix = '', icon, fullText }: CounterProps) => {
+const CounterAnimation = ({ end, duration = 3000, label, suffix = '', icon, fullText, textColor = '#1a1a1a' }: CounterProps) => {
   const [count, setCount] = useState(0);
   const [showFollowup, setShowFollowup] = useState(false);
   const { ref, inView } = useInView({
@@ -58,12 +59,12 @@ const CounterAnimation = ({ end, duration = 3000, label, suffix = '', icon, full
 
   return (
     <div ref={ref} className="text-center">
-      <div className="text-4xl md:text-5xl font-bold text-white mb-2 flex justify-center items-center gap-2">
+      <div className="text-4xl md:text-5xl font-bold mb-2 flex justify-center items-center gap-2" style={{ color: textColor }}>
         <span>{count}</span>
         <span>{suffix}</span>
         {icon && <span className="ml-1">{icon}</span>}
       </div>
-      <p className="text-lg text-white/90">{label}</p>
+      <p className="text-lg" style={{ color: textColor }}>{label}</p>
     </div>
   );
 };

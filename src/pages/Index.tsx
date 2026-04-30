@@ -1,121 +1,13 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import NewsStrip from "../components/NewsStrip";
 import CounterAnimation from "../components/CounterAnimation";
 import BrandCard from "../components/BrandCard";
-import CityMap from "../components/CityMap";
-import LazyImage from "../components/LazyImage";
-import { ArrowRight, ChevronRight, Heart, ChevronLeft } from "lucide-react";
+import { ArrowRight, Heart, ChevronRight } from "lucide-react";
 
 const Index = () => {
-  const [activeSection, setActiveSection] = useState<string>("");
-  const [showLeftArrow, setShowLeftArrow] = useState(false);
-  const [showRightArrow, setShowRightArrow] = useState(true);
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  const domain = window.location.hostname;
-  console.log(domain);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const sections = document.querySelectorAll("section[id]");
-
-      sections.forEach((section) => {
-        const sectionTop = (section as HTMLElement).offsetTop - 100;
-        const sectionHeight = (section as HTMLElement).offsetHeight;
-        const sectionId = section.getAttribute("id") || "";
-
-        if (
-          scrollPosition >= sectionTop &&
-          scrollPosition < sectionTop + sectionHeight
-        ) {
-          setActiveSection(sectionId);
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const brands = [
-    // {
-    //   name: "The Junglee Kitchen",
-    //   // logo: "/lovable-uploads/junglee logo.png",
-    //   route: "/junglee-kitchen",
-    // },
-    {
-      name: "Bhole ke Chole",
-      logo: "/lovable-uploads/cdf67c56-7bd7-4023-af81-bf258fe60fe3.png",
-      route: "/bhole-ke-chole",
-    },
-    {
-      name: "Aahar",
-      logo: "/lovable-uploads/55d6ad50-361d-42cd-b556-c283b2ee23e4.png",
-      route: "/aahar",
-    },
-    {
-      name: "Junglee Kitchen",
-      logo: "/lovable-uploads/junglee logo.png",
-      route: "/junglee-kitchen",
-    },
-    {
-      name: "House Of Andhra",
-      logo: "/lovable-uploads/1310a9da-ccbe-4fa6-bc06-51441a0872ba.png",
-      route: "/house-of-andhra",
-    },
-    {
-      name: "Dil Punjabi Daily",
-      logo: "/lovable-uploads/DIL_daily_new.png",
-      route: "/dil-punjabi-daily",
-    },
-    // {
-    //   name: "Bhole ke Chole",
-    //   logo: "/lovable-uploads/cdf67c56-7bd7-4023-af81-bf258fe60fe3.png",
-    //   route: "/bhole-ke-chole",
-    // },
-    // {
-    //   name: "Nagada",
-    //   logo: "/lovable-uploads/b7f77f5d-c32a-4b73-9673-c4572c649bf4.png",
-    //   route: "/nagada",
-    // },
-    {
-      name: "Khichdi Bar",
-      logo: "/lovable-uploads/235a933c-2973-43db-8419-1bc689100f0a.png",
-      route: "/khichdi-bar",
-    },
-    
-    // {
-    //   name: "All Things Fried",
-    //   logo: "/lovable-uploads/981bf596-8923-43ae-950d-88e254903acf.png",
-    //   route: "/all-things-fried",
-    // },
-    {
-      name: "The Chaat Cult",
-      logo: "/lovable-uploads/tcc.png",
-      route: "/the-chaat-cult",
-    },
-    
-    {
-      name: "VEGERAMA",
-      logo: "/lovable-uploads/vegerama_new-Photoroom.png",
-      route: "/vegerama",
-    },
-    {
-      name: "Bihari Bowl",
-      logo: "/lovable-uploads/bb_logo.png",
-      route: "/bihari-bowl",
-    },
-    // {
-    //   name: "Junglee Kitchen",
-    //   logo: "/lovable-uploads/junglee logo.png",
-    //   route: "/junglee-kitchen",
-    // },
-  ];
-
   const [showLovedByText, setShowLovedByText] = useState(false);
 
   useEffect(() => {
@@ -126,124 +18,136 @@ const Index = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const brands = [
+    {
+      name: "Bhole ke Chole",
+      logo: "/lovable-uploads/cdf67c56-7bd7-4023-af81-bf258fe60fe3.png",
+      route: "/bhole-ke-chole",
+      cuisine: "North Indian Street Food",
+    },
+    {
+      name: "Aahar",
+      logo: "/lovable-uploads/55d6ad50-361d-42cd-b556-c283b2ee23e4.png",
+      route: "/aahar",
+      cuisine: "Traditional Home-style",
+    },
+    {
+      name: "Junglee Kitchen",
+      logo: "/lovable-uploads/junglee logo.png",
+      route: "/junglee-kitchen",
+      cuisine: "North Indian Cuisine",
+    },
+    {
+      name: "House Of Andhra",
+      logo: "/lovable-uploads/1310a9da-ccbe-4fa6-bc06-51441a0872ba.png",
+      route: "/house-of-andhra",
+      cuisine: "Andhra Specialties",
+    },
+    {
+      name: "Dil Punjabi Daily",
+      logo: "/lovable-uploads/DIL_daily_new.png",
+      route: "/dil-punjabi-daily",
+      cuisine: "Punjabi Delights",
+    },
+    {
+      name: "Khichdi Bar",
+      logo: "/lovable-uploads/235a933c-2973-43db-8419-1bc689100f0a.png",
+      route: "/khichdi-bar",
+      cuisine: "Comfort Food",
+    },
+    {
+      name: "The Chaat Cult",
+      logo: "/lovable-uploads/tcc.png",
+      route: "/the-chaat-cult",
+      cuisine: "Indian Chaat",
+    },
+    {
+      name: "VEGERAMA",
+      logo: "/lovable-uploads/vegerama_new-Photoroom.png",
+      route: "/vegerama",
+      cuisine: "Pure Vegetarian",
+    },
+    {
+      name: "Bihari Bowl",
+      logo: "/lovable-uploads/bb_logo.png",
+      route: "/bihari-bowl",
+      cuisine: "Bihari Cuisine",
+    },
+  ];
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[#faf9f6]">
       <Navbar />
 
       {/* Hero Section */}
       <section
         id="hero"
-        className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-b from-white to-gray-50"
+        className="pt-24 pb-16 md:pt-32 md:pb-24 bg-white"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10 md:mb-16 animate-fadeInUp">
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-purple-red md:pb-1 font-heading">
-              India's largest truly virtual brands chain
-            </h1>
-            <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-              Turning every kitchen of India into a bigger profit hub and
-              powering fast deliveries through our in-house production
-            </p>
-          </div>
-
-          {/* Two Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-5xl mx-auto">
-            <div className="bg-gradient-yellow-orange rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-              <div className="p-6 md:p-8">
-                <h3 className="text-2xl font-bold text-dil-purple mb-3">
-                  Restaurant Enabler
-                </h3>
-                <p className="text-dil-purple mb-6">
-                  Helping kitchens earn more profit from their existing
-                  infrastructure.
-                </p>
-                <div className="flex justify-between items-center">
-                  <Link
-                    to="/restaurant-partnership"
-                    className="inline-flex items-center bg-dil-purple text-white px-5 py-2.5 rounded-md font-semibold hover:bg-dil-purple/90 transition-all duration-300 shadow-md hover:shadow-lg"
-                    onClick={() => window.scrollTo(0, 0)}
-                  >
-                    Learn More <ChevronRight size={20} className="ml-1" />
-                  </Link>
-                  <img
-                    src="/lovable-uploads/restaurant_enabler.png"
-                    alt="Restaurant Kitchen"
-                    className="h-32 w-auto object-contain"
-                    style={{
-                      filter: "drop-shadow(0px 4px 8px rgba(0,0,0,0.2))",
-                      border: "2px solid #4B0076",
-                      borderRadius: "8px",
-                      padding: "4px",
-                    }}
-                  />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* Left Section - Text Content */}
+            <div className="text-left">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a1a1a] leading-tight mb-6">
+                India's largest  virtual Brands chain
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-700 max-w-xl mb-8">
+                Crafting the era of delivery-first dining.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-[#B00020] rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-base text-gray-600 font-normal">Authentic regional cuisines from across India</p>
                 </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-[#B00020] rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-base text-gray-600 font-normal">Delivery-first dining experience</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-[#B00020] rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-base text-gray-600 font-normal">Restaurant partner platform</p>
+                </div>
+              </div>
+              <div className="mt-8">
+                <a
+                  href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center px-6 py-3 bg-[#B00020] text-white rounded-md font-semibold hover:bg-opacity-90 transition-all duration-300"
+                >
+                  Order Now <ArrowRight size={18} className="ml-2" />
+                </a>
               </div>
             </div>
 
-            <div className="bg-gradient-yellow-orange rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-              <div className="p-6 md:p-8">
-                <h3 className="text-2xl font-bold text-dil-purple mb-3">
-                  Food Qcom Enabler
-                </h3>
-                <p className="text-dil-purple mb-6">
-                  Empowering quick commerce with our ready-to-cook and
-                  ready-to-eat products.
-                </p>
-                <div className="flex justify-between items-center">
-                  <Link
-                    to="/horeca-supply"
-                    className="inline-flex items-center bg-dil-purple text-white px-5 py-2.5 rounded-md font-semibold hover:bg-dil-purple/90 transition-all duration-300 shadow-md hover:shadow-lg"
-                    onClick={() => window.scrollTo(0, 0)}
-                  >
-                    Learn More <ChevronRight size={20} className="ml-1" />
-                  </Link>
-                  <img
-                    src="/lovable-uploads/food_qcom_enabler.png"
-                    alt="Quick Food Delivery"
-                    className="h-32 w-auto object-contain"
-                    style={{
-                      filter: "drop-shadow(0px 4px 8px rgba(0,0,0,0.2))",
-                      border: "2px solid #4B0076",
-                      borderRadius: "8px",
-                      padding: "4px",
-                    }}
-                  />
-                </div>
-              </div>
+            {/* Right Section - Image */}
+            <div className="flex justify-center items-center">
+              <img
+                src="/lovable-uploads/homepage.png"
+                alt="Delivery-first dining"
+                className="w-full h-80 md:h-96 object-cover rounded-lg"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Earnings Section with News Strip */}
-      <section id="earnings">
-        <div className="bg-gradient-purple-red py-16 md:py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-              India's largest Truly virtual Brands chain
-            </h2>
-            <p className="text-xl text-white/90 mb-6">
-              Earn more from your existing kitchen
-            </p>
-            <Link
-              to="/restaurant-partnership"
-              className="inline-flex items-center bg-white text-dil-purple px-6 py-3 rounded-md font-semibold hover:bg-dil-yellow transition-all duration-300"
-              onClick={() => window.scrollTo(0, 0)}
-            >
-              Learn more <ArrowRight size={18} className="ml-2" />
-            </Link>
-          </div>
-        </div>
-
-        <NewsStrip text="SAME KITCHEN! SAME STAFF! MORE ORDERS!!" />
-      </section>
+      {/* News Strip */}
+      <div className="mt-8">
+        <NewsStrip 
+          text="SAME KITCHEN! SAME STAFF! MORE ORDERS!!" 
+          bgColor="bg-gray-100"
+          textColor="text-gray-800"
+          speed="extremely-slow"
+        />
+      </div>
 
       {/* Our Brands Section */}
       <section id="brands" className="py-16 md:py-24 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-3">Our Brands</h2>
-            <p className="text-xl md:text-2xl text-dil-purple font-semibold mb-4">
+            <p className="text-xl md:text-2xl text-[#4B0076] font-semibold mb-4">
               Bringing India to your plate
             </p>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -267,9 +171,8 @@ const Index = () => {
                   }}
                 >
                   <div className="relative">
-                    {/* Enhanced glow effect - only for yellow logos */}
                     {index % 2 === 0 && (
-                      <div className="absolute inset-0 rounded-full blur-sm opacity-20 transition-all duration-500 group-hover:opacity-80 group-hover:blur-md bg-gradient-yellow-orange"></div>
+                      <div className="absolute inset-0 rounded-full blur-sm opacity-20 transition-all duration-500 group-hover:opacity-80 group-hover:blur-md bg-gradient-to-r from-[#FFD700] to-[#F97316]"></div>
                     )}
                     
                     <BrandCard
@@ -277,11 +180,11 @@ const Index = () => {
                       name={brand.name}
                       color={index % 2 === 0 ? "yellow" : "transparent"}
                       link={
-                        (brand as any).route
-                          ? (brand as any).route
+                        brand.route
+                          ? brand.route
                           : "https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
                       }
-                      internalRoute={!!(brand as any).route}
+                      internalRoute={!!brand.route}
                       className={`relative z-10 ${index % 2 === 1 ? 'bg-gradient-to-br from-orange-300 to-orange-400 border border-orange-400' : ''}`}
                     />
                   </div>
@@ -305,9 +208,8 @@ const Index = () => {
                 }}
               >
                 <div className="relative">
-                  {/* Enhanced glow effect - only for yellow logos */}
                   {index % 2 === 0 && (
-                    <div className="absolute inset-0 rounded-full blur-sm opacity-20 transition-all duration-500 group-hover:opacity-80 group-hover:blur-md bg-gradient-yellow-orange"></div>
+                    <div className="absolute inset-0 rounded-full blur-sm opacity-20 transition-all duration-500 group-hover:opacity-80 group-hover:blur-md bg-gradient-to-r from-[#FFD700] to-[#F97316]"></div>
                   )}
                   
                   <BrandCard
@@ -315,11 +217,11 @@ const Index = () => {
                     name={brand.name}
                     color={index % 2 === 0 ? "yellow" : "transparent"}
                     link={
-                      (brand as any).route
-                        ? (brand as any).route
+                      brand.route
+                        ? brand.route
                         : "https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
                     }
-                    internalRoute={!!(brand as any).route}
+                    internalRoute={!!brand.route}
                     className={`relative z-10 ${index % 2 === 1 ? 'bg-gradient-to-br from-orange-300 to-orange-400 border border-orange-400' : ''}`}
                   />
                 </div>
@@ -333,7 +235,7 @@ const Index = () => {
               href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
               target="_blank"
               rel="noreferrer"
-              className="btn-primary inline-flex items-center"
+              className="inline-flex items-center px-6 py-3 bg-[#B00020] text-white rounded-md font-semibold hover:bg-opacity-90 transition-all duration-300"
             >
               Order Now <ArrowRight size={18} className="ml-2" />
             </a>
@@ -341,101 +243,114 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Fast Facts Section */}
-      <section
-        id="fast-facts"
-        className="bg-gradient-purple-red py-16 md:py-20"
-      >
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Stats & Trust Section */}
+      <section className="py-16 bg-[#faf9f6]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4">
+              Trusted by millions
+            </h2>
+            <p className="text-base text-[#666666]">
+              Loved by 3 million+ foodies across India
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
             <CounterAnimation end={10} label="Brands" />
             <CounterAnimation end={200} label="Outlets" suffix="+" />
             <CounterAnimation end={5} label="Cities" />
           </div>
 
-          {/* Loved by 3 million+ foodies text that appears after counters animation */}
-          <div
-            className={`mt-8 text-center transition-opacity duration-500 ease-in-out ${
-              showLovedByText ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <p className="text-4xl font-bold text-white flex items-center justify-center gap-2">
-              Loved by 3 million+ foodies
-              <Heart className="fill-white text-white inline" size={24} />
-            </p>
+          <div className="flex justify-center gap-8 text-sm text-[#666666]">
+            <span className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-[#c9a227] rounded-full"></div>
+              FSSAI Certified
+            </span>
+            <span className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-[#c9a227] rounded-full"></div>
+              ISO Compliant
+            </span>
+            <span className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-[#c9a227] rounded-full"></div>
+              Hygiene First
+            </span>
           </div>
         </div>
       </section>
 
+
       {/* Cities We Serve Section */}
       <section
         id="cities"
-        className="py-0 md:py-0 relative h-[400px] md:h-[600px]"
+        className="py-16 bg-white"
       >
-        {/* Content on top of the map */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-4 md:mt-16">
-          <div className="text-center md-4 md:mb-10">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-purple-red">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-[#1a1a1a]">
               Cities we serve
             </h2>
-            <p className="text-gray-600 bg-clip-text text-transparent bg-gradient-purple-red">
+            <p className="text-gray-600">
               Currently live in 5 cities with plans to expand to 9 more
               locations soon
             </p>
           </div>
         </div>
 
-        {/* Background Map */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/lovable-uploads/Indiamap.png"
-            alt="India Map"
-            className="absolute top-1/2 left-1/2 h-[400px] md:h-[600px] object-cover opacity-80 -translate-x-1/2 -translate-y-1/2"
-          />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center">
+            <img
+              src="/lovable-uploads/Indiamap.png"
+              alt="India Map"
+              className="h-[300px] md:h-[500px] object-contain"
+            />
+          </div>
         </div>
       </section>
 
-      {/* Quick Delivery Section */}
-      <section id="quick-delivery" className="py-16 bg-gradient-red">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="md:flex md:items-center md:justify-between">
-            <div className="md:w-1/2 mb-8 md:mb-0">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Ride the Quick Delivery Wave with Dil Foods!
+      {/* Partner With Us Section (B2B) */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4">
+                Partner With Us
               </h2>
-              <p className="text-white/90 text-lg mb-6">
-                We supply ready-to-cook and ready-to-eat products that
-                regenerate in 2 minutes — perfect for 10-minute deliveries!
+              <p className="text-base text-[#666666] mb-6">
+                Turn your existing kitchen into a profit hub. Same kitchen, same staff, more orders.
               </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start gap-3">
+                  <div className="w-5 h-5 bg-[#c9a227] rounded-full flex-shrink-0 mt-0.5"></div>
+                  <span className="text-sm text-[#666666]">Zero infrastructure investment</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-5 h-5 bg-[#c9a227] rounded-full flex-shrink-0 mt-0.5"></div>
+                  <span className="text-sm text-[#666666]">Ready-to-cook products supplied</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-5 h-5 bg-[#c9a227] rounded-full flex-shrink-0 mt-0.5"></div>
+                  <span className="text-sm text-[#666666]">Increased revenue from existing setup</span>
+                </li>
+              </ul>
               <Link
-                to="/horeca-supply"
-                className="inline-flex items-center bg-white text-dil-red px-6 py-3 rounded-md font-semibold hover:bg-dil-yellow hover:text-dil-purple transition-all duration-300"
+                to="/restaurant-partnership"
                 onClick={() => window.scrollTo(0, 0)}
+                className="inline-flex items-center justify-center px-6 py-3 bg-[#1a1a1a] text-white rounded-lg font-medium hover:bg-[#2d2d2d] transition-all duration-300"
               >
-                Explore More <ArrowRight size={18} className="ml-2" />
+                Become a Partner <ArrowRight size={18} className="ml-2" />
               </Link>
             </div>
-
-            <div className="md:w-1/2 flex justify-center gap-8">
-              <div className="w-32 h-32 rounded-full border-4 border-white shadow-lg overflow-hidden animate-bounce-slow">
-                <LazyImage
-                  src="/lovable-uploads/ea9d967b-b147-40dd-88dc-473669db104c.png"
-                  alt="Delicious Indian Rice Bowl"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="w-32 h-32 rounded-full border-4 border-white shadow-lg overflow-hidden animate-bounce-slower">
-                <LazyImage
-                  src="/lovable-uploads/3069f6c5-b53f-47c8-9ee7-1c6a984d63b2.png"
-                  alt="Gulab Jamun Dessert"
-                  className="w-full h-full object-cover"
-                  loadingClassName="w-full h-full bg-white/20 animate-pulse"
-                />
-              </div>
+            <div className="bg-[#faf9f6] rounded-lg p-8 flex items-center justify-center">
+              <img
+                src="/lovable-uploads/restaurant_enabler.png"
+                alt="Restaurant Partnership"
+                className="max-w-full h-auto"
+              />
             </div>
           </div>
         </div>
       </section>
+
 
       <Footer />
     </div>

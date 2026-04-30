@@ -32,7 +32,7 @@ const NewsStrip = ({
     <div className={`w-full overflow-hidden ${bgColor}`}>
       <div className="py-3 relative">
         <div className={`${animationClass} whitespace-nowrap inline-block`}>
-          <span className={`text-base sm:text-lg font-bold ${textColor}`}>
+          <span className={`text-base sm:text-lg font-normal ${textColor}`}>
             {duplicatedText}
           </span>
         </div>

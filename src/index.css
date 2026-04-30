@@ -7,38 +7,50 @@
 
 @layer base {
   :root {
-    /* Original Dil Foods brand colors */
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    /* Premium Minimalist Color Palette */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 0 0% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover-foreground: 0 0% 15%;
 
-    /* Primary - Dil Red */
-    --primary: 348 83% 38%;
+    /* Primary - Deep Charcoal */
+    --primary: 0 0% 15%;
     --primary-foreground: 0 0% 98%;
 
-    /* Secondary - Dil Purple */
-    --secondary: 280 89% 23%;
+    /* Secondary - Warm Gray */
+    --secondary: 0 0% 25%;
     --secondary-foreground: 0 0% 98%;
 
     /* Muted */
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    /* Accent - Dil Yellow */
-    --accent: 50 98% 51%;
-    --accent-foreground: 240 10% 3.9%;
+    /* Accent - Muted Gold */
+    --accent: 45 70% 50%;
+    --accent-foreground: 0 0% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 15%;
+
+    --radius: 0.5rem;
+
+    /* Premium Redesign Palette */
+    --premium-dark: 0 0% 10%;       /* #1a1a1a - Deep charcoal */
+    --premium-warm: 0 0% 18%;       /* #2d2d2d - Warm dark gray */
+    --premium-gold: 45 68% 47%;      /* #c9a227 - Muted gold */
+    --premium-beige: 33 55% 65%;     /* #d4a574 - Warm beige */
+    --premium-bg: 43 33% 96%;        /* #faf9f6 - Off-white/cream */
+    --premium-white: 0 0% 100%;     /* #ffffff - Pure white */
+    --premium-text-primary: 0 0% 10%; /* #1a1a1a */
+    --premium-text-secondary: 0 0% 40%; /* #666666 */
 
     --radius: 0.75rem;
 
@@ -129,11 +141,19 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold;
+    @apply font-display font-bold;
   }
 }
 
 @layer components {
+  .btn-premium-primary {
+    @apply px-8 py-4 rounded-lg bg-[#1a1a1a] text-white font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .btn-premium-secondary {
+    @apply px-8 py-4 rounded-lg border-2 border-[#1a1a1a] text-[#1a1a1a] font-semibold transition-all duration-300 hover:bg-[#1a1a1a] hover:text-white hover:shadow-lg hover:-translate-y-0.5;
+  }
+
   .glassmorphism {
     @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg;
   }
