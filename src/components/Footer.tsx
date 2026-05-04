@@ -10,11 +10,11 @@ const Footer = () => {
   const isTovafoodsDomain = window.location.hostname.includes("tovafoods.in");
 
   return (
-    <footer className="bg-gradient-to-r from-[#1A1F2C] to-[#ea384c] pt-16 pb-8 text-white">
+    <footer className="bg-[#faf9f6] border-t border-gray-200 pt-16 pb-8 text-[#1a1a1a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Info */}
-          <div className="space-y-4">
+          <div className="space-y-5">
             <div>
               <Link to="/" className="inline-block" onClick={scrollToTop}>
                 <img
@@ -29,13 +29,13 @@ const Footer = () => {
               </Link>
               {isTovafoodsDomain && (
                 <p
-                  className=" text-white font-light ml-1"
+                  className="text-gray-600 font-light ml-1"
                   style={{ fontFamily: "Montserrat, sans-serif" }}
                 >
                   A company of{" "}
                   <Link
                     to="https://dilfoods.in"
-                    className="inline-block text-[#E81E3F]"
+                    className="inline-block text-[#B00020]"
                   >
                     Dil Foods
                   </Link>
@@ -44,7 +44,7 @@ const Footer = () => {
             </div>
 
             <div className="mt-4">
-              <h2 className="text-2xl font-bold mb-4">
+              <h2 className="font-display text-xl md:text-2xl font-semibold text-[#1a1a1a] mb-5 leading-snug">
                 {isTovafoodsDomain
                   ? "Empowering food businesses with Tova"
                   : "Grow your restaurant business with Dil"}
@@ -54,7 +54,7 @@ const Footer = () => {
                 <Button
                   asChild
                   variant="default"
-                  className="bg-gradient-yellow-orange text-dil-purple hover:bg-gradient-orange-yellow hover:shadow-md mt-2"
+                  className="bg-[#B00020] text-white hover:bg-[#8a0019] hover:shadow-md rounded-full px-6"
                 >
                   <Link
                     to={
@@ -71,38 +71,31 @@ const Footer = () => {
             </div>
 
             {!isTovafoodsDomain && (
-              <div className="flex space-x-4 mt-4">
+              <div className="flex space-x-3 mt-6">
                 <a
-                  href={
-                    isTovafoodsDomain
-                      ? "https://www.linkedin.com/company/tovafoods"
-                      : "https://www.linkedin.com/company/dilfoods"
-                  }
+                  href="https://www.linkedin.com/company/dilfoods"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-white hover:text-gradient-soft-yellow-orange transition-colors"
+                  aria-label="LinkedIn"
+                  className="w-9 h-9 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:text-[#B00020] hover:border-[#B00020] transition-colors"
                 >
-                  <Linkedin size={20} />
+                  <Linkedin size={16} />
                 </a>
                 <a
-                  href={
-                    isTovafoodsDomain
-                      ? "https://www.instagram.com/tovafoods.in/"
-                      : "https://www.instagram.com/dilfoods.in/"
-                  }
+                  href="https://www.instagram.com/dilfoods.in/"
                   target="_blank"
                   rel="noreferrer"
-                  className="text-white hover:text-gradient-soft-yellow-orange transition-colors"
+                  aria-label="Instagram"
+                  className="w-9 h-9 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:text-[#B00020] hover:border-[#B00020] transition-colors"
                 >
-                  <Instagram size={20} />
+                  <Instagram size={16} />
                 </a>
                 <a
-                  href={`mailto:info@${
-                    isTovafoodsDomain ? "tovafoods" : "dilfoods"
-                  }.in`}
-                  className="text-white hover:text-gradient-soft-yellow-orange transition-colors"
+                  href="mailto:info@dilfoods.in"
+                  aria-label="Email"
+                  className="w-9 h-9 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:text-[#B00020] hover:border-[#B00020] transition-colors"
                 >
-                  <Mail size={20} />
+                  <Mail size={16} />
                 </a>
               </div>
             )}
@@ -110,13 +103,15 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-base font-semibold text-[#1a1a1a] mb-5">
+              Quick Links
+            </h3>
+            <ul className="space-y-3">
               <li>
                 <Link
                   to="/"
                   onClick={scrollToTop}
-                  className="text-white hover:text-gradient-soft-yellow-orange transition-colors"
+                  className="text-gray-600 hover:text-[#B00020] transition-colors"
                 >
                   Home
                 </Link>
@@ -125,17 +120,11 @@ const Footer = () => {
               {!isTovafoodsDomain && (
                 <li>
                   <Link
-                    to={
-                      isTovafoodsDomain
-                        ? "/tova-partnership"
-                        : "/restaurant-partnership"
-                    }
+                    to="/restaurant-partnership"
                     onClick={scrollToTop}
-                    className="text-white hover:text-gradient-soft-yellow-orange transition-colors"
+                    className="text-gray-600 hover:text-[#B00020] transition-colors"
                   >
-                    {isTovafoodsDomain
-                      ? "Tow Partnership"
-                      : "Restaurant Partnership"}
+                    Restaurant Partnership
                   </Link>
                 </li>
               )}
@@ -145,7 +134,7 @@ const Footer = () => {
                     <Link
                       to="/horeca-supply"
                       onClick={scrollToTop}
-                      className="text-white hover:text-gradient-soft-yellow-orange transition-colors"
+                      className="text-gray-600 hover:text-[#B00020] transition-colors"
                     >
                       Horeca Supply
                     </Link>
@@ -154,7 +143,7 @@ const Footer = () => {
                     <Link
                       to="/media"
                       onClick={scrollToTop}
-                      className="text-white hover:text-gradient-soft-yellow-orange transition-colors"
+                      className="text-gray-600 hover:text-[#B00020] transition-colors"
                     >
                       Dil In News
                     </Link>
@@ -166,30 +155,32 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <address className="not-italic text-white/90">
+            <h3 className="text-base font-semibold text-[#1a1a1a] mb-5">
+              Contact Us
+            </h3>
+            <address className="not-italic text-gray-600 leading-relaxed">
               51, 2, Chandapura - Anekal Rd
               <br />
               Sri Rama Layout, Anekal,
               <br />
               Naganaikanahalli, Karnataka 562106
             </address>
-            <div className="mt-4">
+            <div className="mt-4 space-y-2">
               {!isTovafoodsDomain && (
                 <>
                   <a
                     href="https://www.linkedin.com/company/dil-foods/jobs/"
                     target="_blank"
                     rel="noreferrer"
-                    className="block text-gradient-yellow-orange hover:underline mt-2"
+                    className="block text-[#B00020] hover:underline underline-offset-4"
                   >
-                    Careers at Dil Foods
+                    Careers at Dil Foods →
                   </a>
                   <Link
                     to="/media?tab=blogs"
-                    className="block text-gradient-yellow-orange hover:underline mt-2"
+                    className="block text-[#B00020] hover:underline underline-offset-4"
                   >
-                    Read Our Blog
+                    Read Our Blog →
                   </Link>
                 </>
               )}
@@ -197,21 +188,21 @@ const Footer = () => {
           </div>
 
           {/* Mission */}
-          <div className="flex flex-col justify-between">
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Our Mission</h3>
-              <p className="text-white/90">
-                {isTovafoodsDomain
-                  ? "Building smarter food supply systems for the modern kitchen."
-                  : "Transforming restaurant businesses with innovative virtual brands and technology solutions."}
-              </p>
-            </div>
+          <div>
+            <h3 className="text-base font-semibold text-[#1a1a1a] mb-5">
+              Our Mission
+            </h3>
+            <p className="text-gray-600 leading-relaxed">
+              {isTovafoodsDomain
+                ? "Building smarter food supply systems for the modern kitchen."
+                : "Transforming restaurant businesses with innovative virtual brands and technology solutions."}
+            </p>
           </div>
         </div>
 
         {/* Footer Bottom */}
-        <div className="border-t border-white/20 mt-12 pt-8">
-          <p className="text-white/80 text-center text-sm">
+        <div className="border-t border-gray-200 mt-14 pt-6">
+          <p className="text-gray-500 text-center text-sm">
             &copy; {new Date().getFullYear()}{" "}
             {isTovafoodsDomain ? "Tova Foods" : "Dil Foods"}. All rights
             reserved.
