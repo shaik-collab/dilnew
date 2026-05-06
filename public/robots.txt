@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Junk / non-indexable pages
+Disallow: /thank-you
+Disallow: /order-history
+Disallow: /delete-data
+Disallow: /special-offer
+Disallow: /feedback-survey/
+
+Sitemap: https://dilfoods.in/sitemap.xml

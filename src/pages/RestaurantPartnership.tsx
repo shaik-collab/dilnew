@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import NewsStrip from "../components/NewsStrip";
 import LazyImage from "../components/LazyImage";
 import HoneycombBrands from "../components/HoneycombBrands";
+import SEO from "../components/SEO";
 import { toast } from "sonner";
 import {
   Users,
@@ -249,6 +250,11 @@ const RestaurantPartnership = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Restaurant Partnership — Grow Your Kitchen with Dil Foods"
+        description="Turn your existing kitchen into a profit hub. Same kitchen, same staff, more orders. Partner with Dil Foods to launch on Swiggy & Zomato with our 10 virtual brands — zero infrastructure investment, ready-to-cook supply, full operational support."
+        path="/restaurant-partnership"
+      />
       <Navbar />
 
       <Dialog.Root open={isDialogOpen} onOpenChange={setIsDialogOpen}>

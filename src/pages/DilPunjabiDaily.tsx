@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import BrandNavigation from "../components/BrandNavigation";
 import FloatingBrandSuggestion from "../components/FloatingBrandSuggestion";
+import SEO from "../components/SEO";
 import {
-  Sparkles,
-  Handshake,
-  Heart,
+  Home,
+  Briefcase,
+  MapPin,
   Star,
   Quote,
   Instagram,
   Menu,
   X,
-  Home,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
@@ -77,101 +77,122 @@ const DilPunjabiDaily = () => {
 
   const menuItems = [
     {
-      name: "Chole Bhature",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Chole Bhature.jpg",
-      description: "Pindi chole served with 2 fluffy Bhataras",
+      name: "Dal Tadka & Aloo Bhujiya Combo",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/DT1.png ",
+      description: "Flavorsome dal tadka served with lightly spiced aloo bhujiya, paired with a choice of steamed rice or soft paratha for a comforting meal.",
       badge: "Bestseller",
     },
     {
-      name: "Dal Makhani & Paratha Combo",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Dal Makhani & Paratha combo.jpg",
-      description: "Indulge in the perfection of slow-cooked creamy black lentils paired with fresh Whole Wheat Paratha",
-      badge: "Signature",
+      name: "Veg Feast Thali",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Feast Thali Veg (dd).png",
+      description: "A complete thali with creamy dal makhni, steamed rice, soft tikona paratha, flavorful rajma, buttery paneer curry, and sweet gulab jamun to finish the meal.",
+      badge: "Complete Thali",
     },
     {
-      name: "Butter Chicken & Paratha Combo",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Butter Chicken & Paratha Combo.jpg",
-      description: "Creamy tomato-based curry with tender chicken pieces served with fresh parathas, a North Indian classic",
-      badge: "Popular",
+      name: "Kadhi Pakoda",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Kadhi Rice.png",
+      description: "Kadhi pakoda made with soft pakoda cooked in mildly spiced kadhi for a balanced taste.",
+      badge: "Punjabi Classic",
     },
     {
-      name: "Veg Homely Thali",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Veg Homely Thali.jpg",
-      description: "A complete meal with Dal tadka + Aloo Matar + Paneer butter masala + Paratha + Steamed rice + Salad with chutney + Gulab jamun",
-      badge: "Chef's Special",
+      name: "Rasam Rice",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Rasam Rice DD.png",
+      description: "Steamed rice with rasam cooked with tamarind and spices for a light taste.",
+      badge: "South Indian",
     },
     {
-      name: "Aloo Matar & Paratha Combo",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Aloo Matar & Paratha Combo.jpg",
-      description: "Homestyle Matar Aloo made in a savory gravy served with Lachha Paratha + Salad + Chutney",
-      badge: "Comfort Food",
+      name: "Bhandare Aloo Paratha Combo",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Bhandare wale aloo paratha.png",
+      description: "Home style Tawa Parathas served with  bhandare style Aloo sabji with masala laccha onion",
+      badge: "Homestyle",
+    },
+    {
+      name: "Rajma Chawal Rice Bowl",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Rajma Rice.png",
+      description: "Steamed rice paired with rich and flavorful rajma curry, served with masala lacha onion.",
+      badge: "North Indian",
     },
     {
       name: "Butter Chicken Rice Bowl",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Butter Chicken Rice Bowl.jpg",
-      description: "Daily Butter Chicken rice bowl accompanied with Green chutney and Salad",
-      badge: "Bowl Special",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Butter chicken rice bowl DD.png",
+      description: "Rice served with creamy butter chicken and mild spices, served with masala lacha onion.",
+      badge: "Non-Veg Favourite",
     },
     {
-      name: "Aloo Matar Rice Bowl",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Aloo Matar Rice Bowl.jpg",
-      description: "Daily Aloo Matar rice bowl accompanied with Green chutney and Salad",
-      badge: "Healthy Choice",
+      name: "Chole Bhature ",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Chole Bhature.png",
+      description: "Chole bhature served with spicy chole and soft fried bhature & masala lachha onion.",
+      badge: "Street Food",
     },
     {
-      name: "Spiced Chicken & Paratha Combo",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Amritsari Chicken & Paratha Combo.jpg",
-      description: "Authentic spiced chicken curry served with fresh whole wheat parathas and accompaniments",
-      badge: "Regional Special",
-    },
-    {
-      name: "Spiced Chicken Rice Bowl",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Amritsari Chicken Rice Bowl.jpg",
-      description: "Daily spiced chicken rice bowl accompanied with Green chutney and Salad",
-      badge: "Traditional",
-    },
-    {
-      name: "Palak Chicken & Paratha Combo",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Palak Chicken & Paratha combo.jpg",
-      description: "Nutritious spinach-based chicken curry served with fresh parathas for a wholesome meal",
-      badge: "Healthy Special",
-    },
-    {
-      name: "Palak Chicken Rice Bowl",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Palak Chicken Rice Bowl.jpg",
-      description: "Daily Palak Chicken rice bowl accompanied with Green chutney and Salad",
-      badge: "Nutritious",
-    },
-    {
-      name: "Atta Halwa",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Atta Halwa (150ml).jpg",
-      description: "Traditional wheat flour halwa, rich and sweet, perfect for dessert lovers",
+      name: "Gulab Jamun",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Gulab Jamun.png",
+      description: "Gulab jamun made soft and soaked in warm sugar syrup for a sweet finish.",
       badge: "Sweet Treat",
     },
+    // {
+    //   name: "Palak Chicken & Paratha Combo",
+    //   image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Palak Chicken & Paratha combo.jpg",
+    //   description: "Nutritious spinach-based chicken curry served with fresh parathas for a wholesome meal",
+    //   badge: "Healthy Special",
+    // },
+    // {
+    //   name: "Palak Chicken Rice Bowl",
+    //   image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Palak Chicken Rice Bowl.jpg",
+    //   description: "Daily Palak Chicken rice bowl accompanied with Green chutney and Salad",
+    //   badge: "Nutritious",
+    // },
+    // {
+    //   name: "Atta Halwa",
+    //   image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Atta Halwa (150ml).jpg",
+    //   description: "Traditional wheat flour halwa, rich and sweet, perfect for dessert lovers",
+    //   badge: "Sweet Treat",
+    // },
   ];
 
   const testimonials = [
     {
       name: "Harpreet Singh",
-      location: "Delhi",
+      location: "Bangalore",
       text: "Homestyle Comfort, Daily Delight indeed! The butter chicken is exactly like home. Perfect flavors!",
       initial: "H",
     },
     {
-      name: "Simran Kaur",
-      location: "Mumbai",
-      text: "Authentic North Indian food that reminds me of my grandmother's cooking. Absolutely delicious!",
+      name: "Raja",
+      location: "Chennai",
+      text: "Exactly the kind of meal you crave after a long day. The sambar rice was light, flavourful, and comforting.",
       initial: "S",
     },
     {
       name: "Amanpreet",
-      location: "Gurgaon",
+      location: "Mumbai",
       text: "The dal makhani is rich and creamy, just the way it should be. This is real comfort food!",
       initial: "A",
     },
   ];
 
-  const instagramPosts: Array<{ id: number; thumbnail: string; url: string }> = [];
+  const instagramPosts = [
+    {
+      id: 1,
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/instagram/DDPost-1.jpeg",
+      url: "https://www.instagram.com/p/DWgkNI6AYxF/",
+    },
+    {
+      id: 2,
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/instagram/DDPost-2.jpeg",
+      url: "https://www.instagram.com/p/DJf7oDaBcfp/",
+    },
+    {
+      id: 3,
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/instagram/DDPost-3.jpeg",
+      url: "https://www.instagram.com/p/DCgtBGShQmH/",
+    },
+    {
+      id: 4,
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/instagram/DDPost-4.jpeg",
+      url: "https://www.instagram.com/p/DXb1BzuEeal/",
+    },
+  ];
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -183,6 +204,26 @@ const DilPunjabiDaily = () => {
 
   return (
     <div className="min-h-screen bg-background dil-punjabi-daily-page scroll-snap-container">
+      <SEO
+        title="Dil Daily — Homestyle Comfort, Daily Delight | Order Online"
+        description="Dal tadka, kadhi pakoda, rajma chawal, chole bhature, butter chicken bowls and more. Light, balanced, homestyle Indian meals — perfect for desk lunches. A Dil Foods brand."
+        path="/dil-punjabi-daily"
+        image="https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Feast Thali Veg (dd).png"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Restaurant",
+          name: "Dil Daily",
+          description: "Homestyle North Indian comfort meals — dal tadka, rajma chawal, butter chicken, kadhi pakoda.",
+          image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/DPD/Feast Thali Veg (dd).png",
+          url: "https://dilfoods.in/dil-punjabi-daily",
+          servesCuisine: "North Indian",
+          parentOrganization: {
+            "@type": "Organization",
+            name: "Dil Foods",
+            url: "https://dilfoods.in",
+          },
+        }}
+      />
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled ? "bg-primary/95 backdrop-blur-md shadow-lg" : "bg-black/20 backdrop-blur-sm"
@@ -352,7 +393,7 @@ const DilPunjabiDaily = () => {
         <div className="relative z-10 container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-accent text-lg md:text-xl tracking-[0.3em] uppercase mb-6 font-semibold">
-              HOMESTYLE COMFORT, DAILY DELIGHT
+              Homestyle Comfort, Wholesome Meals
             </p>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight font-display">
@@ -361,8 +402,7 @@ const DilPunjabiDaily = () => {
             </h1>
             
             <p className="text-white/95 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
-              Rich, hearty, and soul-warming. Experience the generous flavors of authentic North Indian 
-              homestyle cuisine, served with love and tradition every day.
+              Brings you fresh, homestyle Indian meals delivered daily. Affordable, comforting, and consistent food that tastes like ghar ka khana.
             </p>
             
             {/* Platform Availability in Hero */}
@@ -428,42 +468,46 @@ const DilPunjabiDaily = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
               </div>
               <div className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 bg-accent text-accent-foreground p-4 lg:p-5 rounded-xl shadow-strong max-w-[280px] z-10">
-                <p className="text-lg lg:text-xl italic mb-1 font-semibold">"Homestyle comfort, daily delight"</p>
-                <p className="text-xs opacity-80">— The Dil Daily Way</p>
+                <p className="text-lg lg:text-xl italic mb-1 font-semibold">"Homestyle Comfort, Wholesome Meals"</p>
+                {/* <p className="text-xs opacity-80">— The Dil Daily Way</p> */}
               </div>
             </div>
             <div>
-              <span className="text-accent text-sm tracking-[0.3em] uppercase font-semibold">Comfort Heritage</span>
+              {/* <span className="text-accent text-sm tracking-[0.3em] uppercase font-semibold">Comfort Heritage</span> */}
               <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold mt-3 mb-6 leading-tight font-display">
-                The Warmth of
-                <span className="block text-accent">Home</span>
+                
+                <span className="block text-accent">Your daily meal, exactly as it should be.</span>
               </h2>
               <div className="space-y-4 text-white/80 text-base md:text-lg leading-relaxed">
                 <p>
-                  <span className="text-white font-semibold">Dil Daily</span> brings you the generous spirit 
+                  At <span className="text-white font-semibold">Dil Daily </span>  
+                  {/* brings you the generous spirit 
                   of homestyle cooking, where food isn't just nourishment—it's celebration, love, and community served on a plate. 
-                  Our dishes reflect the vibrant culture of traditional North Indian comfort food.
+                  Our dishes reflect the vibrant culture of traditional North Indian comfort food. */}
+                   we believe that the best meal of the day is the one that feels like home. We've built our menu around the foods Indians genuinely crave, not trend-driven, not fusion, just honest, nourishing, regional Indian cooking made consistent and convenient.
                 </p>
                 <p>
-                  From rich dal preparations to creamy gravies, every ingredient tells a story of abundance 
+                  {/* From rich dal preparations to creamy gravies, every ingredient tells a story of abundance 
                   and hospitality. We prepare traditional recipes with the same warmth and generosity that defines 
-                  homestyle culture—rich gravies, fresh breads, and heartwarming flavors.
+                  homestyle culture—rich gravies, fresh breads, and heartwarming flavors. */}
+
                 </p>
                 <p>
-                  Each meal is a celebration of life's simple pleasures. Whether it's the creamy dal makhani that 
+                  {/* Each meal is a celebration of life's simple pleasures. Whether it's the creamy dal makhani that 
                   simmers with patience or the buttery naan that brings families together, we serve the essence 
-                  of comfort food's joyful, nourishing spirit.
+                  of comfort food's joyful, nourishing spirit. */}
+                  Whether it's a satisfying dal-chawal on a Tuesday afternoon or a full thali to power through a busy day, Dil Daily is your reliable everyday meal partner, delivered hot, priced fairly, and always soul-satisfying.
                 </p>
               </div>
               <div className="mt-8 flex items-center gap-6">
                 <div>
-                  <p className="text-3xl md:text-4xl text-accent font-bold">18+</p>
-                  <p className="text-xs md:text-sm text-white/70">Authentic Dishes</p>
+                  <p className="text-3xl md:text-4xl text-accent font-bold">28+</p>
+                  <p className="text-xs md:text-sm text-white/70">Indian states. One daily menu.</p>
                 </div>
                 <div className="w-px h-10 bg-white/20"></div>
                 <div>
-                  <p className="text-3xl md:text-4xl text-accent font-bold">5</p>
-                  <p className="text-xs md:text-sm text-white/70">Star Comfort</p>
+                  <p className="text-3xl md:text-4xl text-accent font-bold">0</p>
+                  <p className="text-xs md:text-sm text-white/70">Boring Office Lunches</p>
                 </div>
                 <div className="w-px h-10 bg-white/20"></div>
                 <div>
@@ -491,35 +535,36 @@ const DilPunjabiDaily = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white/80 backdrop-blur-sm border border-secondary/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-6 shadow-lg">
-                <Sparkles className="w-7 h-7 text-white" />
+                <Home className="w-7 h-7 text-white" />
               </div>
-              <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Rich Flavors</span>
-              <h3 className="text-2xl text-foreground font-bold mt-2 mb-4 font-display">Hearty Meals</h3>
+              {/* <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Rich Flavors</span> */}
+              <h3 className="text-2xl text-foreground font-bold mt-2 mb-4 font-display">Homestyle Cooking</h3>
               <p className="text-foreground/80 leading-relaxed">
-                Our dishes are rich, creamy, and full of flavor, just like traditional North Indian comfort cuisine 
-                that's meant to be shared and enjoyed.
+                {/* Our dishes are rich, creamy, and full of flavor, just like traditional North Indian comfort cuisine 
+                that's meant to be shared and enjoyed. */}
+                Light, balanced meals that feel like home. Simple food, made the way you like it.
               </p>
             </div>
             <div className="bg-white/80 backdrop-blur-sm border border-secondary/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-6 shadow-lg">
-                <Handshake className="w-7 h-7 text-white" />
+                <Briefcase className="w-7 h-7 text-white" />
               </div>
-              <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Daily Fresh</span>
-              <h3 className="text-2xl text-foreground font-bold mt-2 mb-4 font-display">Fresh Preparation</h3>
+              {/* <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Daily Fresh</span> */}
+              <h3 className="text-2xl text-foreground font-bold mt-2 mb-4 font-display">Desk-Friendly & Hassle-Free</h3>
               <p className="text-foreground/80 leading-relaxed">
-                Every dish is prepared fresh daily using traditional methods, ensuring authentic 
-                flavors and the highest quality.
+                {/* Every dish is prepared fresh daily using traditional methods, ensuring authentic 
+                flavors and the highest quality. */}
+                Neatly packed portions designed for office desks and busy lifestyles. Eat well even when you don't have time to cook.
               </p>
             </div>
             <div className="bg-white/80 backdrop-blur-sm border border-secondary/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-6 shadow-lg">
-                <Heart className="w-7 h-7 text-white" />
+                <MapPin className="w-7 h-7 text-white" />
               </div>
-              <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Celebration</span>
-              <h3 className="text-2xl text-foreground font-bold mt-2 mb-4 font-display">Festive Spirit</h3>
+              {/* <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Celebration</span> */}
+              <h3 className="text-2xl text-foreground font-bold mt-2 mb-4 font-display">Regional Flavours You Trust</h3>
               <p className="text-foreground/80 leading-relaxed">
-                Homestyle cooking is about celebration and togetherness. Every meal is a feast that 
-                brings people together.
+                Inspired by the diverse food traditions of India, from simple comfort to warming meals, Dil Daily keeps regional authenticity at the heart of every dish.
               </p>
             </div>
           </div>
@@ -531,9 +576,9 @@ const DilPunjabiDaily = () => {
           <div className="text-center max-w-3xl mx-auto mb-8">
             <span className="text-primary text-sm tracking-[0.3em] uppercase font-semibold">Our Menu</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl text-foreground font-bold mt-4 mb-6 leading-tight font-display">
-              Taste the
+                  Wholesome Indian Meals
               <span className="block text-primary">
-                Richness
+                 Delivered to Your Door
               </span>
             </h2>
             <p className="text-foreground/70 text-lg">
@@ -603,7 +648,13 @@ const DilPunjabiDaily = () => {
                 key={index}
                 className="shrink-0 w-[320px] md:w-[360px] snap-start group cursor-pointer"
               >
-                <div className="relative aspect-square rounded-2xl overflow-hidden mb-5 shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white">
+                <a
+                  href="https://www.swiggy.com/direct/brand/638842?source=swiggy-direct&subSource=instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Order ${item.name} on Swiggy`}
+                  className="relative aspect-square rounded-2xl overflow-hidden mb-5 shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white block"
+                >
                   {item.image ? (
                     <img
                       src={item.image}
@@ -620,7 +671,7 @@ const DilPunjabiDaily = () => {
                       {item.badge}
                     </span>
                   </div>
-                </div>
+                </a>
                 <h3 className="text-2xl text-foreground font-bold mb-2 group-hover:text-primary transition-colors duration-300 font-display">
                   {item.name}
                 </h3>

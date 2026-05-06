@@ -1,11 +1,17 @@
 import React from "react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import SEO from "@/components/SEO";
 import "../styles/termsOfService.css";
 
 const TermsOfService = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Terms of Service | Dil Foods"
+        description="Terms governing your use of the Dil Foods website and services."
+        path="/terms-of-service"
+      />
       <Navbar />
       <section className="terms-of-service-section pt-28 pb-16 md:pt-36 md:pb-24">
         <h1>Terms of Service</h1>

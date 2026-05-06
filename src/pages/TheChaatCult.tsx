@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import BrandNavigation from "../components/BrandNavigation";
 import FloatingBrandSuggestion from "../components/FloatingBrandSuggestion";
+import SEO from "../components/SEO";
 import {
   Sparkles,
   Handshake,
@@ -177,25 +178,46 @@ const TheChaatCult = () => {
   const testimonials = [
     {
       name: "Priya Sharma",
-      location: "Mumbai",
+      location: "Bangalore",
       text: "The Chaat Cult is absolutely addictive! The pani puri is tangy, spicy, and perfect. Can't stop ordering!",
       initial: "P",
     },
     {
       name: "Rohit Mehta",
-      location: "Delhi",
+      location: "Chennai",
       text: "Vibrant, tangy, and absolutely delicious! This is street food culture at its finest. Love it!",
       initial: "R",
     },
     {
       name: "Anjali Patel",
-      location: "Ahmedabad",
+      location: "Mumbai",
       text: "The bhel puri is outstanding! Tangy, spicy, and addictive—exactly what chaat should be!",
       initial: "A",
     },
   ];
 
-  const instagramPosts: Array<{ id: number; thumbnail: string; url: string }> = [];
+  const instagramPosts = [
+    {
+      id: 1,
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/post-1.jpeg",
+      url: "https://www.instagram.com/p/DDHuy0fTFIo/",
+    },
+    {
+      id: 2,
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/post-2.jpeg",
+      url: "https://www.instagram.com/p/C7gxCIov6Ac/",
+    },
+    {
+      id: 3,
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/post-3.webp",
+      url: "https://www.instagram.com/p/DE2PEGXTB71/",
+    },
+    {
+      id: 4,
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/post-4.jpeg",
+      url: "https://www.instagram.com/p/DGLUphfTr87/",
+    },
+  ];
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -207,6 +229,26 @@ const TheChaatCult = () => {
 
   return (
     <div className="min-h-screen bg-background the-chaat-cult-page scroll-snap-container">
+      <SEO
+        title="The Chaat Cult — Indian Chaat & Street Snacks | Order Online | Dil Foods"
+        description="Pani puri, dahi bhalle, samosa chaat, ragda chaat, sev puri and more. The full chaat menu, made fresh and delivered to your door. A Dil Foods brand."
+        path="/the-chaat-cult"
+        image="https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/post-1.jpeg"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Restaurant",
+          name: "The Chaat Cult",
+          description: "Indian chaat and street snacks — pani puri, dahi bhalle, samosa chaat, ragda chaat, sev puri.",
+          image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/TCC/post-1.jpeg",
+          url: "https://dilfoods.in/the-chaat-cult",
+          servesCuisine: "Indian Chaat",
+          parentOrganization: {
+            "@type": "Organization",
+            name: "Dil Foods",
+            url: "https://dilfoods.in",
+          },
+        }}
+      />
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled ? "bg-[#089797]/95 backdrop-blur-md shadow-lg" : "bg-black/35 backdrop-blur-sm"
@@ -459,7 +501,7 @@ const TheChaatCult = () => {
               </div>
               <div className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 bg-[#e8e73e] text-[#212121] p-4 lg:p-5 rounded-xl shadow-lg max-w-[280px] z-10">
                 <p className="text-lg lg:text-xl italic mb-1 font-semibold">"Tangy. Spicy. Addictive."</p>
-                <p className="text-xs opacity-80">— The Chaat Cult Way</p>
+                {/* <p className="text-xs opacity-80">— The Chaat Cult Way</p> */}
               </div>
             </div>
             <div>
@@ -470,19 +512,13 @@ const TheChaatCult = () => {
               </h2>
               <div className="space-y-4 text-white/80 text-base md:text-lg leading-relaxed">
                 <p>
-                  <span className="text-white font-semibold">The Chaat Cult</span> celebrates the vibrant, tangy world 
-                  of Indian street food culture. From crispy gol gappa to spicy bhel puri, every dish captures the 
-                  authentic flavors and energetic spirit that make chaat so irresistibly addictive.
+                  <span className="text-white font-semibold">The Chaat Cult</span> Chaat is India's most democratic food. It doesn't care about your budget or your neighbourhood, it just needs to be punchy, textured, and alive with flavour. At The Chaat Cult, we've made it our mission to deliver that experience without compromise — the kind of chaat that pulls you back for more before you've even finished the first bite.
                 </p>
                 <p>
-                  Our recipes are inspired by the legendary street vendors who've perfected these flavors over generations. 
-                  We combine fresh ingredients, tangy chutneys, and aromatic spices to create that perfect balance of 
-                  sweet, spicy, and tangy that defines authentic chaat culture.
+                  Our menu draws from the best chaat traditions across India: Mumbai's bhel puri, Delhi's aloo
                 </p>
                 <p>
-                  Every bite is a celebration of street food's vibrant energy—the kind of food that brings people 
-                  together, sparks conversations, and creates memories. We bring the authentic taste of India's bustling 
-                  streets directly to your plate.
+                  chaat, Kolkata's jhalmuri, and more, all made fresh, packed smart, and delivered crunch-intact.
                 </p>
               </div>
               <div className="mt-8 flex items-center gap-6">
@@ -523,29 +559,27 @@ const TheChaatCult = () => {
               <div className="w-14 h-14 rounded-xl bg-[#e8e73e] flex items-center justify-center mb-6 shadow-lg">
                 <Sparkles className="w-7 h-7 text-[#212121]" />
               </div>
-              <span className="text-[#e8e73e] text-xs tracking-[0.2em] uppercase font-semibold">Tangy Fresh</span>
-              <h3 className="text-2xl text-[#212121] font-bold mt-2 mb-4 font-display">Vibrant Flavors</h3>
+              {/* <span className="text-[#e8e73e] text-xs tracking-[0.2em] uppercase font-semibold">Tangy Fresh</span> */}
+              <h3 className="text-2xl text-[#212121] font-bold mt-2 mb-4 font-display">Pan-India Chaat Map</h3>
               <p className="text-[#212121]/80 leading-relaxed">
-                Our chaat is all about tangy, fresh flavors that burst in your mouth. Every 
-                bite is a celebration of street food culture.
+                We don't pick one regional tradition; we celebrate all of them. From Delhi to Mumbai to Kolkata, The Chaat Cult brings the best of India's street snacking culture to one menu.
               </p>
             </div>
             <div className="bg-[#e0f7f7] backdrop-blur-sm border border-[#089797]/20 rounded-2xl p-8 hover:bg-[#c8f1f1] transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-[#089797] flex items-center justify-center mb-6 shadow-lg">
                 <Handshake className="w-7 h-7 text-white" />
               </div>
-              <span className="text-[#089797] text-xs tracking-[0.2em] uppercase font-semibold">Street Authentic</span>
-              <h3 className="text-2xl text-[#212121] font-bold mt-2 mb-4 font-display">Real Chaat</h3>
+              {/* <span className="text-[#089797] text-xs tracking-[0.2em] uppercase font-semibold">Street Authentic</span> */}
+              <h3 className="text-2xl text-[#212121] font-bold mt-2 mb-4 font-display">Crunch Preserved, Freshness Guaranteed</h3>
               <p className="text-[#212121]/80 leading-relaxed">
-                Authentic recipes inspired by the best street vendors, bringing you the real 
-                taste of chaat culture.
+              Our packaging is engineered to keep the crunch in the crisps and the tingle in the chutneys, so your chaat arrives exactly as it should taste.
               </p>
             </div>
             <div className="bg-[#fff9de] backdrop-blur-sm border border-[#e8e73e]/20 rounded-2xl p-8 hover:bg-[#fff4bf] transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-[#e8e73e] flex items-center justify-center mb-6 shadow-lg">
                 <Heart className="w-7 h-7 text-white" />
               </div>
-              <span className="text-[#e8e73e] text-xs tracking-[0.2em] uppercase font-semibold">Addictive</span>
+              {/* <span className="text-[#e8e73e] text-xs tracking-[0.2em] uppercase font-semibold">Addictive</span> */}
               <h3 className="text-2xl text-[#212121] font-bold mt-2 mb-4 font-display">Pure Joy</h3>
               <p className="text-[#212121]/80 leading-relaxed">
                 Chaat is addictive for a reason! Tangy, spicy, and absolutely delicious—every 
@@ -633,7 +667,13 @@ const TheChaatCult = () => {
                 key={index}
                 className="shrink-0 w-[320px] md:w-[360px] snap-start group cursor-pointer"
               >
-                <div className="relative aspect-square rounded-2xl overflow-hidden mb-5 shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white">
+                <a
+                  href="https://www.swiggy.com/direct/brand/351617?source=swiggy-direct&subSource=instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Order ${item.name} on Swiggy`}
+                  className="relative aspect-square rounded-2xl overflow-hidden mb-5 shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white block"
+                >
                   {item.image ? (
                     <img
                       src={item.image}
@@ -650,7 +690,7 @@ const TheChaatCult = () => {
                       {item.badge}
                     </span>
                   </div>
-                </div>
+                </a>
                 <h3 className="text-2xl text-[#212121] font-bold mb-2 group-hover:text-[#089797] transition-colors duration-300 font-display">
                   {item.name}
                 </h3>

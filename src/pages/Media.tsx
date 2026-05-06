@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -164,6 +165,11 @@ const Media = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Media & Press — Dil Foods in the News"
+        description="Read the latest news, press coverage, and stories about Dil Foods — India's largest virtual brands chain. Featured in leading publications across India."
+        path="/media"
+      />
       <Navbar />
 
       <main className="flex-grow">

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import BrandNavigation from "../components/BrandNavigation";
 import FloatingBrandSuggestion from "../components/FloatingBrandSuggestion";
+import SEO from "../components/SEO";
 import {
   Sparkles,
   Handshake,
@@ -189,20 +190,20 @@ const VegeRAMA = () => {
   const testimonials = [
     {
       name: "Meera Patel",
-      location: "Mumbai",
+      location: "Bangalore",
       text: "VEGERAMA is a vegetarian's paradise! Fresh, green, and absolutely delicious. The power bowl is amazing!",
       initial: "M",
     },
     {
       name: "Anjali Desai",
-      location: "Pune",
-      text: "Fresh, healthy, and natural—exactly what I look for in vegetarian food. Highly recommended!",
+      location: "Mumbai",
+      text: "Sabudana khichdi was perfectly made, not oily, just right. It felt like home food. ",
       initial: "A",
     },
     {
       name: "Kavita Reddy",
-      location: "Bangalore",
-      text: "The fresh salad bowl is outstanding! This is how vegetarian food should be—vibrant and full of flavor!",
+      location: "Pune",
+      text: "Perfect for Navratri! The sendha namak meals are light, respectful of traditions, and taste like home",
       initial: "K",
     },
   ];
@@ -219,6 +220,26 @@ const VegeRAMA = () => {
 
   return (
     <div className="min-h-screen bg-background vegerama-page scroll-snap-container">
+      <SEO
+        title="VEGERAMA — Pure Vegetarian Indian Meals | Order Online | Dil Foods"
+        description="Jain-friendly khichdi, paneer butter masala bowls, dal makhani, samosa pav, dahi bhalle and more. Pure vegetarian, fresh, and homestyle. A Dil Foods brand."
+        path="/vegerama"
+        image="https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Paneer Butter Masala Rice Bowl.png"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Restaurant",
+          name: "VEGERAMA",
+          description: "Pure vegetarian Indian meals — khichdi, paneer butter masala, dal makhani, samosa, chaat.",
+          image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Paneer Butter Masala Rice Bowl.png",
+          url: "https://dilfoods.in/vegerama",
+          servesCuisine: "Vegetarian Indian",
+          parentOrganization: {
+            "@type": "Organization",
+            name: "Dil Foods",
+            url: "https://dilfoods.in",
+          },
+        }}
+      />
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled ? "bg-[#7CB342]/95 backdrop-blur-md shadow-lg" : "bg-black/20 backdrop-blur-sm"
@@ -390,7 +411,7 @@ const VegeRAMA = () => {
         <div className="relative z-10 container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-[#AED581] text-lg md:text-xl tracking-[0.3em] uppercase mb-6 font-semibold">
-              FRESH. GREEN. DELICIOUS.
+              Pure Veg & Vrat-Friendly Meals
             </p>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight font-display">
@@ -399,8 +420,7 @@ const VegeRAMA = () => {
             </h1>
             
             <p className="text-white/95 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
-              Fresh, healthy, and natural. Experience the vibrant flavors of vegetarian cuisine, 
-              where every dish celebrates the goodness of fresh, green ingredients.
+             Order pure veg and vrat-friendly food from Vegerama. Enjoy fasting-friendly meals, sabudana khichdi, vrat snacks, festive thalis, and vegetarian Indian favourites. 
             </p>
             
             {/* Platform Availability in Hero */}
@@ -466,47 +486,41 @@ const VegeRAMA = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2E7D32]/60 to-transparent"></div>
               </div>
               <div className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 bg-[#AED581] text-[#2E7D32] p-4 lg:p-5 rounded-xl shadow-lg max-w-[280px] z-10">
-                <p className="text-lg lg:text-xl italic mb-1 font-semibold">"Fresh. Green. Delicious."</p>
-                <p className="text-xs opacity-80">— The VEGERAMA Promise</p>
+                <p className="text-lg lg:text-xl italic mb-1 font-semibold">"Pure Veg & Vrat-Friendly Meals"</p>
+                {/* <p className="text-xs opacity-80">— The VEGERAMA Promise</p> */}
               </div>
             </div>
             <div>
               <span className="text-[#AED581] text-sm tracking-[0.3em] uppercase font-semibold">Green Heritage</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold mt-3 mb-6 leading-tight font-display">
-                The Soul of
-                <span className="block text-[#AED581]">Fresh Living</span>
+                Pure veg, every day. Vrat
+                <span className="block text-[#AED581]">-ready when you need it.</span>
               </h2>
               <div className="space-y-4 text-white/80 text-base md:text-lg leading-relaxed">
                 <p>
-                  <span className="text-white font-semibold">VEGERAMA</span> celebrates the vibrant world of vegetarian cuisine, 
-                  where fresh, green ingredients come together to create dishes that nourish both body and soul. 
-                  Our mission is to showcase the incredible diversity and flavor potential of plant-based foods.
+                  <span className="text-white font-semibold">VEGERAMA</span> is made for people who prefer pure vegetarian food and for those who follow fasting days through the year.
                 </p>
                 <p>
-                  Every dish represents our commitment to using the freshest vegetables, aromatic spices, and time-tested 
-                  cooking techniques. From crispy samosas to hearty rice bowls, we transform simple vegetables into 
-                  extraordinary culinary experiences that prove vegetarian food can be vibrant, satisfying, and delicious.
+                  From regular veg meals to vrat-friendly dishes, the menu is built around comfort, simplicity, and cultural food habits. Whether it is Navratri, Ekadashi, Shravan, Monday fasts, or a personal diet choice, Vegerama offers food that feels familiar, light, and satisfying.
                 </p>
                 <p>
-                  We believe that vegetarian food should be a celebration—colorful, flavorful, and full of life. 
-                  Each meal is crafted with care to honor the natural goodness of fresh ingredients while bringing 
-                  joy to every bite.
+                  Whether it's a Monday fast, Navratri, Ekadashi, or just a no-onion-no-garlic day — Vegerama has you covered. 100% pure vegetarian food made with sendha namak where it matters, Jain-friendly options always available, and everyday comfort meals for the rest of the week.
                 </p>
               </div>
               <div className="mt-8 flex items-center gap-6">
                 <div>
-                  <p className="text-3xl md:text-4xl text-[#AED581] font-bold">18+</p>
-                  <p className="text-xs md:text-sm text-white/70">Fresh Varieties</p>
+                  <p className="text-3xl md:text-4xl text-[#AED581] font-bold">30+</p>
+                  <p className="text-xs md:text-sm text-white/70">Everyday Veg Dishes</p>
                 </div>
                 <div className="w-px h-10 bg-white/20"></div>
                 <div>
                   <p className="text-3xl md:text-4xl text-[#AED581] font-bold">100%</p>
-                  <p className="text-xs md:text-sm text-white/70">Vegetarian</p>
+                  <p className="text-xs md:text-sm text-white/70">Pure Veg</p>
                 </div>
                 <div className="w-px h-10 bg-white/20"></div>
                 <div>
-                  <p className="text-3xl md:text-4xl text-[#AED581] font-bold">∞</p>
-                  <p className="text-xs md:text-sm text-white/70">Fresh & Natural</p>
+                  <p className="text-3xl md:text-4xl text-[#AED581] font-bold">365</p>
+                  <p className="text-xs md:text-sm text-white/70">Days of vrat-friendly options for every fast</p>
                 </div>
               </div>
             </div>
@@ -531,33 +545,30 @@ const VegeRAMA = () => {
               <div className="w-14 h-14 rounded-xl bg-[#7CB342] flex items-center justify-center mb-6 shadow-lg">
                 <Sparkles className="w-7 h-7 text-white" />
               </div>
-              <span className="text-[#7CB342] text-xs tracking-[0.2em] uppercase font-semibold">Fresh & Natural</span>
-              <h3 className="text-2xl text-[#2E7D32] font-bold mt-2 mb-4 font-display">Organic Goodness</h3>
+              {/* <span className="text-[#7CB342] text-xs tracking-[0.2em] uppercase font-semibold">Fresh & Natural</span> */}
+              <h3 className="text-2xl text-[#2E7D32] font-bold mt-2 mb-4 font-display">No onion, no garlic , done properly</h3>
               <p className="text-[#2E7D32]/80 leading-relaxed">
-                We use the freshest vegetables and organic ingredients to create dishes that 
-                are not just delicious but also nourishing.
+               We don't just slap a label on it. Our Jain and no-onion-no-garlic dishes are prepared in dedicated processes so there's no cross-contamination, no ambiguity. If it says Jain-friendly on our menu, it means it.
               </p>
             </div>
             <div className="bg-white/80 backdrop-blur-sm border border-[#7CB342]/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-[#7CB342] flex items-center justify-center mb-6 shadow-lg">
                 <Handshake className="w-7 h-7 text-white" />
               </div>
-              <span className="text-[#7CB342] text-xs tracking-[0.2em] uppercase font-semibold">Healthy Living</span>
-              <h3 className="text-2xl text-[#2E7D32] font-bold mt-2 mb-4 font-display">Nourishing Meals</h3>
+              {/* <span className="text-[#7CB342] text-xs tracking-[0.2em] uppercase font-semibold">Healthy Living</span> */}
+              <h3 className="text-2xl text-[#2E7D32] font-bold mt-2 mb-4 font-display">One brand, every dietary preference</h3>
               <p className="text-[#2E7D32]/80 leading-relaxed">
-                Every dish is designed to be healthy and nutritious, providing you with the 
-                energy and vitality you need.
+                Pure veg by default. Vrat-friendly when it matters. Jain-certified where it counts. Whether it's a choice, a lifestyle, or a day of devotion,Vegerama fits without you having to explain yourself to the menu.
               </p>
             </div>
             <div className="bg-white/80 backdrop-blur-sm border border-[#7CB342]/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-[#7CB342] flex items-center justify-center mb-6 shadow-lg">
                 <Heart className="w-7 h-7 text-white" />
               </div>
-              <span className="text-[#7CB342] text-xs tracking-[0.2em] uppercase font-semibold">Vibrant</span>
-              <h3 className="text-2xl text-[#2E7D32] font-bold mt-2 mb-4 font-display">Colorful Flavors</h3>
+              {/* <span className="text-[#7CB342] text-xs tracking-[0.2em] uppercase font-semibold">Vibrant</span> */}
+              <h3 className="text-2xl text-[#2E7D32] font-bold mt-2 mb-4 font-display">Comfort food for every other day too</h3>
               <p className="text-[#2E7D32]/80 leading-relaxed">
-                Vegetarian food should be vibrant and full of life. Every dish is a celebration 
-                of fresh, colorful ingredients.
+                Not every day is a fast day , and Vegerama's everyday menu is just as good. Dal khichdi, paneer butter masala, rajma rice bowls, kulche combos, maska pav with chai. Wholesome, warm, and always pure veg.
               </p>
             </div>
           </div>
@@ -641,7 +652,13 @@ const VegeRAMA = () => {
                 key={index}
                 className="shrink-0 w-[320px] md:w-[360px] snap-start group cursor-pointer"
               >
-                <div className="relative aspect-square rounded-2xl overflow-hidden mb-5 shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white">
+                <a
+                  href="https://www.swiggy.com/direct/brand/667513?source=swiggy-direct&subSource=instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Order ${item.name} on Swiggy`}
+                  className="relative aspect-square rounded-2xl overflow-hidden mb-5 shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white block"
+                >
                   {item.image ? (
                     <img
                       src={item.image}
@@ -658,7 +675,7 @@ const VegeRAMA = () => {
                       {item.badge}
                     </span>
                   </div>
-                </div>
+                </a>
                 <h3 className="text-2xl text-[#2E7D32] font-bold mb-2 group-hover:text-[#7CB342] transition-colors duration-300 font-display">
                   {item.name}
                 </h3>
@@ -709,19 +726,19 @@ const VegeRAMA = () => {
         </div>
       </section>
 
-      <section id="social" className="min-h-screen flex items-center bg-white overflow-hidden scroll-snap-section">
-        <div className="container mx-auto px-6 py-16">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#7CB342] rounded-full mb-6">
-              <Instagram className="w-5 h-5 text-white" />
-              <span className="font-semibold text-white">@vegetrama</span>
+      {instagramPosts.length > 0 && (
+        <section id="social" className="min-h-screen flex items-center bg-white overflow-hidden scroll-snap-section">
+          <div className="container mx-auto px-6 py-16">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#7CB342] rounded-full mb-6">
+                <Instagram className="w-5 h-5 text-white" />
+                <span className="font-semibold text-white">@vegetrama</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl text-[#2E7D32] font-bold mb-4 font-display">Follow Our Culinary Journey</h2>
+              <p className="text-[#2E7D32]/70">Behind-the-scenes, fresh recipes, and natural food stories from our kitchen to yours.</p>
             </div>
-            <h2 className="text-3xl md:text-4xl text-[#2E7D32] font-bold mb-4 font-display">Follow Our Culinary Journey</h2>
-            <p className="text-[#2E7D32]/70">Behind-the-scenes, fresh recipes, and natural food stories from our kitchen to yours.</p>
-          </div>
 
-          {/* Instagram Gallery - Scrollable Thumbnail Grid */}
-          {instagramPosts.length > 0 && (
+            {/* Instagram Gallery - Scrollable Thumbnail Grid */}
             <div className="mb-12">
               <div className="flex gap-4 overflow-x-auto scrollbar-hide px-6 pb-4 snap-x snap-mandatory">
                 {instagramPosts.map((post) => (
@@ -749,22 +766,22 @@ const VegeRAMA = () => {
                 ))}
               </div>
             </div>
-          )}
 
-          {/* Follow Button */}
-          <div className="text-center mt-10">
-            <a
-              href="https://instagram.com/vegetrama"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#2E7D32] text-white font-semibold rounded-lg hover:bg-[#2E7D32]/80 transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              <Instagram className="w-5 h-5" />
-              Follow Us on Instagram
-            </a>
+            {/* Follow Button */}
+            <div className="text-center mt-10">
+              <a
+                href="https://instagram.com/vegetrama"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#2E7D32] text-white font-semibold rounded-lg hover:bg-[#2E7D32]/80 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                <Instagram className="w-5 h-5" />
+                Follow Us on Instagram
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Brand Discovery Section - Inline with VegeRAMA Theme */}
       <section id="brands" className="min-h-screen scroll-snap-section scroll-snap-align-start py-16 md:py-24"

@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import NewsStrip from "../components/NewsStrip";
 import CounterAnimation from "../components/CounterAnimation";
 import BrandCard from "../components/BrandCard";
+import SEO from "../components/SEO";
 import CityMap from "../components/CityMap";
 import LazyImage from "../components/LazyImage";
 import { ArrowRight, ChevronRight, Heart, ChevronLeft } from "lucide-react";
@@ -128,6 +129,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Dil Foods - India's Largest Virtual Brands Chain"
+        description="10 regional virtual brands, 200+ outlets across 5 cities. Order authentic Indian flavours from Bhole ke Chole, Aahar, Junglee Kitchen, House of Andhra, Dil Daily, Khichdi Bar, The Chaat Cult, VEGERAMA, and Bihari Bowl — or partner your kitchen with Dil Foods."
+        path="/"
+      />
       <Navbar />
 
       {/* Hero Section */}
