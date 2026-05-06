@@ -7,15 +7,17 @@ import LazyImage from "../components/LazyImage";
 import HoneycombBrands from "../components/HoneycombBrands";
 import { toast } from "sonner";
 import {
-  Users,
   Clock,
-  PackageCheck,
   Percent,
   BarChart2,
   Award,
   ShoppingBag,
   Calculator,
   Send,
+  Sparkles,
+  ArrowRight,
+  Quote,
+  ShieldCheck,
 } from "lucide-react";
 import * as Dialog from "@radix-ui/react-dialog";
 
@@ -204,46 +206,44 @@ const RestaurantPartnership = () => {
 
   const brands = [
     {
-      name: "Aahar",
-      logo: "/lovable-uploads/55d6ad50-361d-42cd-b556-c283b2ee23e4.png",
+      name: "Khichdi Bar",
+      logo: "/lovable-uploads/235a933c-2973-43db-8419-1bc689100f0a.png",
+    },
+    {
+      name: "Dil Punjabi Daily",
+      logo: "/lovable-uploads/DIL_daily_new.png",
     },
     {
       name: "Bihari Bowl",
-      logo: "/lovable-uploads/1310a9da-ccbe-4fa6-bc06-51441a0872ba.png",
-    },
-    {
-      name: "Khichdi Bar",
-      logo: "/lovable-uploads/DIL_daily_new.png",
+      logo: "/lovable-uploads/bb_logo.png",
     },
     {
       name: "Bhole ke Chole",
       logo: "/lovable-uploads/cdf67c56-7bd7-4023-af81-bf258fe60fe3.png",
     },
     {
-      name: "The Chaat Cult",
-      logo: "/lovable-uploads/235a933c-2973-43db-8419-1bc689100f0a.png",
+      name: "House Of Andhra",
+      logo: "/lovable-uploads/1310a9da-ccbe-4fa6-bc06-51441a0872ba.png",
     },
     {
-      name: "House Of Andhra",
-      logo: "/lovable-uploads/b7f77f5d-c32a-4b73-9673-c4572c649bf4.png",
+      name: "The Chaat Cult",
+      logo: "/lovable-uploads/tcc.png",
     },
-    // {
-    //   name: "Dil Foods",
-    //   logo: "/lovable-uploads/981bf596-8923-43ae-950d-88e254903acf.png",
-    // },
     {
       name: "Junglee Kitchen",
       logo: "/lovable-uploads/junglee logo.png",
-      route: "/junglee-kitchen",
     },
-    { name: "Dil Punjabi Daily", logo: "/lovable-uploads/vegerama_new-Photoroom.png" },
     {
-      name: "Bowled Over",
-      logo: "/lovable-uploads/fde1b960-d52b-4beb-bf58-bb7c457abca9.png",
+      name: "VEGERAMA",
+      logo: "/lovable-uploads/vegerama_new-Photoroom.png",
+    },
+    {
+      name: "Aahar",
+      logo: "/lovable-uploads/55d6ad50-361d-42cd-b556-c283b2ee23e4.png",
     },
     {
       name: "Nagada",
-      logo: "/lovable-uploads/bb_logo.png",
+      logo: "/lovable-uploads/Nagadalogo.png",
     },
   ];
 
@@ -253,17 +253,23 @@ const RestaurantPartnership = () => {
 
       <Dialog.Root open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <Dialog.Portal>
-          <Dialog.Overlay className="fixed inset-0 bg-black/50" />
-          <Dialog.Content className="fixed left-1/2 top-1/2 w-[90%] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white p-6 shadow-lg">
-            <Dialog.Title className="text-lg font-bold">
-              Thank you!
-            </Dialog.Title>
-            <Dialog.Description className="mt-2 text-sm text-gray-600">
-              Your enquiry has been submitted. We will contact you soon.
+          <Dialog.Overlay className="fixed inset-0 bg-black/60 z-50 backdrop-blur-sm" />
+          <Dialog.Content className="fixed left-1/2 top-1/2 w-[90%] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white p-8 shadow-2xl z-50 ring-1 ring-dil-purple/20">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 rounded-full bg-dil-purple/10 flex items-center justify-center">
+                <Sparkles size={20} className="text-dil-purple" />
+              </div>
+              <Dialog.Title className="text-2xl font-bold text-dil-purple">
+                Thank you!
+              </Dialog.Title>
+            </div>
+            <Dialog.Description className="mt-3 text-sm text-gray-600 leading-relaxed">
+              Your enquiry has been submitted. Our partnerships team will reach
+              out within 24 hours.
             </Dialog.Description>
-            <div className="mt-4 text-right">
+            <div className="mt-6 text-right">
               <button
-                className="rounded bg-dil-red px-4 py-2 text-white"
+                className="rounded-full bg-dil-purple px-6 py-2.5 text-white font-semibold hover:bg-dil-purple/90 transition-colors"
                 onClick={() => setIsDialogOpen(false)}
               >
                 Close
@@ -273,26 +279,91 @@ const RestaurantPartnership = () => {
         </Dialog.Portal>
       </Dialog.Root>
 
-      {/* Hero Section - Updated with purple gradient background */}
-      <section className="pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-purple-red text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl md:text-5xl font-bold mb-6 animate-fadeInUp text-white">
-            Join India's truly largest virtual brands network
+      {/* Hero Section — Cream parchment palette, partner-specific content */}
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-[#FDF9F2]">
+        {/* Warm decorative blobs */}
+        <div className="pointer-events-none absolute -top-40 -left-40 w-[560px] h-[560px] rounded-full bg-[#B00020]/[0.08] blur-3xl"></div>
+        <div className="pointer-events-none absolute -bottom-40 -right-40 w-[560px] h-[560px] rounded-full bg-[#c9a227]/[0.14] blur-3xl"></div>
+        <div className="pointer-events-none absolute top-1/3 -right-24 w-[320px] h-[320px] rounded-full bg-[#4B0076]/[0.05] blur-3xl"></div>
+        <div className="pointer-events-none absolute top-1/4 left-[8%] w-[260px] h-[260px] rounded-full bg-[#c9a227]/[0.08] blur-3xl"></div>
+
+        {/* Dotted grid */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.10]"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, #c9a227 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+          }}
+        ></div>
+
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* Eyebrow */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#c9a227]/40 shadow-sm mb-8 animate-fadeIn">
+            <Sparkles size={14} className="text-[#B00020]" />
+            <span className="text-[11px] md:text-xs font-semibold tracking-[0.18em] text-[#1a1a1a] uppercase">
+              For Restaurant Partners
+            </span>
+          </div>
+
+          <h1 className="font-display font-semibold leading-[1.1] tracking-tight text-[#1a1a1a] text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-7 animate-fadeInUp">
+            Join India's truly largest
+            <br />
+            <span className="text-[#B00020]">virtual brands network</span>
           </h1>
+
           <p
-            className="text-xl text-white/90 max-w-3xl mx-auto mb-8 animate-fadeInUp"
-            style={{ animationDelay: "0.1s" }}
+            className="font-body text-base md:text-lg lg:text-xl text-[#1a1a1a] max-w-2xl mx-auto mb-10 leading-relaxed font-medium animate-fadeInUp"
+            style={{
+              textShadow: "0 1px 2px rgba(255, 248, 230, 0.7)",
+              animationDelay: "0.1s",
+            }}
           >
             Unlock the full potential of your kitchen and increase your revenue
-            without additional infrastructure costs
+            without additional infrastructure costs.
           </p>
-          <a
-            href="#signup"
-            className="bg-white text-dil-purple px-4 py-2 rounded hover:bg-white/90 transition-colors font-semibold inline-flex items-center animate-fadeInUp"
+
+          {/* CTAs */}
+          <div
+            className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-12 animate-fadeInUp"
             style={{ animationDelay: "0.2s" }}
           >
-            Partner with Dil Foods
-          </a>
+            <a
+              href="#signup"
+              className="group relative w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-[#B00020] text-white rounded-full font-semibold shadow-xl shadow-[#B00020]/30 ring-2 ring-[#c9a227]/60 hover:bg-[#8a0019] hover:ring-[#c9a227] hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <Sparkles size={16} className="mr-2 text-[#FFD700]" />
+              Apply Now
+              <ArrowRight
+                size={18}
+                className="ml-2 group-hover:translate-x-1 transition-transform"
+              />
+            </a>
+            <a
+              href="#calculator"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white text-[#1a1a1a] rounded-full font-semibold border border-[#1a1a1a] shadow-md hover:bg-[#1a1a1a] hover:text-white hover:-translate-y-0.5 transition-all duration-300"
+            >
+              <Calculator size={16} className="mr-2" />
+              Calculate Your Potential
+            </a>
+          </div>
+
+          {/* Trust strip */}
+          <div
+            className="flex justify-center animate-fadeIn"
+            style={{ animationDelay: "0.3s" }}
+          >
+            <div className="inline-flex flex-wrap items-center justify-center gap-x-5 gap-y-2 px-6 py-3 rounded-full bg-white/85 backdrop-blur-md border border-[#c9a227]/40 shadow-md text-[11px] md:text-xs font-semibold tracking-[0.15em] uppercase text-[#1a1a1a]">
+              <span className="inline-flex items-center gap-1.5">
+                <ShieldCheck size={14} className="text-[#c9a227]" />
+                300+ Outlets
+              </span>
+              <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-[#c9a227]"></span>
+              <span>30-40% Profit</span>
+              <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-[#c9a227]"></span>
+              <span>2-Week Launch</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -300,52 +371,62 @@ const RestaurantPartnership = () => {
       <NewsStrip text="SAME KITCHEN! SAME STAFF! MORE ORDERS!!" />
 
       {/* 3-Step Onboarding */}
-      <section className="py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Easy 3-Step Onboarding
-          </h2>
+      <section className="py-20 md:py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <p className="text-[11px] md:text-xs font-semibold tracking-[0.2em] text-dil-purple uppercase mb-3">
+              The Process
+            </p>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-3 leading-tight">
+              Easy 3-Step Onboarding
+            </h2>
+            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+              From pick-up to pay-out — three simple steps to start earning more from your kitchen.
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {/* Step 1 */}
-            <div className="bg-gradient-yellow-orange rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-              <div className="flex flex-col items-center text-center">
-                <div className="rounded-full bg-dil-purple w-16 h-16 flex items-center justify-center mb-4">
-                  <span className="text-2xl font-bold text-white">1</span>
+            <div className="group relative bg-white rounded-2xl border border-gray-100 hover:border-dil-purple/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+              <div className="h-1.5 bg-gradient-purple-red"></div>
+              <div className="p-7 flex flex-col items-center text-center">
+                <div className="relative mb-5">
+                  <div className="rounded-full bg-gradient-purple-red w-16 h-16 flex items-center justify-center shadow-lg shadow-dil-purple/30">
+                    <span className="text-2xl font-bold text-white">1</span>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-dil-purple mb-3">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
                   Pick the Brand Concept
                 </h3>
-                <p className="text-dil-purple mb-4">
-                  Choose from our portfolio of virtual brands that best suit
-                  your kitchen.
+                <p className="text-gray-600 mb-5 text-sm md:text-base leading-relaxed">
+                  Choose from our portfolio of virtual brands that best suit your kitchen.
                 </p>
-                <div className="mt-auto">
+                <div className="mt-auto w-full pt-2 border-t border-gray-100">
                   <HoneycombBrands brands={brands} size="medium" />
                 </div>
               </div>
             </div>
 
             {/* Step 2 */}
-            <div className="bg-gradient-yellow-orange rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-              <div className="flex flex-col items-center text-center">
-                <div className="rounded-full bg-dil-purple w-16 h-16 flex items-center justify-center mb-4">
+            <div className="group relative bg-white rounded-2xl border border-gray-100 hover:border-dil-purple/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+              <div className="h-1.5 bg-gradient-purple-red"></div>
+              <div className="p-7 flex flex-col items-center text-center">
+                <div className="rounded-full bg-gradient-purple-red w-16 h-16 flex items-center justify-center mb-5 shadow-lg shadow-dil-purple/30">
                   <span className="text-2xl font-bold text-white">2</span>
                 </div>
-                <h3 className="text-xl font-bold text-dil-purple mb-3">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
                   Get Your Staff Trained
                 </h3>
-                <p className="text-dil-purple mb-4">
-                  Our experts will train your kitchen staff at no additional
-                  cost.
+                <p className="text-gray-600 mb-5 text-sm md:text-base leading-relaxed">
+                  Our experts train your kitchen staff at no additional cost — on-site.
                 </p>
-                <div className="mt-auto h-48 w-full flex items-center justify-center">
+                <div className="mt-auto h-44 w-full flex items-center justify-center bg-gray-50 rounded-xl overflow-hidden">
                   <LazyImage
                     src="/lovable-uploads/47be681e-832e-444c-884a-0fdf808a7a8e.png"
                     alt="Staff training"
-                    className="object-contain max-h-full rounded-lg shadow-md"
+                    className="object-contain max-h-full"
                     width={200}
-                    height={192}
+                    height={176}
                     quality={80}
                   />
                 </div>
@@ -353,24 +434,25 @@ const RestaurantPartnership = () => {
             </div>
 
             {/* Step 3 */}
-            <div className="bg-gradient-yellow-orange rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-              <div className="flex flex-col items-center text-center">
-                <div className="rounded-full bg-dil-purple w-16 h-16 flex items-center justify-center mb-4">
+            <div className="group relative bg-white rounded-2xl border border-gray-100 hover:border-dil-purple/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+              <div className="h-1.5 bg-gradient-purple-red"></div>
+              <div className="p-7 flex flex-col items-center text-center">
+                <div className="rounded-full bg-gradient-purple-red w-16 h-16 flex items-center justify-center mb-5 shadow-lg shadow-dil-purple/30">
                   <span className="text-2xl font-bold text-white">3</span>
                 </div>
-                <h3 className="text-xl font-bold text-dil-purple mb-3">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
                   Get More Orders
                 </h3>
-                <p className="text-dil-purple mb-4">
-                  Simply reheat and assemble delivered food from us.
+                <p className="text-gray-600 mb-5 text-sm md:text-base leading-relaxed">
+                  Simply reheat and assemble delivered food from us — same kitchen, more revenue.
                 </p>
-                <div className="mt-auto h-48 w-full flex items-center justify-center">
+                <div className="mt-auto h-44 w-full flex items-center justify-center bg-gray-50 rounded-xl overflow-hidden">
                   <LazyImage
                     src="/lovable-uploads/1167e12a-5b3b-4f3b-9653-7cb0ed27b4f6.png"
                     alt="Food delivery"
-                    className="object-contain max-h-full rounded-lg shadow-md"
+                    className="object-contain max-h-full"
                     width={200}
-                    height={192}
+                    height={176}
                     quality={80}
                   />
                 </div>
@@ -381,29 +463,38 @@ const RestaurantPartnership = () => {
       </section>
 
       {/* Advantages */}
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Partnership Advantages
-          </h2>
+      <section className="py-20 md:py-24 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <p className="text-[11px] md:text-xs font-semibold tracking-[0.2em] text-dil-purple uppercase mb-3">
+              Why Partner
+            </p>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-3 leading-tight">
+              Partnership Advantages
+            </h2>
+            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+              Everything you need to start earning more from your existing kitchen — at zero upfront cost.
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {advantageCards.map((card, index) => (
               <div
                 key={index}
-                className="bg-gradient-yellow-orange rounded-xl p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                className="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-dil-purple/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="flex items-start">
-                  <div className="rounded-full bg-white p-3 mr-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-purple-red flex items-center justify-center shadow-md shadow-dil-purple/20 mb-5 group-hover:scale-110 transition-transform duration-300">
+                  {/* Icon — recolor to white inside the tile */}
+                  <span className="text-white [&_svg]:text-white [&_svg]:w-6 [&_svg]:h-6">
                     {card.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-dil-purple mb-2">
-                      {card.title}
-                    </h3>
-                    <p className="text-dil-purple/90">{card.description}</p>
-                  </div>
+                  </span>
                 </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2 leading-tight">
+                  {card.title}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {card.description}
+                </p>
               </div>
             ))}
           </div>
@@ -411,140 +502,151 @@ const RestaurantPartnership = () => {
       </section>
 
       {/* Kitchen Utilization Calculator */}
-      <section id="calculator" className="py-16 md:py-24">
+      <section id="calculator" className="py-20 md:py-24 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-purple-red">
-            Know If Your Restaurant Is Underutilized
-          </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-            Fill in the details below to calculate how much potential your
-            kitchen has to generate more orders and revenue.
-          </p>
+          <div className="text-center mb-12">
+            <p className="text-[11px] md:text-xs font-semibold tracking-[0.2em] text-dil-purple uppercase mb-3">
+              Free Tool
+            </p>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-3 leading-tight">
+              Is your restaurant{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-purple-red">
+                underutilized?
+              </span>
+            </h2>
+            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+              Fill in the details below to see how much more your kitchen could produce.
+            </p>
+          </div>
 
-          <div className="bg-white shadow-lg rounded-xl p-6 md:p-8 border border-gray-100">
+          <div className="bg-gray-50 shadow-lg rounded-2xl p-6 md:p-10 border border-gray-100">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <div className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Kitchen size (sq ft)
-                    </label>
-                    <input
-                      type="number"
-                      name="kitchenSize"
-                      value={kitchenData.kitchenSize || ""}
-                      onChange={handleCalculatorChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Total staff (number)
-                    </label>
-                    <input
-                      type="number"
-                      name="totalStaff"
-                      value={kitchenData.totalStaff || ""}
-                      onChange={handleCalculatorChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Operating hours (number)
-                    </label>
-                    <input
-                      type="number"
-                      name="operatingHours"
-                      value={kitchenData.operatingHours || ""}
-                      onChange={handleCalculatorChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
-                    />
-                  </div>
+              <div className="space-y-5">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                    Kitchen size <span className="text-gray-400 font-normal">(sq ft)</span>
+                  </label>
+                  <input
+                    type="number"
+                    name="kitchenSize"
+                    value={kitchenData.kitchenSize || ""}
+                    onChange={handleCalculatorChange}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                    Total staff
+                  </label>
+                  <input
+                    type="number"
+                    name="totalStaff"
+                    value={kitchenData.totalStaff || ""}
+                    onChange={handleCalculatorChange}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                    Operating hours <span className="text-gray-400 font-normal">(per day)</span>
+                  </label>
+                  <input
+                    type="number"
+                    name="operatingHours"
+                    value={kitchenData.operatingHours || ""}
+                    onChange={handleCalculatorChange}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
+                  />
                 </div>
               </div>
 
-              <div>
-                <div className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Current orders/day (number)
-                    </label>
-                    <input
-                      type="number"
-                      name="currentOrders"
-                      value={kitchenData.currentOrders || ""}
-                      onChange={handleCalculatorChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Kitchen preparation time (minutes per order)
-                    </label>
-                    <input
-                      type="number"
-                      name="prepTime"
-                      value={kitchenData.prepTime || ""}
-                      onChange={handleCalculatorChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
-                    />
-                  </div>
-
-                  <div className="pt-6">
-                    <button
-                      onClick={calculateUtilization}
-                      className="w-full btn-primary"
-                    >
-                      Calculate Utilization
-                    </button>
-                  </div>
+              <div className="space-y-5">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                    Current orders <span className="text-gray-400 font-normal">(per day)</span>
+                  </label>
+                  <input
+                    type="number"
+                    name="currentOrders"
+                    value={kitchenData.currentOrders || ""}
+                    onChange={handleCalculatorChange}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                    Kitchen prep time <span className="text-gray-400 font-normal">(minutes / order)</span>
+                  </label>
+                  <input
+                    type="number"
+                    name="prepTime"
+                    value={kitchenData.prepTime || ""}
+                    onChange={handleCalculatorChange}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
+                  />
+                </div>
+                <div className="pt-7">
+                  <button
+                    onClick={calculateUtilization}
+                    className="group w-full inline-flex items-center justify-center px-6 py-3 bg-dil-purple text-white rounded-full font-semibold shadow-lg shadow-dil-purple/30 hover:bg-dil-purple/90 hover:shadow-xl transition-all duration-300"
+                  >
+                    <Calculator size={18} className="mr-2" />
+                    Calculate Utilization
+                  </button>
                 </div>
               </div>
             </div>
 
             {calculationResult && (
-              <div className="mt-8 p-6 bg-gradient-purple-red rounded-lg text-white">
-                <h3 className="text-xl font-bold mb-4">Calculation Results</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                  <div>
-                    <p className="text-sm opacity-80">Total Man-hours</p>
-                    <p className="text-2xl font-bold">
-                      {calculationResult.totalManHours}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-sm opacity-80">Total Potential Orders</p>
-                    <p className="text-2xl font-bold">
-                      {calculationResult.totalPotentialOrders}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-sm opacity-80">
-                      Additional Orders Possible
-                    </p>
-                    <p className="text-2xl font-bold">
-                      {calculationResult.additionalOrders}
-                    </p>
-                  </div>
-                </div>
+              <div className="mt-8 p-6 md:p-8 bg-gradient-purple-red rounded-2xl text-white shadow-xl shadow-dil-purple/20 relative overflow-hidden">
+                {/* decorative shape */}
+                <div className="pointer-events-none absolute -top-20 -right-20 w-60 h-60 rounded-full bg-white/[0.06] blur-2xl"></div>
 
-                <div className="flex flex-col items-center justify-center border-t border-white/20 pt-4 mt-2">
-                  <p className="text-lg opacity-90">You are underutilized by</p>
-                  <p className="text-3xl font-bold">
-                    {calculationResult.underutilizedPercent}%
-                  </p>
+                <div className="relative">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Sparkles size={16} className="text-dil-yellow" />
+                    <p className="text-[11px] font-semibold tracking-[0.18em] uppercase text-dil-yellow">
+                      Your Result
+                    </p>
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-6">Calculation Results</h3>
 
-                  {calculationResult.recommendation && (
-                    <div className="mt-4 p-3 bg-white/20 rounded-lg text-center">
-                      <p className="font-bold text-xl">
-                        {calculationResult.recommendation}
-                      </p>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+                      <p className="text-xs uppercase tracking-wider opacity-80">Total Man-hours</p>
+                      <p className="text-3xl font-bold mt-1">{calculationResult.totalManHours}</p>
                     </div>
-                  )}
+                    <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+                      <p className="text-xs uppercase tracking-wider opacity-80">Potential Orders</p>
+                      <p className="text-3xl font-bold mt-1">{calculationResult.totalPotentialOrders}</p>
+                    </div>
+                    <div className="bg-white/10 rounded-xl p-4 backdrop-blur-sm">
+                      <p className="text-xs uppercase tracking-wider opacity-80">Additional Orders</p>
+                      <p className="text-3xl font-bold mt-1">+{calculationResult.additionalOrders}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col items-center justify-center border-t border-white/20 pt-6">
+                    <p className="text-base opacity-90">You are underutilized by</p>
+                    <p className="text-5xl md:text-6xl font-bold text-dil-yellow my-2">
+                      {calculationResult.underutilizedPercent}%
+                    </p>
+
+                    {calculationResult.recommendation && (
+                      <div className="mt-4 px-6 py-4 bg-white/15 rounded-xl text-center backdrop-blur-sm ring-1 ring-dil-yellow/40">
+                        <p className="font-bold text-lg md:text-xl">
+                          {calculationResult.recommendation}
+                        </p>
+                        <a
+                          href="#signup"
+                          className="mt-3 inline-flex items-center text-sm font-semibold text-dil-yellow hover:text-white transition-colors"
+                        >
+                          Apply now
+                          <ArrowRight size={14} className="ml-1.5" />
+                        </a>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             )}
@@ -553,34 +655,37 @@ const RestaurantPartnership = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            What Our Partners Say
-          </h2>
+      <section className="py-20 md:py-24 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <p className="text-[11px] md:text-xs font-semibold tracking-[0.2em] text-dil-purple uppercase mb-3">
+              Partner Stories
+            </p>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-3 leading-tight">
+              What our partners say
+            </h2>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-dil-purple rounded-xl p-6 shadow-lg"
+                className="group relative bg-white rounded-2xl p-7 md:p-8 border border-gray-100 hover:border-dil-purple/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="flex flex-col h-full">
-                  <div className="mb-4">
-                    <svg
-                      className="w-8 h-8 text-dil-yellow"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
+                  <Quote size={32} className="text-dil-purple/70 mb-4" strokeWidth={1.5} />
+                  <p className="text-gray-800 text-base md:text-lg mb-6 flex-grow font-medium leading-relaxed">
+                    "{testimonial.quote}"
+                  </p>
+                  <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
+                    <div className="w-10 h-10 rounded-full bg-gradient-purple-red flex items-center justify-center text-white font-bold shadow-md">
+                      {testimonial.author.charAt(0)}
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">{testimonial.author}</p>
+                      <p className="text-xs text-gray-500">Dil Foods Partner</p>
+                    </div>
                   </div>
-                  <p className="text-dil-yellow text-lg mb-4 flex-grow font-medium">
-                    {testimonial.quote}
-                  </p>
-                  <p className="text-white opacity-80">
-                    - {testimonial.author}
-                  </p>
                 </div>
               </div>
             ))}
@@ -589,222 +694,243 @@ const RestaurantPartnership = () => {
       </section>
 
       {/* Sign Up Form */}
-      <section id="signup" className="py-16 md:py-24">
+      <section id="signup" className="py-20 md:py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <p className="text-[11px] md:text-xs font-semibold tracking-[0.2em] text-dil-purple uppercase mb-3">
+              Apply Today
+            </p>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-3 leading-tight">
               Sign Up Today
             </h2>
-            <p className="text-gray-600">
-              Join India's largest virtual brands network and start earning more
-              from your kitchen
+            <p className="text-base md:text-lg text-gray-600 max-w-xl mx-auto">
+              Join India's largest virtual brands network and start earning more from your kitchen.
             </p>
           </div>
 
-          <form onSubmit={handleSubmit(onSignUpSubmit)} className="space-y-6">
+          <form
+            onSubmit={handleSubmit(onSignUpSubmit)}
+            className="bg-gray-50 rounded-2xl p-6 md:p-10 border border-gray-100 shadow-lg space-y-8"
+          >
+            {/* Group 1: About You */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Your Name*
-              </label>
-              <input
-                type="text"
-                {...register("name", { required: true })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
-              />
-              {errors.name && (
-                <p className="mt-1 text-sm text-red-600">Name is required</p>
-              )}
+              <p className="text-[11px] font-semibold tracking-[0.2em] text-dil-purple uppercase mb-4">
+                01 · About You
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                    Your Name*
+                  </label>
+                  <input
+                    type="text"
+                    {...register("name", { required: true })}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
+                  />
+                  {errors.name && (
+                    <p className="mt-1 text-xs text-dil-red font-medium">Name is required</p>
+                  )}
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                    Contact Number*
+                  </label>
+                  <input
+                    type="tel"
+                    {...register("contactNumber", {
+                      required: true,
+                      pattern: /^[0-9]{10}$/,
+                    })}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
+                  />
+                  {errors.contactNumber && (
+                    <p className="mt-1 text-xs text-dil-red font-medium">
+                      Please enter a valid 10-digit number
+                    </p>
+                  )}
+                </div>
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                    Email*
+                  </label>
+                  <input
+                    type="email"
+                    {...register("email", {
+                      required: true,
+                      pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    })}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
+                  />
+                  {errors.email && (
+                    <p className="mt-1 text-xs text-dil-red font-medium">
+                      Please enter a valid email address
+                    </p>
+                  )}
+                </div>
+              </div>
             </div>
 
+            <div className="border-t border-gray-200"></div>
+
+            {/* Group 2: Restaurant */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Restaurant Name*
-              </label>
-              <input
-                type="text"
-                {...register("restaurantName", { required: true })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
-              />
-              {errors.restaurantName && (
-                <p className="mt-1 text-sm text-red-600">
-                  Restaurant name is required
-                </p>
-              )}
+              <p className="text-[11px] font-semibold tracking-[0.2em] text-dil-purple uppercase mb-4">
+                02 · Your Restaurant
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                    Restaurant Name*
+                  </label>
+                  <input
+                    type="text"
+                    {...register("restaurantName", { required: true })}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
+                  />
+                  {errors.restaurantName && (
+                    <p className="mt-1 text-xs text-dil-red font-medium">
+                      Restaurant name is required
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                    Area*
+                  </label>
+                  <input
+                    type="text"
+                    {...register("area", { required: true })}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
+                  />
+                  {errors.area && (
+                    <p className="mt-1 text-xs text-dil-red font-medium">Area is required</p>
+                  )}
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                    City*
+                  </label>
+                  <input
+                    type="text"
+                    {...register("city", { required: true })}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
+                  />
+                  {errors.city && (
+                    <p className="mt-1 text-xs text-dil-red font-medium">City is required</p>
+                  )}
+                </div>
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                    Pincode*
+                  </label>
+                  <input
+                    type="text"
+                    {...register("pincode", {
+                      required: true,
+                      pattern: /^[0-9]{6}$/,
+                    })}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
+                    placeholder="6-digit pincode"
+                  />
+                  {errors.pincode && (
+                    <p className="mt-1 text-xs text-dil-red font-medium">
+                      Please enter a valid 6-digit pincode
+                    </p>
+                  )}
+                </div>
+              </div>
             </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Area*
-              </label>
-              <input
-                type="text"
-                {...register("area", { required: true })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
-              />
-              {errors.city && (
-                <p className="mt-1 text-sm text-red-600">Area is required</p>
-              )}
-            </div>
+            <div className="border-t border-gray-200"></div>
 
+            {/* Group 3: Kitchen Details */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                City*
-              </label>
-              <input
-                type="text"
-                {...register("city", { required: true })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
-              />
-              {errors.city && (
-                <p className="mt-1 text-sm text-red-600">City is required</p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Contact Number*
-              </label>
-              <input
-                type="tel"
-                {...register("contactNumber", {
-                  required: true,
-                  pattern: /^[0-9]{10}$/,
-                })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
-              />
-              {errors.contactNumber && (
-                <p className="mt-1 text-sm text-red-600">
-                  Please enter a valid 10-digit contact number
-                </p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Email*
-              </label>
-              <input
-                type="email"
-                {...register("email", {
-                  required: true,
-                  pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
-              />
-              {errors.email && (
-                <p className="mt-1 text-sm text-red-600">
-                  Please enter a valid email address
-                </p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Pincode*
-              </label>
-              <input
-                type="text"
-                {...register("pincode", { 
-                  required: true,
-                  pattern: /^[0-9]{6}$/,
-                })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
-                placeholder="Enter 6-digit pincode"
-              />
-              {errors.pincode && (
-                <p className="mt-1 text-sm text-red-600">
-                  Please enter a valid 6-digit pincode
-                </p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Kitchen Area (in sq ft)*
-              </label>
-              <input
-                type="number"
-                {...register("kitchenArea", { 
-                  required: true,
-                  min: 1,
-                })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
-                placeholder="Enter kitchen area in square feet"
-              />
-              {errors.kitchenArea && (
-                <p className="mt-1 text-sm text-red-600">
-                  Kitchen area is required
-                </p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Kitchen Working Hours
-              </label>
-              <input
-                type="number"
-                min="1"
-                max="24"
-                step="1"
-                {...register("kitchenWorkingHours", {
-                  min: { value: 1, message: "Working hours must be at least 1 hour" },
-                  max: { value: 24, message: "Working hours cannot exceed 24 hours per day" },
-                  valueAsNumber: true,
-                })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
-                placeholder="Enter working hours per day (1-24)"
-              />
-              {errors.kitchenWorkingHours && (
-                <p className="mt-1 text-sm text-red-600">
-                  {errors.kitchenWorkingHours.message || "Please enter valid working hours (1-24)"}
-                </p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Total Number of Orders per Day
-              </label>
-              <input
-                type="number"
-                {...register("totalOrdersPerDay", {
-                  min: 0,
-                })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
-                placeholder="Enter average orders per day"
-              />
-              {errors.totalOrdersPerDay && (
-                <p className="mt-1 text-sm text-red-600">
-                  Please enter a valid number
-                </p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Freezer Capacity (in litres)*
-              </label>
-              <input
-                type="number"
-                {...register("freezerCapacity", { 
-                  required: true,
-                  min: 1,
-                })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dil-red"
-                placeholder="Enter freezer capacity in litres"
-              />
-              {errors.freezerCapacity && (
-                <p className="mt-1 text-sm text-red-600">
-                  Freezer capacity is required
-                </p>
-              )}
+              <p className="text-[11px] font-semibold tracking-[0.2em] text-dil-purple uppercase mb-4">
+                03 · Kitchen Details
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                    Kitchen Area <span className="text-gray-400 font-normal">(sq ft)*</span>
+                  </label>
+                  <input
+                    type="number"
+                    {...register("kitchenArea", {
+                      required: true,
+                      min: 1,
+                    })}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
+                  />
+                  {errors.kitchenArea && (
+                    <p className="mt-1 text-xs text-dil-red font-medium">
+                      Kitchen area is required
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                    Working Hours <span className="text-gray-400 font-normal">(per day)</span>
+                  </label>
+                  <input
+                    type="number"
+                    min="1"
+                    max="24"
+                    step="1"
+                    {...register("kitchenWorkingHours", {
+                      min: { value: 1, message: "Working hours must be at least 1 hour" },
+                      max: { value: 24, message: "Working hours cannot exceed 24" },
+                      valueAsNumber: true,
+                    })}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
+                    placeholder="1–24"
+                  />
+                  {errors.kitchenWorkingHours && (
+                    <p className="mt-1 text-xs text-dil-red font-medium">
+                      {errors.kitchenWorkingHours.message || "Please enter valid working hours"}
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                    Orders / Day
+                  </label>
+                  <input
+                    type="number"
+                    {...register("totalOrdersPerDay", { min: 0 })}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
+                    placeholder="Average orders per day"
+                  />
+                  {errors.totalOrdersPerDay && (
+                    <p className="mt-1 text-xs text-dil-red font-medium">
+                      Please enter a valid number
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-1.5">
+                    Freezer Capacity <span className="text-gray-400 font-normal">(litres)*</span>
+                  </label>
+                  <input
+                    type="number"
+                    {...register("freezerCapacity", {
+                      required: true,
+                      min: 1,
+                    })}
+                    className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
+                  />
+                  {errors.freezerCapacity && (
+                    <p className="mt-1 text-xs text-dil-red font-medium">
+                      Freezer capacity is required
+                    </p>
+                  )}
+                </div>
+              </div>
             </div>
 
             <button
               type="submit"
               disabled={isSaving}
-              className="w-full btn-primary flex justify-center items-center gap-2 disabled:opacity-50"
+              className="group w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-dil-purple text-white rounded-full font-semibold shadow-xl shadow-dil-purple/30 hover:bg-dil-purple/90 hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
             >
               {isSaving ? (
                 "Submitting..."
@@ -812,6 +938,7 @@ const RestaurantPartnership = () => {
                 <>
                   <Send size={18} />
                   Submit Application
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </>
               )}
             </button>
