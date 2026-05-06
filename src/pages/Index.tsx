@@ -16,33 +16,17 @@ import {
   Package,
   Rocket,
   TrendingUp,
+  ChefHat,
 } from "lucide-react";
 
 const Index = () => {
   const brands = [
+    // Row 1
     {
-      name: "Bhole ke Chole",
-      logo: "/lovable-uploads/cdf67c56-7bd7-4023-af81-bf258fe60fe3.png",
-      route: "/bhole-ke-chole",
-      cuisine: "North Indian Street Food",
-    },
-    {
-      name: "Aahar",
-      logo: "/lovable-uploads/55d6ad50-361d-42cd-b556-c283b2ee23e4.png",
-      route: "/aahar",
-      cuisine: "Traditional Home-style",
-    },
-    {
-      name: "Junglee Kitchen",
-      logo: "/lovable-uploads/junglee logo.png",
-      route: "/junglee-kitchen",
-      cuisine: "North Indian Cuisine",
-    },
-    {
-      name: "House Of Andhra",
-      logo: "/lovable-uploads/1310a9da-ccbe-4fa6-bc06-51441a0872ba.png",
-      route: "/house-of-andhra",
-      cuisine: "Andhra Specialties",
+      name: "Khichdi Bar",
+      logo: "/lovable-uploads/235a933c-2973-43db-8419-1bc689100f0a.png",
+      route: "/khichdi-bar",
+      cuisine: "Comfort Food",
     },
     {
       name: "Dil Punjabi Daily",
@@ -51,10 +35,23 @@ const Index = () => {
       cuisine: "Punjabi Delights",
     },
     {
-      name: "Khichdi Bar",
-      logo: "/lovable-uploads/235a933c-2973-43db-8419-1bc689100f0a.png",
-      route: "/khichdi-bar",
-      cuisine: "Comfort Food",
+      name: "Bihari Bowl",
+      logo: "/lovable-uploads/bb_logo.png",
+      route: "/bihari-bowl",
+      cuisine: "Bihari Cuisine",
+    },
+    {
+      name: "Bhole ke Chole",
+      logo: "/lovable-uploads/cdf67c56-7bd7-4023-af81-bf258fe60fe3.png",
+      route: "/bhole-ke-chole",
+      cuisine: "North Indian Street Food",
+    },
+    // Row 2
+    {
+      name: "House Of Andhra",
+      logo: "/lovable-uploads/1310a9da-ccbe-4fa6-bc06-51441a0872ba.png",
+      route: "/house-of-andhra",
+      cuisine: "Andhra Specialties",
     },
     {
       name: "The Chaat Cult",
@@ -63,16 +60,22 @@ const Index = () => {
       cuisine: "Indian Chaat",
     },
     {
+      name: "Junglee Kitchen",
+      logo: "/lovable-uploads/junglee logo.png",
+      route: "/junglee-kitchen",
+      cuisine: "North Indian Cuisine",
+    },
+    {
       name: "VEGERAMA",
       logo: "/lovable-uploads/vegerama_new-Photoroom.png",
       route: "/vegerama",
       cuisine: "Pure Vegetarian",
     },
     {
-      name: "Bihari Bowl",
-      logo: "/lovable-uploads/bb_logo.png",
-      route: "/bihari-bowl",
-      cuisine: "Bihari Cuisine",
+      name: "Aahar",
+      logo: "/lovable-uploads/55d6ad50-361d-42cd-b556-c283b2ee23e4.png",
+      route: "/aahar",
+      cuisine: "Traditional Home-style",
     },
   ];
 
@@ -132,35 +135,74 @@ const Index = () => {
         </svg>
 
         {/* Floating decorative chips — desktop only */}
-        <div className="hidden lg:block pointer-events-none absolute top-1/4 left-[8%] animate-float">
-          <div className="w-14 h-14 rounded-2xl bg-white shadow-lg ring-1 ring-[#c9a227]/20 flex items-center justify-center rotate-[-8deg]">
-            <UtensilsCrossed size={22} className="text-[#B00020]" />
+        <a
+          href="#brands"
+          aria-label="Jump to our brands"
+          className="hidden lg:block absolute top-1/4 left-[8%] animate-float z-20"
+        >
+          <div className="w-16 h-16 rounded-2xl bg-white shadow-lg ring-1 ring-[#c9a227]/20 flex items-center justify-center rotate-[-8deg] hover:rotate-0 hover:scale-110 hover:shadow-xl hover:ring-[#c9a227]/60 transition-all duration-300">
+            <UtensilsCrossed size={26} className="text-[#B00020]" />
           </div>
-        </div>
-        <div
-          className="hidden lg:block pointer-events-none absolute top-1/3 right-[10%] animate-float"
+        </a>
+        <a
+          href="https://www.instagram.com/dilfoods.in/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Follow Dil Foods on Instagram"
+          className="hidden lg:block absolute top-1/3 right-[10%] animate-float z-20"
           style={{ animationDelay: "1.2s" }}
         >
-          <div className="w-14 h-14 rounded-2xl bg-white shadow-lg ring-1 ring-[#c9a227]/20 flex items-center justify-center rotate-[8deg]">
-            <Star size={22} className="text-[#c9a227] fill-[#c9a227]" />
+          <div className="w-16 h-16 rounded-2xl bg-white shadow-lg ring-1 ring-[#c9a227]/20 flex items-center justify-center rotate-[8deg] hover:rotate-0 hover:scale-110 hover:shadow-xl hover:ring-[#c9a227]/60 transition-all duration-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="26"
+              height="26"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-[#E1306C]"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
           </div>
-        </div>
-        <div
-          className="hidden lg:block pointer-events-none absolute bottom-[22%] left-[12%] animate-float"
+        </a>
+        <a
+          href="https://www.linkedin.com/company/dil-foods/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Follow Dil Foods on LinkedIn"
+          className="hidden lg:block absolute bottom-[22%] left-[12%] animate-float z-20"
           style={{ animationDelay: "0.6s" }}
         >
-          <div className="w-12 h-12 rounded-full bg-[#FFF8E1] shadow-md ring-1 ring-[#c9a227]/30 flex items-center justify-center">
-            <Sparkles size={18} className="text-[#c9a227]" />
+          <div className="w-16 h-16 rounded-2xl bg-white shadow-lg ring-1 ring-[#c9a227]/20 flex items-center justify-center rotate-[-8deg] hover:rotate-0 hover:scale-110 hover:shadow-xl hover:ring-[#c9a227]/60 transition-all duration-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="26"
+              height="26"
+              fill="currentColor"
+              className="text-[#0A66C2]"
+            >
+              <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
+            </svg>
           </div>
-        </div>
-        <div
-          className="hidden lg:block pointer-events-none absolute bottom-[28%] right-[8%] animate-float"
+        </a>
+        <Link
+          to="/restaurant-partnership"
+          onClick={() => window.scrollTo(0, 0)}
+          aria-label="Become a restaurant partner"
+          className="hidden lg:block absolute bottom-[28%] right-[8%] animate-float z-20"
           style={{ animationDelay: "1.8s" }}
         >
-          <div className="w-12 h-12 rounded-full bg-[#FFF8E1] shadow-md ring-1 ring-[#c9a227]/30 flex items-center justify-center">
-            <Handshake size={18} className="text-[#4B0076]" />
+          <div className="w-16 h-16 rounded-2xl bg-white shadow-lg ring-1 ring-[#c9a227]/20 flex items-center justify-center rotate-[8deg] hover:rotate-0 hover:scale-110 hover:shadow-xl hover:ring-[#c9a227]/60 transition-all duration-300">
+            <Handshake size={26} className="text-[#4B0076]" />
           </div>
-        </div>
+        </Link>
 
         {/* Content */}
         <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32 pb-20 md:pt-40 md:pb-28">
@@ -168,7 +210,7 @@ const Index = () => {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#c9a227]/40 shadow-sm mb-8 animate-fadeIn">
             <Sparkles size={14} className="text-[#B00020]" />
             <span className="text-[11px] md:text-xs font-semibold tracking-[0.18em] text-[#1a1a1a] uppercase">
-              India's #1 Virtual Brands Platform
+              Crafting the era of Delivery-First Dining
             </span>
           </div>
 
@@ -183,16 +225,13 @@ const Index = () => {
             className="font-body text-base md:text-lg lg:text-xl text-[#1a1a1a] max-w-2xl mx-auto mb-10 leading-relaxed font-medium animate-fadeInUp"
             style={{ textShadow: "0 1px 2px rgba(255, 248, 230, 0.7)" }}
           >
-            Crafting the era of delivery-first dining — bringing authentic
-            regional flavours from kitchens across India to your doorstep.
+            Bringing authentic regional flavours from kitchens across India to your doorstep.
           </p>
 
           {/* Dual CTAs */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-12 animate-fadeInUp">
             <a
-              href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
-              target="_blank"
-              rel="noreferrer"
+              href="#brands"
               className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white text-[#1a1a1a] rounded-full font-semibold border border-[#1a1a1a] shadow-md hover:bg-[#1a1a1a] hover:text-white hover:-translate-y-0.5 transition-all duration-300"
             >
               Order Now
@@ -226,75 +265,20 @@ const Index = () => {
                 3M+ Foodies
               </span>
               <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-[#c9a227]"></span>
-              <span>200+ Outlets</span>
+              <span>300+ Outlets</span>
             </div>
           </div>
         </div>
 
         {/* Scroll cue */}
         <a
-          href="#audience"
+          href="#brands"
           className="hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-1 text-gray-400 hover:text-[#1a1a1a] transition-colors"
           aria-label="Scroll for more"
         >
           <span className="text-[10px] tracking-[0.2em] uppercase">Scroll</span>
           <ChevronDown size={18} className="animate-bounce-slow" />
         </a>
-      </section>
-
-      {/* Audience-selector strip */}
-      <section
-        id="audience"
-        className="bg-[#faf9f6] border-y border-[#c9a227]/15"
-      >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-7">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5">
-            {/* B2C card */}
-            <a
-              href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
-              target="_blank"
-              rel="noreferrer"
-              className="group flex items-center gap-4 px-5 py-4 bg-white rounded-2xl border border-gray-100 hover:border-[#c9a227]/60 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
-            >
-              <div className="w-12 h-12 rounded-xl bg-[#FFF8E1] flex items-center justify-center flex-shrink-0">
-                <UtensilsCrossed size={22} className="text-[#B00020]" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="font-display text-lg font-semibold text-[#1a1a1a] leading-tight">
-                  Hungry?
-                </p>
-                <p className="text-sm text-gray-600 mt-0.5 truncate">
-                  Order from 10 brands across India
-                  <span className="ml-1 text-[#B00020] font-medium underline-offset-4 group-hover:underline">
-                    Order Now →
-                  </span>
-                </p>
-              </div>
-            </a>
-
-            {/* B2B card */}
-            <Link
-              to="/restaurant-partnership"
-              onClick={() => window.scrollTo(0, 0)}
-              className="group flex items-center gap-4 px-5 py-4 bg-white rounded-2xl border border-gray-100 hover:border-[#c9a227]/60 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
-            >
-              <div className="w-12 h-12 rounded-xl bg-[#FFF8E1] flex items-center justify-center flex-shrink-0">
-                <Handshake size={22} className="text-[#4B0076]" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="font-display text-lg font-semibold text-[#1a1a1a] leading-tight">
-                  Own a kitchen?
-                </p>
-                <p className="text-sm text-gray-600 mt-0.5 truncate">
-                  Same kitchen, more orders.
-                  <span className="ml-1 text-[#4B0076] font-medium underline-offset-4 group-hover:underline">
-                    Partner with Dil →
-                  </span>
-                </p>
-              </div>
-            </Link>
-          </div>
-        </div>
       </section>
 
       {/* News Strip */}
@@ -363,20 +347,42 @@ const Index = () => {
               })}
           </div>
 
-          {/* CTA */}
-          <div className="text-center mt-14">
-            <a
-              href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
-              target="_blank"
-              rel="noreferrer"
-              className="group inline-flex items-center px-7 py-3.5 bg-[#B00020] text-white rounded-full font-semibold shadow-lg shadow-[#B00020]/20 hover:bg-[#8a0019] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
-            >
-              Order Now
-              <ArrowRight
-                size={18}
-                className="ml-2 group-hover:translate-x-1 transition-transform"
-              />
-            </a>
+        </div>
+      </section>
+
+      {/* Order Platforms Strip — Available on your favourite apps */}
+      <section className="py-14 md:py-16 bg-white border-y border-[#c9a227]/15">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <p className="text-[11px] md:text-xs font-semibold tracking-[0.2em] text-[#8a6d10] uppercase mb-2">
+              Available On
+            </p>
+            <h2 className="font-display text-2xl md:text-3xl font-semibold text-[#1a1a1a]">
+              Order Dil brands on your favourite app
+            </h2>
+            <p className="text-sm text-gray-500 mt-2">
+              Tap a brand above to see ordering options
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+            {[
+              { name: "Swiggy", color: "#FC8019" },
+              { name: "Zomato", color: "#E23744" },
+              { name: "Magicpin", color: "#E91E63" },
+            ].map((p) => (
+              <div
+                key={p.name}
+                className="flex items-center justify-center min-w-[160px] md:min-w-[180px] px-6 py-4 bg-[#faf9f6] rounded-2xl border border-gray-100"
+              >
+                <span
+                  className="font-display text-xl md:text-2xl font-bold tracking-tight"
+                  style={{ color: p.color }}
+                >
+                  {p.name}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -398,8 +404,8 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
             <CounterAnimation end={10} label="Brands" />
-            <CounterAnimation end={200} label="Outlets" suffix="+" />
-            <CounterAnimation end={5} label="Cities" />
+            <CounterAnimation end={300} label="Outlets" suffix="+" />
+            <CounterAnimation end={6} label="Cities" />
           </div>
 
           <div className="flex justify-center gap-8 text-sm text-[#666666]">
@@ -436,7 +442,7 @@ const Index = () => {
             </h2>
             <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
               Same kitchen. Same staff. More orders. Get up and running with Dil
-              Foods in 5 simple steps.
+              Foods in 6 simple steps.
             </p>
           </div>
 
@@ -445,7 +451,7 @@ const Index = () => {
             <div className="relative">
               {/* Connector dotted line */}
               <div
-                className="absolute top-10 left-[8%] right-[8%] h-px"
+                className="absolute top-8 left-[8%] right-[8%] h-px"
                 style={{
                   backgroundImage:
                     "linear-gradient(to right, #d1d5db 50%, transparent 50%)",
@@ -454,42 +460,55 @@ const Index = () => {
                 }}
               ></div>
 
-              <div className="relative grid grid-cols-5 gap-4">
+              <div className="relative grid grid-cols-6 gap-3">
                 {[
                   {
                     icon: PhoneCall,
                     step: "1",
-                    title: "Connect with Us",
-                    desc: "Reach out via the partner form. Our team gets in touch within 24 hours.",
-                    color: "from-[#B00020] to-[#8a0019]",
+                    title: "Connect",
+                    desc: "You fill the enquiry form on this website. We contact you within 24 hours to understand your business and requirements.",
+                    from: "#B00020",
+                    to: "#8a0019",
                   },
                   {
                     icon: ClipboardCheck,
                     step: "2",
                     title: "Kitchen Assessment",
-                    desc: "We evaluate your kitchen capacity, location and current operations — free of cost.",
-                    color: "from-[#4B0076] to-[#3a005c]",
+                    desc: "We send a team to assess your kitchen space and capabilities, including storage and freezer capacity, to evaluate how we can partner together.",
+                    from: "#4B0076",
+                    to: "#3a005c",
                   },
                   {
                     icon: Package,
                     step: "3",
-                    title: "Brand Onboarding",
-                    desc: "Pick the right Dil brands for your area. We supply ready-to-cook products & training.",
-                    color: "from-[#c9a227] to-[#a8871f]",
+                    title: "Brand Additions",
+                    desc: "Based on your kitchen capabilities, utilization and geography, we identify the most suitable brands from our portfolio for your restaurant.",
+                    from: "#c9a227",
+                    to: "#a8871f",
+                  },
+                  {
+                    icon: ChefHat,
+                    step: "4",
+                    title: "Training",
+                    desc: "Our chefs visit your restaurant in person and train your team on a simple 3-step flow — Assemble, Heat, Dispatch.",
+                    from: "#0891B2",
+                    to: "#0E7490",
                   },
                   {
                     icon: Rocket,
-                    step: "4",
+                    step: "5",
                     title: "Go Live",
-                    desc: "Launch on Swiggy, Zomato & more. Start receiving orders from day one.",
-                    color: "from-[#F97316] to-[#c25608]",
+                    desc: "We onboard your assigned brands on Swiggy, Zomato and more — your outlet goes live online with zero tech effort.",
+                    from: "#F97316",
+                    to: "#c25608",
                   },
                   {
                     icon: TrendingUp,
-                    step: "5",
-                    title: "Grow Revenue",
-                    desc: "Track performance, scale brands and unlock new revenue from your existing setup.",
-                    color: "from-[#2E7D32] to-[#1b5e20]",
+                    step: "6",
+                    title: "Receive Orders",
+                    desc: "New orders start flowing in across every platform. Same kitchen, same staff — more revenue every month.",
+                    from: "#2E7D32",
+                    to: "#1b5e20",
                   },
                 ].map((item, idx) => {
                   const Icon = item.icon;
@@ -500,23 +519,26 @@ const Index = () => {
                     >
                       {/* Icon circle */}
                       <div className="relative z-10 mb-5">
-                        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#B00020] to-[#7a0016] flex items-center justify-center shadow-lg shadow-black/10 ring-4 ring-white group-hover:ring-[#c9a227]/40 group-hover:scale-110 transition-all duration-300">
-                          <Icon size={30} className="text-white" />
+                        <div
+                          className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg shadow-black/10 ring-4 ring-white group-hover:ring-[#c9a227]/40 group-hover:scale-110 transition-all duration-300"
+                          style={{ background: `linear-gradient(to bottom right, ${item.from}, ${item.to})` }}
+                        >
+                          <Icon size={24} className="text-white" />
                         </div>
                         {/* Step number badge */}
-                        <div className="absolute -top-1 -right-1 w-9 h-9 rounded-full bg-white shadow-md ring-1 ring-gray-200 flex items-center justify-center">
-                          <span className="text-sm font-bold text-[#8a6d10]">
+                        <div className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-white shadow-md ring-1 ring-gray-200 flex items-center justify-center">
+                          <span className="text-xs font-bold text-[#8a6d10]">
                             {item.step}
                           </span>
                         </div>
                       </div>
 
                       {/* Card */}
-                      <div className="bg-[#faf9f6] rounded-2xl p-5 w-full border border-gray-100 group-hover:border-[#c9a227]/40 group-hover:shadow-md transition-all duration-300">
-                        <h3 className="font-display text-lg font-semibold text-[#1a1a1a] mb-2">
+                      <div className="bg-[#faf9f6] rounded-2xl p-4 w-full border border-gray-100 group-hover:border-[#c9a227]/40 group-hover:shadow-md transition-all duration-300">
+                        <h3 className="font-display text-base font-semibold text-[#1a1a1a] mb-2 leading-tight">
                           {item.title}
                         </h3>
-                        <p className="text-sm text-gray-600 leading-relaxed">
+                        <p className="text-xs text-gray-600 leading-relaxed">
                           {item.desc}
                         </p>
                       </div>
@@ -533,32 +555,50 @@ const Index = () => {
               {
                 icon: PhoneCall,
                 step: "01",
-                title: "Connect with Us",
-                desc: "Reach out via the partner form. Our team gets in touch within 24 hours.",
+                title: "Connect",
+                desc: "You fill the enquiry form on this website. We contact you within 24 hours to understand your business and requirements.",
+                from: "#B00020",
+                to: "#8a0019",
               },
               {
                 icon: ClipboardCheck,
                 step: "02",
                 title: "Kitchen Assessment",
-                desc: "We evaluate your kitchen capacity, location and current operations — free of cost.",
+                desc: "We send a team to assess your kitchen space and capabilities, including storage and freezer capacity, to evaluate how we can partner together.",
+                from: "#4B0076",
+                to: "#3a005c",
               },
               {
                 icon: Package,
                 step: "03",
-                title: "Brand Onboarding",
-                desc: "Pick the right Dil brands for your area. We supply ready-to-cook products & training.",
+                title: "Brand Additions",
+                desc: "Based on your kitchen capabilities, utilization and geography, we identify the most suitable brands from our portfolio for your restaurant.",
+                from: "#c9a227",
+                to: "#a8871f",
+              },
+              {
+                icon: ChefHat,
+                step: "04",
+                title: "Training",
+                desc: "Our chefs visit your restaurant in person and train your team on a simple 3-step flow — Assemble, Heat, Dispatch.",
+                from: "#0891B2",
+                to: "#0E7490",
               },
               {
                 icon: Rocket,
-                step: "04",
+                step: "05",
                 title: "Go Live",
-                desc: "Launch on Swiggy, Zomato & more. Start receiving orders from day one.",
+                desc: "We onboard your assigned brands on Swiggy, Zomato and more — your outlet goes live online with zero tech effort.",
+                from: "#F97316",
+                to: "#c25608",
               },
               {
                 icon: TrendingUp,
-                step: "05",
-                title: "Grow Revenue",
-                desc: "Track performance, scale brands and unlock new revenue from your existing setup.",
+                step: "06",
+                title: "Receive Orders",
+                desc: "New orders start flowing in across every platform. Same kitchen, same staff — more revenue every month.",
+                from: "#2E7D32",
+                to: "#1b5e20",
               },
             ].map((item, idx, arr) => {
               const Icon = item.icon;
@@ -568,7 +608,10 @@ const Index = () => {
                     {/* Icon column with vertical line */}
                     <div className="flex flex-col items-center">
                       <div className="relative">
-                        <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#B00020] to-[#7a0016] flex items-center justify-center shadow-md ring-4 ring-white">
+                        <div
+                          className="w-14 h-14 rounded-full flex items-center justify-center shadow-md ring-4 ring-white"
+                          style={{ background: `linear-gradient(to bottom right, ${item.from}, ${item.to})` }}
+                        >
                           <Icon size={22} className="text-white" />
                         </div>
                         <div className="absolute -top-1 -right-1 w-8 h-8 rounded-full bg-white shadow ring-1 ring-gray-200 flex items-center justify-center">
@@ -634,7 +677,7 @@ const Index = () => {
               <span className="text-[#B00020]">serve</span>
             </h2>
             <p className="text-base md:text-lg text-gray-600">
-              Currently live in 5 cities with plans to expand to 9 more
+              Currently live in 6 cities with plans to expand to 9 more
               locations soon
             </p>
           </div>
@@ -643,7 +686,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center">
             <img
-              src="/lovable-uploads/Indiamap.png"
+              src="/lovable-uploads/Asset 2.png"
               alt="India Map"
               className="h-[300px] md:h-[500px] object-contain"
             />
