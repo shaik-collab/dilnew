@@ -1,13 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
 import BrandNavigation from "../components/BrandNavigation";
 import FloatingBrandSuggestion from "../components/FloatingBrandSuggestion";
 import SEO from "../components/SEO";
 import {
-  Sparkles,
-  Handshake,
-  Heart,
+  MapPin,
+  ShieldCheck,
+  PartyPopper,
   Star,
   Quote,
   Instagram,
@@ -307,17 +306,7 @@ const TheChaatCult = () => {
                 Other Brands
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="text-white/90 hover:text-[#e8e73e] transition-colors duration-300 font-medium"
-              >
-                Contact
-              </a>
-              <a
-                href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
+                href="https://www.swiggy.com/direct/brand/351617?source=swiggy-direct&subSource=instagram"
                 target="_blank"
                 rel="noreferrer"
                 className="px-6 py-2.5 bg-[#e8e73e] text-[#212121] font-semibold rounded-lg hover:bg-[#e8e73e]/90 transition-all duration-300"
@@ -384,22 +373,9 @@ const TheChaatCult = () => {
                 Other Brands
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                  setIsMenuOpen(false);
-                }}
-                className="block text-white/90 hover:text-[#e8e73e] transition-colors duration-300 font-medium py-2"
-              >
-                Contact
-              </a>
-              <a
-                href="#menu"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("menu");
-                }}
+                href="https://www.swiggy.com/direct/brand/351617?source=swiggy-direct&subSource=instagram"
+                target="_blank"
+                rel="noreferrer"
                 className="block px-6 py-2.5 bg-[#e8e73e] text-[#212121] font-semibold rounded-lg hover:bg-[#e8e73e]/90 transition-all duration-300 text-center"
               >
                 Order Now
@@ -505,7 +481,7 @@ const TheChaatCult = () => {
               </div>
             </div>
             <div>
-              <span className="text-[#e8e73e] text-sm tracking-[0.3em] uppercase font-semibold">Street Heritage</span>
+              {/* <span className="text-[#e8e73e] text-sm tracking-[0.3em] uppercase font-semibold">Street Heritage</span> */}
               <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold mt-3 mb-6 leading-tight font-display">
                 The Soul of
                 <span className="block text-[#089797]">Street Food</span>
@@ -557,7 +533,7 @@ const TheChaatCult = () => {
             <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-[#fdfddf] backdrop-blur-sm border border-[#e8e73e]/20 rounded-2xl p-8 hover:bg-[#fdf9c4] transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-[#e8e73e] flex items-center justify-center mb-6 shadow-lg">
-                <Sparkles className="w-7 h-7 text-[#212121]" />
+                <MapPin className="w-7 h-7 text-[#212121]" />
               </div>
               {/* <span className="text-[#e8e73e] text-xs tracking-[0.2em] uppercase font-semibold">Tangy Fresh</span> */}
               <h3 className="text-2xl text-[#212121] font-bold mt-2 mb-4 font-display">Pan-India Chaat Map</h3>
@@ -567,7 +543,7 @@ const TheChaatCult = () => {
             </div>
             <div className="bg-[#e0f7f7] backdrop-blur-sm border border-[#089797]/20 rounded-2xl p-8 hover:bg-[#c8f1f1] transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-[#089797] flex items-center justify-center mb-6 shadow-lg">
-                <Handshake className="w-7 h-7 text-white" />
+                <ShieldCheck className="w-7 h-7 text-white" />
               </div>
               {/* <span className="text-[#089797] text-xs tracking-[0.2em] uppercase font-semibold">Street Authentic</span> */}
               <h3 className="text-2xl text-[#212121] font-bold mt-2 mb-4 font-display">Crunch Preserved, Freshness Guaranteed</h3>
@@ -577,7 +553,7 @@ const TheChaatCult = () => {
             </div>
             <div className="bg-[#fff9de] backdrop-blur-sm border border-[#e8e73e]/20 rounded-2xl p-8 hover:bg-[#fff4bf] transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-[#e8e73e] flex items-center justify-center mb-6 shadow-lg">
-                <Heart className="w-7 h-7 text-white" />
+                <PartyPopper className="w-7 h-7 text-white" />
               </div>
               {/* <span className="text-[#e8e73e] text-xs tracking-[0.2em] uppercase font-semibold">Addictive</span> */}
               <h3 className="text-2xl text-[#212121] font-bold mt-2 mb-4 font-display">Pure Joy</h3>
@@ -992,9 +968,6 @@ const TheChaatCult = () => {
         </div>
       </section>
 
-      <div id="contact" className="scroll-snap-section">
-        <Footer />
-      </div>
 
       {/* Floating Brand Suggestion - 30 second popup */}
       <FloatingBrandSuggestion />

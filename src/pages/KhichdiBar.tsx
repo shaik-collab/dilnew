@@ -1,13 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
 import BrandNavigation from "../components/BrandNavigation";
 import FloatingBrandSuggestion from "../components/FloatingBrandSuggestion";
 import SEO from "../components/SEO";
 import {
-  Sparkles,
-  Handshake,
-  Heart,
+  Globe,
+  UtensilsCrossed,
+  Coffee,
   Star,
   Quote,
   Instagram,
@@ -283,17 +282,7 @@ const KhichdiBar = () => {
                 Other Brands
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="text-white/90 hover:text-secondary transition-colors duration-300 font-medium"
-              >
-                Contact
-              </a>
-              <a
-                href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
+                href="https://www.swiggy.com/direct/brand/442032?source=swiggy-direct&subSource=instagram"
                 target="_blank"
                 rel="noreferrer"
                 className="px-6 py-2.5 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary/90 transition-all duration-300"
@@ -357,17 +346,7 @@ const KhichdiBar = () => {
                 Other Brands
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="block text-white/90 hover:text-secondary transition-colors duration-300 font-medium py-2"
-              >
-                Contact
-              </a>
-              <a
-                href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
+                href="https://www.swiggy.com/direct/brand/442032?source=swiggy-direct&subSource=instagram"
                 target="_blank"
                 rel="noreferrer"
                 className="block px-6 py-2.5 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary/90 transition-all duration-300 text-center"
@@ -403,7 +382,7 @@ const KhichdiBar = () => {
             </h1>
             
             <p className="text-white/95 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
-              Simple, wholesome, and nourishing. Experience the comfort of traditional khichdi, 
+              Simple, wholesome, and nourishing. Experience the comfort of khichdi, 
               crafted with care and served with love.
             </p>
             
@@ -488,7 +467,7 @@ const KhichdiBar = () => {
                  Khichdi Bar was built on that energy.A menu that travels from North to South India to global flavor territory.
                 </p>
                 <p>
-                  Our menu runs from the Classics, plain dal, simple vegetable, and ghee pongal, to Desi Blends like Rajasthani dal papad and paneer khichdi. We even take you into Videsi Blends, where khichdi meets peri-peri, butter garlic, and Korean.
+                  Our menu runs from the Classics, plain dal, simple vegetable, and ghee pongal, to Desi Blends like rajasthani dal papad and paneer khichdi. We even take you into Videsi Blends, where khichdi meets peri-peri, butter garlic, and Korean.
                 </p>
                 <p>
                   Khichdi for every mood: Whether you need a "hug in a bowl" after a long day, a spicy "pick-me-up" to break the monotony, or a light "reset" for your system, we have a blend for that. From the comfort of childhood memories to the thrill of a global fusion, Khichdi Bar is your reliable partner for every craving, every mood, and every day.
@@ -530,7 +509,7 @@ const KhichdiBar = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white/80 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-6 shadow-lg">
-                <Sparkles className="w-7 h-7 text-white" />
+                <Globe className="w-7 h-7 text-white" />
               </div>
               {/* <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Simple & Pure</span> */}
               <h3 className="text-2xl text-foreground font-bold mt-2 mb-4 font-display">Regional Heart, Global Soul</h3>
@@ -540,7 +519,7 @@ const KhichdiBar = () => {
             </div>
             <div className="bg-white/80 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-6 shadow-lg">
-                <Handshake className="w-7 h-7 text-white" />
+                <UtensilsCrossed className="w-7 h-7 text-white" />
               </div>
               {/* <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Comfort Food</span> */}
               <h3 className="text-2xl text-foreground font-bold mt-2 mb-4 font-display">Ghee, Curd, Crunch . Always</h3>
@@ -550,7 +529,7 @@ const KhichdiBar = () => {
             </div>
             <div className="bg-white/80 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-6 shadow-lg">
-                <Heart className="w-7 h-7 text-white" />
+                <Coffee className="w-7 h-7 text-white" />
               </div>
               {/* <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Every Day</span> */}
               <h3 className="text-2xl text-foreground font-bold mt-2 mb-4 font-display">One Bowl. No Effort. Any Day.</h3>
@@ -963,9 +942,6 @@ const KhichdiBar = () => {
         </div>
       </section>
 
-      <div id="contact" className="scroll-snap-section">
-        <Footer />
-      </div>
 
       {/* Floating Brand Suggestion - 30 second popup */}
       <FloatingBrandSuggestion />

@@ -1,13 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
 import BrandNavigation from "../components/BrandNavigation";
 import FloatingBrandSuggestion from "../components/FloatingBrandSuggestion";
 import SEO from "../components/SEO";
 import {
-  Sparkles,
-  Handshake,
-  Heart,
+  ShieldCheck,
+  Leaf,
+  Salad,
   Star,
   Quote,
   Instagram,
@@ -126,7 +125,7 @@ const VegeRAMA = () => {
       badge: "Traditional",
     },
     {
-      name: "Aloo Samosa [2pcs]",
+      name: "Aloo Samosa",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Aloo Samosa [2pcs].png",
       description: "Golden, crispy samosas served with tangy green chutney, offering a perfect blend of crunch and flavor.",
       badge: "Street Snack",
@@ -138,7 +137,7 @@ const VegeRAMA = () => {
       badge: "North Indian",
     },
     {
-      name: "Dahi Bhalle [6pcs]",
+      name: "Dahi Bhalle ",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Dahi Bhalle [6pcs].png",
       description: "Soft, flavorful Dahi Bhalle topped with tangy chutney and aromatic special spice mix for a refreshing treat.",
       badge: "Cooling Treat",
@@ -150,13 +149,13 @@ const VegeRAMA = () => {
       badge: "Tangy Chaat",
     },
     {
-      name: "Mini Dal Kachori [5pcs]",
+      name: "Mini Dal Kachori",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Dal Kachori [5pcs].png",
       description: "Freshly fried Rajasthani Dal kachori, served along with green and sweet Imly chutney.",
       badge: "Rajasthani Special",
     },
     {
-      name: "Upwas Sabudana Vada [2pcs]",
+      name: "Upwas Sabudana Vada",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Vegerama/Upwas Sabudana Vada [2pcs].png",
       description: "Crispy vada made from Sabudana, and roasted peanuts served with sweet curd. Made with SENDHA NAMAK.",
       badge: "Vrat Special",
@@ -298,17 +297,7 @@ const VegeRAMA = () => {
                 Other Brands
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="text-white/90 hover:text-[#AED581] transition-colors duration-300 font-medium"
-              >
-                Contact
-              </a>
-              <a
-                href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
+                href="https://www.swiggy.com/city/bangalore/vegerama-pure-veg-and-fasting-specials-8th-and-9th-cross-btm-rest1148251"
                 target="_blank"
                 rel="noreferrer"
                 className="px-6 py-2.5 bg-[#AED581] text-[#2E7D32] font-semibold rounded-lg hover:bg-[#AED581]/90 transition-all duration-300"
@@ -372,21 +361,9 @@ const VegeRAMA = () => {
                 Other Brands
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="block text-white/90 hover:text-[#AED581] transition-colors duration-300 font-medium py-2"
-              >
-                Contact
-              </a>
-              <a
-                href="#menu"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("menu");
-                }}
+                href="https://www.swiggy.com/city/bangalore/vegerama-pure-veg-and-fasting-specials-8th-and-9th-cross-btm-rest1148251"
+                target="_blank"
+                rel="noreferrer"
                 className="block px-6 py-2.5 bg-[#AED581] text-[#2E7D32] font-semibold rounded-lg hover:bg-[#AED581]/90 transition-all duration-300 text-center"
               >
                 Order Now
@@ -420,7 +397,7 @@ const VegeRAMA = () => {
             </h1>
             
             <p className="text-white/95 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
-             Order pure veg and vrat-friendly food from Vegerama. Enjoy fasting-friendly meals, sabudana khichdi, vrat snacks, festive thalis, and vegetarian Indian favourites. 
+             Enjoy fast-friendly meals, sabudana khichdi, vrat snacks, festive thalis, and vegetarian Indian favourites. 
             </p>
             
             {/* Platform Availability in Hero */}
@@ -533,8 +510,8 @@ const VegeRAMA = () => {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-[#7CB342] text-sm tracking-[0.3em] uppercase font-semibold">Our Journey</span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#2E7D32] font-bold mt-4 mb-6 leading-tight font-display">
-              The Power of
-              <span className="block text-[#7CB342]">Fresh & Green</span>
+              Vegetarian Food that
+              <span className="block text-[#7CB342]">Never Compromises</span>
             </h2>
             <p className="text-[#2E7D32]/80 text-lg">
               Celebrating the natural goodness of fresh vegetables and plant-based ingredients.
@@ -543,7 +520,7 @@ const VegeRAMA = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white/80 backdrop-blur-sm border border-[#7CB342]/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-[#7CB342] flex items-center justify-center mb-6 shadow-lg">
-                <Sparkles className="w-7 h-7 text-white" />
+                <ShieldCheck className="w-7 h-7 text-white" />
               </div>
               {/* <span className="text-[#7CB342] text-xs tracking-[0.2em] uppercase font-semibold">Fresh & Natural</span> */}
               <h3 className="text-2xl text-[#2E7D32] font-bold mt-2 mb-4 font-display">No onion, no garlic , done properly</h3>
@@ -553,7 +530,7 @@ const VegeRAMA = () => {
             </div>
             <div className="bg-white/80 backdrop-blur-sm border border-[#7CB342]/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-[#7CB342] flex items-center justify-center mb-6 shadow-lg">
-                <Handshake className="w-7 h-7 text-white" />
+                <Leaf className="w-7 h-7 text-white" />
               </div>
               {/* <span className="text-[#7CB342] text-xs tracking-[0.2em] uppercase font-semibold">Healthy Living</span> */}
               <h3 className="text-2xl text-[#2E7D32] font-bold mt-2 mb-4 font-display">One brand, every dietary preference</h3>
@@ -563,7 +540,7 @@ const VegeRAMA = () => {
             </div>
             <div className="bg-white/80 backdrop-blur-sm border border-[#7CB342]/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-[#7CB342] flex items-center justify-center mb-6 shadow-lg">
-                <Heart className="w-7 h-7 text-white" />
+                <Salad className="w-7 h-7 text-white" />
               </div>
               {/* <span className="text-[#7CB342] text-xs tracking-[0.2em] uppercase font-semibold">Vibrant</span> */}
               <h3 className="text-2xl text-[#2E7D32] font-bold mt-2 mb-4 font-display">Comfort food for every other day too</h3>
@@ -976,9 +953,6 @@ const VegeRAMA = () => {
         </div>
       </section>
 
-      <div id="contact" className="scroll-snap-section">
-        <Footer />
-      </div>
 
       {/* Floating Brand Suggestion - 30 second popup */}
       <FloatingBrandSuggestion />

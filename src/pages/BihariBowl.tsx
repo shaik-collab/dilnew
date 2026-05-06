@@ -1,13 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
 import BrandNavigation from "../components/BrandNavigation";
 import FloatingBrandSuggestion from "../components/FloatingBrandSuggestion";
 import SEO from "../components/SEO";
 import {
-  Sparkles,
-  Handshake,
-  Heart,
+  Wheat,
+  Soup,
+  Crown,
   Star,
   Quote,
   Instagram,
@@ -350,17 +349,7 @@ const BihariBowl = () => {
                 Other Brands
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="text-white/90 hover:text-[#fad8a1] transition-colors duration-300 font-medium"
-              >
-                Contact
-              </a>
-              <a
-                href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
+                href="https://www.swiggy.com/direct/brand/386506?source=swiggy-direct&subSource=instagram"
                 target="_blank"
                 rel="noreferrer"
                 className="px-6 py-2.5 bg-[#a11d21] text-white font-semibold rounded-lg hover:bg-[#a11d21]/90 transition-all duration-300"
@@ -424,17 +413,7 @@ const BihariBowl = () => {
                 Other Brands
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="block text-white/90 hover:text-[#fad8a1] transition-colors duration-300 font-medium py-2"
-              >
-                Contact
-              </a>
-              <a
-                href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
+                href="https://www.swiggy.com/direct/brand/386506?source=swiggy-direct&subSource=instagram"
                 target="_blank"
                 rel="noreferrer"
                 className="block px-6 py-2.5 bg-[#a11d21] text-white font-semibold rounded-lg hover:bg-[#a11d21]/90 transition-all duration-300 text-center"
@@ -542,7 +521,7 @@ const BihariBowl = () => {
               </div>
             </div>
             <div>
-              <span className="text-[#fad8a1] text-sm tracking-[0.3em] uppercase font-semibold">Cultural Heritage</span>
+              {/* <span className="text-[#fad8a1] text-sm tracking-[0.3em] uppercase font-semibold">Cultural Heritage</span> */}
               <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold mt-3 mb-6 leading-tight font-display">
                 The Heart of
                 <span className="block text-[#fad8a1]">Eastern India</span>
@@ -565,8 +544,8 @@ const BihariBowl = () => {
                 </div>
                 <div className="w-px h-10 bg-white/20"></div>
                 <div>
-                  <p className="text-3xl md:text-4xl text-[#fad8a1] font-bold">100km+</p>
-                  <p className="text-xs md:text-sm text-white/70">From home. Zero km from the feeling.</p>
+                  <p className="text-3xl md:text-4xl text-[#fad8a1] font-bold">0</p>
+                  <p className="text-xs md:text-sm text-white/70">Km between you and home flavour</p>
                 </div>
                 <div className="w-px h-10 bg-white/20"></div>
                 <div>
@@ -594,9 +573,9 @@ const BihariBowl = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-[#fff6ea]/80 backdrop-blur-sm border border-[#a11d21]/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-[#a11d21] flex items-center justify-center mb-6 shadow-lg">
-                <Sparkles className="w-7 h-7 text-white" />
+                <Wheat className="w-7 h-7 text-white" />
               </div>
-              <span className="text-[#a11d21] text-xs tracking-[0.2em] uppercase font-semibold">Regional Authentic</span>
+              {/* <span className="text-[#a11d21] text-xs tracking-[0.2em] uppercase font-semibold">Regional Authentic</span> */}
               <h3 className="text-2xl text-[#5b101a] font-bold mt-2 mb-4 font-display">Ingredients with Heritage</h3>
               <p className="text-[#5b101a]/80 leading-relaxed">
                 Sattu, mustard oil,and ghee, the building blocks of Bihari cooking are as distinctive as the cuisine itself.The menu is designed are these authentic ingredients.
@@ -604,9 +583,9 @@ const BihariBowl = () => {
             </div>
             <div className="bg-[#fff6ea]/80 backdrop-blur-sm border border-[#a11d21]/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-[#a11d21] flex items-center justify-center mb-6 shadow-lg">
-                <Handshake className="w-7 h-7 text-white" />
+                <Soup className="w-7 h-7 text-white" />
               </div>
-              <span className="text-[#a11d21] text-xs tracking-[0.2em] uppercase font-semibold">Earthy Flavors</span>
+              {/* <span className="text-[#a11d21] text-xs tracking-[0.2em] uppercase font-semibold">Earthy Flavors</span> */}
               <h3 className="text-2xl text-[#5b101a] font-bold mt-2 mb-4 font-display">The accompaniments are the meal</h3>
               <p className="text-[#5b101a]/80 leading-relaxed">
                 Chokha in its proper variants. Regional chutneys that belong on the table. Every Bihari Bowl order arrives complete, because eating litti without the right chokha is like eating a dosa without sambar. We don't let that happen.
@@ -614,9 +593,9 @@ const BihariBowl = () => {
             </div>
             <div className="bg-[#fff6ea]/80 backdrop-blur-sm border border-[#a11d21]/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-[#a11d21] flex items-center justify-center mb-6 shadow-lg">
-                <Heart className="w-7 h-7 text-white" />
+                <Crown className="w-7 h-7 text-white" />
               </div>
-              <span className="text-[#a11d21] text-xs tracking-[0.2em] uppercase font-semibold">Heritage</span>
+              {/* <span className="text-[#a11d21] text-xs tracking-[0.2em] uppercase font-semibold">Heritage</span> */}
               <h3 className="text-2xl text-[#5b101a] font-bold mt-2 mb-4 font-display">Dishes that have always deserved a bigger stage</h3>
               <p className="text-[#5b101a]/80 leading-relaxed">
                 Dhuska. Dal pitha. Sattu sharbat. These aren't new inventions, they've been on tables across Bihar and Eastern India for generations. They just never had the right platform. That's the only thing we changed.
@@ -1027,9 +1006,6 @@ const BihariBowl = () => {
         </div>
       </section>
 
-      <div id="contact" className="scroll-snap-section">
-        <Footer />
-      </div>
 
       {/* Floating Brand Suggestion - 30 second popup */}
       <FloatingBrandSuggestion />

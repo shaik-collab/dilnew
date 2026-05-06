@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
 import BrandNavigation from "../components/BrandNavigation";
 import FloatingBrandSuggestion from "../components/BrandNavigation";
 import {
@@ -133,17 +132,7 @@ const AllThingsFried = () => {
                 Reviews
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="text-white/90 hover:text-[#FFEB3B] transition-colors duration-300 font-medium"
-              >
-                Contact
-              </a>
-              <a
-                href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
+                href="https://www.swiggy.com"
                 target="_blank"
                 rel="noreferrer"
                 className="px-6 py-2.5 bg-[#FFEB3B] text-[#212121] font-semibold rounded-lg hover:bg-[#FFEB3B]/90 transition-all duration-300"
@@ -197,17 +186,7 @@ const AllThingsFried = () => {
                 Reviews
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="block text-white/90 hover:text-[#FFEB3B] transition-colors duration-300 font-medium py-2"
-              >
-                Contact
-              </a>
-              <a
-                href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
+                href="https://www.swiggy.com"
                 target="_blank"
                 rel="noreferrer"
                 className="block px-6 py-2.5 bg-[#FFEB3B] text-[#212121] font-semibold rounded-lg hover:bg-[#FFEB3B]/90 transition-all duration-300 text-center"
@@ -475,9 +454,6 @@ const AllThingsFried = () => {
         </div>
       </section>
 
-      <div className="scroll-snap-section">
-        <Footer />
-      </div>
     </div>
   );
 };
