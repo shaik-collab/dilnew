@@ -1,10 +1,16 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import SEO from "@/components/SEO";
 import "../styles/PrivacyPolicy.css";
 
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Privacy Policy | Dil Foods"
+        description="How Dil Foods collects, uses, and protects your personal information."
+        path="/privacy-policy"
+      />
       <Navbar />
       <section className="privacy-policy-section pt-28 pb-16 md:pt-36 md:pb-24">
         <h1>Privacy Policy</h1>

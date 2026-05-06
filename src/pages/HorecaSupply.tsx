@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import NewsStrip from "../components/NewsStrip";
 import LazyImage from "../components/LazyImage";
+import SEO from "../components/SEO";
 import { ArrowRight, Send, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -171,6 +172,11 @@ const HorecaSupply = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO
+        title="Horeca Supply — Ready-to-Cook Products by Tova Foods | Dil Foods"
+        description="Tova Foods supplies ready-to-cook and ready-to-eat products to restaurants, cloud kitchens, and quick-commerce platforms. Two-minute regeneration, perfect for 10-minute deliveries. A Dil Foods company."
+        path="/horeca-supply"
+      />
       <Navbar />
 
       {/* Hero Section */}

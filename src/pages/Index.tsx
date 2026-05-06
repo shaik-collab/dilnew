@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import NewsStrip from "../components/NewsStrip";
 import CounterAnimation from "../components/CounterAnimation";
+import SEO from "../components/SEO";
 import {
   ArrowRight,
   Sparkles,
@@ -81,6 +82,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#faf9f6]">
+      <SEO
+        title="Dil Foods - India's Largest Virtual Brands Chain"
+        description="10 regional virtual brands, 200+ outlets across 5 cities. Order authentic Indian flavours from Bhole ke Chole, Aahar, Junglee Kitchen, House of Andhra, Dil Daily, Khichdi Bar, The Chaat Cult, VEGERAMA, and Bihari Bowl — or partner your kitchen with Dil Foods."
+        path="/"
+      />
       <Navbar />
 
       {/* Hero Section — Editorial parchment composition */}

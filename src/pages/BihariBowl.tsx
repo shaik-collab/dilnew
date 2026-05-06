@@ -1,12 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
 import BrandNavigation from "../components/BrandNavigation";
 import FloatingBrandSuggestion from "../components/FloatingBrandSuggestion";
+import SEO from "../components/SEO";
 import {
-  Sparkles,
-  Handshake,
-  Heart,
+  Wheat,
+  Soup,
+  Crown,
   Star,
   Quote,
   Instagram,
@@ -76,24 +76,43 @@ const BihariBowl = () => {
   };
 
   const menuItems = [
+    
     {
-      name: "Paneer Butter Masala [250ml]",
+      name: "Litti Chokha",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Litti Chokha (3).png",
+      description: "The Litti Chokha features roasted wheat balls stuffed with sattu, served with a smoky mash of eggplant, potatoes, and tomatoes. This hearty bowl offers a traditional North Indian flavor experience. ",
+      badge: "Rich & Creamy",
+    },
+    {
+      name: "Champaran Chicken",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/champaran chicken.jpg",
+      description: "Indulge in the robust flavors of champaran chicken served in a handi. This dish originates from the heart of champaran, offering a savory delight with its rich and authentic taste. ",
+      badge: "Rich & Creamy",
+    },
+    {
+      name: "Sattu Poori",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Sattu poori with aloo tamatar sabji.png",
+      description: "Stuffed sattu poori paired with spiced aloo tamatar sabji. ",
+      badge: "Rich & Creamy",
+    },
+    {
+      name: "Paneer Butter Masala",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Paneer butter masala.png",
       description: "Classic Paneer Butter Masala in a creamy gravy.",
       badge: "Rich & Creamy",
     },
     {
-      name: "Kala Chana Ghugni [250ml]",
+      name: "Kala Chana Ghugni",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Kala Channa Ghugni .png",
       description: "Kala Chana Ghugni is a flavorful dish of black chickpeas cooked with spices.",
       badge: "Traditional",
     },
-    {
-      name: "Suji Ka Halwa (150ml)",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi Bar/Suji Ka Halwa (150ml).jpg",
-      description: "Our special homemade Suji Ka Halwa, filled with deliciousness and loaded with droplets of ghee. Every bite is a sweet pleasure, all in a completely desi style!",
-      badge: "Sweet Treat",
-    },
+    // {
+    //   name: "Suji Ka Halwa",
+    //   image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi Bar/Suji Ka Halwa (150ml).jpg",
+    //   description: "Our special homemade Suji Ka Halwa, filled with deliciousness and loaded with droplets of ghee. Every bite is a sweet pleasure, all in a completely desi style!",
+    //   badge: "Sweet Treat",
+    // },
     {
       name: "Chura Fry with Peanuts (Poha Chiwada)",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Chura badam.jpg",
@@ -101,13 +120,13 @@ const BihariBowl = () => {
       badge: "Crispy Snack",
     },
     {
-      name: "Wasseypur Ki Thali [8cp]",
+      name: "Wasseypur Ki Thali",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/wasseypur ki thali.jpg",
       description: "A hearty Bihari feast featuring Dal Tadka, Chokha, Ghughni, and more rich in tradition and taste.",
       badge: "Signature Thali",
     },
     {
-      name: "Madhubhani Thali [8cp]",
+      name: "Madhubhani Thali ",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Madhubani Thali.jpg",
       description: "A Bihari delight with Tehri, Matar Gravy, Paneer, Ghughni, and more, plus sweet Thekua and Charauri for an authentic taste.",
       badge: "Royal Thali",
@@ -125,7 +144,7 @@ const BihariBowl = () => {
       badge: "Comfort Special",
     },
     {
-      name: "Matar Paneer [250ml]",
+      name: "Matar Paneer ",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Matar paneer.png",
       description: "Green peas and paneer cooked in a rich, spiced tomato gravy.",
       badge: "Nutritious",
@@ -143,55 +162,55 @@ const BihariBowl = () => {
       badge: "Homestyle",
     },
     {
-      name: "Homestyle Rajma Masala [250ml]",
+      name: "Homestyle Rajma Masala",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Rajma Masala.png",
       description: "Kidney beans cooked in a thick tomato gravy, a comforting North Indian flavors.",
       badge: "Popular",
     },
     {
-      name: "Poori with Aloo Tamatar Sabji [4cp]",
+      name: "Poori with Aloo Tamatar Sabji",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Poori Aloo Tamatar Sabji.png",
       description: "Fluffy, golden poori served with spiced potato and tomato curry for a hearty homestyle meal.",
       badge: "Classic Combo",
     },
     {
-      name: "Dal Tadka [250ml]",
+      name: "Dal Tadka",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Dal Tadka Edited.png",
       description: "Dal cooked until soft and seasoned with cumin, garlic, and spices.",
       badge: "Simple & Pure",
     },
     {
-      name: "Aloo Baingan Chokha [250ml]",
+      name: "Aloo Baingan Chokha",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Aloo baingan chokha.png",
       description: "A mashed blend of potatoes and roasted brinjal with mild spices.",
       badge: "Rustic Special",
     },
     {
-      name: "Aloo Tamatar Ki Sabzi [250ml]",
+      name: "Aloo Tamatar Ki Sabzi",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Aloo tamatar sabji.png",
       description: "Homestyle Aloo Tamatar Ki Sabji cooked in a flavorful tomato-based gravy, offering a comforting and hearty meal.",
       badge: "Homestyle",
     },
     {
-      name: "Bihari Style Kadhi Badi [250ml]",
+      name: "Bihari Style Kadhi Badi ",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Bihari Kadhi badi.png",
       description: "A comforting bowl of Kadhi Badi, soft besan dumplings in a tangy, yogurt-based curry for a homestyle treat.",
       badge: "Traditional",
     },
     {
-      name: "Aloo Bhujiya [250ml]",
+      name: "Aloo Bhujiya",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Aloo bhujiya.png",
       description: "A crunchy snack made with chickpea flour and potatoes.",
       badge: "Crispy Snack",
     },
     {
-      name: "Aloo Matar [250ml]",
+      name: "Aloo Matar ",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/Aloo matar.png",
       description: "Potatoes and green peas cooked in a spiced tomato-based curry.",
       badge: "Homestyle",
     },
     {
-      name: "Bhaat [Steam Rice] [250ml]",
+      name: "Bhaat [Steam Rice] ",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari Bowl/bhaat_ steamed rice.jpg",
       description: "Rice steamed to perfect fluffy white grains. Enjoyable with our special curries.",
       badge: "Simple & Pure",
@@ -201,25 +220,46 @@ const BihariBowl = () => {
   const testimonials = [
     {
       name: "Rajesh Kumar",
-      location: "Patna",
+      location: "Bangalore",
       text: "Bihari Bowl brings authentic Eastern flavors home! The litti chokha is exactly like my grandmother makes it!",
       initial: "R",
     },
     {
       name: "Priya Singh",
-      location: "Bhagalpur",
+      location: "Mumbai",
       text: "Eastern flavors, authentic taste indeed! Every dish reminds me of home. Absolutely delicious!",
       initial: "P",
     },
     {
       name: "Amit Verma",
-      location: "Muzaffarpur",
-      text: "The Bihari kebab is outstanding! This is real regional cuisine at its finest. Highly recommended!",
+      location: "Pune",
+      text: "Finally! Authentic Champaran Chicken that doesn't hold back on the mustard oil or the smoky, clay-pot flavour.",
       initial: "A",
     },
   ];
 
-  const instagramPosts: Array<{ id: number; thumbnail: string; url: string }> = [];
+  const instagramPosts = [
+    {
+      id: 1,
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari%20Bowl/instagram/post-1.jpeg",
+      url: "https://www.instagram.com/p/DDFXB3KSnCg/",
+    },
+    {
+      id: 2,
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari%20Bowl/instagram/post-2.jpeg",
+      url: "https://www.instagram.com/p/DW1V_qqE51o/",
+    },
+    {
+      id: 3,
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari%20Bowl/instagram/post-3.jpeg",
+      url: "https://www.instagram.com/p/DTxep_pk8HP/",
+    },
+    {
+      id: 4,
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari%20Bowl/instagram/post-4.jpeg",
+      url: "https://www.instagram.com/p/DPys6sdCtYH/",
+    },
+  ];
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -231,6 +271,26 @@ const BihariBowl = () => {
 
   return (
     <div className="min-h-screen bg-background bihari-bowl-page scroll-snap-container">
+      <SEO
+        title="Bihari Bowl — Authentic Bihari Cuisine | Order Online | Dil Foods"
+        description="Litti chokha, sattu paratha, champaran chicken, Bihari thali and more. Authentic Bihari cuisine — traditional flavours from the heart of Bihar. A Dil Foods brand."
+        path="/bihari-bowl"
+        image="https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari%20Bowl/Litti%20Chokha%20(3).png"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Restaurant",
+          name: "Bihari Bowl",
+          description: "Authentic Bihari cuisine — litti chokha, sattu paratha, champaran chicken, Bihari thali.",
+          image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Bihari%20Bowl/Litti%20Chokha%20(3).png",
+          url: "https://dilfoods.in/bihari-bowl",
+          servesCuisine: "Bihari",
+          parentOrganization: {
+            "@type": "Organization",
+            name: "Dil Foods",
+            url: "https://dilfoods.in",
+          },
+        }}
+      />
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled ? "bg-[#a11d21]/95 backdrop-blur-md shadow-lg" : "bg-black/20 backdrop-blur-sm"
@@ -289,17 +349,7 @@ const BihariBowl = () => {
                 Other Brands
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="text-white/90 hover:text-[#fad8a1] transition-colors duration-300 font-medium"
-              >
-                Contact
-              </a>
-              <a
-                href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
+                href="https://www.swiggy.com/direct/brand/386506?source=swiggy-direct&subSource=instagram"
                 target="_blank"
                 rel="noreferrer"
                 className="px-6 py-2.5 bg-[#a11d21] text-white font-semibold rounded-lg hover:bg-[#a11d21]/90 transition-all duration-300"
@@ -363,17 +413,7 @@ const BihariBowl = () => {
                 Other Brands
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="block text-white/90 hover:text-[#fad8a1] transition-colors duration-300 font-medium py-2"
-              >
-                Contact
-              </a>
-              <a
-                href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
+                href="https://www.swiggy.com/direct/brand/386506?source=swiggy-direct&subSource=instagram"
                 target="_blank"
                 rel="noreferrer"
                 className="block px-6 py-2.5 bg-[#a11d21] text-white font-semibold rounded-lg hover:bg-[#a11d21]/90 transition-all duration-300 text-center"
@@ -477,46 +517,40 @@ const BihariBowl = () => {
               </div>
               <div className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 bg-[#fad8a1] text-[#5b101a] p-4 lg:p-5 rounded-xl shadow-lg max-w-[280px] z-10">
                 <p className="text-lg lg:text-xl italic mb-1 font-semibold">"Eastern flavors, authentic taste"</p>
-                <p className="text-xs opacity-80">— The Bihari Bowl Promise</p>
+                {/* <p className="text-xs opacity-80">— The Bihari Bowl Promise</p> */}
               </div>
             </div>
             <div>
-              <span className="text-[#fad8a1] text-sm tracking-[0.3em] uppercase font-semibold">Cultural Heritage</span>
+              {/* <span className="text-[#fad8a1] text-sm tracking-[0.3em] uppercase font-semibold">Cultural Heritage</span> */}
               <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold mt-3 mb-6 leading-tight font-display">
                 The Heart of
                 <span className="block text-[#fad8a1]">Eastern India</span>
               </h2>
               <div className="space-y-4 text-white/80 text-base md:text-lg leading-relaxed">
                 <p>
-                  <span className="text-white font-semibold">Bihari Bowl</span> brings you the authentic, earthy flavors 
-                  of Eastern India's rich culinary heritage. From the traditional Litti Chokha to hearty rajma and dal, 
-                  every dish tells a story of generations-old recipes and time-honored cooking traditions.
+                  <span className="text-white font-semibold">Bihari Bowl</span> brings you the authentic, earthy flavors of Eastern India's rich culinary heritage. From the traditional Litti Chokha to hearty Champaran dishes, every dish tells a story of generations-old recipes and time-honored cooking traditions.
                 </p>
                 <p>
-                  Our kitchen honors the simple yet profound flavors that define Bihari cuisine—using wholesome ingredients, 
-                  traditional spice blends, and cooking techniques that have been preserved through centuries. Each bowl 
-                  represents the genuine taste of rural Bihar, where food is prepared with love and shared with warmth.
+                  Bihari cuisine is one of India's most underrepresented food traditions on the national stage , yet it's one of the most character-rich, rooted in centuries of farming culture, river-valley ingredients, and a no-frills philosophy of big flavour from simple means.
                 </p>
                 <p>
-                  We celebrate the rustic charm and authentic flavors that make Eastern Indian cuisine so special. 
-                  Every meal is a journey to the heartland of India, where traditional recipes meet modern convenience 
-                  without compromising on taste or authenticity.
+                  At Bihari Bowl, we're on a mission to change that. Every dish we serve is a genuine expression of Bihar's culinary identity, earthy sattu, wood-smoke-kissed litti, ghee-laden chokha, and slow-cooked ghuguni. 
                 </p>
               </div>
               <div className="mt-8 flex items-center gap-6">
                 <div>
-                  <p className="text-3xl md:text-4xl text-[#fad8a1] font-bold">25+</p>
-                  <p className="text-xs md:text-sm text-white/70">Traditional Items</p>
+                  <p className="text-3xl md:text-4xl text-[#fad8a1] font-bold">15+</p>
+                  <p className="text-xs md:text-sm text-white/70">Regional Favourites</p>
                 </div>
                 <div className="w-px h-10 bg-white/20"></div>
                 <div>
-                  <p className="text-3xl md:text-4xl text-[#fad8a1] font-bold">100%</p>
-                  <p className="text-xs md:text-sm text-white/70">Authentic Recipes</p>
+                  <p className="text-3xl md:text-4xl text-[#fad8a1] font-bold">0</p>
+                  <p className="text-xs md:text-sm text-white/70">Km between you and home flavour</p>
                 </div>
                 <div className="w-px h-10 bg-white/20"></div>
                 <div>
                   <p className="text-3xl md:text-4xl text-[#fad8a1] font-bold">∞</p>
-                  <p className="text-xs md:text-sm text-white/70">Heritage & Love</p>
+                  <p className="text-xs md:text-sm text-white/70">Layers of Smoky Flavor</p>
                 </div>
               </div>
             </div>
@@ -539,35 +573,32 @@ const BihariBowl = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-[#fff6ea]/80 backdrop-blur-sm border border-[#a11d21]/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-[#a11d21] flex items-center justify-center mb-6 shadow-lg">
-                <Sparkles className="w-7 h-7 text-white" />
+                <Wheat className="w-7 h-7 text-white" />
               </div>
-              <span className="text-[#a11d21] text-xs tracking-[0.2em] uppercase font-semibold">Regional Authentic</span>
-              <h3 className="text-2xl text-[#5b101a] font-bold mt-2 mb-4 font-display">Traditional Recipes</h3>
+              {/* <span className="text-[#a11d21] text-xs tracking-[0.2em] uppercase font-semibold">Regional Authentic</span> */}
+              <h3 className="text-2xl text-[#5b101a] font-bold mt-2 mb-4 font-display">Ingredients with Heritage</h3>
               <p className="text-[#5b101a]/80 leading-relaxed">
-                Our dishes are rooted in traditional Bihari recipes, using authentic spices and 
-                cooking methods passed down through generations.
+                Sattu, mustard oil,and ghee, the building blocks of Bihari cooking are as distinctive as the cuisine itself.The menu is designed are these authentic ingredients.
               </p>
             </div>
             <div className="bg-[#fff6ea]/80 backdrop-blur-sm border border-[#a11d21]/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-[#a11d21] flex items-center justify-center mb-6 shadow-lg">
-                <Handshake className="w-7 h-7 text-white" />
+                <Soup className="w-7 h-7 text-white" />
               </div>
-              <span className="text-[#a11d21] text-xs tracking-[0.2em] uppercase font-semibold">Earthy Flavors</span>
-              <h3 className="text-2xl text-[#5b101a] font-bold mt-2 mb-4 font-display">Authentic Taste</h3>
+              {/* <span className="text-[#a11d21] text-xs tracking-[0.2em] uppercase font-semibold">Earthy Flavors</span> */}
+              <h3 className="text-2xl text-[#5b101a] font-bold mt-2 mb-4 font-display">The accompaniments are the meal</h3>
               <p className="text-[#5b101a]/80 leading-relaxed">
-                Every dish captures the earthy, authentic flavors of Eastern India, bringing you 
-                the true taste of regional cuisine.
+                Chokha in its proper variants. Regional chutneys that belong on the table. Every Bihari Bowl order arrives complete, because eating litti without the right chokha is like eating a dosa without sambar. We don't let that happen.
               </p>
             </div>
             <div className="bg-[#fff6ea]/80 backdrop-blur-sm border border-[#a11d21]/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-[#a11d21] flex items-center justify-center mb-6 shadow-lg">
-                <Heart className="w-7 h-7 text-white" />
+                <Crown className="w-7 h-7 text-white" />
               </div>
-              <span className="text-[#a11d21] text-xs tracking-[0.2em] uppercase font-semibold">Heritage</span>
-              <h3 className="text-2xl text-[#5b101a] font-bold mt-2 mb-4 font-display">Cultural Richness</h3>
+              {/* <span className="text-[#a11d21] text-xs tracking-[0.2em] uppercase font-semibold">Heritage</span> */}
+              <h3 className="text-2xl text-[#5b101a] font-bold mt-2 mb-4 font-display">Dishes that have always deserved a bigger stage</h3>
               <p className="text-[#5b101a]/80 leading-relaxed">
-                Bihari cuisine is rich in culture and tradition. Every dish is a celebration of 
-                the heritage and flavors of Eastern India.
+                Dhuska. Dal pitha. Sattu sharbat. These aren't new inventions, they've been on tables across Bihar and Eastern India for generations. They just never had the right platform. That's the only thing we changed.
               </p>
             </div>
           </div>
@@ -651,7 +682,13 @@ const BihariBowl = () => {
                   key={index}
                   className="shrink-0 w-[320px] md:w-[360px] snap-start group cursor-pointer"
                 >
-                  <div className="relative aspect-square rounded-2xl overflow-hidden mb-5 shadow-lg group-hover:shadow-xl transition-all duration-300 bg-[#fad8a1]">
+                  <a
+                    href="https://www.swiggy.com/direct/brand/386506?source=swiggy-direct&subSource=instagram"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Order ${item.name} on Swiggy`}
+                    className="relative aspect-square rounded-2xl overflow-hidden mb-5 shadow-lg group-hover:shadow-xl transition-all duration-300 bg-[#fad8a1] block"
+                  >
                     {item.image ? (
                       <img
                         src={item.image}
@@ -668,7 +705,7 @@ const BihariBowl = () => {
                         {item.badge}
                       </span>
                     </div>
-                  </div>
+                  </a>
                   <h3 className="text-2xl text-[#5b101a] font-bold mb-2 group-hover:text-[#a11d21] transition-colors duration-300 font-display">
                     {item.name}
                   </h3>
@@ -969,9 +1006,6 @@ const BihariBowl = () => {
         </div>
       </section>
 
-      <div id="contact" className="scroll-snap-section">
-        <Footer />
-      </div>
 
       {/* Floating Brand Suggestion - 30 second popup */}
       <FloatingBrandSuggestion />

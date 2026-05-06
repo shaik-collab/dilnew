@@ -72,15 +72,40 @@ const FloatingBrandSuggestion: React.FC<FloatingBrandSuggestionProps> = ({
     setIsDismissed(false);
     setIsVisible(false);
 
-    // Show suggestion after 30 seconds if not dismissed
-    const timer = setTimeout(() => {
-      if (!isDismissed) {
-        setIsVisible(true);
-      }
-    }, 30000);
+    // Show suggestion shortly after page load
+    const showTimer = setTimeout(() => {
+      setIsVisible(true);
+    }, 800);
 
-    return () => clearTimeout(timer);
-  }, [currentRoute, isDismissed]);
+    // Brand pages use an inner `.scroll-snap-container` with its own
+    // overflow-y, so window.scrollY never changes. Listen on whichever
+    // element is actually scrolling.
+    const snapContainer = document.querySelector(".scroll-snap-container");
+
+    const handleScroll = (e: Event) => {
+      const target = e.target as HTMLElement | Document;
+      const scrollTop =
+        target instanceof HTMLElement
+          ? target.scrollTop
+          : window.scrollY;
+      if (scrollTop > 100) {
+        setIsVisible(false);
+      }
+    };
+
+    if (snapContainer) {
+      snapContainer.addEventListener("scroll", handleScroll, { passive: true });
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      clearTimeout(showTimer);
+      if (snapContainer) {
+        snapContainer.removeEventListener("scroll", handleScroll);
+      }
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [currentRoute]);
 
   const handleDismiss = () => {
     setIsDismissed(true);

@@ -1,8 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
 import BrandNavigation from "../components/BrandNavigation";
 import FloatingBrandSuggestion from "../components/FloatingBrandSuggestion";
+import SEO from "../components/SEO";
 import {
   Sparkles,
   Handshake,
@@ -88,12 +88,7 @@ const JungleeKitchen = () => {
       description: "Mouth watering chicken makhanwala made with chunks of boneless chickens cooked in a smooth buttery and creamy tomato gravy",
       badge: "Bestseller",
     },
-    {
-      name: "Butter Naan",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Butter Naan.jpg",
-      description: "Fluffy naan bread brushed with melted butter, offering a soft and rich texture",
-      badge: "Most Popular",
-    },
+    
     {
       name: "Dal Makhani",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Dal Makhani.jpg",
@@ -104,6 +99,12 @@ const JungleeKitchen = () => {
       name: "Mutton Yakhni Pulao",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Mutton Yakhni Pulao.jpg",
       description: "Tender mutton yakhni pulao slow-cooked with aromatic spices and long-grain basmati biryani rice, crowned with Junglee's signature garnish",
+      badge: "Chef's Special",
+    },
+    {
+      name: "Junglee Mutton ",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Junglee Maas (Mutton) .jpg",
+      description: "Our Signature Classic Dish, slow cooked meat in it's own fat and ghee with whole red chillies, garlic, and whole spices, a take on a bhuna mutton with bold and rustic flavours.",
       badge: "Chef's Special",
     },
     {
@@ -168,6 +169,12 @@ const JungleeKitchen = () => {
       badge: "Chef's Special",
     },
     {
+      name: "Butter Naan",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Butter Naan.jpg",
+      description: "Fluffy naan bread brushed with melted butter, offering a soft and rich texture",
+      badge: "Most Popular",
+    },
+    {
       name: "Peshawari Karahi Paneer",
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Peshawari Karahi Paneer.jpg",
       description: "A rich Peshawari-style paneer tossed with Angara spices, cooked in karahi gravy and finished with our signature Junglee Hero garnish. Bold, smoky, and irresistibly creamy",
@@ -196,7 +203,7 @@ const JungleeKitchen = () => {
     },
     {
       name: "Ananya Patel",
-      location: "Pune",
+      location: "Mumbai",
       text: "As a vegetarian, I'm always looking for places that treat paneer dishes with care. The Paneer Tikka here is simply divine!",
       initial: "A",
     },
@@ -245,6 +252,26 @@ const JungleeKitchen = () => {
 
   return (
     <div className="min-h-screen bg-background junglee-kitchen-page scroll-snap-container">
+      <SEO
+        title="The Junglee Kitchen — Royal North Indian Cuisine | Order Online | Dil Foods"
+        description="Butter chicken, dal makhani, mutton rogan josh, butter naan, kebabs and more. Royal North Indian cuisine inspired by the Kapoor khandaan ka khaana. A Dil Foods brand."
+        path="/junglee-kitchen"
+        image="https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Butter Chicken (Murgh Makhanwala).jpg"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Restaurant",
+          name: "The Junglee Kitchen",
+          description: "Royal North Indian cuisine — butter chicken, dal makhani, kebabs, mutton biryani.",
+          image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/junglee-kitchen/Butter Chicken (Murgh Makhanwala).jpg",
+          url: "https://dilfoods.in/junglee-kitchen",
+          servesCuisine: "North Indian",
+          parentOrganization: {
+            "@type": "Organization",
+            name: "Dil Foods",
+            url: "https://dilfoods.in",
+          },
+        }}
+      />
       {/* Custom Navbar for Junglee Kitchen */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -316,17 +343,7 @@ const JungleeKitchen = () => {
                 Other Brands
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="text-jungle-beige/90 hover:text-jungle-gold transition-colors duration-300 font-medium"
-              >
-                Contact
-              </a>
-              <a
-                href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
+                href="https://www.swiggy.com/city/bangalore/the-junglee-kitchen-anvi-pride-koramangala-rest1256957"
                 target="_blank"
                 rel="noreferrer"
                 className="px-6 py-2.5 bg-jungle-gold text-jungle-brown font-semibold rounded-lg hover:bg-jungle-gold/90 hover:shadow-glow transition-all duration-300"
@@ -402,21 +419,9 @@ const JungleeKitchen = () => {
                 Other Brands
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="block text-jungle-beige/90 hover:text-jungle-gold transition-colors duration-300 font-medium py-2"
-              >
-                Contact
-              </a>
-              <a
-                href="#menu"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("menu");
-                }}
+                href="https://www.swiggy.com/city/bangalore/the-junglee-kitchen-anvi-pride-koramangala-rest1256957"
+                target="_blank"
+                rel="noreferrer"
                 className="block px-6 py-2.5 bg-jungle-gold text-jungle-brown font-semibold rounded-lg hover:bg-jungle-gold/90 hover:shadow-glow transition-all duration-300 text-center"
               >
                 Order Now
@@ -444,7 +449,7 @@ const JungleeKitchen = () => {
           <div className="max-w-4xl mx-auto text-center">
             {/* Tagline */}
             <p className="text-jungle-gold text-lg md:text-xl tracking-[0.3em] uppercase mb-6 font-semibold">
-              CURATED BY PASSION
+              Kapoor Khandaan Ka Khana
             </p>
             
             {/* Main Title */}
@@ -455,8 +460,9 @@ const JungleeKitchen = () => {
             
             {/* Description */}
             <p className="text-jungle-beige/95 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
-              Where untamed flavors meet culinary artistry. Experience the wild side of Indian
-              cuisine, curated with passion and served with soul.
+              {/* Where untamed flavors meet culinary artistry. Experience the wild side of Indian
+              cuisine, curated with passion and served with soul. */}
+              The legendary Bollywood Kapoor family's heritage recipes brought to your table.
             </p>
             
             {/* Platform Availability in Hero */}
@@ -539,44 +545,41 @@ const JungleeKitchen = () => {
               </div>
             </div>
             <div>
-              <span className="text-jungle-gold text-sm tracking-[0.3em] uppercase font-semibold">Brand Origins</span>
+              <span className="text-jungle-gold text-sm tracking-[0.3em] uppercase font-semibold">From Movie Sets to you, a family table served to you.</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl text-jungle-brown font-bold mt-3 mb-6 leading-tight font-display">
-                Meet Our
+                The founder's story — 
                 <span className="block text-jungle-gold">
-                  Curator
+                  Armaan Jain
                 </span>
               </h2>
               <div className="space-y-4 text-muted-foreground text-base md:text-lg leading-relaxed">
                 <p>
-                  <span className="text-foreground font-semibold">Armaan Jain</span> isn't just a food
-                  enthusiast—he's a culinary storyteller. Growing up in the heart of India, surrounded
-                  by the intoxicating aromas of his grandmother's kitchen, Armaan developed an
-                  unshakeable bond with authentic Indian flavors.
+                  <span className="text-foreground font-semibold">Armaan Jain</span> grew up in one of India's most iconic families , the Kapoors, Bollywood's first family. But long before he understood what it meant to carry that name, he understood what it meant to sit at their table.
                 </p>
                 <p>
-                  His journey from a passionate home cook to the visionary behind The Junglee Kitchen
-                  spans over a decade of exploration, experimentation, and an unwavering commitment
-                  to preserving the soul of Indian cuisine while pushing its boundaries.
+                  It was his nani's kitchen that shaped him most. The aromas of slow-cooked gravies, the way every family gathering was anchored by food that felt like memory itself. In a family where cinema ran in the veins, food ran just as deep.
                 </p>
                 <p>
-                  Every dish at The Junglee Kitchen carries Armaan's philosophy: food should be wild,
-                  honest, and deeply satisfying. It should tell a story and create memories.
+                  Armaan spent years cooking, experimenting, and quietly preserving the recipes that had been passed down. And then came the decision that changed everything: to stop keeping these recipes within the family, and to share them with the world.
+                </p>
+                <p>
+                  The Junglee Kitchen is his tribute to that legacy, recipes that once belonged to one home, now made to be experienced at yours.
                 </p>
               </div>
               <div className="mt-8 flex items-center gap-6">
                 <div>
-                  <p className="text-3xl md:text-4xl text-jungle-gold font-bold">10+</p>
-                  <p className="text-xs md:text-sm text-jungle-brown/70">Years of Passion</p>
+                  <p className="text-3xl md:text-4xl text-jungle-gold font-bold">100</p>
+                  <p className="text-xs md:text-sm text-jungle-brown/70">Years Of Kapoor culinary legacy</p>
                 </div>
                 <div className="w-px h-10 bg-jungle-brown/20"></div>
                 <div>
-                  <p className="text-3xl md:text-4xl text-jungle-gold font-bold">50+</p>
-                  <p className="text-xs md:text-sm text-jungle-brown/70">Signature Recipes</p>
+                  <p className="text-3xl md:text-4xl text-jungle-gold font-bold">5</p>
+                  <p className="text-xs md:text-sm text-jungle-brown/70">Star Indulgence</p>
                 </div>
                 <div className="w-px h-10 bg-jungle-brown/20"></div>
                 <div>
-                  <p className="text-3xl md:text-4xl text-jungle-gold font-bold">1</p>
-                  <p className="text-xs md:text-sm text-jungle-brown/70">Wild Vision</p>
+                  <p className="text-3xl md:text-4xl text-jungle-gold font-bold">∞</p>
+                  <p className="text-xs md:text-sm text-jungle-brown/70">Cinematic Nostalgia</p>
                 </div>
               </div>
             </div>
@@ -603,36 +606,30 @@ const JungleeKitchen = () => {
               <div className="w-14 h-14 rounded-xl bg-jungle-gold flex items-center justify-center mb-6 shadow-glow">
                 <Sparkles className="w-7 h-7 text-jungle-brown" />
               </div>
-              <span className="text-jungle-gold text-xs tracking-[0.2em] uppercase font-semibold">The Curation</span>
-              <h3 className="text-2xl text-jungle-beige font-bold mt-2 mb-4 font-display">Crafting the Wild</h3>
+              {/* <span className="text-jungle-gold text-xs tracking-[0.2em] uppercase font-semibold">The Curation</span> */}
+              <h3 className="text-2xl text-jungle-beige font-bold mt-2 mb-4 font-display">Bollywood's most iconic kitchen, delivered</h3>
               <p className="text-jungle-beige/80 leading-relaxed">
-                Every recipe at The Junglee Kitchen is handpicked from the diverse culinary landscape
-                of India. From the royal kitchens of Lucknow to the street corners of Delhi, we've
-                curated dishes that represent the untamed spirit of Indian cuisine.
+                The Kapoor family gave India its greatest cinema,Raj Kapoor, Rishi Kapoor, Ranbir Kapoor, Kareena Kapoor. The Junglee Kitchen brings the other side of that legacy: the food that fed them, celebrated with them, and comforted them. Bollywood heritage, in every bite.
               </p>
             </div>
             <div className="bg-jungle-beige/10 backdrop-blur-sm border border-jungle-beige/20 rounded-2xl p-8 hover:bg-jungle-beige/20 transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-jungle-gold flex items-center justify-center mb-6 shadow-glow">
                 <Handshake className="w-7 h-7 text-jungle-brown" />
               </div>
-              <span className="text-jungle-gold text-xs tracking-[0.2em] uppercase font-semibold">The Collaboration</span>
+              {/* <span className="text-jungle-gold text-xs tracking-[0.2em] uppercase font-semibold">The Collaboration</span> */}
               <h3 className="text-2xl text-jungle-beige font-bold mt-2 mb-4 font-display">Partnering with Dil Foods</h3>
               <p className="text-jungle-beige/80 leading-relaxed">
-                Our collaboration with Dil Foods brings The Junglee Kitchen to your doorstep with
-                uncompromising quality. Dil Foods shares our passion for authentic flavors and has the
-                infrastructure to ensure every meal reaches you as it was meant to be.
+                Our collaboration with Dil Foods brings The Junglee Kitchen to your doorstep with uncompromising quality. Dil Foods shares our passion for authentic flavors and has the infrastructure to ensure every meal reaches you as it was meant to be.
               </p>
             </div>
             <div className="bg-jungle-beige/10 backdrop-blur-sm border border-jungle-beige/20 rounded-2xl p-8 hover:bg-jungle-beige/20 transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-jungle-gold flex items-center justify-center mb-6 shadow-glow">
                 <Heart className="w-7 h-7 text-jungle-brown" />
               </div>
-              <span className="text-jungle-gold text-xs tracking-[0.2em] uppercase font-semibold">The Promise</span>
-              <h3 className="text-2xl text-jungle-beige font-bold mt-2 mb-4 font-display">Our Commitment to You</h3>
+              {/* <span className="text-jungle-gold text-xs tracking-[0.2em] uppercase font-semibold">The Promise</span> */}
+              <h3 className="text-2xl text-jungle-beige font-bold mt-2 mb-4 font-display">Ghee  the non-negotiable</h3>
               <p className="text-jungle-beige/80 leading-relaxed">
-                We promise you more than just food. We promise an experience—a journey through flavors
-                that awaken your senses and transport you to the vibrant streets and royal courts of
-                India. No preservatives, no shortcuts, no compromise.
+                In the Kapoor household, ghee was not a garnish. It was a language. Poured generously over dal, worked into parathas, finished on khichd,the family's obsession with pure desi ghee is the thread that runs through every recipe Armaan grew up eating. At The Junglee Kitchen, we don't hold back. If a dish needs ghee, it gets ghee, the way his nani always insisted.
               </p>
             </div>
           </div>
@@ -647,7 +644,7 @@ const JungleeKitchen = () => {
             <h2 className="text-4xl md:text-5xl lg:text-6xl text-jungle-brown font-bold mt-4 mb-6 leading-tight font-display">
               Taste the
               <span className="block text-jungle-gold">
-                Wild
+                Legacy
               </span>
             </h2>
             <p className="text-jungle-brown/70 text-lg">
@@ -718,7 +715,13 @@ const JungleeKitchen = () => {
                 key={index}
                 className="shrink-0 w-[320px] md:w-[360px] snap-start group cursor-pointer"
               >
-                <div className="relative aspect-square rounded-2xl overflow-hidden mb-5 shadow-food group-hover:shadow-strong transition-all duration-300 bg-jungle-beige">
+                <a
+                  href="https://www.swiggy.com/direct/brand/716668?source=swiggy-direct&subSource=instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Order ${item.name} on Swiggy`}
+                  className="relative aspect-square rounded-2xl overflow-hidden mb-5 shadow-food group-hover:shadow-strong transition-all duration-300 bg-jungle-beige block"
+                >
                   <img
                     src={item.image}
                     alt={item.name}
@@ -730,7 +733,7 @@ const JungleeKitchen = () => {
                       {item.badge}
                     </span>
                   </div>
-                </div>
+                </a>
                 <h3 className="text-2xl text-jungle-brown font-bold mb-2 group-hover:text-jungle-gold transition-colors duration-300 font-display">
                   {item.name}
                 </h3>
@@ -1047,9 +1050,6 @@ const JungleeKitchen = () => {
         </div>
       </section>
 
-      <div id="contact" className="scroll-snap-section">
-        <Footer />
-      </div>
 
       {/* Floating Brand Suggestion - 30 second popup */}
       <FloatingBrandSuggestion />

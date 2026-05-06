@@ -1,18 +1,17 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
 import BrandNavigation from "../components/BrandNavigation";
 import FloatingBrandSuggestion from "../components/FloatingBrandSuggestion";
+import SEO from "../components/SEO";
 import {
-  Sparkles,
-  Handshake,
-  Heart,
+  ChefHat,
+  Briefcase,
+  Flame,
   Star,
   Quote,
   Instagram,
   Menu,
   X,
-  Home,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
@@ -88,6 +87,18 @@ const HouseOfAndhra = () => {
       image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/Andhra Style Paneer Ghee Rice Bowl.jpg",
       description: "Flavorful ghee rice bowl topped with spicy Andhra style paneer curry",
       badge: "Vegetarian",
+    },
+    {
+      name: "Guntur Chicken Biryani",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/guntur chicken biryani.png",
+      description: "Adhara style Biryani rice with Guntur style chicken, Aromatic and spicy.",
+      badge: "Spicy",
+    },
+    {
+      name: "Egg Ghee Roast Biryani",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/egg ghee roast biryani.jpg ",
+      description: "Egg Biryani cooked with ghee and roasted spices",
+      badge: "Egg Special",
     },
     {
       name: "Andhra Chilli Paneer",
@@ -216,8 +227,8 @@ const HouseOfAndhra = () => {
   const testimonials = [
     {
       name: "Vikram Reddy",
-      location: "Hyderabad",
-      text: "Finally, authentic Andhra flavors! The spice level is perfect and brings back memories of home.",
+      location: "Mumbai",
+      text: "The guntur chicken is outstanding! This is real Andhra cuisine at its finest.",
       initial: "V",
     },
     {
@@ -229,7 +240,7 @@ const HouseOfAndhra = () => {
     {
       name: "Ramesh Kumar",
       location: "Chennai",
-      text: "The gongura mutton is outstanding! This is real Andhra cuisine at its finest.",
+      text: "The guntur chicken is outstanding! This is real Andhra cuisine at its finest.",
       initial: "R",
     },
   ];
@@ -237,23 +248,23 @@ const HouseOfAndhra = () => {
   const instagramPosts: Array<{ id: number; thumbnail: string; url: string }> = [
     {
       id: 1,
-      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/instagram/post 1.jpg",
-      url: "https://www.instagram.com/reel/C2HwrLZxg-V/?igsh=eWN3bmRzc3FsYWhs",
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/instagram/HOAPost-5.jpeg",
+      url: "https://www.instagram.com/p/DXEw0adCA9T/",
     },
     {
       id: 2,
-      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/instagram/post 2.jpg",
-      url: "https://www.instagram.com/reel/DTQMBimEx50/?igsh=MTJ2em9oa2tzaXJ4YQ==",
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/instagram/HOAPost-6.jpeg",
+      url: "https://www.instagram.com/p/DXrEOnBE5Lx/",
     },
     {
       id: 3,
-      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/instagram/post 3.jpg",
-      url: "https://www.instagram.com/reel/DSM15vgk0Gg/?igsh=bHBmcjVza2ZoZHZv",
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/instagram/HOAPost-7.jpeg",
+      url: "https://www.instagram.com/p/DWY0qmuExDs/",
     },
     {
       id: 4,
-      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/instagram/post 4.jpg",
-      url: "https://www.instagram.com/reel/CucJMeNtJtN/?igsh=MWllZ3ZqMzRnZThzaw==",
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/instagram/HOAPost-8.jpeg",
+      url: "https://www.instagram.com/p/DVgUcGMkyGD/",
     },
   ];
 
@@ -267,6 +278,26 @@ const HouseOfAndhra = () => {
 
   return (
     <div className="min-h-screen bg-background house-of-andhra-page scroll-snap-container">
+      <SEO
+        title="House of Andhra — Authentic Andhra Cuisine | Order Online | Dil Foods"
+        description="Andhra chilli chicken, gutti vankaya, gongura mutton, ghee podi idlis, pulusu annam and more. Bold, fiery flavours from the spice belt of India. A Dil Foods brand."
+        path="/house-of-andhra"
+        image="https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/Andhra Chilli Chicken.jpg"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Restaurant",
+          name: "House of Andhra",
+          description: "Authentic Andhra cuisine — chilli chicken, gutti vankaya, gongura mutton, ghee podi idlis.",
+          image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/HOA/Andhra Chilli Chicken.jpg",
+          url: "https://dilfoods.in/house-of-andhra",
+          servesCuisine: "Andhra",
+          parentOrganization: {
+            "@type": "Organization",
+            name: "Dil Foods",
+            url: "https://dilfoods.in",
+          },
+        }}
+      />
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled ? "bg-primary/95 backdrop-blur-md shadow-lg" : "bg-black/20 backdrop-blur-sm"
@@ -325,17 +356,7 @@ const HouseOfAndhra = () => {
                 Other Brands
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="text-white/90 hover:text-secondary/80 transition-colors duration-300 font-medium"
-              >
-                Contact
-              </a>
-              <a
-                href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
+                href="https://www.swiggy.com/city/bangalore/house-of-andhra-immadihalli-whitefield-rest1206732"
                 target="_blank"
                 rel="noreferrer"
                 className="px-6 py-2.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300"
@@ -399,21 +420,9 @@ const HouseOfAndhra = () => {
                 Other Brands
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="block text-white/90 hover:text-secondary/80 transition-colors duration-300 font-medium py-2"
-              >
-                Contact
-              </a>
-              <a
-                href="#menu"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("menu");
-                }}
+                href="https://www.swiggy.com/city/bangalore/house-of-andhra-immadihalli-whitefield-rest1206732"
+                target="_blank"
+                rel="noreferrer"
                 className="block px-6 py-2.5 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-all duration-300 text-center"
               >
                 Order Now
@@ -516,47 +525,45 @@ const HouseOfAndhra = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
               </div>
               <div className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 bg-accent text-foreground p-4 lg:p-5 rounded-xl shadow-strong max-w-[280px] z-10">
-                <p className="text-lg lg:text-xl italic mb-1 font-semibold">"Fire, spice, and royal taste"</p>
-                <p className="text-xs opacity-80">— The Andhra Legacy</p>
+                <p className="text-lg lg:text-xl italic mb-1 font-semibold">"Where Spice Meets Soul"</p>
+                {/* <p className="text-xs opacity-80">— The Andhra Legacy</p> */}
               </div>
             </div>
             <div>
-              <span className="text-accent text-sm tracking-[0.3em] uppercase font-semibold">Royal Heritage</span>
+              <span className="text-accent text-sm tracking-[0.3em] uppercase font-semibold">Authentic Andhra Flavours </span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold mt-3 mb-6 leading-tight font-display">
-                The Royal Legacy of
-                <span className="block text-accent">Andhra Pradesh</span>
+               We celebrate the fierce diversity of the 
+                <span className="block text-accent">Telugu states.</span>
               </h2>
               <div className="space-y-4 text-white/80 text-base md:text-lg leading-relaxed">
                 <p>
-                  <span className="text-white font-semibold">House Of Andhra</span> brings you the bold, fiery 
+                  <span className="text-white font-semibold">Andhra Cuisine </span> 
+                  {/* brings you the bold, fiery 
                   flavors of Andhra Pradesh, where spice isn't just an ingredient—it's a way of life. Our cuisine 
-                  reflects the royal heritage and vibrant culture of this remarkable region.
+                  reflects the royal heritage and vibrant culture of this remarkable region. */}
+                  is one of India's most distinctive and proudly spice-forward food traditions, and at House of Andhra, we make sure it stays that way. Our menu goes far beyond biryani. We celebrate the curries, the podis, the pachadis, and the rice combinations that define how Andhra families actually eat.
                 </p>
                 <p>
-                  From the royal kitchens of the Nizams to the coastal villages of the Bay of Bengal, every recipe 
-                  tells a story of tradition, passion, and the perfect balance of heat and flavor. We use authentic 
-                  Guntur chilies, Kurnool spices, and time-honored cooking techniques.
+                  This isn’t just about biryani, it’s about complete meals. Rich curries, flavourful rice, crunchy starters, and signature accompaniments  that make every meal feel authentic.
                 </p>
                 <p>
-                  Each dish is a celebration of Andhra's diverse culinary landscape—from tangy Gongura to fiery 
-                  Pulusu, from aromatic biryanis to spicy curries that awaken every sense and create unforgettable 
-                  dining experiences.
+                  Designed for modern lifestyles, every meal is packed to be desk-friendly without losing its traditional essence.
                 </p>
               </div>
               <div className="mt-8 flex items-center gap-6">
                 <div>
                   <p className="text-3xl md:text-4xl text-accent font-bold">25+</p>
-                  <p className="text-xs md:text-sm text-white/70">Royal Recipes</p>
+                  <p className="text-xs md:text-sm text-white/70">Regional Recipes</p>
                 </div>
                 <div className="w-px h-10 bg-white/20"></div>
                 <div>
-                  <p className="text-3xl md:text-4xl text-accent font-bold">8</p>
-                  <p className="text-xs md:text-sm text-white/70">Signature Spices</p>
+                  <p className="text-3xl md:text-4xl text-accent font-bold">3+</p>
+                  <p className="text-xs md:text-sm text-white/70">Regional Flavours</p>
                 </div>
                 <div className="w-px h-10 bg-white/20"></div>
                 <div>
-                  <p className="text-3xl md:text-4xl text-accent font-bold">∞</p>
-                  <p className="text-xs md:text-sm text-white/70">Andhra Fire</p>
+                  <p className="text-3xl md:text-4xl text-accent font-bold">100%</p>
+                  <p className="text-xs md:text-sm text-white/70">Spice Forward</p>
                 </div>
               </div>
             </div>
@@ -579,35 +586,32 @@ const HouseOfAndhra = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-card/80 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:bg-card transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-6 shadow-lg">
-                <Sparkles className="w-7 h-7 text-white" />
+                <ChefHat className="w-7 h-7 text-white" />
               </div>
-              <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Authentic Spices</span>
-              <h3 className="text-2xl text-primary font-bold mt-2 mb-4 font-display">Bold Flavors</h3>
+              {/* <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Authentic Spices</span> */}
+              <h3 className="text-2xl text-primary font-bold mt-2 mb-4 font-display">Beyond Biryani</h3>
               <p className="text-primary/70 leading-relaxed">
-                We use traditional Andhra spices and cooking techniques to bring you the authentic 
-                fiery flavors that define this cuisine.
+                Curries, mixed rice, and starters are the real heroes here. Discover gongura mutton, gutti vankaya, pulusu annam, and Andhra-style chilli chicken — dishes you won't find anywhere else.
               </p>
             </div>
             <div className="bg-card/80 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:bg-card transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-6 shadow-lg">
-                <Handshake className="w-7 h-7 text-white" />
+                <Briefcase className="w-7 h-7 text-white" />
               </div>
-              <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Regional Heritage</span>
-              <h3 className="text-2xl text-primary font-bold mt-2 mb-4 font-display">Traditional Recipes</h3>
+              {/* <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Regional Heritage</span> */}
+              <h3 className="text-2xl text-primary font-bold mt-2 mb-4 font-display">Desk-Friendly, Never Messy</h3>
               <p className="text-primary/70 leading-relaxed">
-                Our recipes are passed down through generations, preserving the authentic taste 
-                and cooking methods of Andhra Pradesh.
+                our meals are designed for the urban professional, bold flavours that travel well and eat clean at your desk.
               </p>
             </div>
             <div className="bg-card/80 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:bg-card transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-6 shadow-lg">
-                <Heart className="w-7 h-7 text-white" />
+                <Flame className="w-7 h-7 text-white" />
               </div>
-              <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Spice Mastery</span>
-              <h3 className="text-2xl text-primary font-bold mt-2 mb-4 font-display">Perfect Heat</h3>
+              {/* <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Spice Mastery</span> */}
+              <h3 className="text-2xl text-primary font-bold mt-2 mb-4 font-display">Spice as Flavour, Not Gimmick</h3>
               <p className="text-primary/70 leading-relaxed">
-                Every dish is carefully balanced to deliver the perfect level of heat, ensuring 
-                bold flavors without overwhelming the palate.
+                We celebrate Andhra spice for what it is, layered, complex, and deeply flavourful. Every dish carries chilli, tang, crunch, and garnish in perfect balance.
               </p>
             </div>
           </div>
@@ -691,7 +695,13 @@ const HouseOfAndhra = () => {
                 key={index}
                 className="shrink-0 w-[320px] md:w-[360px] snap-start group cursor-pointer"
               >
-                <div className="relative aspect-square rounded-2xl overflow-hidden mb-5 shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white">
+                <a
+                  href="https://www.swiggy.com/direct/brand/364250?source=swiggy-direct&subSource=instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Order ${item.name} on Swiggy`}
+                  className="relative aspect-square rounded-2xl overflow-hidden mb-5 shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white block"
+                >
                   {item.image ? (
                     <img
                       src={item.image}
@@ -708,7 +718,7 @@ const HouseOfAndhra = () => {
                       {item.badge}
                     </span>
                   </div>
-                </div>
+                </a>
                 <h3 className="text-2xl text-foreground font-bold mb-2 group-hover:text-primary transition-colors duration-300 font-display">
                   {item.name}
                 </h3>
@@ -1008,9 +1018,6 @@ const HouseOfAndhra = () => {
         </div>
       </section>
 
-      <div id="contact" className="scroll-snap-section">
-        <Footer />
-      </div>
 
       {/* Floating Brand Suggestion - 30 second popup */}
       <FloatingBrandSuggestion />

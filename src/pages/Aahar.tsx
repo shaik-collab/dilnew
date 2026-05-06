@@ -1,12 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
 import BrandNavigation from "../components/BrandNavigation";
 import FloatingBrandSuggestion from "../components/FloatingBrandSuggestion";
+import SEO from "../components/SEO";
 import {
-  Sparkles,
-  Handshake,
-  Heart,
   Star,
   Quote,
   Instagram,
@@ -15,6 +12,9 @@ import {
   Home,
   ChevronLeft,
   ChevronRight,
+  Sprout,
+  Soup,
+  Package,
 } from "lucide-react";
 
 const Aahar = () => {
@@ -140,21 +140,21 @@ const Aahar = () => {
 
   const testimonials = [
     {
-      name: "Rahul Mehta",
-      location: "Delhi",
-      text: "Aahar brings authentic Indian flavors to my home every day. The dal tadka is exactly like my mother makes it!",
+      name: "Ravi Kumar",
+      location: "Bangalore",
+      text: "Aahar makes breakfast feel like home. The idlis are soft, the sambar is perfectly balanced, and the chutney tastes fresh every time.",
       initial: "R",
     },
     {
       name: "Sneha Reddy",
-      location: "Hyderabad",
-      text: "Pure Indian food at its best. Every dish tastes homemade and brings back childhood memories.",
+      location: "Bangalore",
+      text: "The dosa is crisp, the fillings are just right, and everything feels freshly made. It’s my go-to breakfast almost every day.",
       initial: "S",
     },
     {
-      name: "Amit Kumar",
-      location: "Mumbai",
-      text: "Finally, a brand that understands what real Indian food should taste like. Highly recommended!",
+      name: "Arjun Nair",
+      location: "Bangalore",
+      text: "Simple, clean, and authentic South Indian breakfast. Finally found a place that gets idli and dosa right.",
       initial: "A",
     },
   ];
@@ -171,6 +171,26 @@ const Aahar = () => {
 
   return (
     <div className="min-h-screen bg-background aahar-page scroll-snap-container">
+      <SEO
+        title="Aahar — Pure South Indian Breakfast | Order Online | Dil Foods"
+        description="Soft idlis, crispy vadas, lemon rice, bisi bele bath, ghee pongal and more. Authentic South Indian breakfast and meals from Aahar — a Dil Foods brand."
+        path="/aahar"
+        image="https://dilwebsite.s3.ap-south-1.amazonaws.com/Aahar/Aahar Display image - Swiggy.png"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Restaurant",
+          name: "Aahar",
+          description: "Authentic South Indian breakfast and meals — idlis, vadas, dosas, bisi bele bath, lemon rice.",
+          image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Aahar/Aahar Display image - Swiggy.png",
+          url: "https://dilfoods.in/aahar",
+          servesCuisine: "South Indian",
+          parentOrganization: {
+            "@type": "Organization",
+            name: "Dil Foods",
+            url: "https://dilfoods.in",
+          },
+        }}
+      />
       {/* Custom Navbar */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -230,17 +250,7 @@ const Aahar = () => {
                 Other Brands
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="text-white/90 hover:text-[#43A047] transition-colors duration-300 font-medium"
-              >
-                Contact
-              </a>
-              <a
-                href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
+                href="https://www.swiggy.com/city/bangalore/aahar-doddaballapura-2nd-stage-rajajinagar-rest545922"
                 target="_blank"
                 rel="noreferrer"
                 className="px-6 py-2.5 bg-[#F4A460] text-[#3E2723] font-semibold rounded-lg hover:bg-[#F4A460]/90 transition-all duration-300"
@@ -304,21 +314,9 @@ const Aahar = () => {
                 Other Brands
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="block text-white/90 hover:text-[#43A047] transition-colors duration-300 font-medium py-2"
-              >
-                Contact
-              </a>
-              <a
-                href="#menu"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("menu");
-                }}
+                href="https://www.swiggy.com/city/bangalore/aahar-doddaballapura-2nd-stage-rajajinagar-rest545922"
+                target="_blank"
+                rel="noreferrer"
                 className="block px-6 py-2.5 bg-[#F4A460] text-[#3E2723] font-semibold rounded-lg hover:bg-[#F4A460]/90 transition-all duration-300 text-center"
               >
                 Order Now
@@ -344,7 +342,7 @@ const Aahar = () => {
         <div className="relative z-10 container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-[#F4A460] text-lg md:text-xl tracking-[0.3em] uppercase mb-6 font-semibold">
-              PURE INDIAN FLAVORS
+              South India's rich flavours
             </p>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight font-display">
@@ -419,34 +417,30 @@ const Aahar = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#E53935]/60 to-transparent"></div>
               </div>
               <div className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 bg-[#F4A460] text-[#3E2723] p-4 lg:p-5 rounded-xl shadow-strong max-w-[280px] z-10">
-                <p className="text-lg lg:text-xl italic mb-1 font-semibold">"Pure Indian flavors, every day"</p>
-                <p className="text-xs opacity-80">— The Aahar Promise</p>
+                <p className="text-lg lg:text-xl italic mb-1 font-semibold">"South India's rich flavours "</p>
+                {/* <p className="text-xs opacity-80">— The Aahar Promise</p> */}
               </div>
             </div>
             <div>
-              <span className="text-[#F4A460] text-sm tracking-[0.3em] uppercase font-semibold">Brand Heritage</span>
+              {/* <span className="text-[#F4A460] text-sm tracking-[0.3em] uppercase font-semibold">Brand Heritage</span> */}
               <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold mt-3 mb-6 leading-tight font-display">
                 The Soul of
                 <span className="block text-[#F4A460]">South India</span>
               </h2>
               <div className="space-y-4 text-white/80 text-base md:text-lg leading-relaxed">
                 <p>
-                  <span className="text-white font-semibold">Aahar</span> represents more than just food—it 
-                  embodies the timeless traditions, warm hospitality, and authentic flavors that have been 
-                  the cornerstone of South Indian cuisine for generations.
+                  <span className="text-white font-semibold">Aahar</span> represents more than just food; it embodies the timeless traditions, warm hospitality, and authentic flavors that have been the cornerstone of South Indian cuisine for generations.
                 </p>
                 <p>
-                  Every recipe traces back to ancient South Indian culinary traditions. From the fermented 
-                  batters of idli and dosa to the aromatic spice blends of sambar and rasam, we preserve 
-                  the authentic techniques passed down through generations of home cooks.
+                  Every recipe traces back to ancient South Indian culinary traditions. From the fermented batters of idli and dosa to the aromatic spice blends of sambar and rasam, we preserve the authentic techniques passed down through generations of home cooks.
                 </p>
-                <p>
+                {/* <p>
                   We source the finest rice from Tamil Nadu's fertile plains, lentils from Karnataka's 
                   abundant harvests, and coconuts from Kerala's coastal groves. Each ingredient is carefully 
                   selected to ensure authenticity and superior taste.
-                </p>
+                </p> */}
               </div>
-              <div className="mt-8 flex items-center gap-6">
+              {/* <div className="mt-8 flex items-center gap-6">
                 <div>
                   <p className="text-3xl md:text-4xl text-[#F4A460] font-bold">15+</p>
                   <p className="text-xs md:text-sm text-white/70">Authentic Dishes</p>
@@ -461,7 +455,7 @@ const Aahar = () => {
                   <p className="text-3xl md:text-4xl text-[#F4A460] font-bold">∞</p>
                   <p className="text-xs md:text-sm text-white/70">Love & Authenticity</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -484,35 +478,32 @@ const Aahar = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white/80 backdrop-blur-sm border border-[#C85A3A]/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-[#E53935] flex items-center justify-center mb-6 shadow-lg">
-                <Sparkles className="w-7 h-7 text-white" />
+                <Sprout className="w-7 h-7 text-white" />
               </div>
-              <span className="text-[#E53935] text-xs tracking-[0.2em] uppercase font-semibold">Authentic Recipes</span>
-              <h3 className="text-2xl text-[#3E2723] font-bold mt-2 mb-4 font-display">Traditional Flavors</h3>
+              {/* <span className="text-[#E53935] text-xs tracking-[0.2em] uppercase font-semibold">Authentic Recipes</span> */}
+              <h3 className="text-2xl text-[#3E2723] font-bold mt-2 mb-4 font-display">Fermented Right, Served Fresh</h3>
               <p className="text-[#3E2723]/80 leading-relaxed">
-                Every recipe at Aahar is rooted in traditional Indian cooking methods, using authentic 
-                spices and techniques that bring out the true essence of each dish.
+                Our idli and dosa batter follows proper fermentation — the step that separates authentic South Indian food from its imitations. Light, fluffy idlis. Perfectly crisp dosas.
               </p>
             </div>
             <div className="bg-white/80 backdrop-blur-sm border border-[#C85A3A]/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-[#E53935] flex items-center justify-center mb-6 shadow-lg">
-                <Handshake className="w-7 h-7 text-white" />
+                <Soup className="w-7 h-7 text-white" />
               </div>
-              <span className="text-[#E53935] text-xs tracking-[0.2em] uppercase font-semibold">Quality Promise</span>
-              <h3 className="text-2xl text-[#3E2723] font-bold mt-2 mb-4 font-display">Fresh Ingredients</h3>
+              {/* <span className="text-[#E53935] text-xs tracking-[0.2em] uppercase font-semibold">Quality Promise</span> */}
+              <h3 className="text-2xl text-[#3E2723] font-bold mt-2 mb-4 font-display">Chutneys & Sambar — Non-Negotiable</h3>
               <p className="text-[#3E2723]/80 leading-relaxed">
-                We source the finest ingredients and prepare each dish with care, ensuring that every 
-                meal meets our high standards of quality and taste.
+                Every Aahar order comes with house-made coconut chutney, tomato chutney, and sambar. These aren't afterthoughts — they're half the meal.
               </p>
             </div>
             <div className="bg-white/80 backdrop-blur-sm border border-[#C85A3A]/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-[#E53935] flex items-center justify-center mb-6 shadow-lg">
-                <Heart className="w-7 h-7 text-white" />
+                <Package className="w-7 h-7 text-white" />
               </div>
-              <span className="text-[#E53935] text-xs tracking-[0.2em] uppercase font-semibold">Daily Comfort</span>
-              <h3 className="text-2xl text-[#3E2723] font-bold mt-2 mb-4 font-display">Home-Style Cooking</h3>
+              {/* <span className="text-[#E53935] text-xs tracking-[0.2em] uppercase font-semibold">Daily Comfort</span> */}
+              <h3 className="text-2xl text-[#3E2723] font-bold mt-2 mb-4 font-display">Tiffin Culture, Delivered</h3>
               <p className="text-[#3E2723]/80 leading-relaxed">
-                Aahar brings the comfort of home-cooked meals to your table every day, with flavors 
-                that remind you of family gatherings and cherished memories.
+                From breakfast tiffin to full South Indian meals with rice, rasam, and kootu — Aahar brings the full spectrum of South Indian eating to your door, any time of day.
               </p>
             </div>
           </div>
@@ -597,7 +588,13 @@ const Aahar = () => {
                 key={index}
                 className="shrink-0 w-[320px] md:w-[360px] snap-start group cursor-pointer"
               >
-                <div className="relative aspect-square rounded-2xl overflow-hidden mb-5 shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white">
+                <a
+                  href="https://www.swiggy.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Order ${item.name} on Swiggy`}
+                  className="relative aspect-square rounded-2xl overflow-hidden mb-5 shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white block"
+                >
                   {item.image ? (
                     <img
                       src={item.image}
@@ -614,7 +611,7 @@ const Aahar = () => {
                       {item.badge}
                     </span>
                   </div>
-                </div>
+                </a>
                 <h3 className="text-2xl text-[#3E2723] font-bold mb-2 group-hover:text-[#E53935] transition-colors duration-300 font-display">
                   {item.name}
                 </h3>
@@ -667,18 +664,18 @@ const Aahar = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="social" className="min-h-screen flex items-center bg-white overflow-hidden scroll-snap-section">
-        <div className="container mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#8BC34A] rounded-full mb-6">
-              <Instagram className="w-5 h-5 text-white" />
-              <span className="font-semibold text-white">@aahar</span>
+      {instagramPosts.length > 0 && (
+        <section id="social" className="min-h-screen flex items-center bg-white overflow-hidden scroll-snap-section">
+          <div className="container mx-auto px-6">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <div className="inline-flex items-center gap-3 px-6 py-3 bg-[#8BC34A] rounded-full mb-6">
+                <Instagram className="w-5 h-5 text-white" />
+                <span className="font-semibold text-white">@aahar</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl text-[#3E2723] font-bold mb-4 font-display">Follow Our Culinary Journey</h2>
+              <p className="text-[#3E2723]/70">Behind-the-scenes, pure Indian recipes, and food stories from our kitchen to yours.</p>
             </div>
-            <h2 className="text-3xl md:text-4xl text-[#3E2723] font-bold mb-4 font-display">Follow Our Culinary Journey</h2>
-            <p className="text-[#3E2723]/70">Behind-the-scenes, pure Indian recipes, and food stories from our kitchen to yours.</p>
-          </div>
 
-          {instagramPosts.length > 0 && (
             <div className="mb-12">
               <div className="flex gap-4 overflow-x-auto scrollbar-hide px-6 pb-4 snap-x snap-mandatory">
                 {instagramPosts.map((post) => (
@@ -706,22 +703,22 @@ const Aahar = () => {
                 ))}
               </div>
             </div>
-          )}
 
-          {/* Follow Button */}
-          <div className="text-center mt-10">
-            <a
-              href="https://instagram.com/aahar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#3E2723] text-white font-semibold rounded-lg hover:bg-[#3E2723]/80 transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              <Instagram className="w-5 h-5" />
-              Follow Us on Instagram
-            </a>
+            {/* Follow Button */}
+            <div className="text-center mt-10">
+              <a
+                href="https://instagram.com/aahar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#3E2723] text-white font-semibold rounded-lg hover:bg-[#3E2723]/80 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                <Instagram className="w-5 h-5" />
+                Follow Us on Instagram
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Brand Discovery Section - Inline with Aahar Theme */}
       <section id="brands" className="min-h-screen scroll-snap-section scroll-snap-align-start py-16 md:py-24"
@@ -916,9 +913,6 @@ const Aahar = () => {
         </div>
       </section>
 
-      <div id="contact" className="scroll-snap-section">
-        <Footer />
-      </div>
 
       {/* Floating Brand Suggestion - 30 second popup */}
       <FloatingBrandSuggestion />

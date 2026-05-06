@@ -1,12 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
 import BrandNavigation from "../components/BrandNavigation";
 import FloatingBrandSuggestion from "../components/FloatingBrandSuggestion";
+import SEO from "../components/SEO";
 import {
-  Sparkles,
-  Handshake,
-  Heart,
+  Globe,
+  UtensilsCrossed,
+  Coffee,
   Star,
   Quote,
   Instagram,
@@ -171,7 +171,28 @@ const KhichdiBar = () => {
     },
   ];
 
-  const instagramPosts: Array<{ id: number; thumbnail: string; url: string }> = [];
+  const instagramPosts = [
+    {
+      id: 1,
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi%20Bar/instagram/post-1.jpeg",
+      url: "https://www.instagram.com/p/DXHRV95DOCL/",
+    },
+    {
+      id: 2,
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi%20Bar/instagram/post-2.jpeg",
+      url: "https://www.instagram.com/p/DPv90spjNbJ/",
+    },
+    {
+      id: 3,
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi%20Bar/instagram/post-3.jpeg",
+      url: "https://www.instagram.com/p/DTpvgO0ETv4/",
+    },
+    {
+      id: 4,
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi%20Bar/instagram/post-4.jpeg",
+      url: "https://www.instagram.com/p/DQo-lz1jOnl/",
+    },
+  ];
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -183,6 +204,26 @@ const KhichdiBar = () => {
 
   return (
     <div className="min-h-screen bg-background khichdi-bar-page scroll-snap-container">
+      <SEO
+        title="Khichdi Bar — Comfort Bowls Made Daily | Order Online | Dil Foods"
+        description="Plain dal khichdi, masala khichdi, butter garlic khichdi, vegetable khichdi and more. Hearty, comforting one-bowl meals — light, balanced, and homestyle. A Dil Foods brand."
+        path="/khichdi-bar"
+        image="https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi Bar/Plain Dal Khichdi.jpg"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Restaurant",
+          name: "Khichdi Bar",
+          description: "Comfort khichdi bowls — dal khichdi, masala khichdi, butter garlic khichdi, vegetable khichdi.",
+          image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/Khichdi Bar/Plain Dal Khichdi.jpg",
+          url: "https://dilfoods.in/khichdi-bar",
+          servesCuisine: "Indian",
+          parentOrganization: {
+            "@type": "Organization",
+            name: "Dil Foods",
+            url: "https://dilfoods.in",
+          },
+        }}
+      />
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled ? "bg-primary/95 backdrop-blur-md shadow-lg" : "bg-black/20 backdrop-blur-sm"
@@ -241,17 +282,7 @@ const KhichdiBar = () => {
                 Other Brands
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="text-white/90 hover:text-secondary transition-colors duration-300 font-medium"
-              >
-                Contact
-              </a>
-              <a
-                href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
+                href="https://www.swiggy.com/direct/brand/442032?source=swiggy-direct&subSource=instagram"
                 target="_blank"
                 rel="noreferrer"
                 className="px-6 py-2.5 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary/90 transition-all duration-300"
@@ -315,17 +346,7 @@ const KhichdiBar = () => {
                 Other Brands
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="block text-white/90 hover:text-secondary transition-colors duration-300 font-medium py-2"
-              >
-                Contact
-              </a>
-              <a
-                href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
+                href="https://www.swiggy.com/direct/brand/442032?source=swiggy-direct&subSource=instagram"
                 target="_blank"
                 rel="noreferrer"
                 className="block px-6 py-2.5 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary/90 transition-all duration-300 text-center"
@@ -361,7 +382,7 @@ const KhichdiBar = () => {
             </h1>
             
             <p className="text-white/95 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
-              Simple, wholesome, and nourishing. Experience the comfort of traditional khichdi, 
+              Simple, wholesome, and nourishing. Experience the comfort of khichdi, 
               crafted with care and served with love.
             </p>
             
@@ -429,30 +450,27 @@ const KhichdiBar = () => {
               </div>
               <div className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 bg-secondary text-foreground p-4 lg:p-5 rounded-xl shadow-strong max-w-[280px] z-10">
                 <p className="text-lg lg:text-xl italic mb-1 font-semibold">"Comfort in every bowl"</p>
-                <p className="text-xs opacity-80">— The Khichdi Bar Promise</p>
+                {/* <p className="text-xs opacity-80">— The Khichdi Bar Promise</p> */}
               </div>
             </div>
             <div>
               <span className="text-secondary text-sm tracking-[0.3em] uppercase font-semibold">Comfort Heritage</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold mt-3 mb-6 leading-tight font-display">
-                The Simple Joy of
-                <span className="block text-secondary">Wholesome Comfort</span>
+                Khichdi, elevated. Comfort, delivered.
+                <span className="block text-secondary"></span>
               </h2>
               <div className="space-y-4 text-white/80 text-base md:text-lg leading-relaxed">
                 <p>
-                  <span className="text-white font-semibold">Khichdi Bar</span> celebrates the simple, nourishing 
-                  comfort of khichdi—India's ultimate comfort food that transcends regions, generations, and occasions. 
-                  Our mission is to honor this humble yet profound dish with the respect it deserves.
+                  <span className="text-white font-semibold">Khichdi </span> has never needed an introduction. Every Indian grew up eating it, at home, when unwell, on tired evenings, on days with no plan. It’s the one dish that shows up without drama and always delivers.
                 </p>
                 <p>
-                  Made with wholesome rice, lentils, and gentle spices, khichdi represents the essence of mindful 
-                  eating. It's the food that mothers prepare for their children, that comforts the sick, and that 
-                  brings families together around simple, shared moments of nourishment.
+                 Khichdi Bar was built on that energy.A menu that travels from North to South India to global flavor territory.
                 </p>
                 <p>
-                  Every bowl tells a story of health, healing, and home. We prepare our khichdi with the same 
-                  care and intention that has made this dish beloved across India—simple ingredients transformed 
-                  into something greater than the sum of its parts.
+                  Our menu runs from the Classics, plain dal, simple vegetable, and ghee pongal, to Desi Blends like rajasthani dal papad and paneer khichdi. We even take you into Videsi Blends, where khichdi meets peri-peri, butter garlic, and Korean.
+                </p>
+                <p>
+                  Khichdi for every mood: Whether you need a "hug in a bowl" after a long day, a spicy "pick-me-up" to break the monotony, or a light "reset" for your system, we have a blend for that. From the comfort of childhood memories to the thrill of a global fusion, Khichdi Bar is your reliable partner for every craving, every mood, and every day.
                 </p>
               </div>
               <div className="mt-8 flex items-center gap-6">
@@ -462,13 +480,13 @@ const KhichdiBar = () => {
                 </div>
                 <div className="w-px h-10 bg-white/20"></div>
                 <div>
-                  <p className="text-3xl md:text-4xl text-secondary font-bold">3</p>
-                  <p className="text-xs md:text-sm text-white/70">Simple Ingredients</p>
+                  <p className="text-3xl md:text-4xl text-secondary font-bold">1</p>
+                  <p className="text-xs md:text-sm text-white/70">Dish that fixes everything</p>
                 </div>
                 <div className="w-px h-10 bg-white/20"></div>
                 <div>
                   <p className="text-3xl md:text-4xl text-secondary font-bold">∞</p>
-                  <p className="text-xs md:text-sm text-white/70">Comfort & Care</p>
+                  <p className="text-xs md:text-sm text-white/70">Comfort for every mood and every day</p>
                 </div>
               </div>
             </div>
@@ -491,35 +509,32 @@ const KhichdiBar = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white/80 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-6 shadow-lg">
-                <Sparkles className="w-7 h-7 text-white" />
+                <Globe className="w-7 h-7 text-white" />
               </div>
-              <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Simple & Pure</span>
-              <h3 className="text-2xl text-foreground font-bold mt-2 mb-4 font-display">Wholesome Goodness</h3>
+              {/* <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Simple & Pure</span> */}
+              <h3 className="text-2xl text-foreground font-bold mt-2 mb-4 font-display">Regional Heart, Global Soul</h3>
               <p className="text-foreground/80 leading-relaxed">
-                Our khichdi is made with simple, wholesome ingredients that nourish your body 
-                and comfort your soul.
+                From Rajasthani dal papad and Ghee Pongal to Korean masala and Peri-peri blends, we map the world’s comfort geography in a single bowl. Whatever you cravet, the soul of the khichdi stays constant while the flavor goes wherever your mood takes you
               </p>
             </div>
             <div className="bg-white/80 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-6 shadow-lg">
-                <Handshake className="w-7 h-7 text-white" />
+                <UtensilsCrossed className="w-7 h-7 text-white" />
               </div>
-              <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Comfort Food</span>
-              <h3 className="text-2xl text-foreground font-bold mt-2 mb-4 font-display">Nourishing Meals</h3>
+              {/* <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Comfort Food</span> */}
+              <h3 className="text-2xl text-foreground font-bold mt-2 mb-4 font-display">Ghee, Curd, Crunch . Always</h3>
               <p className="text-foreground/80 leading-relaxed">
-                Every bowl is prepared with care, ensuring that you get the comfort and nourishment 
-                you need, whenever you need it.
+                Every Khichdi Bar bowl ships with its "holy trinity" of companions: Ghee, Curd, and chatpata Sev. These aren't optional extras; they are part of the deal. We believe khichdi without its loyal accompaniments isn't really khichdi,it’s just a meal missing its heart.
               </p>
             </div>
             <div className="bg-white/80 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-6 shadow-lg">
-                <Heart className="w-7 h-7 text-white" />
+                <Coffee className="w-7 h-7 text-white" />
               </div>
-              <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Every Day</span>
-              <h3 className="text-2xl text-foreground font-bold mt-2 mb-4 font-display">Daily Comfort</h3>
+              {/* <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Every Day</span> */}
+              <h3 className="text-2xl text-foreground font-bold mt-2 mb-4 font-display">One Bowl. No Effort. Any Day.</h3>
               <p className="text-foreground/80 leading-relaxed">
-                Khichdi is more than food—it's comfort, it's home, it's the simple joy of a 
-                nourishing meal that makes everything better.
+                Khichdi Bar exists for your low-energy moments, not just celebrations. Whether it’s a tired Tuesday, a sick Wednesday, or a "can’t-decide" Thursday, we are your reliable reset button. It’s high-quality comfort for your lowest-effort days.
               </p>
             </div>
           </div>
@@ -603,7 +618,13 @@ const KhichdiBar = () => {
                   key={index}
                   className="shrink-0 w-[320px] md:w-[360px] snap-start group cursor-pointer"
                 >
-                  <div className="relative aspect-square rounded-2xl overflow-hidden mb-5 shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white">
+                  <a
+                    href="https://www.swiggy.com/direct/brand/442032?source=swiggy-direct&subSource=instagram"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Order ${item.name} on Swiggy`}
+                    className="relative aspect-square rounded-2xl overflow-hidden mb-5 shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white block"
+                  >
                     {item.image ? (
                       <img
                         src={item.image}
@@ -620,7 +641,7 @@ const KhichdiBar = () => {
                         {item.badge}
                       </span>
                     </div>
-                  </div>
+                  </a>
                   <h3 className="text-2xl text-foreground font-bold mb-2 group-hover:text-primary transition-colors duration-300 font-display">
                     {item.name}
                   </h3>
@@ -921,9 +942,6 @@ const KhichdiBar = () => {
         </div>
       </section>
 
-      <div id="contact" className="scroll-snap-section">
-        <Footer />
-      </div>
 
       {/* Floating Brand Suggestion - 30 second popup */}
       <FloatingBrandSuggestion />

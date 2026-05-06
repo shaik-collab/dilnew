@@ -1,12 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
 import BrandNavigation from "../components/BrandNavigation";
 import FloatingBrandSuggestion from "../components/FloatingBrandSuggestion";
+import SEO from "../components/SEO";
 import {
-  Sparkles,
-  Handshake,
-  Heart,
+  Flame,
+  PartyPopper,
+  Smile,
   Star,
   Quote,
   Instagram,
@@ -79,25 +79,25 @@ const BholeKeChole = () => {
     // TOP 5 FEATURED ITEMS - Most Popular Street Food Items
     {
       name: "Chole Bhature",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Chole Bhature.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/mainBKC.png",
       description: "Savor rich and aromatic pindi chole, slow-cooked with traditional spices to deliver deep, bold flavors, making it a true North Indian classic.",
       badge: "Bestseller",
     },
     {
       name: "Chole Kulche",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Chole Kulche.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/BKC65.jpg",
       description: "Savor the perfect pairing of soft Kulchas with our pindi chole, accompanied with carrot and chilli pickle, lachha onion masala",
       badge: "Popular",
     },
     {
       name: "Paneer Stuffed Chole Bhature",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Paneer Stuffed Chole Bhature.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/BKC44.jpg",
       description: "Savor the essence of North India with our Paneer Stuffed Chole Bhature, 2 soft and fluffy bhaturas filled with paneer, served with flavorful Pindi chole",
       badge: "Signature",
     },
     {
       name: "Mini Aloo Tikki Chaat",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Mini Aloo Tikki Chaat.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/BKC-53.JPG",
       description: "Savor the blend of Mini Aloo Tikki and Ragda Chaat, featuring flavorful aloo tikki, ragda, sweet Imly, and green chutney. Garnished with chopped coriander and Dil spice mix",
       badge: "Street Special",
     },
@@ -110,43 +110,43 @@ const BholeKeChole = () => {
     // OTHER POPULAR STREET FOOD ITEMS
     {
       name: "Poori Chole Combo",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Poori Chole Combo.png",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/BKC46.jpg",
       description: "The Poori Chole Combo features fluffy Pooris paired with flavorful Chole, offering a classic and satisfying meal",
       badge: "Comfort Food",
     },
     {
       name: "Mini Ragda Chaat",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Mini Ragda Chaat.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/BKC-52.JPG",
       description: "Savor the rich flavors of our Ragda topped with onion tomato mix, a hearty blend of spiced chickpeas, complemented with our special Dil Spice mix paired with Imli and mint chutney",
       badge: "Spicy",
     },
     {
       name: "Punjabi Aloo Samosa",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Punjabi Aloo Samosa (2 pcs).jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/BKC-58.jpg",
       description: "The all-season snack buddy! Punjabi style samosa with spices and green peas. Served with chutney",
       badge: "Classic",
     },
     {
       name: "Mini Dal Kachori",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Mini Dal Kachori (3 pcs).jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/BKC-63.JPG",
       description: "Mini freshly fried Rajasthani Dal kachori, served along with green and sweet Imly chutney",
       badge: "Regional",
     },
     {
       name: "Dahi Bhalla",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Dahi Bhalla [2pc].jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/BKC61.jpg",
       description: "Soft Dahi Bhalle soaked in creamy yogurt, topped with tangy chutneys. A perfect sweet and savory delight!",
       badge: "Refreshing",
     },
     {
       name: "Gulab Jamun",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Gulab Jamun (2Pc).jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/BKC-55.JPG",
       description: "Soft, plump, with loads of syrup - Gulab Jamun just the way you like it. There is nothing else in our Gulab jamun than authenticity and love",
       badge: "Sweet Treat",
     },
     {
       name: "Masala Lemonade",
-      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Masala Lemonade.jpg",
+      image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/BKC59.jpg",
       description: "A zesty twist on an old favorite. Our Hajmola Lemonade combines the tangy thrill of Hajmola with the refreshing zest of fresh lemons",
       badge: "Refreshing",
     },
@@ -155,13 +155,13 @@ const BholeKeChole = () => {
   const testimonials = [
     {
       name: "Rohit Verma",
-      location: "Delhi",
+      location: "Hyderabad",
       text: "Bhole ke Chole brings the authentic street food experience home! The chole bhature is exactly like the street vendors!",
       initial: "R",
     },
     {
       name: "Kavita Singh",
-      location: "Punjab",
+      location: "Pune",
       text: "Pure joy indeed! The flavors are spot on and bring back so many memories of street food adventures.",
       initial: "K",
     },
@@ -173,7 +173,28 @@ const BholeKeChole = () => {
     },
   ];
 
-  const instagramPosts: Array<{ id: number; thumbnail: string; url: string }> = [];
+  const instagramPosts = [
+    {
+      id: 1,
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/instagram/post-1.jpeg",
+      url: "https://www.instagram.com/p/DSXYoPqDdg6/",
+    },
+    {
+      id: 2,
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/instagram/post-2.jpeg",
+      url: "https://www.instagram.com/p/DUqD52ak4PH/",
+    },
+    {
+      id: 3,
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/instagram/post-3.jpeg",
+      url: "https://www.instagram.com/p/DUDh1Zdk-qr/",
+    },
+    {
+      id: 4,
+      thumbnail: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/instagram/post-4.jpeg",
+      url: "https://www.instagram.com/p/DWl3ZSvkaL4/",
+    },
+  ];
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -185,6 +206,26 @@ const BholeKeChole = () => {
 
   return (
     <div className="min-h-screen bg-background bhole-ke-chole-page scroll-snap-container">
+      <SEO
+        title="Bhole ke Chole — North Indian Street Food | Order Online | Dil Foods"
+        description="Order chole bhature, kulche, samosa, dahi bhalla, gulab jamun and more from Bhole ke Chole. Authentic North Indian street food on Swiggy. A Dil Foods brand."
+        path="/bhole-ke-chole"
+        image="https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/mainBKC.png"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Restaurant",
+          name: "Bhole ke Chole",
+          description: "Authentic North Indian street food — chole bhature, kulche, chaat and more.",
+          image: "https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/mainBKC.png",
+          url: "https://dilfoods.in/bhole-ke-chole",
+          servesCuisine: "North Indian Street Food",
+          parentOrganization: {
+            "@type": "Organization",
+            name: "Dil Foods",
+            url: "https://dilfoods.in",
+          },
+        }}
+      />
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled ? "bg-primary/95 backdrop-blur-md shadow-lg" : "bg-black/20 backdrop-blur-sm"
@@ -243,17 +284,7 @@ const BholeKeChole = () => {
                 Other Brands
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="text-white/90 hover:text-primary/70 transition-colors duration-300 font-medium"
-              >
-                Contact
-              </a>
-              <a
-                href="https://orders.dilfoods.in/?_gl=1*32xgw6*_ga*NDA1NTU0Mjc1LjE3MTYxMDgwNjU.*_ga_7CQ31SQHW5*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA.*_ga_VCDE3GHY4J*MTc0MjExODExOC4xNS4wLjE3NDIxMTgxMTguMC4wLjA."
+                href="https://www.swiggy.com/direct/brand/415554?source=swiggy-direct&subSource=instagram"
                 target="_blank"
                 rel="noreferrer"
                 className="px-6 py-2.5 bg-secondary text-foreground font-semibold rounded-lg hover:bg-secondary/90 transition-all duration-300"
@@ -317,21 +348,9 @@ const BholeKeChole = () => {
                 Other Brands
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className="block text-white/90 hover:text-primary/70 transition-colors duration-300 font-medium py-2"
-              >
-                Contact
-              </a>
-              <a
-                href="#menu"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("menu");
-                }}
+                href="https://www.swiggy.com/direct/brand/415554?source=swiggy-direct&subSource=instagram"
+                target="_blank"
+                rel="noreferrer"
                 className="block px-6 py-2.5 bg-secondary text-foreground font-semibold rounded-lg hover:bg-secondary/90 transition-all duration-300 text-center"
               >
                 Order Now
@@ -345,7 +364,7 @@ const BholeKeChole = () => {
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/Bhole ke Chole Display image - Swiggy.JPG"
+            src="https://dilwebsite.s3.ap-south-1.amazonaws.com/BKC/mainBKC.png"
             alt="Street Food Feast - Bhole ke Chole"
             className="w-full h-full object-cover object-center"
           />
@@ -356,7 +375,7 @@ const BholeKeChole = () => {
         <div className="relative z-10 container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-secondary text-lg md:text-xl tracking-[0.3em] uppercase mb-6 font-semibold">
-              STREET FOOD, PURE JOY
+              Street Food, Done Right
             </p>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight font-display">
@@ -365,8 +384,9 @@ const BholeKeChole = () => {
             </h1>
             
             <p className="text-white/95 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
-              Fun, casual, and vibrant. Experience the authentic street food culture with our 
-              signature chole dishes that bring pure joy to every bite.
+              {/* Fun, casual, and vibrant. Experience the authentic street food culture with our 
+              signature chole dishes that bring pure joy to every bite. */}
+              From the lively lanes of Paharganj to your plate, we serve chole bhature the bold and authentic Delhi way.
             </p>
             
             {/* Platform Availability in Hero */}
@@ -432,47 +452,50 @@ const BholeKeChole = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
               </div>
               <div className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 bg-secondary text-foreground p-4 lg:p-5 rounded-xl shadow-strong max-w-[280px] z-10">
-                <p className="text-lg lg:text-xl italic mb-1 font-semibold">"Street food, pure joy!"</p>
-                <p className="text-xs opacity-80">— The Bhole ke Chole Way</p>
+                <p className="text-lg lg:text-xl italic mb-1 font-semibold">"Street Food, Done Right!"</p>
+                {/* <p className="text-xs opacity-80">— The Bhole ke Chole Way</p> */}
               </div>
             </div>
             <div>
-              <span className="text-secondary text-sm tracking-[0.3em] uppercase font-semibold">Street Food Heritage</span>
+              {/* <span className="text-secondary text-sm tracking-[0.3em] uppercase font-semibold">Street Food Heritage</span> */}
               <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold mt-3 mb-6 leading-tight font-display">
-                The Heart of
-                <span className="block text-secondary">Street Food Culture</span>
+                Where Delhi’s Streets Come Alive
+                {/* <span className="block text-secondary">Street Food Culture</span> */}
               </h2>
               <div className="space-y-4 text-white/80 text-base md:text-lg leading-relaxed">
                 <p>
-                  <span className="text-white font-semibold">Bhole ke Chole</span> celebrates the vibrant world 
+                  {/* <span className="text-white font-semibold">Bhole ke Chole</span> celebrates the vibrant world 
                   of Indian street food, where every bite tells a story of tradition, community, and the pure 
-                  joy of authentic flavors served with love.
+                  joy of authentic flavors served with love. */}
+                  In the heart of Paharganj, food isn’t just eaten, it’s experienced.
                 </p>
                 <p>
-                  From the bustling lanes of Old Delhi to the vibrant markets of Amritsar, chole has been 
+                  {/* From the bustling lanes of Old Delhi to the vibrant markets of Amritsar, chole has been 
                   the king of street food for generations. We honor this legacy with bold flavors and 
-                  passionate preparation that street vendors have perfected over decades.
+                  passionate preparation that street vendors have perfected over decades. */}
+                  You hear the sizzle before you see the plate. You smell the spices before you take the first bite. There’s movement, noise, energy, and in the middle of it all, a simple plate of chole bhature that somehow feels perfect.
                 </p>
                 <p>
-                  Our secret lies in the perfect blend of aromatic spices and that authentic tanginess 
+                  {/* Our secret lies in the perfect blend of aromatic spices and that authentic tanginess 
                   that street food lovers crave. Every dish captures the spirit of community, celebration, 
-                  and pure food joy.
+                  and pure food joy. */}
+                  That’s the feeling we bring to every dish: bold spices, hot bhature, and the warmth of Delhi’s street culture in every bite.
                 </p>
               </div>
               <div className="mt-8 flex items-center gap-6">
                 <div>
-                  <p className="text-3xl md:text-4xl text-secondary font-bold">20+</p>
-                  <p className="text-xs md:text-sm text-white/70">Signature Dishes</p>
+                  <p className="text-3xl md:text-4xl text-secondary font-bold">2+</p>
+                  <p className="text-xs md:text-sm text-white/70">Bhaturas you'll order. Guaranteed.</p>
                 </div>
                 <div className="w-px h-10 bg-white/20"></div>
                 <div>
-                  <p className="text-3xl md:text-4xl text-secondary font-bold">12</p>
-                  <p className="text-xs md:text-sm text-white/70">Secret Spices</p>
+                  <p className="text-3xl md:text-4xl text-secondary font-bold">1</p>
+                  <p className="text-xs md:text-sm text-white/70">Signature Aam Panna to cut through the spice</p>
                 </div>
                 <div className="w-px h-10 bg-white/20"></div>
                 <div>
                   <p className="text-3xl md:text-4xl text-secondary font-bold">∞</p>
-                  <p className="text-xs md:text-sm text-white/70">Street Food Joy</p>
+                  <p className="text-xs md:text-sm text-white/70">Dilli Wali Cravings</p>
                 </div>
               </div>
             </div>
@@ -495,9 +518,9 @@ const BholeKeChole = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-card/80 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:bg-card transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-6 shadow-lg">
-                <Sparkles className="w-7 h-7 text-white" />
+                <Flame className="w-7 h-7 text-white" />
               </div>
-              <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Street Authentic</span>
+              {/* <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Street Authentic</span> */}
               <h3 className="text-2xl text-foreground font-bold mt-2 mb-4 font-display">Real Flavors</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Our chole recipes are inspired by the best street vendors, bringing you authentic 
@@ -506,9 +529,9 @@ const BholeKeChole = () => {
             </div>
             <div className="bg-card/80 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:bg-card transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-6 shadow-lg">
-                <Handshake className="w-7 h-7 text-white" />
+                <PartyPopper className="w-7 h-7 text-white" />
               </div>
-              <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Casual Vibes</span>
+              {/* <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Casual Vibes</span> */}
               <h3 className="text-2xl text-foreground font-bold mt-2 mb-4 font-display">Fun & Fresh</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Street food is about fun, casual dining. Every dish is prepared fresh and served 
@@ -517,9 +540,9 @@ const BholeKeChole = () => {
             </div>
             <div className="bg-card/80 backdrop-blur-sm border border-primary/20 rounded-2xl p-8 hover:bg-card transition-all duration-300 hover:-translate-y-2">
               <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center mb-6 shadow-lg">
-                <Heart className="w-7 h-7 text-white" />
+                <Smile className="w-7 h-7 text-white" />
               </div>
-              <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Pure Joy</span>
+              {/* <span className="text-primary text-xs tracking-[0.2em] uppercase font-semibold">Pure Joy</span> */}
               <h3 className="text-2xl text-foreground font-bold mt-2 mb-4 font-display">Happy Eating</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Food should bring joy! Our chole dishes are designed to make you smile and bring 
@@ -607,7 +630,13 @@ const BholeKeChole = () => {
                   key={index}
                   className="shrink-0 w-[320px] md:w-[360px] snap-start group cursor-pointer"
                 >
-                  <div className="relative aspect-square rounded-2xl overflow-hidden mb-5 shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white">
+                  <a
+                    href="https://www.swiggy.com/direct/brand/415554?source=swiggy-direct&subSource=instagram"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Order ${item.name} on Swiggy`}
+                    className="relative aspect-square rounded-2xl overflow-hidden mb-5 shadow-lg group-hover:shadow-xl transition-all duration-300 bg-white block"
+                  >
                     {item.image ? (
                       <img
                         src={item.image}
@@ -624,7 +653,7 @@ const BholeKeChole = () => {
                         {item.badge}
                       </span>
                     </div>
-                  </div>
+                  </a>
                   <h3 className="text-2xl text-foreground font-bold mb-2 group-hover:text-primary transition-colors duration-300 font-display">
                     {item.name}
                   </h3>
@@ -925,9 +954,6 @@ const BholeKeChole = () => {
         </div>
       </section>
 
-      <div id="contact" className="scroll-snap-section">
-        <Footer />
-      </div>
 
       {/* Floating Brand Suggestion - 30 second popup */}
       <FloatingBrandSuggestion />
