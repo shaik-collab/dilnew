@@ -26,56 +26,56 @@ const Index = () => {
       name: "Khichdi Bar",
       logo: "/lovable-uploads/235a933c-2973-43db-8419-1bc689100f0a.png",
       route: "/khichdi-bar",
-      cuisine: "Comfort Food",
+      cuisine: "Comfort In Every Bowl",
     },
     {
       name: "Dil Punjabi Daily",
       logo: "/lovable-uploads/DIL_daily_new.png",
       route: "/dil-punjabi-daily",
-      cuisine: "Punjabi Delights",
+      cuisine: "Homestyle Comfort, Wholesome Meals",
     },
     {
       name: "Bihari Bowl",
       logo: "/lovable-uploads/bb_logo.png",
       route: "/bihari-bowl",
-      cuisine: "Bihari Cuisine",
+      cuisine: "Eastern Flavors, Authentic Taste",
     },
     {
       name: "Bhole ke Chole",
       logo: "/lovable-uploads/cdf67c56-7bd7-4023-af81-bf258fe60fe3.png",
       route: "/bhole-ke-chole",
-      cuisine: "North Indian Street Food",
+      cuisine: "Street Food, Done Right",
     },
     // Row 2
     {
       name: "House Of Andhra",
       logo: "/lovable-uploads/1310a9da-ccbe-4fa6-bc06-51441a0872ba.png",
       route: "/house-of-andhra",
-      cuisine: "Andhra Specialties",
+      cuisine: "Where Spice Meets Soul",
     },
     {
       name: "The Chaat Cult",
       logo: "/lovable-uploads/tcc.png",
       route: "/the-chaat-cult",
-      cuisine: "Indian Chaat",
+      cuisine: "Tangy. Spicy. Addictive.",
     },
     {
       name: "Junglee Kitchen",
       logo: "/lovable-uploads/junglee logo.png",
       route: "/junglee-kitchen",
-      cuisine: "North Indian Cuisine",
+      cuisine: "Kapoor Khandaan Ka Khana",
     },
     {
       name: "VEGERAMA",
       logo: "/lovable-uploads/vegerama_new-Photoroom.png",
       route: "/vegerama",
-      cuisine: "Pure Vegetarian",
+      cuisine: "Pure Veg & Vrat-Friendly Meals",
     },
     {
       name: "Aahar",
       logo: "/lovable-uploads/55d6ad50-361d-42cd-b556-c283b2ee23e4.png",
       route: "/aahar",
-      cuisine: "Traditional Home-style",
+      cuisine: "South India's Rich Flavours",
     },
   ];
 
@@ -490,7 +490,8 @@ const Index = () => {
                     icon: ChefHat,
                     step: "4",
                     title: "Training",
-                    desc: "Our chefs visit your restaurant in person and train your team on a simple 3-step flow        Assemble -> Heat ->Dispatch.",
+                    desc: "Our chefs visit your restaurant in person and train your team on a simple 3-step flow:",
+                    flow: ["Assemble", "Heat", "Dispatch"],
                     from: "#0891B2",
                     to: "#0E7490",
                   },
@@ -542,6 +543,18 @@ const Index = () => {
                         <p className="text-xs text-gray-600 leading-relaxed">
                           {item.desc}
                         </p>
+                        {"flow" in item && item.flow && (
+                          <div className="mt-2.5 flex items-center justify-center gap-1.5 text-[10px] font-normal uppercase tracking-wider text-[#1a1a1a] whitespace-nowrap">
+                            {item.flow.map((s, i, arr) => (
+                              <span key={i} className="flex items-center gap-1.5">
+                                {s}
+                                {i < arr.length - 1 && (
+                                  <span className="text-[#c9a227]">→</span>
+                                )}
+                              </span>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </div>
                   );
@@ -581,7 +594,8 @@ const Index = () => {
                 icon: ChefHat,
                 step: "04",
                 title: "Training",
-                desc: "Our chefs visit your restaurant in person and train your team on a simple 3-step flow — Assemble, Heat, Dispatch.",
+                desc: "Our chefs visit your restaurant in person and train your team on a simple 3-step flow:",
+                flow: ["Assemble", "Heat", "Dispatch"],
                 from: "#0891B2",
                 to: "#0E7490",
               },
@@ -642,6 +656,18 @@ const Index = () => {
                       <p className="text-sm text-gray-600 leading-relaxed">
                         {item.desc}
                       </p>
+                      {"flow" in item && item.flow && (
+                        <div className="mt-2.5 flex items-center gap-2 text-[11px] font-normal uppercase tracking-wider text-[#1a1a1a] whitespace-nowrap">
+                          {item.flow.map((s, i, arr) => (
+                            <span key={i} className="flex items-center gap-2">
+                              {s}
+                              {i < arr.length - 1 && (
+                                <span className="text-[#c9a227]">→</span>
+                              )}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
