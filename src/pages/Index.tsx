@@ -106,7 +106,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-[#FDF9F2]/70"></div>
 
         {/* Decorative warm blobs */}
-        <div className="pointer-events-none absolute -top-40 -left-40 w-[560px] h-[560px] rounded-full bg-[#B00020]/[0.06] blur-3xl"></div>
+        <div className="pointer-events-none absolute -top-40 -left-40 w-[560px] h-[560px] rounded-full bg-[#E91E63]/[0.06] blur-3xl"></div>
         <div className="pointer-events-none absolute -bottom-40 -right-40 w-[560px] h-[560px] rounded-full bg-[#c9a227]/[0.10] blur-3xl"></div>
         <div className="pointer-events-none absolute top-1/3 -right-24 w-[320px] h-[320px] rounded-full bg-[#4B0076]/[0.04] blur-3xl"></div>
 
@@ -133,7 +133,7 @@ const Index = () => {
             strokeWidth="1.2"
             strokeLinecap="round"
           />
-          <circle cx="100" cy="20" r="3" fill="#B00020" />
+          <circle cx="100" cy="20" r="3" fill="#E91E63" />
           <circle cx="60" cy="20" r="1.5" fill="#c9a227" />
           <circle cx="140" cy="20" r="1.5" fill="#c9a227" />
           <circle cx="30" cy="20" r="1" fill="#c9a227" opacity="0.6" />
@@ -147,7 +147,7 @@ const Index = () => {
           className="hidden lg:block absolute top-1/4 left-[8%] animate-float z-20"
         >
           <div className="w-16 h-16 rounded-2xl bg-white shadow-lg ring-1 ring-[#c9a227]/20 flex items-center justify-center rotate-[-8deg] hover:rotate-0 hover:scale-110 hover:shadow-xl hover:ring-[#c9a227]/60 transition-all duration-300">
-            <UtensilsCrossed size={26} className="text-[#B00020]" />
+            <UtensilsCrossed size={26} className="text-[#E91E63]" />
           </div>
         </a>
         <a
@@ -214,7 +214,7 @@ const Index = () => {
         <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32 pb-20 md:pt-40 md:pb-28">
           {/* Eyebrow tag */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#c9a227]/40 shadow-sm mb-8 animate-fadeIn">
-            <Sparkles size={14} className="text-[#B00020]" />
+            <Sparkles size={14} className="text-[#E91E63]" />
             <span className="text-[11px] md:text-xs font-semibold tracking-[0.18em] text-[#1a1a1a] uppercase">
               Crafting the era of Delivery-First Dining
             </span>
@@ -245,7 +245,7 @@ const Index = () => {
             <Link
               to="/restaurant-partnership"
               onClick={() => window.scrollTo(0, 0)}
-              className="group relative w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-[#B00020] text-white rounded-full font-semibold shadow-xl shadow-[#B00020]/30 ring-2 ring-[#c9a227]/60 hover:bg-[#8a0019] hover:ring-[#c9a227] hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300"
+              className="group relative w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-[#E91E63] text-white rounded-full font-semibold shadow-xl shadow-[#E91E63]/30 ring-2 ring-[#c9a227]/60 hover:bg-[#C2185B] hover:ring-[#c9a227] hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300"
             >
               <Sparkles size={16} className="mr-2 text-[#FFD700]" />
               Become a Partner
@@ -303,7 +303,7 @@ const Index = () => {
               Our Portfolio
             </p>
             <h2 className="font-display text-4xl md:text-5xl font-semibold text-[#1a1a1a] mb-4 leading-tight">
-              Bringing India to <span className="text-[#B00020]">your plate</span>
+              Bringing India to <span className="text-[#E91E63]">your plate</span>
             </h2>
             <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
               Ten regional brands, one common goal — caring for the daily eating
@@ -366,9 +366,9 @@ const Index = () => {
             <h2 className="font-display text-2xl md:text-3xl font-semibold text-[#1a1a1a]">
               Order Dil brands on your favourite app
             </h2>
-            <p className="text-sm text-gray-500 mt-2">
+            {/* <p className="text-sm text-gray-500 mt-2">
               Tap a brand above to see ordering options
-            </p>
+            </p> */}
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
@@ -444,7 +444,7 @@ const Index = () => {
             </p>
             <h2 className="font-display text-4xl md:text-5xl font-semibold text-[#1a1a1a] mb-4 leading-tight">
               How partnership{" "}
-              <span className="text-[#B00020]">works</span>
+              <span className="text-[#E91E63]">works</span>
             </h2>
             <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
               Same kitchen. Same staff. More orders. Get up and running with Dil
@@ -473,8 +473,8 @@ const Index = () => {
                     step: "1",
                     title: "Connect",
                     desc: "You fill the enquiry form on this website. We contact you within 24 hours to understand your business and requirements.",
-                    from: "#B00020",
-                    to: "#8a0019",
+                    from: "#E91E63",
+                    to: "#C2185B",
                   },
                   {
                     icon: ClipboardCheck,
@@ -577,8 +577,8 @@ const Index = () => {
                 step: "01",
                 title: "Connect",
                 desc: "You fill the enquiry form on this website. We contact you within 24 hours to understand your business and requirements.",
-                from: "#B00020",
-                to: "#8a0019",
+                from: "#E91E63",
+                to: "#C2185B",
               },
               {
                 icon: ClipboardCheck,
@@ -707,7 +707,7 @@ const Index = () => {
             </p>
             <h2 className="font-display text-4xl md:text-5xl font-semibold mb-3 text-[#1a1a1a]">
               Cities we{" "}
-              <span className="text-[#B00020]">serve</span>
+              <span className="text-[#E91E63]">serve</span>
             </h2>
             <p className="text-base md:text-lg text-gray-600">
               Currently live in 6 cities with plans to expand to 9 more
@@ -737,7 +737,7 @@ const Index = () => {
               </p>
               <h2 className="font-display text-4xl md:text-5xl font-semibold text-[#1a1a1a] mb-4 leading-tight">
                 Partner With{" "}
-                <span className="text-[#B00020]">Us</span>
+                <span className="text-[#E91E63]">Us</span>
               </h2>
               <p className="text-base text-[#666666] mb-6">
                 Turn your existing kitchen into a profit hub. Same kitchen, same staff, more orders.

@@ -10,7 +10,6 @@ const Navbar = () => {
   const isTovaDomain = window.location.hostname.includes("tovafoods.in");
 
   const hasPurpleGradientHero =
-    location.pathname === "/restaurant-partnership" ||
     location.pathname === "/horeca-supply" ||
     location.pathname === "/media";
 

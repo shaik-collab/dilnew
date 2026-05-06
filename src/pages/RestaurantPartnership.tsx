@@ -288,7 +288,7 @@ const RestaurantPartnership = () => {
       {/* Hero Section — Cream parchment palette, partner-specific content */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-[#FDF9F2]">
         {/* Warm decorative blobs */}
-        <div className="pointer-events-none absolute -top-40 -left-40 w-[560px] h-[560px] rounded-full bg-[#B00020]/[0.08] blur-3xl"></div>
+        <div className="pointer-events-none absolute -top-40 -left-40 w-[560px] h-[560px] rounded-full bg-[#E91E63]/[0.08] blur-3xl"></div>
         <div className="pointer-events-none absolute -bottom-40 -right-40 w-[560px] h-[560px] rounded-full bg-[#c9a227]/[0.14] blur-3xl"></div>
         <div className="pointer-events-none absolute top-1/3 -right-24 w-[320px] h-[320px] rounded-full bg-[#4B0076]/[0.05] blur-3xl"></div>
         <div className="pointer-events-none absolute top-1/4 left-[8%] w-[260px] h-[260px] rounded-full bg-[#c9a227]/[0.08] blur-3xl"></div>
@@ -304,18 +304,10 @@ const RestaurantPartnership = () => {
         ></div>
 
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#c9a227]/40 shadow-sm mb-8 animate-fadeIn">
-            <Sparkles size={14} className="text-[#B00020]" />
-            <span className="text-[11px] md:text-xs font-semibold tracking-[0.18em] text-[#1a1a1a] uppercase">
-              For Restaurant Partners
-            </span>
-          </div>
-
           <h1 className="font-display font-semibold leading-[1.1] tracking-tight text-[#1a1a1a] text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-7 animate-fadeInUp">
             Join India's truly largest
             <br />
-            <span className="text-[#B00020]">virtual brands network</span>
+            <span className="text-[#E91E63]">virtual brands network</span>
           </h1>
 
           <p
@@ -336,7 +328,7 @@ const RestaurantPartnership = () => {
           >
             <a
               href="#signup"
-              className="group relative w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-[#B00020] text-white rounded-full font-semibold shadow-xl shadow-[#B00020]/30 ring-2 ring-[#c9a227]/60 hover:bg-[#8a0019] hover:ring-[#c9a227] hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300"
+              className="group relative w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-[#E91E63] text-white rounded-full font-semibold shadow-xl shadow-[#E91E63]/30 ring-2 ring-[#c9a227]/60 hover:bg-[#C2185B] hover:ring-[#c9a227] hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300"
             >
               <Sparkles size={16} className="mr-2 text-[#FFD700]" />
               Apply Now
@@ -374,7 +366,12 @@ const RestaurantPartnership = () => {
       </section>
 
       {/* Ticker */}
-      <NewsStrip text="SAME KITCHEN! SAME STAFF! MORE ORDERS!!" />
+      <NewsStrip
+        text="SAME KITCHEN! SAME STAFF! MORE ORDERS!!"
+        bgColor="bg-gradient-to-r from-[#FFF8E1] via-[#FFEFC2] to-[#FFF8E1]"
+        textColor="text-[#8a6d10]"
+        speed="extremely-slow"
+      />
 
       {/* 3-Step Onboarding */}
       <section className="py-20 md:py-24 bg-white">
@@ -394,10 +391,10 @@ const RestaurantPartnership = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {/* Step 1 */}
             <div className="group relative bg-white rounded-2xl border border-gray-100 hover:border-dil-purple/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-              <div className="h-1.5 bg-gradient-purple-red"></div>
+              <div className="h-1.5 bg-[#E91E63]"></div>
               <div className="p-7 flex flex-col items-center text-center">
                 <div className="relative mb-5">
-                  <div className="rounded-full bg-gradient-purple-red w-16 h-16 flex items-center justify-center shadow-lg shadow-dil-purple/30">
+                  <div className="rounded-full bg-[#E91E63] w-16 h-16 flex items-center justify-center shadow-lg shadow-[#E91E63]/30">
                     <span className="text-2xl font-bold text-white">1</span>
                   </div>
                 </div>
@@ -415,9 +412,9 @@ const RestaurantPartnership = () => {
 
             {/* Step 2 */}
             <div className="group relative bg-white rounded-2xl border border-gray-100 hover:border-dil-purple/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-              <div className="h-1.5 bg-gradient-purple-red"></div>
+              <div className="h-1.5 bg-[#E91E63]"></div>
               <div className="p-7 flex flex-col items-center text-center">
-                <div className="rounded-full bg-gradient-purple-red w-16 h-16 flex items-center justify-center mb-5 shadow-lg shadow-dil-purple/30">
+                <div className="rounded-full bg-[#E91E63] w-16 h-16 flex items-center justify-center mb-5 shadow-lg shadow-[#E91E63]/30">
                   <span className="text-2xl font-bold text-white">2</span>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -441,16 +438,17 @@ const RestaurantPartnership = () => {
 
             {/* Step 3 */}
             <div className="group relative bg-white rounded-2xl border border-gray-100 hover:border-dil-purple/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-              <div className="h-1.5 bg-gradient-purple-red"></div>
+              <div className="h-1.5 bg-[#E91E63]"></div>
               <div className="p-7 flex flex-col items-center text-center">
-                <div className="rounded-full bg-gradient-purple-red w-16 h-16 flex items-center justify-center mb-5 shadow-lg shadow-dil-purple/30">
+                <div className="rounded-full bg-[#E91E63] w-16 h-16 flex items-center justify-center mb-5 shadow-lg shadow-[#E91E63]/30">
                   <span className="text-2xl font-bold text-white">3</span>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   Get More Orders
                 </h3>
                 <p className="text-gray-600 mb-5 text-sm md:text-base leading-relaxed">
-                  Simply reheat and assemble delivered food from us — same kitchen, more revenue.
+                  {/* Simply reheat and assemble delivered food from us — same kitchen, more revenue. */}
+                  Simple steps to help kitchens prepare and pack food easily, so every order goes out quickly and consistently.
                 </p>
                 <div className="mt-auto h-44 w-full flex items-center justify-center bg-gray-50 rounded-xl overflow-hidden">
                   <LazyImage
@@ -489,7 +487,7 @@ const RestaurantPartnership = () => {
                 key={index}
                 className="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-dil-purple/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-gradient-purple-red flex items-center justify-center shadow-md shadow-dil-purple/20 mb-5 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 rounded-xl bg-[#E91E63] flex items-center justify-center shadow-md shadow-[#E91E63]/20 mb-5 group-hover:scale-110 transition-transform duration-300">
                   {/* Icon — recolor to white inside the tile */}
                   <span className="text-white [&_svg]:text-white [&_svg]:w-6 [&_svg]:h-6">
                     {card.icon}
@@ -516,7 +514,7 @@ const RestaurantPartnership = () => {
             </p>
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-3 leading-tight">
               Is your restaurant{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-purple-red">
+              <span className="bg-clip-text text-transparent bg-[#E91E63]">
                 underutilized?
               </span>
             </h2>
@@ -604,7 +602,7 @@ const RestaurantPartnership = () => {
             </div>
 
             {calculationResult && (
-              <div className="mt-8 p-6 md:p-8 bg-gradient-purple-red rounded-2xl text-white shadow-xl shadow-dil-purple/20 relative overflow-hidden">
+              <div className="mt-8 p-6 md:p-8 bg-[#E91E63] rounded-2xl text-white shadow-xl shadow-[#E91E63]/20 relative overflow-hidden">
                 {/* decorative shape */}
                 <div className="pointer-events-none absolute -top-20 -right-20 w-60 h-60 rounded-full bg-white/[0.06] blur-2xl"></div>
 
@@ -684,7 +682,7 @@ const RestaurantPartnership = () => {
                     "{testimonial.quote}"
                   </p>
                   <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                    <div className="w-10 h-10 rounded-full bg-gradient-purple-red flex items-center justify-center text-white font-bold shadow-md">
+                    <div className="w-10 h-10 rounded-full bg-[#E91E63] flex items-center justify-center text-white font-bold shadow-md">
                       {testimonial.author.charAt(0)}
                     </div>
                     <div>

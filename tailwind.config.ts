@@ -69,7 +69,7 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				dil: {
-					red: "#B00020",
+					red: "#E91E63",
 					purple: "#4B0076",
 					yellow: "#FFD700", // We keep this for backward compatibility
 					yellowOrange: "#F97316", // Added bright orange
