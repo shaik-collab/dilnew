@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -45,6 +45,18 @@ const RestaurantPartnership = () => {
     additionalOrders: number;
     recommendation: string;
   } | null>(null);
+
+  const resultRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll to result panel when calculation completes
+  useEffect(() => {
+    if (calculationResult && resultRef.current) {
+      resultRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  }, [calculationResult]);
 
   // Form for restaurant signup
   const {
@@ -518,9 +530,19 @@ const RestaurantPartnership = () => {
                 underutilized?
               </span>
             </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-5">
               Fill in the details below to see how much more your kitchen could produce.
             </p>
+            <a
+              href="#signup"
+              className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-[#E91E63]/40 text-[#E91E63] text-sm font-semibold shadow-sm hover:bg-[#E91E63] hover:text-white hover:border-[#E91E63] hover:shadow-md transition-all duration-300"
+            >
+              Already convinced? Apply now
+              <ArrowRight
+                size={14}
+                className="group-hover:translate-x-1 transition-transform"
+              />
+            </a>
           </div>
 
           <div className="bg-gray-50 shadow-lg rounded-2xl p-6 md:p-10 border border-gray-100">
@@ -535,6 +557,7 @@ const RestaurantPartnership = () => {
                     name="kitchenSize"
                     value={kitchenData.kitchenSize || ""}
                     onChange={handleCalculatorChange}
+                    placeholder="e.g., 250"
                     className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
                   />
                 </div>
@@ -547,6 +570,7 @@ const RestaurantPartnership = () => {
                     name="totalStaff"
                     value={kitchenData.totalStaff || ""}
                     onChange={handleCalculatorChange}
+                    placeholder="e.g., 3"
                     className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
                   />
                 </div>
@@ -559,6 +583,7 @@ const RestaurantPartnership = () => {
                     name="operatingHours"
                     value={kitchenData.operatingHours || ""}
                     onChange={handleCalculatorChange}
+                    placeholder="e.g., 10"
                     className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
                   />
                 </div>
@@ -574,6 +599,7 @@ const RestaurantPartnership = () => {
                     name="currentOrders"
                     value={kitchenData.currentOrders || ""}
                     onChange={handleCalculatorChange}
+                    placeholder="e.g., 30"
                     className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
                   />
                 </div>
@@ -586,6 +612,7 @@ const RestaurantPartnership = () => {
                     name="prepTime"
                     value={kitchenData.prepTime || ""}
                     onChange={handleCalculatorChange}
+                    placeholder="e.g., 12"
                     className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dil-purple/40 focus:border-dil-purple transition-all"
                   />
                 </div>
@@ -602,7 +629,10 @@ const RestaurantPartnership = () => {
             </div>
 
             {calculationResult && (
-              <div className="mt-8 p-6 md:p-8 bg-[#E91E63] rounded-2xl text-white shadow-xl shadow-[#E91E63]/20 relative overflow-hidden">
+              <div
+                ref={resultRef}
+                className="mt-8 p-6 md:p-8 bg-[#E91E63] rounded-2xl text-white shadow-xl shadow-[#E91E63]/20 relative overflow-hidden"
+              >
                 {/* decorative shape */}
                 <div className="pointer-events-none absolute -top-20 -right-20 w-60 h-60 rounded-full bg-white/[0.06] blur-2xl"></div>
 

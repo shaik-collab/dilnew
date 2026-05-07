@@ -650,6 +650,24 @@
   }
 }
 
+/* Seamless infinite marquee — requires two identical copies of content side-by-side */
+@keyframes marquee-seamless {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee-seamless {
+  animation: marquee-seamless 40s linear infinite;
+  will-change: transform;
+}
+.animate-marquee-seamless-slow {
+  animation: marquee-seamless 70s linear infinite;
+  will-change: transform;
+}
+.animate-marquee-seamless-very-slow {
+  animation: marquee-seamless 110s linear infinite;
+  will-change: transform;
+}
+
 /* Enhanced Brand Logo Animations */
 @keyframes bounce-slow {
   0%, 100% { transform: translateY(0px); }

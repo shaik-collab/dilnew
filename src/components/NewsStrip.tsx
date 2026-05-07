@@ -1,41 +1,40 @@
-
-import { useState, useEffect } from 'react';
-
 interface NewsStripProps {
   text: string;
   bgColor?: string;
   textColor?: string;
-  speed?: 'slow' | 'very-slow' | 'extremely-slow';
+  speed?: "slow" | "very-slow" | "extremely-slow";
 }
 
-const NewsStrip = ({ 
-  text, 
-  bgColor = "bg-gradient-yellow-orange", 
+const NewsStrip = ({
+  text,
+  bgColor = "bg-gradient-yellow-orange",
   textColor = "text-dil-purple",
-  speed = "very-slow"
+  speed = "very-slow",
 }: NewsStripProps) => {
-  const [duplicatedText, setDuplicatedText] = useState("");
-  
-  // Duplicate the text to ensure continuous scrolling
-  useEffect(() => {
-    // Adding multiple copies to ensure continuous flow regardless of screen width
-    setDuplicatedText(`${text} • ${text} • ${text} • ${text} • ${text} • ${text} • ${text} • ${text}`);
-  }, [text]);
-  
+  // One "block" — repeated within a single span so the strip isn't sparse.
+  const block = `${text} • ${text} • ${text} • ${text} • ${text} • ${text}`;
+
+  // Seamless loop: two identical copies side-by-side, container animates -50%.
   const animationClass = {
-    'slow': 'animate-marquee-slow',
-    'very-slow': 'animate-marquee-very-slow',
-    'extremely-slow': 'animate-marquee-very-slow duration-[120s]'
+    slow: "animate-marquee-seamless",
+    "very-slow": "animate-marquee-seamless-slow",
+    "extremely-slow": "animate-marquee-seamless-very-slow",
   }[speed];
-  
+
   return (
     <div className={`w-full overflow-hidden ${bgColor}`}>
-      <div className="py-3 relative">
-        <div className={`${animationClass} whitespace-nowrap inline-block`}>
-          <span className={`text-base sm:text-lg font-normal ${textColor}`}>
-            {duplicatedText}
-          </span>
-        </div>
+      <div className={`py-3 flex w-max ${animationClass}`}>
+        <span
+          className={`text-base sm:text-lg font-normal whitespace-nowrap pr-8 ${textColor}`}
+        >
+          {block}
+        </span>
+        <span
+          aria-hidden="true"
+          className={`text-base sm:text-lg font-normal whitespace-nowrap pr-8 ${textColor}`}
+        >
+          {block}
+        </span>
       </div>
     </div>
   );

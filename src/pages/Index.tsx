@@ -9,15 +9,12 @@ import {
   Sparkles,
   ShieldCheck,
   Star,
-  ChevronDown,
-  UtensilsCrossed,
-  Handshake,
   PhoneCall,
-  ClipboardCheck,
-  Package,
+  Search,
+  Boxes,
+  GraduationCap,
+  Smartphone,
   Rocket,
-  TrendingUp,
-  ChefHat,
 } from "lucide-react";
 
 const Index = () => {
@@ -89,189 +86,134 @@ const Index = () => {
       />
       <Navbar />
 
-      {/* Hero Section — Editorial parchment composition */}
+      {/* Hero Section — Brand-first composition */}
       <section
         id="hero"
-        className="relative min-h-[100svh] md:min-h-[92vh] flex items-center justify-center overflow-hidden bg-[#FDF9F2]"
+        className="relative min-h-[88svh] md:min-h-[90vh] flex items-start md:items-center overflow-hidden bg-[#FDF9F2]"
       >
-        {/* Background kitchen image — soft blurred texture */}
-        <img
-          src="/lovable-uploads/kitchen.png"
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover blur-[3px] scale-105"
-        />
+        {/* Soft ambient blooms */}
+        <div className="pointer-events-none absolute top-0 left-1/3 w-[640px] h-[640px] rounded-full bg-[#E91E63]/[0.05] blur-3xl"></div>
+        <div className="pointer-events-none absolute -bottom-32 -right-24 w-[520px] h-[520px] rounded-full bg-[#c9a227]/[0.08] blur-3xl"></div>
 
-        {/* Parchment wash to keep the editorial feel intact */}
-        <div className="absolute inset-0 bg-[#FDF9F2]/70"></div>
-
-        {/* Decorative warm blobs */}
-        <div className="pointer-events-none absolute -top-40 -left-40 w-[560px] h-[560px] rounded-full bg-[#E91E63]/[0.06] blur-3xl"></div>
-        <div className="pointer-events-none absolute -bottom-40 -right-40 w-[560px] h-[560px] rounded-full bg-[#c9a227]/[0.10] blur-3xl"></div>
-        <div className="pointer-events-none absolute top-1/3 -right-24 w-[320px] h-[320px] rounded-full bg-[#4B0076]/[0.04] blur-3xl"></div>
-
-        {/* Subtle dotted grid texture */}
+        {/* Subtle line grid */}
         <div
-          className="pointer-events-none absolute inset-0 opacity-[0.10]"
+          className="pointer-events-none absolute inset-0 opacity-[0.035]"
           style={{
             backgroundImage:
-              "radial-gradient(circle, #c9a227 1px, transparent 1px)",
-            backgroundSize: "28px 28px",
+              "linear-gradient(#1a1a1a 1px, transparent 1px), linear-gradient(90deg, #1a1a1a 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
           }}
         ></div>
 
-        {/* Decorative ornamental SVG — top center */}
-        <svg
-          aria-hidden="true"
-          className="pointer-events-none absolute top-20 md:top-24 left-1/2 -translate-x-1/2 w-32 md:w-40 h-auto opacity-50"
-          viewBox="0 0 200 40"
-          fill="none"
-        >
-          <path
-            d="M10 20 Q 50 0, 100 20 T 190 20"
-            stroke="#c9a227"
-            strokeWidth="1.2"
-            strokeLinecap="round"
-          />
-          <circle cx="100" cy="20" r="3" fill="#E91E63" />
-          <circle cx="60" cy="20" r="1.5" fill="#c9a227" />
-          <circle cx="140" cy="20" r="1.5" fill="#c9a227" />
-          <circle cx="30" cy="20" r="1" fill="#c9a227" opacity="0.6" />
-          <circle cx="170" cy="20" r="1" fill="#c9a227" opacity="0.6" />
-        </svg>
-
-        {/* Floating decorative chips — desktop only */}
-        <a
-          href="#brands"
-          aria-label="Jump to our brands"
-          className="hidden lg:block absolute top-1/4 left-[8%] animate-float z-20"
-        >
-          <div className="w-16 h-16 rounded-2xl bg-white shadow-lg ring-1 ring-[#c9a227]/20 flex items-center justify-center rotate-[-8deg] hover:rotate-0 hover:scale-110 hover:shadow-xl hover:ring-[#c9a227]/60 transition-all duration-300">
-            <UtensilsCrossed size={26} className="text-[#E91E63]" />
-          </div>
-        </a>
-        <a
-          href="https://www.instagram.com/dilfoods.in/"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Follow Dil Foods on Instagram"
-          className="hidden lg:block absolute top-1/3 right-[10%] animate-float z-20"
-          style={{ animationDelay: "1.2s" }}
-        >
-          <div className="w-16 h-16 rounded-2xl bg-white shadow-lg ring-1 ring-[#c9a227]/20 flex items-center justify-center rotate-[8deg] hover:rotate-0 hover:scale-110 hover:shadow-xl hover:ring-[#c9a227]/60 transition-all duration-300">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="26"
-              height="26"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="text-[#E1306C]"
-            >
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-            </svg>
-          </div>
-        </a>
-        <a
-          href="https://www.linkedin.com/company/dil-foods/"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Follow Dil Foods on LinkedIn"
-          className="hidden lg:block absolute bottom-[22%] left-[12%] animate-float z-20"
-          style={{ animationDelay: "0.6s" }}
-        >
-          <div className="w-16 h-16 rounded-2xl bg-white shadow-lg ring-1 ring-[#c9a227]/20 flex items-center justify-center rotate-[-8deg] hover:rotate-0 hover:scale-110 hover:shadow-xl hover:ring-[#c9a227]/60 transition-all duration-300">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="26"
-              height="26"
-              fill="currentColor"
-              className="text-[#0A66C2]"
-            >
-              <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
-            </svg>
-          </div>
-        </a>
-        <Link
-          to="/restaurant-partnership"
-          onClick={() => window.scrollTo(0, 0)}
-          aria-label="Become a restaurant partner"
-          className="hidden lg:block absolute bottom-[28%] right-[8%] animate-float z-20"
-          style={{ animationDelay: "1.8s" }}
-        >
-          <div className="w-16 h-16 rounded-2xl bg-white shadow-lg ring-1 ring-[#c9a227]/20 flex items-center justify-center rotate-[8deg] hover:rotate-0 hover:scale-110 hover:shadow-xl hover:ring-[#c9a227]/60 transition-all duration-300">
-            <Handshake size={26} className="text-[#4B0076]" />
-          </div>
-        </Link>
-
         {/* Content */}
-        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32 pb-20 md:pt-40 md:pb-28">
-          {/* Eyebrow tag */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#c9a227]/40 shadow-sm mb-8 animate-fadeIn">
-            <Sparkles size={14} className="text-[#E91E63]" />
-            <span className="text-[11px] md:text-xs font-semibold tracking-[0.18em] text-[#1a1a1a] uppercase">
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-12 md:pt-24 md:pb-14">
+          {/* Live eyebrow */}
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-[#1a1a1a]/8 shadow-[0_1px_2px_rgba(0,0,0,0.04)] mb-6 animate-fadeIn">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75 animate-ping"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span className="text-[10px] md:text-[11px] font-semibold tracking-[0.16em] text-[#1a1a1a]/70 uppercase">
               Crafting the era of Delivery-First Dining
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="font-display font-semibold leading-[1.1] tracking-tight text-[#1a1a1a] text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-7 animate-fadeInUp">
+          <h1 className="font-display font-semibold tracking-[-0.02em] leading-[1] text-[#1a1a1a] text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] mb-5 animate-fadeInUp">
             India's largest
-            <br /> virtual brands chain
+            <br />
+            <span className="text-[#E91E63]">virtual brands</span> chain.
           </h1>
 
           {/* Subhead */}
           <p
-            className="font-body text-base md:text-lg lg:text-xl text-[#1a1a1a] max-w-2xl mx-auto mb-10 leading-relaxed font-medium animate-fadeInUp"
-            style={{ textShadow: "0 1px 2px rgba(255, 248, 230, 0.7)" }}
+            className="text-sm md:text-base lg:text-lg text-[#1a1a1a]/65 max-w-2xl mx-auto leading-[1.55] mb-7 animate-fadeInUp"
+            style={{ animationDelay: "0.08s" }}
           >
-            Bringing authentic regional flavours from kitchens across India to your doorstep.
+            Bringing authentic regional flavours from kitchens across India to your doorstep.{" "}
+            {/* <span className="font-semibold text-[#1a1a1a]">10 brands</span> and{" "}
+            <span className="font-semibold text-[#1a1a1a]">300+ kitchens</span>{" "}
+            — delivered to your door, in one tap. */}
           </p>
 
-          {/* Dual CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-12 animate-fadeInUp">
-            <a
-              href="#brands"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white text-[#1a1a1a] rounded-full font-semibold border border-[#1a1a1a] shadow-md hover:bg-[#1a1a1a] hover:text-white hover:-translate-y-0.5 transition-all duration-300"
+          {/* Brand Showcase Strip — the unique visual element */}
+          <div
+            className="relative mb-8 animate-fadeIn group/strip"
+            style={{ animationDelay: "0.16s" }}
+          >
+            {/* Edge fades */}
+            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 z-10 bg-gradient-to-r from-[#FDF9F2] to-transparent pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 z-10 bg-gradient-to-l from-[#FDF9F2] to-transparent pointer-events-none"></div>
+
+            <div className="overflow-hidden">
+              <div className="flex gap-3 md:gap-4 animate-marquee-slow group-hover/strip:[animation-play-state:paused]">
+                {[...brands, ...brands].map((brand, i) => (
+                  <Link
+                    key={i}
+                    to={brand.route}
+                    onClick={() => window.scrollTo(0, 0)}
+                    className="group/card flex-shrink-0 w-[110px] md:w-[120px] aspect-square bg-white border border-[#1a1a1a]/8 rounded-2xl p-3 shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_20px_rgba(0,0,0,0.08)] hover:border-[#c9a227]/40 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center"
+                  >
+                    <img
+                      src={brand.logo}
+                      alt={brand.name}
+                      className="max-w-full max-h-full object-contain group-hover/card:scale-110 transition-transform duration-300"
+                    />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* CTAs */}
+          <div
+            className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-8 animate-fadeInUp"
+            style={{ animationDelay: "0.24s" }}
+          >
+            <button
+              type="button"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                window.dispatchEvent(new CustomEvent("dilfoods:open-brands"));
+              }}
+              className="group w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 bg-[#1a1a1a] text-white rounded-full font-medium hover:bg-[#2d2d2d] hover:-translate-y-0.5 hover:shadow-xl transition-all duration-300"
             >
               Order Now
-            </a>
+              <ArrowRight
+                size={16}
+                className="ml-2 group-hover:translate-x-1 transition-transform"
+              />
+            </button>
             <Link
               to="/restaurant-partnership"
               onClick={() => window.scrollTo(0, 0)}
-              className="group relative w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-[#E91E63] text-white rounded-full font-semibold shadow-xl shadow-[#E91E63]/30 ring-2 ring-[#c9a227]/60 hover:bg-[#C2185B] hover:ring-[#c9a227] hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300"
+              className="group w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 bg-[#E91E63] text-white rounded-full font-semibold shadow-lg shadow-[#E91E63]/30 ring-2 ring-[#c9a227]/50 hover:bg-[#C2185B] hover:ring-[#c9a227] hover:shadow-xl hover:shadow-[#E91E63]/40 hover:-translate-y-0.5 transition-all duration-300"
             >
-              <Sparkles size={16} className="mr-2 text-[#FFD700]" />
+              <Sparkles size={15} className="mr-2 text-[#FFD700]" />
               Become a Partner
               <ArrowRight
-                size={18}
+                size={16}
                 className="ml-2 group-hover:translate-x-1 transition-transform"
               />
             </Link>
           </div>
 
-          {/* Trust strip */}
-          <div className="flex justify-center animate-fadeIn">
+          {/* Trust pill — credentials & recognition (different from stats section below) */}
+          <div
+            className="flex justify-center animate-fadeIn"
+            style={{ animationDelay: "0.32s" }}
+          >
             <div className="inline-flex flex-wrap items-center justify-center gap-x-5 gap-y-2 px-6 py-3 rounded-full bg-white/85 backdrop-blur-md border border-[#c9a227]/40 shadow-md text-[11px] md:text-xs font-semibold tracking-[0.15em] uppercase text-[#1a1a1a]">
-              <span className="inline-flex items-center gap-1.5">
+              {/* <span className="inline-flex items-center gap-1.5">
                 <ShieldCheck size={14} className="text-[#c9a227]" />
                 FSSAI Certified
               </span>
               <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-[#c9a227]"></span>
-              <span>ISO Compliant</span>
-              <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-[#c9a227]"></span>
+              <span>ISO Compliant</span> */}
               <span className="inline-flex items-center gap-1.5">
                 <Star size={14} className="text-[#c9a227] fill-[#c9a227]" />
-                3M+ Foodies
+                Featured on Shark Tank India
               </span>
-              <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-[#c9a227]"></span>
-              <span>300+ Outlets</span>
             </div>
           </div>
         </div>
@@ -279,11 +221,11 @@ const Index = () => {
         {/* Scroll cue */}
         <a
           href="#brands"
-          className="hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-1 text-gray-400 hover:text-[#1a1a1a] transition-colors"
+          className="hidden md:flex absolute bottom-5 left-1/2 -translate-x-1/2 z-10 flex-col items-center gap-1 text-[#1a1a1a]/30 hover:text-[#1a1a1a] transition-colors"
           aria-label="Scroll for more"
         >
-          <span className="text-[10px] tracking-[0.2em] uppercase">Scroll</span>
-          <ChevronDown size={18} className="animate-bounce-slow" />
+          {/* <span className="text-[10px] tracking-[0.2em] uppercase">Scroll</span>
+          <ChevronDown size={16} className="animate-bounce-slow" /> */}
         </a>
       </section>
 
@@ -295,8 +237,8 @@ const Index = () => {
         speed="extremely-slow"
       />
 
-      {/* Our Brands Section — calm 3x3 curated grid */}
-      <section id="brands" className="py-20 md:py-28 bg-[#faf9f6] relative overflow-hidden">
+      {/* Our Brands Section — commented out: brands are now showcased in the hero strip */}
+      {/* <section id="brands" className="py-20 md:py-28 bg-[#faf9f6] relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-14">
             <p className="text-[11px] md:text-xs font-semibold tracking-[0.2em] text-[#8a6d10] uppercase mb-3">
@@ -311,7 +253,6 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Curated grid — 4×2 logos, hover reveals cuisine */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-1 md:gap-x-6 md:gap-y-2 max-w-6xl mx-auto">
             {brands
               .filter((brand) => brand.name !== "Aahar")
@@ -328,7 +269,6 @@ const Index = () => {
                         className="max-w-full max-h-full object-contain"
                       />
                     </div>
-                    {/* Hover label — reserved height so layout never shifts. mt clears the 1.2x scaled logo */}
                     <div className="h-5 mt-5 md:mt-6 flex items-center justify-center">
                       <p className="text-xs md:text-sm text-[#8a6d10] font-medium tracking-wide opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         {brand.cuisine}
@@ -354,7 +294,7 @@ const Index = () => {
           </div>
 
         </div>
-      </section>
+      </section> */}
 
       {/* Order Platforms Strip — Available on your favourite apps */}
       <section className="py-14 md:py-16 bg-white border-y border-[#c9a227]/15">
@@ -472,49 +412,48 @@ const Index = () => {
                     icon: PhoneCall,
                     step: "1",
                     title: "Connect",
-                    desc: "You fill the enquiry form on this website. We contact you within 24 hours to understand your business and requirements.",
+                    desc: "Fill the enquiry form. We contact you within 24 hours to understand your business and requirements.",
                     from: "#E91E63",
                     to: "#C2185B",
                   },
                   {
-                    icon: ClipboardCheck,
+                    icon: Search,
                     step: "2",
                     title: "Kitchen Assessment",
-                    desc: "We send a team to assess your kitchen space and capabilities, including storage and freezer capacity, to evaluate how we can partner together.",
+                    desc: "We assess your kitchen space and capabilities, including storage, freezer capacity.",
                     from: "#4B0076",
                     to: "#3a005c",
                   },
                   {
-                    icon: Package,
+                    icon: Boxes,
                     step: "3",
                     title: "Brand Additions",
-                    desc: "Based on your kitchen capabilities, utilization and geography, we identify the most suitable brands from our portfolio for your restaurant.",
+                    desc: "Based on your kitchen capabilities, utilization and geography, we select brands for you.",
                     from: "#c9a227",
                     to: "#a8871f",
                   },
                   {
-                    icon: ChefHat,
+                    icon: GraduationCap,
                     step: "4",
                     title: "Training",
-                    desc: "Our chefs visit your restaurant in person and train your team on a simple 3-step flow:",
-                    flow: ["Assemble", "Heat", "Dispatch"],
+                    desc: "Our chefs visit your restaurant in person and train your team on a simple 3-step flow.",
+                    // flow: ["Assemble", "Heat", "Dispatch"],
                     from: "#0891B2",
                     to: "#0E7490",
                   },
                   {
-                    icon: Rocket,
+                    icon: Smartphone,
                     step: "5",
-                    title: "Tech Integration",
-                    desc: "We onboard your assigned brands on Swiggy, Zomato and more — your outlet goes live online with zero tech effort.",
+                    title: "Tech",
+                    desc: "We onboard your assigned brands on Swiggy, Zomato and more — your outlet goes live with our brands.",
                     from: "#F97316",
                     to: "#c25608",
                   },
                   {
-                    icon: TrendingUp,
+                    icon: Rocket,
                     step: "6",
                     title: "Go Live",
-                    desc: "New orders start flowing in across every platform. Same kitchen, same staff — more revenue every month.",
-                    // desc:"New and more orders start coming to your restaurant => $$$$",
+                    desc: "New orders start flowing on all platforms. Same kitchen, same staff — more revenue every month.",
                     from: "#2E7D32",
                     to: "#1b5e20",
                   },
@@ -581,40 +520,40 @@ const Index = () => {
                 to: "#C2185B",
               },
               {
-                icon: ClipboardCheck,
+                icon: Search,
                 step: "02",
                 title: "Kitchen Assessment",
-                desc: "We send a team to assess your kitchen space and capabilities, including storage and freezer capacity, to evaluate how we can partner together.",
+                desc: "We assess your kitchen space and capabilities, including storage, freezer capacity and other things.",
                 from: "#4B0076",
                 to: "#3a005c",
               },
               {
-                icon: Package,
+                icon: Boxes,
                 step: "03",
                 title: "Brand Additions",
-                desc: "Based on your kitchen capabilities, utilization and geography, we identify the most suitable brands from our portfolio for your restaurant.",
+                desc: "Based on your kitchen capabilities, utilization and geography, we select brands for you.",
                 from: "#c9a227",
                 to: "#a8871f",
               },
               {
-                icon: ChefHat,
+                icon: GraduationCap,
                 step: "04",
                 title: "Training",
-                desc: "Our chefs visit your restaurant in person and train your team on a simple 3-step flow:",
+                desc: "Our chefs visit your restaurant in person and train your team on a simple 3-step flow.",
                 flow: ["Assemble", "Heat", "Dispatch"],
                 from: "#0891B2",
                 to: "#0E7490",
               },
               {
-                icon: Rocket,
+                icon: Smartphone,
                 step: "05",
-                title: "Tech Integration",
-                desc: "We onboard your assigned brands on Swiggy, Zomato and more — your outlet goes live online with zero tech effort.",
+                title: "Tech",
+                desc: "We onboard your assigned brands on Swiggy, Zomato and more — your outlet goes live with our brands.",
                 from: "#F97316",
                 to: "#c25608",
               },
               {
-                icon: TrendingUp,
+                icon: Rocket,
                 step: "06",
                 title: "Go Live",
                 desc: "New orders start flowing in across every platform. Same kitchen, same staff — more revenue every month.",
