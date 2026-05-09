@@ -119,10 +119,10 @@ const Index = () => {
 
               {/* Sub */}
               <p
-                className="text-base md:text-lg text-[#555555] leading-relaxed mb-8 max-w-lg animate-fadeInUp"
+                className="text-base md:text-lg text-[#555555] leading-relaxed mb-8 max-w-xl animate-fadeInUp"
                 style={{ animationDelay: "0.1s" }}
               >
-                Turn your existing kitchen into a multi-brand revenue engine.
+                Turn your existing kitchen into a multi-brand revenue engine.<br />
                 Same Staff. Same Kitchen. But more Orders, every day.
               </p>
 
@@ -228,16 +228,19 @@ const Index = () => {
                 {/* Brand logos 3×3 grid */}
                 <div className="grid grid-cols-3 gap-2">
                   {brands.slice(0, 9).map((brand, i) => (
-                    <div
+                    <Link
                       key={i}
-                      className="aspect-square bg-[#faf9f6] rounded-xl border border-gray-100 flex items-center justify-center p-2 hover:border-[#c9a227]/50 hover:shadow-sm transition-all duration-200"
+                      to={brand.route}
+                      onClick={() => window.scrollTo(0, 0)}
+                      aria-label={`Visit ${brand.name} page`}
+                      className="aspect-square bg-[#faf9f6] rounded-xl border border-gray-100 flex items-center justify-center p-2 hover:border-[#c9a227]/50 hover:shadow-sm hover:-translate-y-0.5 transition-all duration-200"
                     >
                       <img
                         src={brand.logo}
                         alt={brand.name}
                         className="max-w-full max-h-full object-contain"
                       />
-                    </div>
+                    </Link>
                   ))}
                 </div>
 
@@ -393,16 +396,16 @@ const Index = () => {
           </div>
 
           {/* Featured highlight — Shark Tank India */}
-          <div className="flex justify-center mt-6">
+          <div className="flex justify-center mt-10">
             <div
-              className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white border border-[#1565C0]/15 shadow-md shadow-[#1565C0]/10"
+              className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-white border border-[#1565C0]/20 shadow-lg shadow-[#1565C0]/15"
               style={{
                 background:
-                  "linear-gradient(135deg, rgba(21,101,192,0.06), rgba(249,196,34,0.08))",
+                  "linear-gradient(135deg, rgba(21,101,192,0.08), rgba(249,196,34,0.10))",
               }}
             >
-              <Sparkles size={15} className="text-[#F9C422]" />
-              <span className="text-sm text-[#1a1a1a]">
+              <Sparkles size={20} className="text-[#F9C422]" />
+              <span className="text-base text-[#1a1a1a]">
                 Featured &amp; secured deals on{" "}
                 <span className="font-extrabold tracking-tight">
                   <span style={{ color: "#1565C0" }}>Shark Tank</span>{" "}
