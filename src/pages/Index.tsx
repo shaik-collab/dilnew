@@ -197,26 +197,6 @@ const Index = () => {
                 </p>
               </div>
 
-              {/* As seen on — Shark Tank India */}
-              <div
-                className="flex items-center gap-4 mt-6 pt-5 border-t border-gray-200/70 w-full animate-fadeIn"
-                style={{ animationDelay: "0.3s" }}
-              >
-                <span className="text-[10px] font-semibold tracking-[0.18em] text-[#999999] uppercase whitespace-nowrap">
-                  As seen on
-                </span>
-                <div className="flex items-center gap-2.5">
-                  <img
-                    src="/lovable-uploads/Logo_of_Shark_Tank_India.png"
-                    alt="Shark Tank India"
-                    className="h-14 w-auto object-contain"
-                  />
-                  <div className="flex flex-col leading-tight">
-                    {/* <span className="text-sm font-black tracking-wide" style={{ color: "#1565C0" }}>SHARK TANK</span>
-                    <span className="text-sm font-black tracking-wide" style={{ color: "#F9C422" }}>INDIA</span> */}
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* RIGHT — Visual composition */}
@@ -275,7 +255,7 @@ const Index = () => {
                 </div>
                 <div>
                   <p className="text-[10px] font-bold text-[#1a1a1a]">New Order!</p>
-                  <p className="text-[9px] text-[#888888]">Bhole ke Chole · ₹340</p>
+                  {/* <p className="text-[9px] text-[#888888]">Bhole ke Chole · ₹340</p> */}
                 </div>
               </div>
 
@@ -397,7 +377,27 @@ const Index = () => {
             <CounterAnimation end={6} label="Cities" />
           </div>
 
-          <div className="flex justify-center gap-8 text-sm text-[#666666]">
+          {/* Featured highlight — Shark Tank India */}
+          <div className="flex justify-center mb-6">
+            <div
+              className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white border border-[#1565C0]/15 shadow-md shadow-[#1565C0]/10"
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(21,101,192,0.06), rgba(249,196,34,0.08))",
+              }}
+            >
+              <Sparkles size={15} className="text-[#F9C422]" />
+              <span className="text-sm text-[#1a1a1a]">
+                Featured &amp; secured deals on{" "}
+                <span className="font-extrabold tracking-tight">
+                  <span style={{ color: "#1565C0" }}>Shark Tank</span>{" "}
+                  <span style={{ color: "#F9C422" }}>India</span>
+                </span>
+              </span>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-[#666666]">
             <span className="flex items-center gap-2">
               <div className="w-2 h-2 bg-[#c9a227] rounded-full"></div>
               FSSAI Certified
