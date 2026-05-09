@@ -255,22 +255,22 @@ const Index = () => {
                 </div>
                 <div>
                   <p className="text-[10px] font-bold text-[#1a1a1a]">New Order!</p>
-                  {/* <p className="text-[9px] text-[#888888]">Bhole ke Chole · ₹340</p> */}
+                  <p className="text-[9px] text-[#888888]">Bhole ke Chole</p>
                 </div>
               </div>
 
               {/* Floating: Go Live in 8 Days */}
-              <div
+              {/* <div
                 className="absolute bottom-[14%] right-[-2%] z-20 bg-white rounded-2xl px-3.5 py-2.5 shadow-xl shadow-black/10 border border-gray-100/80"
                 style={{ animation: "float 4s ease-in-out infinite", animationDelay: "1s" }}
               >
                 <p className="text-sm font-bold text-[#E91E63]">🔥 Go Live in 2 Weeks</p>
-              </div>
+              </div> */}
 
-              {/* Floating: Trending in Bangalore */}
+              {/* Floating: Trending in Bangalore (moved into former Go Live slot) */}
               <div
-                className="absolute top-[22%] left-[-2%] z-20 bg-white rounded-2xl px-3.5 py-2.5 shadow-xl shadow-black/10 border border-gray-100/80"
-                style={{ animation: "float 3.5s ease-in-out infinite", animationDelay: "0.5s" }}
+                className="absolute bottom-[14%] right-[-2%] z-20 bg-white rounded-2xl px-3.5 py-2.5 shadow-xl shadow-black/10 border border-gray-100/80"
+                style={{ animation: "float 4s ease-in-out infinite", animationDelay: "1s" }}
               >
                 <p className="text-sm font-bold text-[#F97316]">🍲 Trending in Bangalore</p>
               </div>
@@ -377,8 +377,23 @@ const Index = () => {
             <CounterAnimation end={6} label="Cities" />
           </div>
 
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-[#666666]">
+            <span className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-[#c9a227] rounded-full"></div>
+              FSSAI Certified
+            </span>
+            <span className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-[#c9a227] rounded-full"></div>
+              ISO Compliant
+            </span>
+            <span className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-[#c9a227] rounded-full"></div>
+              Hygiene First
+            </span>
+          </div>
+
           {/* Featured highlight — Shark Tank India */}
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center mt-6">
             <div
               className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white border border-[#1565C0]/15 shadow-md shadow-[#1565C0]/10"
               style={{
@@ -395,21 +410,6 @@ const Index = () => {
                 </span>
               </span>
             </div>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-[#666666]">
-            <span className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-[#c9a227] rounded-full"></div>
-              FSSAI Certified
-            </span>
-            <span className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-[#c9a227] rounded-full"></div>
-              ISO Compliant
-            </span>
-            <span className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-[#c9a227] rounded-full"></div>
-              Hygiene First
-            </span>
           </div>
         </div>
       </section>
